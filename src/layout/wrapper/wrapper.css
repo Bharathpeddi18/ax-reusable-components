@@ -1,0 +1,16 @@
+.ax-app-wrapper{
+    position: relative;
+    height: calc(100vh - var(--ax-app-header-height) - var(--ax-app-footer-height));
+    overflow: auto;
+    top: var(--ax-app-header-height);
+    transition: all 0.5s ease-in-out;
+    width: calc(100vw - var(--ax-app-nav-collapsed-width));
+    left: var(--ax-app-nav-collapsed-width);
+}
+
+@media screen and (min-width: 1024px) {
+    .ax-app-nav-expanded~.ax-app-wrapper{
+        width: calc(100vw - var(--ax-app-nav-expanded-width));
+        left: var(--ax-app-nav-expanded-width);
+    }
+}

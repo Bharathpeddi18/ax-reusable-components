@@ -1,0 +1,429 @@
+/* ==========================================================================
+   AstraX (AX) World-Class Reusable Button Component Styles
+   Inspired by Material UI, Radix UI & Modern Design Systems
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Base Button Styles & CSS Variables
+   -------------------------------------------------------------------------- */
+.ax-btn {
+  /* Dimensions & Spacing */
+  --ax-btn-height: 40px;
+  --ax-btn-padding-x: 16px;
+  --ax-btn-padding-y: 8px;
+  --ax-btn-gap: 8px;
+  --ax-btn-radius: 8px;
+  --ax-btn-font-size: 0.875rem;
+  --ax-btn-font-weight: 600;
+  --ax-btn-icon-size: 18px;
+  --ax-btn-transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Default Theme (Primary) */
+  --ax-btn-bg: #0284c7;
+  --ax-btn-text: #ffffff;
+  --ax-btn-border: transparent;
+  --ax-btn-hover-bg: #0369a1;
+  --ax-btn-hover-text: #ffffff;
+  --ax-btn-hover-border: transparent;
+  --ax-btn-active-bg: #075985;
+  --ax-btn-focus-ring: rgba(2, 132, 199, 0.35);
+  --ax-btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+  /* Element Reset & Core Flex */
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ax-btn-gap);
+  height: var(--ax-btn-height);
+  padding: var(--ax-btn-padding-y) var(--ax-btn-padding-x);
+  font-family: inherit;
+  font-size: var(--ax-btn-font-size);
+  font-weight: var(--ax-btn-font-weight);
+  line-height: 1.25;
+  color: var(--ax-btn-text);
+  background-color: var(--ax-btn-bg);
+  border: 1px solid var(--ax-btn-border);
+  border-radius: var(--ax-btn-radius);
+  box-shadow: var(--ax-btn-shadow);
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  white-space: nowrap;
+  vertical-align: middle;
+  transition: var(--ax-btn-transition);
+  outline: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ax-btn *,
+.ax-btn *::before,
+.ax-btn *::after {
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   2. Interaction States (Hover, Active, Focus)
+   -------------------------------------------------------------------------- */
+.ax-btn:hover:not(:disabled):not(.ax-btn-disabled):not(.ax-btn-loading) {
+  background-color: var(--ax-btn-hover-bg);
+  color: var(--ax-btn-hover-text);
+  border-color: var(--ax-btn-hover-border);
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.12), var(--ax-btn-shadow);
+}
+
+.ax-btn:active:not(:disabled):not(.ax-btn-disabled):not(.ax-btn-loading) {
+  background-color: var(--ax-btn-active-bg);
+  transform: scale(0.98) translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.ax-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ax-btn-focus-ring);
+}
+
+/* --------------------------------------------------------------------------
+   3. Variants (Contained, Outlined, Text, Soft, Elevated, Glass)
+   -------------------------------------------------------------------------- */
+
+/* Contained / Solid (Default) */
+.ax-btn-contained,
+.ax-btn-solid {
+  /* Uses base theme variables */
+}
+
+/* Outlined */
+.ax-btn-outlined,
+.ax-btn-outline {
+  --ax-btn-bg: transparent;
+  --ax-btn-text: var(--ax-btn-base-color, #0284c7);
+  --ax-btn-border: var(--ax-btn-base-color, #0284c7);
+  --ax-btn-hover-bg: rgba(2, 132, 199, 0.08);
+  --ax-btn-hover-text: var(--ax-btn-base-color, #0284c7);
+  --ax-btn-hover-border: var(--ax-btn-base-color, #0284c7);
+  --ax-btn-active-bg: rgba(2, 132, 199, 0.16);
+  --ax-btn-shadow: none;
+}
+
+/* Text / Ghost */
+.ax-btn-text,
+.ax-btn-ghost {
+  --ax-btn-bg: transparent;
+  --ax-btn-text: var(--ax-btn-base-color, #0284c7);
+  --ax-btn-border: transparent;
+  --ax-btn-hover-bg: rgba(2, 132, 199, 0.08);
+  --ax-btn-hover-text: var(--ax-btn-base-color, #0284c7);
+  --ax-btn-active-bg: rgba(2, 132, 199, 0.16);
+  --ax-btn-shadow: none;
+}
+
+/* Soft / Tonal */
+.ax-btn-soft,
+.ax-btn-tonal {
+  --ax-btn-bg: rgba(2, 132, 199, 0.12);
+  --ax-btn-text: var(--ax-btn-base-color, #0284c7);
+  --ax-btn-border: transparent;
+  --ax-btn-hover-bg: rgba(2, 132, 199, 0.2);
+  --ax-btn-hover-text: var(--ax-btn-base-color, #0284c7);
+  --ax-btn-active-bg: rgba(2, 132, 199, 0.28);
+  --ax-btn-shadow: none;
+}
+
+/* Elevated */
+.ax-btn-elevated {
+  --ax-btn-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+}
+.ax-btn-elevated:hover:not(:disabled):not(.ax-btn-disabled) {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Glass / Frosted */
+.ax-btn-glass {
+  --ax-btn-bg: rgba(255, 255, 255, 0.15);
+  --ax-btn-text: #ffffff;
+  --ax-btn-border: rgba(255, 255, 255, 0.25);
+  --ax-btn-hover-bg: rgba(255, 255, 255, 0.25);
+  --ax-btn-active-bg: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* --------------------------------------------------------------------------
+   4. Color Themes (Primary, Secondary, Success, Warning, Danger, Dark, etc.)
+   -------------------------------------------------------------------------- */
+
+/* Primary (Blue) */
+.ax-btn-color-primary {
+  --ax-btn-base-color: #0284c7;
+  --ax-btn-bg: #0284c7;
+  --ax-btn-text: #ffffff;
+  --ax-btn-hover-bg: #0369a1;
+  --ax-btn-active-bg: #075985;
+  --ax-btn-focus-ring: rgba(2, 132, 199, 0.35);
+}
+
+/* Secondary (Slate) */
+.ax-btn-color-secondary {
+  --ax-btn-base-color: #64748b;
+  --ax-btn-bg: #64748b;
+  --ax-btn-text: #ffffff;
+  --ax-btn-hover-bg: #475569;
+  --ax-btn-active-bg: #334155;
+  --ax-btn-focus-ring: rgba(100, 116, 139, 0.35);
+}
+
+/* Success (Emerald) */
+.ax-btn-color-success {
+  --ax-btn-base-color: #10b981;
+  --ax-btn-bg: #10b981;
+  --ax-btn-text: #ffffff;
+  --ax-btn-hover-bg: #059669;
+  --ax-btn-active-bg: #047857;
+  --ax-btn-focus-ring: rgba(16, 185, 129, 0.35);
+}
+
+/* Warning (Amber) */
+.ax-btn-color-warning {
+  --ax-btn-base-color: #f59e0b;
+  --ax-btn-bg: #f59e0b;
+  --ax-btn-text: #1c1917;
+  --ax-btn-hover-bg: #d97706;
+  --ax-btn-hover-text: #ffffff;
+  --ax-btn-active-bg: #b45309;
+  --ax-btn-focus-ring: rgba(245, 158, 11, 0.35);
+}
+
+/* Danger / Destructive (Red) */
+.ax-btn-color-danger,
+.ax-btn-color-destructive {
+  --ax-btn-base-color: #ef4444;
+  --ax-btn-bg: #ef4444;
+  --ax-btn-text: #ffffff;
+  --ax-btn-hover-bg: #dc2626;
+  --ax-btn-active-bg: #b91c1c;
+  --ax-btn-focus-ring: rgba(239, 68, 68, 0.35);
+}
+
+/* Dark (Slate 900) */
+.ax-btn-color-dark {
+  --ax-btn-base-color: #0f172a;
+  --ax-btn-bg: #0f172a;
+  --ax-btn-text: #f8fafc;
+  --ax-btn-hover-bg: #1e293b;
+  --ax-btn-active-bg: #334155;
+  --ax-btn-focus-ring: rgba(15, 23, 42, 0.35);
+}
+
+/* Light (White / Subtle) */
+.ax-btn-color-light {
+  --ax-btn-base-color: #475569;
+  --ax-btn-bg: #ffffff;
+  --ax-btn-text: #0f172a;
+  --ax-btn-border: #e2e8f0;
+  --ax-btn-hover-bg: #f8fafc;
+  --ax-btn-hover-border: #cbd5e1;
+  --ax-btn-active-bg: #f1f5f9;
+  --ax-btn-focus-ring: rgba(2, 132, 199, 0.25);
+  --ax-btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* --------------------------------------------------------------------------
+   5. Sizes (xs, sm, md, lg, xl)
+   -------------------------------------------------------------------------- */
+
+/* Extra Small (xs) */
+.ax-btn-size-xs {
+  --ax-btn-height: 28px;
+  --ax-btn-padding-x: 10px;
+  --ax-btn-padding-y: 4px;
+  --ax-btn-font-size: 0.75rem;
+  --ax-btn-gap: 5px;
+  --ax-btn-icon-size: 14px;
+  --ax-btn-radius: 6px;
+}
+
+/* Small (sm) */
+.ax-btn-size-sm {
+  --ax-btn-height: 34px;
+  --ax-btn-padding-x: 12px;
+  --ax-btn-padding-y: 6px;
+  --ax-btn-font-size: 0.8125rem;
+  --ax-btn-gap: 6px;
+  --ax-btn-icon-size: 16px;
+  --ax-btn-radius: 7px;
+}
+
+/* Medium (md - Default) */
+.ax-btn-size-md {
+  --ax-btn-height: 40px;
+  --ax-btn-padding-x: 16px;
+  --ax-btn-padding-y: 8px;
+  --ax-btn-font-size: 0.875rem;
+  --ax-btn-gap: 8px;
+  --ax-btn-icon-size: 18px;
+  --ax-btn-radius: 8px;
+}
+
+/* Large (lg) */
+.ax-btn-size-lg {
+  --ax-btn-height: 48px;
+  --ax-btn-padding-x: 22px;
+  --ax-btn-padding-y: 11px;
+  --ax-btn-font-size: 1rem;
+  --ax-btn-gap: 10px;
+  --ax-btn-icon-size: 20px;
+  --ax-btn-radius: 10px;
+}
+
+/* Extra Large (xl) */
+.ax-btn-size-xl {
+  --ax-btn-height: 56px;
+  --ax-btn-padding-x: 28px;
+  --ax-btn-padding-y: 14px;
+  --ax-btn-font-size: 1.125rem;
+  --ax-btn-gap: 12px;
+  --ax-btn-icon-size: 22px;
+  --ax-btn-radius: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Shapes (Rounded, Pill, Square, Circle)
+   -------------------------------------------------------------------------- */
+.ax-btn-shape-rounded {
+  /* Standard per size */
+}
+
+.ax-btn-shape-pill {
+  border-radius: 9999px;
+}
+
+.ax-btn-shape-square {
+  border-radius: 0px;
+}
+
+.ax-btn-shape-circle {
+  border-radius: 50%;
+  padding: 0 !important;
+  width: var(--ax-btn-height);
+  min-width: var(--ax-btn-height);
+  aspect-ratio: 1 / 1;
+}
+
+/* --------------------------------------------------------------------------
+   7. Icon Only Mode
+   -------------------------------------------------------------------------- */
+.ax-btn-icon-only {
+  width: var(--ax-btn-height);
+  min-width: var(--ax-btn-height);
+  padding: 0 !important;
+  aspect-ratio: 1 / 1;
+  display: inline-grid;
+  place-items: center;
+}
+
+.ax-btn-icon-only .ax-btn-icon {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. Icon Elements & Positions
+   -------------------------------------------------------------------------- */
+.ax-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--ax-btn-icon-size);
+  height: var(--ax-btn-icon-size);
+}
+
+.ax-btn-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ax-btn-icon-start {
+  margin-right: -2px;
+}
+
+.ax-btn-icon-end {
+  margin-left: -2px;
+}
+
+.ax-btn-label {
+  display: inline-flex;
+  align-items: center;
+  line-height: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   9. Loading State & Spinner
+   -------------------------------------------------------------------------- */
+.ax-btn-loading {
+  cursor: wait !important;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.ax-btn-spinner {
+  display: inline-block;
+  width: var(--ax-btn-icon-size);
+  height: var(--ax-btn-icon-size);
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: ax-btn-spin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ax-btn-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Disabled State
+   -------------------------------------------------------------------------- */
+.ax-btn:disabled,
+.ax-btn.ax-btn-disabled {
+  opacity: 0.55;
+  cursor: not-allowed !important;
+  pointer-events: none;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. Full Width Modifier
+   -------------------------------------------------------------------------- */
+.ax-btn-full-width {
+  width: 100%;
+  display: flex;
+}
+
+/* --------------------------------------------------------------------------
+   12. Ripple Effect (Material UI Inspired)
+   -------------------------------------------------------------------------- */
+.ax-btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ax-btn-ripple-anim 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ax-btn-ripple-anim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}

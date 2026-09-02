@@ -1,0 +1,20 @@
+.ax-app-header{
+    --ax-app-header-bg-color: #FFF;
+}
+
+.ax-app-header{
+    position: fixed;
+    height: var(--ax-app-header-height);
+    transition: all 0.5s ease-in-out;
+    width: calc(100vw - var(--ax-app-nav-collapsed-width));
+    left: var(--ax-app-nav-collapsed-width);
+    z-index: 9998;
+}
+
+@media screen and (min-width: 1024px) {
+    .ax-app-nav-expanded~.ax-app-header{
+        width: calc(100vw - var(--ax-app-nav-expanded-width));
+        left: var(--ax-app-nav-expanded-width);
+    }
+}
+
