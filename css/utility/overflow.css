@@ -1,0 +1,49 @@
+/* ========================================
+   Overflow Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Overflow (All Axes)
+   ---------------------------------------- */
+
+.ax-overflow-auto { overflow: auto; }
+.ax-overflow-hidden { overflow: hidden; }
+.ax-overflow-clip { overflow: clip; }
+.ax-overflow-visible { overflow: visible; }
+.ax-overflow-scroll { overflow: scroll; }
+
+/* ----------------------------------------
+   Overflow X
+   ---------------------------------------- */
+
+.ax-overflow-x-auto { overflow-x: auto; }
+.ax-overflow-x-hidden { overflow-x: hidden; }
+.ax-overflow-x-clip { overflow-x: clip; }
+.ax-overflow-x-visible { overflow-x: visible; }
+.ax-overflow-x-scroll { overflow-x: scroll; }
+
+/* ----------------------------------------
+   Overflow Y
+   ---------------------------------------- */
+
+.ax-overflow-y-auto { overflow-y: auto; }
+.ax-overflow-y-hidden { overflow-y: hidden; }
+.ax-overflow-y-clip { overflow-y: clip; }
+.ax-overflow-y-visible { overflow-y: visible; }
+.ax-overflow-y-scroll { overflow-y: scroll; }
+
+/* ----------------------------------------
+   Overscroll Behavior
+   ---------------------------------------- */
+
+.ax-overscroll-auto { overscroll-behavior: auto; }
+.ax-overscroll-contain { overscroll-behavior: contain; }
+.ax-overscroll-none { overscroll-behavior: none; }
+
+.ax-overscroll-x-auto { overscroll-behavior-x: auto; }
+.ax-overscroll-x-contain { overscroll-behavior-x: contain; }
+.ax-overscroll-x-none { overscroll-behavior-x: none; }
+
+.ax-overscroll-y-auto { overscroll-behavior-y: auto; }
+.ax-overscroll-y-contain { overscroll-behavior-y: contain; }
+.ax-overscroll-y-none { overscroll-behavior-y: none; }

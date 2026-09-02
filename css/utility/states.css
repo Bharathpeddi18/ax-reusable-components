@@ -1,0 +1,303 @@
+/* ========================================
+   State Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Hover - Effects & Transforms
+   ---------------------------------------- */
+
+.ax-hover-opacity:hover,
+.hover\:ax-opacity-80:hover {
+  opacity: var(--ax-state-hover-opacity, 0.8);
+}
+
+.hover\:ax-opacity-100:hover {
+  opacity: 1;
+}
+
+.hover\:ax-opacity-50:hover {
+  opacity: 0.5;
+}
+
+.ax-hover-underline:hover,
+.hover\:ax-underline:hover {
+  text-decoration: underline;
+}
+
+.ax-hover-no-underline:hover,
+.hover\:ax-no-underline:hover {
+  text-decoration: none;
+}
+
+.ax-hover-scale-105:hover,
+.hover\:ax-scale-105:hover {
+  transform: scale(1.05);
+}
+
+.hover\:ax-scale-100:hover {
+  transform: scale(1);
+}
+
+.hover\:ax-scale-95:hover {
+  transform: scale(0.95);
+}
+
+/* ----------------------------------------
+   Hover - Background Colors
+   ---------------------------------------- */
+
+.hover\:ax-bg-primary:hover {
+  background-color: var(--ax-color-primary-hover);
+}
+
+.hover\:ax-bg-secondary:hover {
+  background-color: var(--ax-color-secondary-hover);
+}
+
+.hover\:ax-bg-surface:hover {
+  background-color: var(--ax-color-surface);
+}
+
+.hover\:ax-bg-surface-secondary:hover {
+  background-color: var(--ax-color-surface-secondary);
+}
+
+.hover\:ax-bg-surface-tertiary:hover {
+  background-color: var(--ax-color-surface-tertiary);
+}
+
+.hover\:ax-bg-success:hover {
+  background-color: var(--ax-color-success-hover);
+}
+
+.hover\:ax-bg-danger:hover {
+  background-color: var(--ax-color-danger-hover);
+}
+
+.hover\:ax-bg-warning:hover {
+  background-color: var(--ax-color-warning-hover);
+}
+
+.hover\:ax-bg-info:hover {
+  background-color: var(--ax-color-info-hover);
+}
+
+.hover\:ax-bg-gray-50:hover {
+  background-color: var(--ax-color-gray-50);
+}
+
+.hover\:ax-bg-gray-100:hover {
+  background-color: var(--ax-color-gray-100);
+}
+
+.hover\:ax-bg-gray-200:hover {
+  background-color: var(--ax-color-gray-200);
+}
+
+.hover\:ax-bg-transparent:hover {
+  background-color: transparent;
+}
+
+/* ----------------------------------------
+   Hover - Text Colors
+   ---------------------------------------- */
+
+.hover\:ax-text-primary:hover {
+  color: var(--ax-color-primary-hover);
+}
+
+.hover\:ax-text-secondary:hover {
+  color: var(--ax-color-secondary-hover);
+}
+
+.hover\:ax-text-danger:hover {
+  color: var(--ax-color-danger-hover);
+}
+
+.hover\:ax-text-success:hover {
+  color: var(--ax-color-success-hover);
+}
+
+.hover\:ax-text-white:hover {
+  color: var(--ax-color-white);
+}
+
+.hover\:ax-text-black:hover {
+  color: var(--ax-color-black);
+}
+
+.hover\:ax-text-muted:hover {
+  color: var(--ax-color-text-muted);
+}
+
+/* ----------------------------------------
+   Hover - Borders & Shadows
+   ---------------------------------------- */
+
+.hover\:ax-border-primary:hover {
+  border-color: var(--ax-color-primary);
+}
+
+.hover\:ax-border-secondary:hover {
+  border-color: var(--ax-color-border-secondary);
+}
+
+.hover\:ax-shadow-sm:hover {
+  box-shadow: var(--ax-shadow-sm);
+}
+
+.hover\:ax-shadow-md:hover {
+  box-shadow: var(--ax-shadow-md);
+}
+
+.hover\:ax-shadow-lg:hover {
+  box-shadow: var(--ax-shadow-lg);
+}
+
+.hover\:ax-shadow-none:hover {
+  box-shadow: none;
+}
+
+/* ----------------------------------------
+   Focus
+   ---------------------------------------- */
+
+.ax-focus-outline:focus,
+.focus\:ax-outline:focus {
+  outline: 2px solid var(--ax-color-focus);
+  outline-offset: 2px;
+}
+
+.ax-focus-none:focus,
+.focus\:ax-outline-none:focus {
+  outline: none;
+}
+
+.focus\:ax-border-primary:focus {
+  border-color: var(--ax-color-border-focus);
+}
+
+.focus\:ax-bg-surface:focus {
+  background-color: var(--ax-color-surface);
+}
+
+/* ----------------------------------------
+   Focus Visible
+   ---------------------------------------- */
+
+.ax-focus-visible-outline:focus-visible,
+.focus-visible\:ax-outline:focus-visible {
+  outline: 2px solid var(--ax-color-focus);
+  outline-offset: 2px;
+}
+
+.ax-focus-visible-none:focus-visible,
+.focus-visible\:ax-outline-none:focus-visible {
+  outline: none;
+}
+
+/* ----------------------------------------
+   Active
+   ---------------------------------------- */
+
+.ax-active-opacity:active,
+.active\:ax-opacity-70:active {
+  opacity: var(--ax-state-active-opacity, 0.7);
+}
+
+.ax-active-scale:active,
+.ax-active-scale-95:active,
+.active\:ax-scale-95:active {
+  transform: scale(0.98);
+}
+
+.active\:ax-bg-primary-active:active {
+  background-color: var(--ax-color-primary-active);
+}
+
+/* ----------------------------------------
+   Disabled
+   ---------------------------------------- */
+
+.ax-disabled-opacity:disabled,
+.disabled\:ax-opacity-50:disabled {
+  opacity: var(--ax-state-disabled-opacity, 0.5);
+}
+
+.ax-disabled-pointer:disabled,
+.disabled\:ax-pointer-events-none:disabled {
+  pointer-events: none;
+}
+
+.ax-disabled-cursor:disabled,
+.disabled\:ax-cursor-not-allowed:disabled {
+  cursor: not-allowed;
+}
+
+/* ----------------------------------------
+   Checked
+   ---------------------------------------- */
+
+.ax-checked-primary:checked,
+.checked\:ax-bg-primary:checked {
+  accent-color: var(--ax-color-primary);
+}
+
+.ax-checked-success:checked,
+.checked\:ax-bg-success:checked {
+  accent-color: var(--ax-color-success);
+}
+
+/* ----------------------------------------
+   Valid / Invalid
+   ---------------------------------------- */
+
+.ax-valid-border:valid,
+.valid\:ax-border-success:valid {
+  border-color: var(--ax-color-success);
+}
+
+.ax-invalid-border:invalid,
+.invalid\:ax-border-danger:invalid {
+  border-color: var(--ax-color-danger);
+}
+
+/* ----------------------------------------
+   Required / Optional
+   ---------------------------------------- */
+
+.ax-required-border:required {
+  border-color: var(--ax-color-required, var(--ax-color-danger));
+}
+
+/* ----------------------------------------
+   Readonly
+   ---------------------------------------- */
+
+.ax-readonly-opacity:read-only {
+  opacity: var(--ax-state-readonly-opacity, 0.7);
+}
+
+.ax-readonly-cursor:read-only {
+  cursor: default;
+}
+
+/* ----------------------------------------
+   Placeholder
+   ---------------------------------------- */
+
+.ax-placeholder-muted::placeholder,
+.placeholder\:ax-text-muted::placeholder {
+  color: var(--ax-color-text-muted);
+  opacity: 1;
+}
+
+/* ----------------------------------------
+   Selection
+   ---------------------------------------- */
+
+.ax-selection-primary::selection,
+.selection\:ax-bg-primary::selection {
+  background-color: var(--ax-color-primary);
+  color: var(--ax-color-on-primary, var(--ax-color-white));
+}

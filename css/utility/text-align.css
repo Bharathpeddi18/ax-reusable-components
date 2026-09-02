@@ -1,0 +1,28 @@
+/* ========================================
+   Text Alignment
+   ======================================== */
+
+.ax-text-left {
+  text-align: left;
+}
+
+.ax-text-center {
+  text-align: center;
+}
+
+.ax-text-right {
+  text-align: right;
+}
+
+.ax-text-justify {
+  text-align: justify;
+
+}
+
+.ax-text-start {
+  text-align: start;
+}
+
+.ax-text-end {
+  text-align: end;
+}

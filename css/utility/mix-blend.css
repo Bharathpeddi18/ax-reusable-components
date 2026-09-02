@@ -1,0 +1,21 @@
+/* ========================================
+   Mix Blend Mode Utilities
+   ======================================== */
+
+.ax-mix-normal, .ax-blend-normal { mix-blend-mode: normal; }
+.ax-mix-multiply, .ax-blend-multiply { mix-blend-mode: multiply; }
+.ax-mix-screen, .ax-blend-screen { mix-blend-mode: screen; }
+.ax-mix-overlay, .ax-blend-overlay { mix-blend-mode: overlay; }
+.ax-mix-darken, .ax-blend-darken { mix-blend-mode: darken; }
+.ax-mix-lighten, .ax-blend-lighten { mix-blend-mode: lighten; }
+.ax-mix-color-dodge, .ax-blend-color-dodge { mix-blend-mode: color-dodge; }
+.ax-mix-color-burn, .ax-blend-color-burn { mix-blend-mode: color-burn; }
+.ax-mix-hard-light, .ax-blend-hard-light { mix-blend-mode: hard-light; }
+.ax-mix-soft-light, .ax-blend-soft-light { mix-blend-mode: soft-light; }
+.ax-mix-difference, .ax-blend-difference { mix-blend-mode: difference; }
+.ax-mix-exclusion, .ax-blend-exclusion { mix-blend-mode: exclusion; }
+.ax-mix-hue, .ax-blend-hue { mix-blend-mode: hue; }
+.ax-mix-saturation, .ax-blend-saturation { mix-blend-mode: saturation; }
+.ax-mix-color, .ax-blend-color { mix-blend-mode: color; }
+.ax-mix-luminosity, .ax-blend-luminosity { mix-blend-mode: luminosity; }
+.ax-mix-plus-lighter { mix-blend-mode: plus-lighter; }

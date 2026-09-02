@@ -1,0 +1,8 @@
+/* ========================================
+   User Select Utilities
+   ======================================== */
+
+.ax-user-select-auto, .ax-select-auto { user-select: auto; }
+.ax-user-select-none, .ax-select-none { user-select: none; }
+.ax-user-select-text, .ax-select-text { user-select: text; }
+.ax-user-select-all, .ax-select-all { user-select: all; }

@@ -1,0 +1,15 @@
+/* ========================================
+   Font Style
+   ======================================== */
+
+.ax-italic {
+  font-style: italic;
+}
+
+.ax-not-italic {
+  font-style: normal;
+}
+
+.ax-oblique {
+  font-style: oblique;
+}

@@ -1,0 +1,105 @@
+/* ========================================
+   SVG Utilities
+   ======================================== */
+
+
+/* ========================================
+   Fill
+   ======================================== */
+
+.ax-fill-none {
+  fill: none;
+}
+
+.ax-fill-current {
+  fill: currentColor;
+}
+
+.ax-fill-transparent {
+  fill: transparent;
+}
+
+
+/* ========================================
+   Stroke
+   ======================================== */
+
+.ax-stroke-none {
+  stroke: none;
+}
+
+.ax-stroke-current {
+  stroke: currentColor;
+}
+
+.ax-stroke-transparent {
+  stroke: transparent;
+}
+
+
+/* ========================================
+   Stroke Width
+   ======================================== */
+
+.ax-stroke-0 {
+  stroke-width: 0;
+}
+
+.ax-stroke-1 {
+  stroke-width: 1;
+}
+
+.ax-stroke-2 {
+  stroke-width: 2;
+}
+
+.ax-stroke-3 {
+  stroke-width: 3;
+}
+
+
+/* ========================================
+   Stroke Linecap
+   ======================================== */
+
+.ax-stroke-linecap-butt {
+  stroke-linecap: butt;
+}
+
+.ax-stroke-linecap-round {
+  stroke-linecap: round;
+}
+
+.ax-stroke-linecap-square {
+  stroke-linecap: square;
+}
+
+
+/* ========================================
+   Stroke Linejoin
+   ======================================== */
+
+.ax-stroke-linejoin-miter {
+  stroke-linejoin: miter;
+}
+
+.ax-stroke-linejoin-round {
+  stroke-linejoin: round;
+}
+
+.ax-stroke-linejoin-bevel {
+  stroke-linejoin: bevel;
+}
+
+
+/* ========================================
+   Vector Effect
+   ======================================== */
+
+.ax-vector-effect-none {
+  vector-effect: none;
+}
+
+.ax-vector-effect-non-scaling-stroke {
+  vector-effect: non-scaling-stroke;
+}

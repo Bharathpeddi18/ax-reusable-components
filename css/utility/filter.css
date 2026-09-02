@@ -1,0 +1,107 @@
+/* ========================================
+   Filter & Backdrop Filter Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Filter Reset
+   ---------------------------------------- */
+
+.ax-filter-none { filter: none; }
+
+/* ----------------------------------------
+   Blur
+   ---------------------------------------- */
+
+.ax-blur-none { filter: blur(0); }
+.ax-blur-sm { filter: blur(4px); }
+.ax-blur { filter: blur(8px); }
+.ax-blur-md { filter: blur(12px); }
+.ax-blur-lg { filter: blur(16px); }
+.ax-blur-xl { filter: blur(24px); }
+.ax-blur-2xl { filter: blur(40px); }
+
+/* ----------------------------------------
+   Backdrop Blur
+   ---------------------------------------- */
+
+.ax-backdrop-blur-none { backdrop-filter: blur(0); -webkit-backdrop-filter: blur(0); }
+.ax-backdrop-blur-sm { backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+.ax-backdrop-blur { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.ax-backdrop-blur-md { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.ax-backdrop-blur-lg { backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
+.ax-backdrop-blur-xl { backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+
+/* ----------------------------------------
+   Brightness
+   ---------------------------------------- */
+
+.ax-brightness-50 { filter: brightness(0.5); }
+.ax-brightness-75 { filter: brightness(0.75); }
+.ax-brightness-90 { filter: brightness(0.9); }
+.ax-brightness-100 { filter: brightness(1); }
+.ax-brightness-110 { filter: brightness(1.1); }
+.ax-brightness-125 { filter: brightness(1.25); }
+.ax-brightness-150 { filter: brightness(1.5); }
+
+/* ----------------------------------------
+   Contrast
+   ---------------------------------------- */
+
+.ax-contrast-50 { filter: contrast(0.5); }
+.ax-contrast-75 { filter: contrast(0.75); }
+.ax-contrast-100 { filter: contrast(1); }
+.ax-contrast-125 { filter: contrast(1.25); }
+.ax-contrast-150 { filter: contrast(1.5); }
+
+/* ----------------------------------------
+   Grayscale
+   ---------------------------------------- */
+
+.ax-grayscale-0 { filter: grayscale(0); }
+.ax-grayscale { filter: grayscale(1); }
+.ax-grayscale-50 { filter: grayscale(0.5); }
+
+/* ----------------------------------------
+   Invert
+   ---------------------------------------- */
+
+.ax-invert-0 { filter: invert(0); }
+.ax-invert { filter: invert(1); }
+
+/* ----------------------------------------
+   Saturation
+   ---------------------------------------- */
+
+.ax-saturate-0 { filter: saturate(0); }
+.ax-saturate-50 { filter: saturate(0.5); }
+.ax-saturate-100 { filter: saturate(1); }
+.ax-saturate-150 { filter: saturate(1.5); }
+.ax-saturate-200 { filter: saturate(2); }
+
+/* ----------------------------------------
+   Sepia
+   ---------------------------------------- */
+
+.ax-sepia-0 { filter: sepia(0); }
+.ax-sepia { filter: sepia(1); }
+
+/* ----------------------------------------
+   Hue Rotate
+   ---------------------------------------- */
+
+.ax-hue-rotate-0 { filter: hue-rotate(0deg); }
+.ax-hue-rotate-30 { filter: hue-rotate(30deg); }
+.ax-hue-rotate-60 { filter: hue-rotate(60deg); }
+.ax-hue-rotate-90 { filter: hue-rotate(90deg); }
+.ax-hue-rotate-180 { filter: hue-rotate(180deg); }
+
+/* ----------------------------------------
+   Drop Shadow
+   ---------------------------------------- */
+
+.ax-drop-shadow-none { filter: drop-shadow(0 0 transparent); }
+.ax-drop-shadow-sm { filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.08)); }
+.ax-drop-shadow { filter: drop-shadow(0 2px 4px rgb(0 0 0 / 0.12)); }
+.ax-drop-shadow-md { filter: drop-shadow(0 4px 6px rgb(0 0 0 / 0.14)); }
+.ax-drop-shadow-lg { filter: drop-shadow(0 10px 15px rgb(0 0 0 / 0.15)); }
+.ax-drop-shadow-xl { filter: drop-shadow(0 20px 25px rgb(0 0 0 / 0.20)); }

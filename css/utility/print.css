@@ -1,0 +1,46 @@
+/* ========================================
+   Print Utilities
+   ======================================== */
+
+.ax-print-only {
+  display: none !important;
+}
+
+@media print {
+  .ax-print-hidden, .ax-no-print {
+    display: none !important;
+  }
+
+  .ax-print-only {
+    display: block !important;
+  }
+
+  .ax-print-visible {
+    display: block !important;
+  }
+
+  .ax-print-inline {
+    display: inline !important;
+  }
+
+  .ax-print-inline-block {
+    display: inline-block !important;
+  }
+
+  .ax-print-break-before, .ax-break-before {
+    break-before: page;
+  }
+
+  .ax-print-break-after, .ax-break-after {
+    break-after: page;
+  }
+
+  .ax-print-break-inside-avoid, .ax-break-inside-avoid {
+    break-inside: avoid;
+  }
+
+  .ax-print-color-adjust {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+}

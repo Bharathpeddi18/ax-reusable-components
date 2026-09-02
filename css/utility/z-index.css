@@ -1,0 +1,24 @@
+/* ========================================
+   Z-Index Utilities
+   ======================================== */
+
+.ax-z-auto { z-index: auto; }
+.ax-z-0 { z-index: 0; }
+.ax-z-1 { z-index: 1; }
+.ax-z-2 { z-index: 2; }
+.ax-z-3 { z-index: 3; }
+.ax-z-10 { z-index: 10; }
+.ax-z-20 { z-index: 20; }
+.ax-z-30 { z-index: 30; }
+.ax-z-40 { z-index: 40; }
+.ax-z-50 { z-index: 50; }
+.ax-z-100 { z-index: 100; }
+
+.ax-z-dropdown { z-index: var(--ax-z-index-dropdown, 1000); }
+.ax-z-sticky { z-index: var(--ax-z-index-sticky, 1100); }
+.ax-z-fixed { z-index: var(--ax-z-index-fixed, 1200); }
+.ax-z-overlay { z-index: var(--ax-z-index-overlay, 1300); }
+.ax-z-modal { z-index: var(--ax-z-index-modal, 1400); }
+.ax-z-popover { z-index: var(--ax-z-index-popover, 1500); }
+.ax-z-tooltip { z-index: var(--ax-z-index-tooltip, 1600); }
+.ax-z-toast { z-index: var(--ax-z-index-toast, 1700); }

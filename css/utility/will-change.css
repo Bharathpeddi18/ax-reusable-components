@@ -1,0 +1,10 @@
+/* ========================================
+   Will Change Utilities
+   ======================================== */
+
+.ax-will-change-auto { will-change: auto; }
+.ax-will-change-transform { will-change: transform; }
+.ax-will-change-opacity { will-change: opacity; }
+.ax-will-change-scroll, .ax-will-change-scroll-position { will-change: scroll-position; }
+.ax-will-change-contents { will-change: contents; }
+.ax-will-change-transform-opacity { will-change: transform, opacity; }

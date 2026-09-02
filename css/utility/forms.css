@@ -1,0 +1,198 @@
+/* ========================================
+   Form Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Form Controls
+   ---------------------------------------- */
+
+.ax-form-control {
+  display: block;
+  width: 100%;
+  padding: var(--ax-space-2) var(--ax-space-3);
+  font-family: inherit;
+  font-size: var(--ax-font-size-md);
+  line-height: var(--ax-line-height-normal);
+  color: var(--ax-color-text);
+  background-color: var(--ax-color-surface);
+  border: 1px solid var(--ax-color-border);
+  border-radius: var(--ax-radius-md);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.ax-form-control:focus {
+  outline: none;
+  border-color: var(--ax-color-border-focus);
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 0.15);
+}
+
+.ax-form-control::placeholder {
+  color: var(--ax-color-text-muted);
+  opacity: 1;
+}
+
+.ax-form-control:disabled {
+  background-color: var(--ax-color-surface-secondary);
+  color: var(--ax-color-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.ax-form-control:read-only {
+  background-color: var(--ax-color-surface-secondary);
+  cursor: default;
+}
+
+/* ----------------------------------------
+   Form Field Sizing
+   ---------------------------------------- */
+
+.ax-form-control-sm {
+  min-height: 32px;
+  padding: var(--ax-space-1) var(--ax-space-2);
+  font-size: var(--ax-font-size-sm);
+  border-radius: var(--ax-radius-sm);
+}
+
+.ax-form-control-md {
+  min-height: 40px;
+  padding: var(--ax-space-2) var(--ax-space-3);
+  font-size: var(--ax-font-size-md);
+  border-radius: var(--ax-radius-md);
+}
+
+.ax-form-control-lg {
+  min-height: 48px;
+  padding: var(--ax-space-3) var(--ax-space-4);
+  font-size: var(--ax-font-size-lg);
+  border-radius: var(--ax-radius-lg);
+}
+
+/* ----------------------------------------
+   Form Select
+   ---------------------------------------- */
+
+.ax-form-select {
+  display: block;
+  width: 100%;
+  padding: var(--ax-space-2) var(--ax-space-8) var(--ax-space-2) var(--ax-space-3);
+  font-family: inherit;
+  font-size: var(--ax-font-size-md);
+  line-height: var(--ax-line-height-normal);
+  color: var(--ax-color-text);
+  background-color: var(--ax-color-surface);
+  border: 1px solid var(--ax-color-border);
+  border-radius: var(--ax-radius-md);
+  cursor: pointer;
+}
+
+.ax-form-select:focus {
+  outline: none;
+  border-color: var(--ax-color-border-focus);
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 0.15);
+}
+
+.ax-form-select:disabled {
+  background-color: var(--ax-color-surface-secondary);
+  color: var(--ax-color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* ----------------------------------------
+   Checkbox & Radio
+   ---------------------------------------- */
+
+.ax-form-check {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ax-space-2);
+  cursor: pointer;
+}
+
+.ax-form-check-input {
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--ax-color-primary);
+  cursor: pointer;
+}
+
+.ax-form-check-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ----------------------------------------
+   Textarea
+   ---------------------------------------- */
+
+.ax-form-textarea {
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  padding: var(--ax-space-2) var(--ax-space-3);
+  font-family: inherit;
+  font-size: var(--ax-font-size-md);
+  line-height: var(--ax-line-height-normal);
+  color: var(--ax-color-text);
+  background-color: var(--ax-color-surface);
+  border: 1px solid var(--ax-color-border);
+  border-radius: var(--ax-radius-md);
+  resize: vertical;
+}
+
+.ax-form-textarea:focus {
+  outline: none;
+  border-color: var(--ax-color-border-focus);
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 0.15);
+}
+
+/* ----------------------------------------
+   File Input
+   ---------------------------------------- */
+
+.ax-form-file {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: var(--ax-font-size-md);
+  color: var(--ax-color-text-secondary);
+  cursor: pointer;
+}
+
+/* ----------------------------------------
+   Form Validation States
+   ---------------------------------------- */
+
+.ax-form-control.ax-is-valid,
+.ax-form-select.ax-is-valid {
+  border-color: var(--ax-color-success);
+}
+
+.ax-form-control.ax-is-valid:focus,
+.ax-form-select.ax-is-valid:focus {
+  box-shadow: 0 0 0 3px rgb(22 163 74 / 0.15);
+}
+
+.ax-form-control.ax-is-invalid,
+.ax-form-select.ax-is-invalid {
+  border-color: var(--ax-color-danger);
+}
+
+.ax-form-control.ax-is-invalid:focus,
+.ax-form-select.ax-is-invalid:focus {
+  box-shadow: 0 0 0 3px rgb(220 38 38 / 0.15);
+}
+
+.ax-form-label {
+  display: inline-block;
+  margin-bottom: var(--ax-space-1);
+  font-size: var(--ax-font-size-sm);
+  font-weight: var(--ax-font-weight-medium);
+  color: var(--ax-color-text);
+}
+
+.ax-form-text {
+  margin-top: var(--ax-space-1);
+  font-size: var(--ax-font-size-xs);
+  color: var(--ax-color-text-muted);
+}

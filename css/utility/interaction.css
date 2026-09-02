@@ -1,0 +1,19 @@
+/* ========================================
+   Interaction Utilities (Aggregated Module)
+   ======================================== */
+
+@import "./cursor.css";
+@import "./pointer-events.css";
+@import "./user-select.css";
+@import "./resize.css";
+@import "./scroll.css";
+
+/* ----------------------------------------
+   Touch Action
+   ---------------------------------------- */
+
+.ax-touch-auto { touch-action: auto; }
+.ax-touch-none { touch-action: none; }
+.ax-touch-pan-x { touch-action: pan-x; }
+.ax-touch-pan-y { touch-action: pan-y; }
+.ax-touch-manipulation { touch-action: manipulation; }

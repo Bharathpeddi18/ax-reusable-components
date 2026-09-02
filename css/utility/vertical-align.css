@@ -1,0 +1,35 @@
+/* ========================================
+   Vertical Align
+   ======================================== */
+
+.ax-align-baseline {
+  vertical-align: baseline;
+}
+
+.ax-align-top {
+  vertical-align: top;
+}
+
+.ax-align-middle {
+  vertical-align: middle;
+}
+
+.ax-align-bottom {
+  vertical-align: bottom;
+}
+
+.ax-align-text-top {
+  vertical-align: text-top;
+}
+
+.ax-align-text-bottom {
+  vertical-align: text-bottom;
+}
+
+.ax-align-sub {
+  vertical-align: sub;
+}
+
+.ax-align-super {
+  vertical-align: super;
+}

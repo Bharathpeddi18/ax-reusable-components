@@ -1,0 +1,19 @@
+/* ========================================
+   Text Transform
+   ======================================== */
+
+.ax-uppercase {
+  text-transform: uppercase;
+}
+
+.ax-lowercase {
+  text-transform: lowercase;
+}
+
+.ax-capitalize {
+  text-transform: capitalize;
+}
+
+.ax-normal-case {
+  text-transform: none;
+}

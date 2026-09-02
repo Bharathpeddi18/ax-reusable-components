@@ -1,0 +1,162 @@
+/* ========================================
+   Base Typography
+   ======================================== */
+
+/* ----------------------------------------
+   Headings
+   ---------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: var(--ax-font-weight-bold);
+  line-height: var(--ax-line-height-tight);
+  color: var(--ax-color-text);
+}
+
+h1 {
+  font-size: var(--ax-font-size-4xl);
+}
+
+h2 {
+  font-size: var(--ax-font-size-3xl);
+}
+
+h3 {
+  font-size: var(--ax-font-size-2xl);
+}
+
+h4 {
+  font-size: var(--ax-font-size-xl);
+}
+
+h5 {
+  font-size: var(--ax-font-size-lg);
+}
+
+h6 {
+  font-size: var(--ax-font-size-md);
+}
+
+/* ----------------------------------------
+   Paragraph
+   ---------------------------------------- */
+
+p {
+  margin: 0;
+  line-height: var(--ax-line-height-normal);
+}
+
+/* ----------------------------------------
+   Small Text
+   ---------------------------------------- */
+
+small {
+  font-size: var(--ax-font-size-sm);
+}
+
+/* ----------------------------------------
+   Strong / Bold
+   ---------------------------------------- */
+
+strong,
+b {
+  font-weight: var(--ax-font-weight-bold);
+}
+
+/* ----------------------------------------
+   Emphasis
+   ---------------------------------------- */
+
+em,
+i {
+  font-style: italic;
+}
+
+/* ----------------------------------------
+   Links
+   ---------------------------------------- */
+
+a {
+  text-decoration-thickness: 0.0625rem;
+  text-underline-offset: 0.15em;
+}
+
+/* ----------------------------------------
+   Code
+   ---------------------------------------- */
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--ax-font-family-mono);
+}
+
+code {
+  font-size: 0.875em;
+}
+
+/* ----------------------------------------
+   Keyboard Input
+   ---------------------------------------- */
+
+kbd {
+  padding: 0.125rem 0.375rem;
+  font-size: var(--ax-font-size-sm);
+  border: 1px solid var(--ax-color-border);
+  border-radius: var(--ax-radius-sm);
+  background-color: var(--ax-color-surface-secondary);
+}
+
+/* ----------------------------------------
+   Preformatted Text
+   ---------------------------------------- */
+
+pre {
+  overflow-x: auto;
+  padding: var(--ax-space-4);
+  font-size: var(--ax-font-size-sm);
+  line-height: var(--ax-line-height-normal);
+  border-radius: var(--ax-radius-md);
+  background-color: var(--ax-color-surface-secondary);
+}
+
+/* ----------------------------------------
+   Blockquote
+   ---------------------------------------- */
+
+blockquote {
+  margin: var(--ax-space-4) 0;
+  padding-inline-start: var(--ax-space-4);
+  border-inline-start: 4px solid var(--ax-color-border);
+  color: var(--ax-color-text-secondary);
+}
+
+/* ----------------------------------------
+   Mark
+   ---------------------------------------- */
+
+mark {
+  padding: 0.125rem 0.25rem;
+  border-radius: var(--ax-radius-sm);
+  color: inherit;
+  background-color: var(--ax-color-warning);
+}
+
+/* ----------------------------------------
+   Deleted / Inserted
+   ---------------------------------------- */
+
+del {
+  text-decoration: line-through;
+}
+
+ins {
+  text-decoration: underline;
+  text-decoration-thickness: 0.0625rem;
+}

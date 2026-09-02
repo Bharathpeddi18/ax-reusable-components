@@ -1,0 +1,55 @@
+/* ========================================
+   Container
+   ======================================== */
+
+.ax-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--ax-space-4);
+  padding-right: var(--ax-space-4);
+}
+
+
+/* ========================================
+   Container - Small
+   ======================================== */
+
+@media (min-width: 576px) {
+  .ax-container {
+    max-width: 540px;
+  }
+}
+
+
+/* ========================================
+   Container - Medium
+   ======================================== */
+
+@media (min-width: 768px) {
+  .ax-container {
+    max-width: 720px;
+  }
+}
+
+
+/* ========================================
+   Container - Large
+   ======================================== */
+
+@media (min-width: 992px) {
+  .ax-container {
+    max-width: 960px;
+  }
+}
+
+
+/* ========================================
+   Container - Extra Large
+   ======================================== */
+
+@media (min-width: 1200px) {
+  .ax-container {
+    max-width: 1140px;
+  }
+}

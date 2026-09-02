@@ -1,0 +1,31 @@
+/* ========================================
+   List Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   List Style Type
+   ---------------------------------------- */
+
+.ax-list-none { list-style-type: none; }
+.ax-list-disc { list-style-type: disc; }
+.ax-list-circle { list-style-type: circle; }
+.ax-list-square { list-style-type: square; }
+.ax-list-decimal { list-style-type: decimal; }
+.ax-list-decimal-leading-zero { list-style-type: decimal-leading-zero; }
+.ax-list-lower-alpha { list-style-type: lower-alpha; }
+.ax-list-upper-alpha { list-style-type: upper-alpha; }
+.ax-list-lower-roman { list-style-type: lower-roman; }
+.ax-list-upper-roman { list-style-type: upper-roman; }
+
+/* ----------------------------------------
+   List Style Position
+   ---------------------------------------- */
+
+.ax-list-inside { list-style-position: inside; }
+.ax-list-outside { list-style-position: outside; }
+
+/* ----------------------------------------
+   List Style Image
+   ---------------------------------------- */
+
+.ax-list-image-none { list-style-image: none; }

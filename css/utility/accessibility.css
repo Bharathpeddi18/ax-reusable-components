@@ -1,0 +1,71 @@
+/* ========================================
+   Accessibility Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Screen Reader Only
+   ---------------------------------------- */
+
+.ax-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.ax-sr-only-focusable:not(:focus):not(:focus-visible) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ----------------------------------------
+   Restore Screen Reader Only
+   ---------------------------------------- */
+
+.ax-not-sr-only {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* ----------------------------------------
+   Focus Outline Utilities
+   ---------------------------------------- */
+
+.ax-focus-outline:focus {
+  outline: 2px solid var(--ax-color-focus);
+  outline-offset: 2px;
+}
+
+.ax-focus-none:focus, .ax-focus-outline-none:focus {
+  outline: none;
+}
+
+/* ----------------------------------------
+   Forced Colors
+   ---------------------------------------- */
+
+.ax-forced-color-adjust-auto {
+  forced-color-adjust: auto;
+}
+
+.ax-forced-color-adjust-none {
+  forced-color-adjust: none;
+}

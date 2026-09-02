@@ -1,0 +1,46 @@
+/* ========================================
+   Caret Utilities
+   ======================================== */
+
+
+/* ========================================
+   Caret Color
+   ======================================== */
+
+.ax-caret-transparent {
+  caret-color: transparent;
+}
+
+.ax-caret-current {
+  caret-color: currentColor;
+
+}
+
+.ax-caret-inherit {
+  caret-color: inherit;
+}
+
+
+/* ========================================
+   Caret Color Tokens
+   ======================================== */
+
+.ax-caret-primary {
+  caret-color: var(--ax-color-primary);
+}
+
+.ax-caret-secondary {
+  caret-color: var(--ax-color-secondary);
+}
+
+.ax-caret-success {
+  caret-color: var(--ax-color-success);
+}
+
+.ax-caret-warning {
+  caret-color: var(--ax-color-warning);
+}
+
+.ax-caret-danger {
+  caret-color: var(--ax-color-danger);
+}

@@ -1,0 +1,58 @@
+/* ========================================
+   Global Base Styles
+   ======================================== */
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--ax-font-family-sans);
+  font-size: var(--ax-font-size-md);
+  font-weight: var(--ax-font-weight-normal);
+  line-height: var(--ax-line-height-normal);
+  color: var(--ax-color-text);
+  background-color: var(--ax-color-background);
+}
+
+/* ========================================
+   Links
+   ======================================== */
+
+a {
+  color: var(--ax-color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   Images
+   ======================================== */
+
+img {
+  height: auto;
+}
+
+/* ========================================
+   Selection
+   ======================================== */
+
+::selection {
+  background-color: var(--ax-color-primary);
+  color: var(--ax-color-white);
+}
+
+/* ========================================
+   Focus
+   ======================================== */
+
+:focus,
+:focus-visible {
+  outline: 2px solid var(--ax-color-primary);
+  outline-offset: 2px;
+}

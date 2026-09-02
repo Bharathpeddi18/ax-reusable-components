@@ -1,0 +1,24 @@
+/* ========================================
+   Font Variant
+   ======================================== */
+
+.ax-normal-nums {
+  font-variant-numeric: normal;
+}
+
+.ax-tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.ax-proportional-nums {
+  font-variant-numeric: proportional-nums;
+
+}
+
+.ax-ordinal {
+  font-variant-numeric: ordinal;
+}
+
+.ax-slashed-zero {
+  font-variant-numeric: slashed-zero;
+}
