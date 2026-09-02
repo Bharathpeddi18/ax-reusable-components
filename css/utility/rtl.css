@@ -1,0 +1,149 @@
+/* ========================================
+   RTL & Logical Properties Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Direction
+   ---------------------------------------- */
+
+.ax-dir-ltr,
+.ax-direction-ltr {
+  direction: ltr;
+}
+
+.ax-dir-rtl,
+.ax-direction-rtl {
+  direction: rtl;
+}
+
+/* ----------------------------------------
+   Text Alignment
+   ---------------------------------------- */
+
+.ax-text-start {
+  text-align: start;
+}
+
+.ax-text-end {
+  text-align: end;
+}
+
+/* ----------------------------------------
+   Logical Margins
+   ---------------------------------------- */
+
+.ax-ms-auto {
+  margin-inline-start: auto;
+}
+
+.ax-me-auto {
+  margin-inline-end: auto;
+}
+
+.ax-ms-0 {
+  margin-inline-start: 0;
+}
+
+.ax-me-0 {
+  margin-inline-end: 0;
+}
+
+.ax-ms-1 {
+  margin-inline-start: var(--ax-space-1);
+}
+
+.ax-me-1 {
+  margin-inline-end: var(--ax-space-1);
+}
+
+.ax-ms-2 {
+  margin-inline-start: var(--ax-space-2);
+}
+
+.ax-me-2 {
+  margin-inline-end: var(--ax-space-2);
+}
+
+.ax-ms-3 {
+  margin-inline-start: var(--ax-space-3);
+}
+
+.ax-me-3 {
+  margin-inline-end: var(--ax-space-3);
+}
+
+.ax-ms-4 {
+  margin-inline-start: var(--ax-space-4);
+}
+
+.ax-me-4 {
+  margin-inline-end: var(--ax-space-4);
+}
+
+/* ----------------------------------------
+   Logical Padding
+   ---------------------------------------- */
+
+.ax-ps-0 {
+  padding-inline-start: 0;
+}
+
+.ax-pe-0 {
+  padding-inline-end: 0;
+}
+
+.ax-ps-1 {
+  padding-inline-start: var(--ax-space-1);
+}
+
+.ax-pe-1 {
+  padding-inline-end: var(--ax-space-1);
+}
+
+.ax-ps-2 {
+  padding-inline-start: var(--ax-space-2);
+}
+
+.ax-pe-2 {
+  padding-inline-end: var(--ax-space-2);
+}
+
+.ax-ps-3 {
+  padding-inline-start: var(--ax-space-3);
+}
+
+.ax-pe-3 {
+  padding-inline-end: var(--ax-space-3);
+}
+
+.ax-ps-4 {
+  padding-inline-start: var(--ax-space-4);
+}
+
+.ax-pe-4 {
+  padding-inline-end: var(--ax-space-4);
+}
+
+/* ----------------------------------------
+   Logical Borders
+   ---------------------------------------- */
+
+.ax-border-start {
+  border-inline-start: 1px solid var(--ax-color-border);
+}
+
+.ax-border-end {
+  border-inline-end: 1px solid var(--ax-color-border);
+}
+
+/* ----------------------------------------
+   RTL Document Context
+   ---------------------------------------- */
+
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+}

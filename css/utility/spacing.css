@@ -1,0 +1,228 @@
+/* ========================================
+   Spacing Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Margin - All Sides
+   ---------------------------------------- */
+
+.ax-m-0 { margin: var(--ax-space-0); }
+.ax-m-1 { margin: var(--ax-space-1); }
+.ax-m-2 { margin: var(--ax-space-2); }
+.ax-m-3 { margin: var(--ax-space-3); }
+.ax-m-4 { margin: var(--ax-space-4); }
+.ax-m-5 { margin: var(--ax-space-5); }
+.ax-m-6 { margin: var(--ax-space-6); }
+.ax-m-8 { margin: var(--ax-space-8); }
+.ax-m-10 { margin: var(--ax-space-10); }
+.ax-m-12 { margin: var(--ax-space-12); }
+.ax-m-16 { margin: var(--ax-space-16); }
+.ax-m-auto { margin: auto; }
+
+/* ----------------------------------------
+   Margin - X Axis (Inline)
+   ---------------------------------------- */
+
+.ax-mx-0 { margin-inline: var(--ax-space-0); }
+.ax-mx-1 { margin-inline: var(--ax-space-1); }
+.ax-mx-2 { margin-inline: var(--ax-space-2); }
+.ax-mx-3 { margin-inline: var(--ax-space-3); }
+.ax-mx-4 { margin-inline: var(--ax-space-4); }
+.ax-mx-6 { margin-inline: var(--ax-space-6); }
+.ax-mx-8 { margin-inline: var(--ax-space-8); }
+.ax-mx-auto { margin-inline: auto; }
+
+/* ----------------------------------------
+   Margin - Y Axis (Block)
+   ---------------------------------------- */
+
+.ax-my-0 { margin-block: var(--ax-space-0); }
+.ax-my-1 { margin-block: var(--ax-space-1); }
+.ax-my-2 { margin-block: var(--ax-space-2); }
+.ax-my-3 { margin-block: var(--ax-space-3); }
+.ax-my-4 { margin-block: var(--ax-space-4); }
+.ax-my-6 { margin-block: var(--ax-space-6); }
+.ax-my-8 { margin-block: var(--ax-space-8); }
+.ax-my-auto { margin-block: auto; }
+
+/* ----------------------------------------
+   Margin - Top
+   ---------------------------------------- */
+
+.ax-mt-0 { margin-top: var(--ax-space-0); }
+.ax-mt-1 { margin-top: var(--ax-space-1); }
+.ax-mt-2 { margin-top: var(--ax-space-2); }
+.ax-mt-3 { margin-top: var(--ax-space-3); }
+.ax-mt-4 { margin-top: var(--ax-space-4); }
+.ax-mt-6 { margin-top: var(--ax-space-6); }
+.ax-mt-8 { margin-top: var(--ax-space-8); }
+.ax-mt-12 { margin-top: var(--ax-space-12); }
+.ax-mt-auto { margin-top: auto; }
+
+/* ----------------------------------------
+   Margin - Right
+   ---------------------------------------- */
+
+.ax-mr-0 { margin-right: var(--ax-space-0); }
+.ax-mr-1 { margin-right: var(--ax-space-1); }
+.ax-mr-2 { margin-right: var(--ax-space-2); }
+.ax-mr-3 { margin-right: var(--ax-space-3); }
+.ax-mr-4 { margin-right: var(--ax-space-4); }
+.ax-mr-6 { margin-right: var(--ax-space-6); }
+.ax-mr-8 { margin-right: var(--ax-space-8); }
+.ax-mr-auto { margin-right: auto; }
+
+/* ----------------------------------------
+   Margin - Bottom
+   ---------------------------------------- */
+
+.ax-mb-0 { margin-bottom: var(--ax-space-0); }
+.ax-mb-1 { margin-bottom: var(--ax-space-1); }
+.ax-mb-2 { margin-bottom: var(--ax-space-2); }
+.ax-mb-3 { margin-bottom: var(--ax-space-3); }
+.ax-mb-4 { margin-bottom: var(--ax-space-4); }
+.ax-mb-6 { margin-bottom: var(--ax-space-6); }
+.ax-mb-8 { margin-bottom: var(--ax-space-8); }
+.ax-mb-12 { margin-bottom: var(--ax-space-12); }
+.ax-mb-auto { margin-bottom: auto; }
+
+/* ----------------------------------------
+   Margin - Left
+   ---------------------------------------- */
+
+.ax-ml-0 { margin-left: var(--ax-space-0); }
+.ax-ml-1 { margin-left: var(--ax-space-1); }
+.ax-ml-2 { margin-left: var(--ax-space-2); }
+.ax-ml-3 { margin-left: var(--ax-space-3); }
+.ax-ml-4 { margin-left: var(--ax-space-4); }
+.ax-ml-6 { margin-left: var(--ax-space-6); }
+.ax-ml-8 { margin-left: var(--ax-space-8); }
+.ax-ml-auto { margin-left: auto; }
+
+/* ----------------------------------------
+   Padding - All Sides
+   ---------------------------------------- */
+
+.ax-p-0 { padding: var(--ax-space-0); }
+.ax-p-1 { padding: var(--ax-space-1); }
+.ax-p-2 { padding: var(--ax-space-2); }
+.ax-p-3 { padding: var(--ax-space-3); }
+.ax-p-4 { padding: var(--ax-space-4); }
+.ax-p-5 { padding: var(--ax-space-5); }
+.ax-p-6 { padding: var(--ax-space-6); }
+.ax-p-8 { padding: var(--ax-space-8); }
+.ax-p-10 { padding: var(--ax-space-10); }
+.ax-p-12 { padding: var(--ax-space-12); }
+.ax-p-16 { padding: var(--ax-space-16); }
+
+/* ----------------------------------------
+   Padding - X Axis (Inline)
+   ---------------------------------------- */
+
+.ax-px-0 { padding-inline: var(--ax-space-0); }
+.ax-px-1 { padding-inline: var(--ax-space-1); }
+.ax-px-2 { padding-inline: var(--ax-space-2); }
+.ax-px-3 { padding-inline: var(--ax-space-3); }
+.ax-px-4 { padding-inline: var(--ax-space-4); }
+.ax-px-6 { padding-inline: var(--ax-space-6); }
+.ax-px-8 { padding-inline: var(--ax-space-8); }
+
+/* ----------------------------------------
+   Padding - Y Axis (Block)
+   ---------------------------------------- */
+
+.ax-py-0 { padding-block: var(--ax-space-0); }
+.ax-py-1 { padding-block: var(--ax-space-1); }
+.ax-py-2 { padding-block: var(--ax-space-2); }
+.ax-py-3 { padding-block: var(--ax-space-3); }
+.ax-py-4 { padding-block: var(--ax-space-4); }
+.ax-py-6 { padding-block: var(--ax-space-6); }
+.ax-py-8 { padding-block: var(--ax-space-8); }
+
+/* ----------------------------------------
+   Padding - Top
+   ---------------------------------------- */
+
+.ax-pt-0 { padding-top: var(--ax-space-0); }
+.ax-pt-1 { padding-top: var(--ax-space-1); }
+.ax-pt-2 { padding-top: var(--ax-space-2); }
+.ax-pt-3 { padding-top: var(--ax-space-3); }
+.ax-pt-4 { padding-top: var(--ax-space-4); }
+.ax-pt-6 { padding-top: var(--ax-space-6); }
+.ax-pt-8 { padding-top: var(--ax-space-8); }
+
+/* ----------------------------------------
+   Padding - Right
+   ---------------------------------------- */
+
+.ax-pr-0 { padding-right: var(--ax-space-0); }
+.ax-pr-1 { padding-right: var(--ax-space-1); }
+.ax-pr-2 { padding-right: var(--ax-space-2); }
+.ax-pr-3 { padding-right: var(--ax-space-3); }
+.ax-pr-4 { padding-right: var(--ax-space-4); }
+.ax-pr-6 { padding-right: var(--ax-space-6); }
+.ax-pr-8 { padding-right: var(--ax-space-8); }
+
+/* ----------------------------------------
+   Padding - Bottom
+   ---------------------------------------- */
+
+.ax-pb-0 { padding-bottom: var(--ax-space-0); }
+.ax-pb-1 { padding-bottom: var(--ax-space-1); }
+.ax-pb-2 { padding-bottom: var(--ax-space-2); }
+.ax-pb-3 { padding-bottom: var(--ax-space-3); }
+.ax-pb-4 { padding-bottom: var(--ax-space-4); }
+.ax-pb-6 { padding-bottom: var(--ax-space-6); }
+.ax-pb-8 { padding-bottom: var(--ax-space-8); }
+
+/* ----------------------------------------
+   Padding - Left
+   ---------------------------------------- */
+
+.ax-pl-0 { padding-left: var(--ax-space-0); }
+.ax-pl-1 { padding-left: var(--ax-space-1); }
+.ax-pl-2 { padding-left: var(--ax-space-2); }
+.ax-pl-3 { padding-left: var(--ax-space-3); }
+.ax-pl-4 { padding-left: var(--ax-space-4); }
+.ax-pl-6 { padding-left: var(--ax-space-6); }
+.ax-pl-8 { padding-left: var(--ax-space-8); }
+
+/* ----------------------------------------
+   Gap (Flex & Grid)
+   ---------------------------------------- */
+
+.ax-gap-0 { gap: var(--ax-space-0); }
+.ax-gap-1 { gap: var(--ax-space-1); }
+.ax-gap-2 { gap: var(--ax-space-2); }
+.ax-gap-3 { gap: var(--ax-space-3); }
+.ax-gap-4 { gap: var(--ax-space-4); }
+.ax-gap-5 { gap: var(--ax-space-5); }
+.ax-gap-6 { gap: var(--ax-space-6); }
+.ax-gap-8 { gap: var(--ax-space-8); }
+.ax-gap-10 { gap: var(--ax-space-10); }
+.ax-gap-12 { gap: var(--ax-space-12); }
+.ax-gap-16 { gap: var(--ax-space-16); }
+
+/* ----------------------------------------
+   Row Gap
+   ---------------------------------------- */
+
+.ax-gap-y-0, .ax-row-gap-0 { row-gap: var(--ax-space-0); }
+.ax-gap-y-1, .ax-row-gap-1 { row-gap: var(--ax-space-1); }
+.ax-gap-y-2, .ax-row-gap-2 { row-gap: var(--ax-space-2); }
+.ax-gap-y-3, .ax-row-gap-3 { row-gap: var(--ax-space-3); }
+.ax-gap-y-4, .ax-row-gap-4 { row-gap: var(--ax-space-4); }
+.ax-gap-y-6, .ax-row-gap-6 { row-gap: var(--ax-space-6); }
+.ax-gap-y-8, .ax-row-gap-8 { row-gap: var(--ax-space-8); }
+
+/* ----------------------------------------
+   Column Gap
+   ---------------------------------------- */
+
+.ax-gap-x-0, .ax-column-gap-0 { column-gap: var(--ax-space-0); }
+.ax-gap-x-1, .ax-column-gap-1 { column-gap: var(--ax-space-1); }
+.ax-gap-x-2, .ax-column-gap-2 { column-gap: var(--ax-space-2); }
+.ax-gap-x-3, .ax-column-gap-3 { column-gap: var(--ax-space-3); }
+.ax-gap-x-4, .ax-column-gap-4 { column-gap: var(--ax-space-4); }
+.ax-gap-x-6, .ax-column-gap-6 { column-gap: var(--ax-space-6); }
+.ax-gap-x-8, .ax-column-gap-8 { column-gap: var(--ax-space-8); }

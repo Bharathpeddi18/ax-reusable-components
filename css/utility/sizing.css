@@ -1,0 +1,154 @@
+/* ========================================
+   Sizing Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Width - Keywords
+   ---------------------------------------- */
+
+.ax-w-auto { width: auto; }
+.ax-w-full { width: 100%; }
+.ax-w-screen { width: 100vw; }
+.ax-w-fit { width: fit-content; }
+.ax-w-min { width: min-content; }
+.ax-w-max { width: max-content; }
+
+/* ----------------------------------------
+   Width - Fractions
+   ---------------------------------------- */
+
+.ax-w-1\/2 { width: 50%; }
+.ax-w-1\/3 { width: 33.333333%; }
+.ax-w-2\/3 { width: 66.666667%; }
+.ax-w-1\/4 { width: 25%; }
+.ax-w-2\/4 { width: 50%; }
+.ax-w-3\/4 { width: 75%; }
+.ax-w-1\/5 { width: 20%; }
+.ax-w-2\/5 { width: 40%; }
+.ax-w-3\/5 { width: 60%; }
+.ax-w-4\/5 { width: 80%; }
+.ax-w-1\/12 { width: 8.333333%; }
+.ax-w-2\/12 { width: 16.666667%; }
+.ax-w-3\/12 { width: 25%; }
+.ax-w-4\/12 { width: 33.333333%; }
+.ax-w-5\/12 { width: 41.666667%; }
+.ax-w-6\/12 { width: 50%; }
+.ax-w-7\/12 { width: 58.333333%; }
+.ax-w-8\/12 { width: 66.666667%; }
+.ax-w-9\/12 { width: 75%; }
+.ax-w-10\/12 { width: 83.333333%; }
+.ax-w-11\/12 { width: 91.666667%; }
+
+/* ----------------------------------------
+   Width - Fixed Values
+   ---------------------------------------- */
+
+.ax-w-0 { width: 0; }
+.ax-w-1 { width: var(--ax-space-1); }
+.ax-w-2 { width: var(--ax-space-2); }
+.ax-w-3 { width: var(--ax-space-3); }
+.ax-w-4 { width: var(--ax-space-4); }
+.ax-w-5 { width: var(--ax-space-5); }
+.ax-w-6 { width: var(--ax-space-6); }
+.ax-w-8 { width: var(--ax-space-8); }
+.ax-w-10 { width: var(--ax-space-10); }
+.ax-w-12 { width: var(--ax-space-12); }
+.ax-w-16 { width: var(--ax-space-16); }
+
+/* ----------------------------------------
+   Height - Keywords
+   ---------------------------------------- */
+
+.ax-h-auto { height: auto; }
+.ax-h-full { height: 100%; }
+.ax-h-screen { height: 100vh; }
+.ax-h-fit { height: fit-content; }
+.ax-h-min { height: min-content; }
+.ax-h-max { height: max-content; }
+
+/* ----------------------------------------
+   Height - Fractions
+   ---------------------------------------- */
+
+.ax-h-1\/2 { height: 50%; }
+.ax-h-1\/3 { height: 33.333333%; }
+.ax-h-2\/3 { height: 66.666667%; }
+.ax-h-1\/4 { height: 25%; }
+.ax-h-3\/4 { height: 75%; }
+
+/* ----------------------------------------
+   Height - Fixed Values
+   ---------------------------------------- */
+
+.ax-h-0 { height: 0; }
+.ax-h-1 { height: var(--ax-space-1); }
+.ax-h-2 { height: var(--ax-space-2); }
+.ax-h-3 { height: var(--ax-space-3); }
+.ax-h-4 { height: var(--ax-space-4); }
+.ax-h-5 { height: var(--ax-space-5); }
+.ax-h-6 { height: var(--ax-space-6); }
+.ax-h-8 { height: var(--ax-space-8); }
+.ax-h-10 { height: var(--ax-space-10); }
+.ax-h-12 { height: var(--ax-space-12); }
+.ax-h-16 { height: var(--ax-space-16); }
+
+/* ----------------------------------------
+   Size (Width & Height)
+   ---------------------------------------- */
+
+.ax-size-auto { width: auto; height: auto; }
+.ax-size-full { width: 100%; height: 100%; }
+.ax-size-4 { width: var(--ax-space-4); height: var(--ax-space-4); }
+.ax-size-5 { width: var(--ax-space-5); height: var(--ax-space-5); }
+.ax-size-6 { width: var(--ax-space-6); height: var(--ax-space-6); }
+.ax-size-8 { width: var(--ax-space-8); height: var(--ax-space-8); }
+.ax-size-10 { width: var(--ax-space-10); height: var(--ax-space-10); }
+.ax-size-12 { width: var(--ax-space-12); height: var(--ax-space-12); }
+.ax-size-16 { width: var(--ax-space-16); height: var(--ax-space-16); }
+
+/* ----------------------------------------
+   Min Width
+   ---------------------------------------- */
+
+.ax-min-w-0 { min-width: 0; }
+.ax-min-w-full { min-width: 100%; }
+.ax-min-w-fit { min-width: fit-content; }
+.ax-min-w-min { min-width: min-content; }
+.ax-min-w-max { min-width: max-content; }
+
+/* ----------------------------------------
+   Max Width
+   ---------------------------------------- */
+
+.ax-max-w-none { max-width: none; }
+.ax-max-w-full { max-width: 100%; }
+.ax-max-w-fit { max-width: fit-content; }
+.ax-max-w-min { max-width: min-content; }
+.ax-max-w-max { max-width: max-content; }
+.ax-max-w-xs { max-width: 20rem; }
+.ax-max-w-sm { max-width: 24rem; }
+.ax-max-w-md { max-width: 28rem; }
+.ax-max-w-lg { max-width: 32rem; }
+.ax-max-w-xl { max-width: 36rem; }
+.ax-max-w-2xl { max-width: 42rem; }
+.ax-max-w-3xl { max-width: 48rem; }
+.ax-max-w-4xl { max-width: 56rem; }
+.ax-max-w-5xl { max-width: 64rem; }
+.ax-max-w-6xl { max-width: 72rem; }
+.ax-max-w-7xl { max-width: 80rem; }
+
+/* ----------------------------------------
+   Min Height
+   ---------------------------------------- */
+
+.ax-min-h-0 { min-height: 0; }
+.ax-min-h-full { min-height: 100%; }
+.ax-min-h-screen { min-height: 100vh; }
+
+/* ----------------------------------------
+   Max Height
+   ---------------------------------------- */
+
+.ax-max-h-none { max-height: none; }
+.ax-max-h-full { max-height: 100%; }
+.ax-max-h-screen { max-height: 100vh; }

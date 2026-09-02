@@ -1,0 +1,19 @@
+/* ========================================
+   Resize Utilities
+   ======================================== */
+
+.ax-resize-none {
+  resize: none;
+}
+
+.ax-resize {
+  resize: both;
+}
+
+.ax-resize-x {
+  resize: horizontal;
+}
+
+.ax-resize-y {
+  resize: vertical;
+}

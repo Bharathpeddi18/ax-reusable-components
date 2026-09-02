@@ -1,0 +1,27 @@
+/* ========================================
+   Object / Media Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Object Fit
+   ---------------------------------------- */
+
+.ax-object-contain { object-fit: contain; }
+.ax-object-cover { object-fit: cover; }
+.ax-object-fill { object-fit: fill; }
+.ax-object-none { object-fit: none; }
+.ax-object-scale-down { object-fit: scale-down; }
+
+/* ----------------------------------------
+   Object Position
+   ---------------------------------------- */
+
+.ax-object-center { object-position: center; }
+.ax-object-top { object-position: top; }
+.ax-object-top-right { object-position: top right; }
+.ax-object-right { object-position: right; }
+.ax-object-bottom-right { object-position: bottom right; }
+.ax-object-bottom { object-position: bottom; }
+.ax-object-bottom-left { object-position: bottom left; }
+.ax-object-left { object-position: left; }
+.ax-object-top-left { object-position: top left; }

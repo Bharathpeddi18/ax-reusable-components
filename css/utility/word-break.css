@@ -1,0 +1,15 @@
+/* ========================================
+   Word Break / Wrapping Utilities
+   ======================================== */
+
+.ax-break-normal { word-break: normal; }
+.ax-break-words { overflow-wrap: break-word; }
+.ax-break-all { word-break: break-all; }
+.ax-break-keep { word-break: keep-all; }
+
+.ax-wrap-normal { overflow-wrap: normal; }
+.ax-wrap-anywhere { overflow-wrap: anywhere; }
+
+.ax-hyphens-none { hyphens: none; }
+.ax-hyphens-manual { hyphens: manual; }
+.ax-hyphens-auto { hyphens: auto; }

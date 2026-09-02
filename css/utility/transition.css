@@ -1,0 +1,53 @@
+/* ========================================
+   Transition
+   ======================================== */
+
+.ax-transition-none {
+  transition: none;
+}
+
+.ax-transition {
+  transition-property: color, background-color, border-color,
+    opacity, box-shadow, transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease;
+}
+
+.ax-transition-fast {
+  transition-property: color, background-color, border-color,
+    opacity, box-shadow, transform;
+  transition-duration: 100ms;
+  transition-timing-function: ease;
+}
+
+.ax-transition-slow {
+  transition-property: color, background-color, border-color,
+    opacity, box-shadow, transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
+
+
+/* ========================================
+   Transition Timing
+   ======================================== */
+
+.ax-ease-linear {
+  transition-timing-function: linear;
+}
+
+.ax-ease {
+  transition-timing-function: ease;
+}
+
+.ax-ease-in {
+  transition-timing-function: ease-in;
+}
+
+.ax-ease-out {
+  transition-timing-function: ease-out;
+}
+
+.ax-ease-in-out {
+  transition-timing-function: ease-in-out;
+}

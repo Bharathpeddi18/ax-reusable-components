@@ -1,0 +1,111 @@
+/* ========================================
+   Table Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Table Layout
+   ---------------------------------------- */
+
+.ax-table-auto {
+  table-layout: auto;
+}
+
+.ax-table-fixed {
+  table-layout: fixed;
+}
+
+/* ----------------------------------------
+   Border Collapse
+   ---------------------------------------- */
+
+.ax-border-collapse {
+  border-collapse: collapse;
+}
+
+.ax-border-separate {
+  border-collapse: separate;
+}
+
+/* ----------------------------------------
+   Border Spacing
+   ---------------------------------------- */
+
+.ax-border-spacing-0 {
+  border-spacing: 0;
+}
+
+.ax-border-spacing-1 {
+  border-spacing: var(--ax-space-1);
+}
+
+.ax-border-spacing-2 {
+  border-spacing: var(--ax-space-2);
+}
+
+.ax-border-spacing-4 {
+  border-spacing: var(--ax-space-4);
+}
+
+/* ----------------------------------------
+   Border Spacing X
+   ---------------------------------------- */
+
+.ax-border-spacing-x-0 {
+  border-spacing: 0 0;
+}
+
+.ax-border-spacing-x-1 {
+  border-spacing: var(--ax-space-1) 0;
+}
+
+.ax-border-spacing-x-2 {
+  border-spacing: var(--ax-space-2) 0;
+}
+
+.ax-border-spacing-x-4 {
+  border-spacing: var(--ax-space-4) 0;
+}
+
+/* ----------------------------------------
+   Border Spacing Y
+   ---------------------------------------- */
+
+.ax-border-spacing-y-0 {
+  border-spacing: 0 0;
+}
+
+.ax-border-spacing-y-1 {
+  border-spacing: 0 var(--ax-space-1);
+}
+
+.ax-border-spacing-y-2 {
+  border-spacing: 0 var(--ax-space-2);
+}
+
+.ax-border-spacing-y-4 {
+  border-spacing: 0 var(--ax-space-4);
+}
+
+/* ----------------------------------------
+   Caption Side
+   ---------------------------------------- */
+
+.ax-caption-top {
+  caption-side: top;
+}
+
+.ax-caption-bottom {
+  caption-side: bottom;
+}
+
+/* ----------------------------------------
+   Empty Cells
+   ---------------------------------------- */
+
+.ax-empty-cells-show {
+  empty-cells: show;
+}
+
+.ax-empty-cells-hide {
+  empty-cells: hide;
+}

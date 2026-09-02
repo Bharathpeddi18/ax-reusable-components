@@ -1,0 +1,10 @@
+/* ========================================
+   Line Height Utilities
+   ======================================== */
+
+.ax-leading-none, .ax-lh-none { line-height: var(--ax-line-height-none, 1); }
+.ax-leading-tight, .ax-lh-tight { line-height: var(--ax-line-height-tight, 1.25); }
+.ax-leading-snug, .ax-lh-snug { line-height: var(--ax-line-height-snug, 1.375); }
+.ax-leading-normal, .ax-lh-normal { line-height: var(--ax-line-height-normal, 1.5); }
+.ax-leading-relaxed, .ax-lh-relaxed { line-height: var(--ax-line-height-relaxed, 1.625); }
+.ax-leading-loose, .ax-lh-loose { line-height: var(--ax-line-height-loose, 2); }

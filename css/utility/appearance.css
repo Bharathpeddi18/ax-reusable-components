@@ -1,0 +1,7 @@
+/* ========================================
+   Appearance Utilities
+   ======================================== */
+
+.ax-appearance-auto { appearance: auto; }
+.ax-appearance-none { appearance: none; }
+.ax-appearance-button { appearance: button; }

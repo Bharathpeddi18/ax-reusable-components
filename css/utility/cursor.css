@@ -1,0 +1,26 @@
+/* ========================================
+   Cursor Utilities
+   ======================================== */
+
+.ax-cursor-auto { cursor: auto; }
+.ax-cursor-default { cursor: default; }
+.ax-cursor-pointer { cursor: pointer; }
+.ax-cursor-wait { cursor: wait; }
+.ax-cursor-progress { cursor: progress; }
+.ax-cursor-text { cursor: text; }
+.ax-cursor-move { cursor: move; }
+.ax-cursor-not-allowed { cursor: not-allowed; }
+.ax-cursor-help { cursor: help; }
+.ax-cursor-crosshair { cursor: crosshair; }
+.ax-cursor-grab { cursor: grab; }
+.ax-cursor-grabbing { cursor: grabbing; }
+.ax-cursor-zoom-in { cursor: zoom-in; }
+.ax-cursor-zoom-out { cursor: zoom-out; }
+.ax-cursor-none { cursor: none; }
+.ax-cursor-context-menu { cursor: context-menu; }
+.ax-cursor-col-resize { cursor: col-resize; }
+.ax-cursor-row-resize { cursor: row-resize; }
+.ax-cursor-n-resize { cursor: n-resize; }
+.ax-cursor-e-resize { cursor: e-resize; }
+.ax-cursor-s-resize { cursor: s-resize; }
+.ax-cursor-w-resize { cursor: w-resize; }

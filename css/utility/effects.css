@@ -1,0 +1,8 @@
+/* ========================================
+   Effects Utilities (Aggregated Module)
+   ======================================== */
+
+@import "./shadows.css";
+@import "./opacity.css";
+@import "./filter.css";
+@import "./mix-blend.css";

@@ -1,0 +1,71 @@
+/* ========================================
+   Color Tokens
+   ======================================== */
+
+:root {
+  /* ----------------------------------------
+     Brand
+     ---------------------------------------- */
+  --ax-color-primary: #2563eb;
+  --ax-color-primary-hover: #1d4ed8;
+  --ax-color-primary-active: #1e40af;
+
+  --ax-color-secondary: #64748b;
+  --ax-color-secondary-hover: #475569;
+  --ax-color-secondary-active: #334155;
+
+  /* ----------------------------------------
+     Semantic
+     ---------------------------------------- */
+  --ax-color-success: #16a34a;
+  --ax-color-success-hover: #15803d;
+
+  --ax-color-warning: #d97706;
+  --ax-color-warning-hover: #b45309;
+
+  --ax-color-danger: #dc2626;
+  --ax-color-danger-hover: #b91c1c;
+
+  --ax-color-info: #0284c7;
+  --ax-color-info-hover: #0369a1;
+
+  /* ----------------------------------------
+     Background & Surface
+     ---------------------------------------- */
+  --ax-color-background: #ffffff;
+  --ax-color-surface: #ffffff;
+  --ax-color-surface-secondary: #f8fafc;
+  --ax-color-surface-tertiary: #f1f5f9;
+
+  /* ----------------------------------------
+     Text
+     ---------------------------------------- */
+  --ax-color-text: #0f172a;
+  --ax-color-text-secondary: #475569;
+  --ax-color-text-muted: #64748b;
+  --ax-color-text-disabled: #94a3b8;
+
+  /* ----------------------------------------
+     Border
+     ---------------------------------------- */
+  --ax-color-border: #e2e8f0;
+  --ax-color-border-secondary: #cbd5e1;
+  --ax-color-border-focus: var(--ax-color-primary);
+
+  /* ----------------------------------------
+     Neutral Palette
+     ---------------------------------------- */
+  --ax-color-white: #ffffff;
+  --ax-color-black: #000000;
+
+  --ax-color-gray-50: #f8fafc;
+  --ax-color-gray-100: #f1f5f9;
+  --ax-color-gray-200: #e2e8f0;
+  --ax-color-gray-300: #cbd5e1;
+  --ax-color-gray-400: #94a3b8;
+  --ax-color-gray-500: #64748b;
+  --ax-color-gray-600: #475569;
+  --ax-color-gray-700: #334155;
+  --ax-color-gray-800: #1e293b;
+  --ax-color-gray-900: #0f172a;
+}

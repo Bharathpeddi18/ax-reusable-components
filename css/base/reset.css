@@ -1,0 +1,108 @@
+/* ========================================
+   CSS Reset
+   ======================================== */
+
+/* ----------------------------------------
+   Box Sizing
+   ---------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ----------------------------------------
+   Remove Default Margin & Padding
+   ---------------------------------------- */
+* {
+  margin: 0;
+}
+
+/* ----------------------------------------
+   Document & Root
+   ---------------------------------------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  tab-size: 4;
+}
+
+/* ----------------------------------------
+   Body
+   ---------------------------------------- */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* ----------------------------------------
+   Images & Media
+   ---------------------------------------- */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----------------------------------------
+   Form Elements
+   ---------------------------------------- */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* ----------------------------------------
+   Buttons & Interactive
+   ---------------------------------------- */
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+}
+
+/* ----------------------------------------
+   Links
+   ---------------------------------------- */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* ----------------------------------------
+   Tables
+   ---------------------------------------- */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ----------------------------------------
+   Lists
+   ---------------------------------------- */
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+/* ----------------------------------------
+   Textarea
+   ---------------------------------------- */
+textarea {
+  resize: vertical;
+}

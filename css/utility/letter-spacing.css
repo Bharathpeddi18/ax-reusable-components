@@ -1,0 +1,10 @@
+/* ========================================
+   Letter Spacing Utilities
+   ======================================== */
+
+.ax-tracking-tighter { letter-spacing: var(--ax-letter-spacing-tighter, -0.05em); }
+.ax-tracking-tight { letter-spacing: var(--ax-letter-spacing-tight, -0.025em); }
+.ax-tracking-normal { letter-spacing: var(--ax-letter-spacing-normal, 0); }
+.ax-tracking-wide { letter-spacing: var(--ax-letter-spacing-wide, 0.025em); }
+.ax-tracking-wider { letter-spacing: var(--ax-letter-spacing-wider, 0.05em); }
+.ax-tracking-widest { letter-spacing: var(--ax-letter-spacing-widest, 0.1em); }

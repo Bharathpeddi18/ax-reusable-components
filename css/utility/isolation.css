@@ -1,0 +1,6 @@
+/* ========================================
+   Isolation Utilities
+   ======================================== */
+
+.ax-isolate { isolation: isolate; }
+.ax-isolation-auto { isolation: auto; }

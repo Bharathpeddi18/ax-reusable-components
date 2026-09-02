@@ -1,0 +1,33 @@
+/* ========================================
+   Content & Contain Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Generated Content
+   ---------------------------------------- */
+
+.ax-content-none { content: none; }
+.ax-content-empty { content: ""; }
+.ax-content-normal { content: normal; }
+
+.ax-before-content-empty::before { content: ""; }
+.ax-after-content-empty::after { content: ""; }
+
+/* ----------------------------------------
+   Contain
+   ---------------------------------------- */
+
+.ax-contain-none { contain: none; }
+.ax-contain-layout { contain: layout; }
+.ax-contain-paint { contain: paint; }
+.ax-contain-size { contain: size; }
+.ax-contain-content { contain: content; }
+.ax-contain-strict { contain: strict; }
+
+/* ----------------------------------------
+   Content Visibility
+   ---------------------------------------- */
+
+.ax-content-visible { content-visibility: visible; }
+.ax-content-auto { content-visibility: auto; }
+.ax-content-hidden { content-visibility: hidden; }

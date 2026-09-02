@@ -1,0 +1,101 @@
+/* ========================================
+   Position Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Position
+   ---------------------------------------- */
+
+.ax-static, .ax-position-static { position: static; }
+.ax-relative, .ax-position-relative { position: relative; }
+.ax-absolute, .ax-position-absolute { position: absolute; }
+.ax-fixed, .ax-position-fixed { position: fixed; }
+.ax-sticky, .ax-position-sticky { position: sticky; }
+
+/* ----------------------------------------
+   Inset (All sides)
+   ---------------------------------------- */
+
+.ax-inset-0 { inset: 0; }
+.ax-inset-auto { inset: auto; }
+.ax-inset-x-0 { inset-inline: 0; }
+.ax-inset-y-0 { inset-block: 0; }
+
+/* ----------------------------------------
+   Top
+   ---------------------------------------- */
+
+.ax-top-0 { top: 0; }
+.ax-top-auto { top: auto; }
+.ax-top-1 { top: var(--ax-space-1); }
+.ax-top-2 { top: var(--ax-space-2); }
+.ax-top-4 { top: var(--ax-space-4); }
+.ax-top-8 { top: var(--ax-space-8); }
+.ax-top-full { top: 100%; }
+.ax-top-1\/2 { top: 50%; }
+
+/* ----------------------------------------
+   Right
+   ---------------------------------------- */
+
+.ax-right-0 { right: 0; }
+.ax-right-auto { right: auto; }
+.ax-right-1 { right: var(--ax-space-1); }
+.ax-right-2 { right: var(--ax-space-2); }
+.ax-right-4 { right: var(--ax-space-4); }
+.ax-right-8 { right: var(--ax-space-8); }
+.ax-right-full { right: 100%; }
+
+/* ----------------------------------------
+   Bottom
+   ---------------------------------------- */
+
+.ax-bottom-0 { bottom: 0; }
+.ax-bottom-auto { bottom: auto; }
+.ax-bottom-1 { bottom: var(--ax-space-1); }
+.ax-bottom-2 { bottom: var(--ax-space-2); }
+.ax-bottom-4 { bottom: var(--ax-space-4); }
+.ax-bottom-8 { bottom: var(--ax-space-8); }
+.ax-bottom-full { bottom: 100%; }
+
+/* ----------------------------------------
+   Left
+   ---------------------------------------- */
+
+.ax-left-0 { left: 0; }
+.ax-left-auto { left: auto; }
+.ax-left-1 { left: var(--ax-space-1); }
+.ax-left-2 { left: var(--ax-space-2); }
+.ax-left-4 { left: var(--ax-space-4); }
+.ax-left-8 { left: var(--ax-space-8); }
+.ax-left-full { left: 100%; }
+.ax-left-1\/2 { left: 50%; }
+
+/* ----------------------------------------
+   Logical Start / End
+   ---------------------------------------- */
+
+.ax-start-0 { inset-inline-start: 0; }
+.ax-start-auto { inset-inline-start: auto; }
+.ax-end-0 { inset-inline-end: 0; }
+.ax-end-auto { inset-inline-end: auto; }
+
+/* ----------------------------------------
+   Z-Index
+   ---------------------------------------- */
+
+.ax-z-auto { z-index: auto; }
+.ax-z-0 { z-index: 0; }
+.ax-z-10 { z-index: var(--ax-z-index-10, 10); }
+.ax-z-20 { z-index: var(--ax-z-index-20, 20); }
+.ax-z-30 { z-index: var(--ax-z-index-30, 30); }
+.ax-z-40 { z-index: var(--ax-z-index-40, 40); }
+.ax-z-50 { z-index: var(--ax-z-index-50, 50); }
+.ax-z-dropdown { z-index: var(--ax-z-index-dropdown); }
+.ax-z-sticky { z-index: var(--ax-z-index-sticky); }
+.ax-z-fixed { z-index: var(--ax-z-index-fixed); }
+.ax-z-overlay { z-index: var(--ax-z-index-overlay); }
+.ax-z-modal { z-index: var(--ax-z-index-modal); }
+.ax-z-popover { z-index: var(--ax-z-index-popover); }
+.ax-z-tooltip { z-index: var(--ax-z-index-tooltip); }
+.ax-z-toast { z-index: var(--ax-z-index-toast); }

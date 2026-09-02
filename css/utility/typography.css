@@ -1,0 +1,288 @@
+/* ========================================
+   Typography Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Font Family
+   ---------------------------------------- */
+
+.ax-font-sans {
+   font-family: var(--ax-font-family-sans);
+}
+
+.ax-font-serif {
+   font-family: var(--ax-font-family-serif);
+}
+
+.ax-font-mono {
+   font-family: var(--ax-font-family-mono);
+}
+
+/* ----------------------------------------
+   Font Size
+   ---------------------------------------- */
+
+.ax-text-xs {
+   font-size: var(--ax-font-size-xs);
+}
+
+.ax-text-sm {
+   font-size: var(--ax-font-size-sm);
+}
+
+.ax-text-md {
+   font-size: var(--ax-font-size-md);
+}
+
+.ax-text-lg {
+   font-size: var(--ax-font-size-lg);
+}
+
+.ax-text-xl {
+   font-size: var(--ax-font-size-xl);
+}
+
+.ax-text-2xl {
+   font-size: var(--ax-font-size-2xl);
+}
+
+.ax-text-3xl {
+   font-size: var(--ax-font-size-3xl);
+}
+
+.ax-text-4xl {
+   font-size: var(--ax-font-size-4xl);
+}
+
+.ax-text-5xl {
+   font-size: var(--ax-font-size-5xl);
+}
+
+.ax-text-6xl {
+   font-size: var(--ax-font-size-6xl);
+}
+
+/* ----------------------------------------
+   Font Weight
+   ---------------------------------------- */
+
+.ax-font-light,
+.ax-fw-light {
+   font-weight: var(--ax-font-weight-light);
+}
+
+.ax-font-normal,
+.ax-fw-normal,
+.ax-fw-regular {
+   font-weight: var(--ax-font-weight-normal);
+}
+
+.ax-font-medium,
+.ax-fw-medium {
+   font-weight: var(--ax-font-weight-medium);
+}
+
+.ax-font-semibold,
+.ax-fw-semibold {
+   font-weight: var(--ax-font-weight-semibold);
+}
+
+.ax-font-bold,
+.ax-fw-bold {
+   font-weight: var(--ax-font-weight-bold);
+}
+
+.ax-font-extrabold,
+.ax-fw-extrabold {
+   font-weight: var(--ax-font-weight-extrabold);
+}
+
+/* ----------------------------------------
+   Line Height
+   ---------------------------------------- */
+
+.ax-leading-none,
+.ax-lh-none {
+   line-height: var(--ax-line-height-none);
+}
+
+.ax-leading-tight,
+.ax-lh-tight {
+   line-height: var(--ax-line-height-tight);
+}
+
+.ax-leading-snug,
+.ax-lh-snug {
+   line-height: var(--ax-line-height-snug);
+}
+
+.ax-leading-normal,
+.ax-lh-normal {
+   line-height: var(--ax-line-height-normal);
+}
+
+.ax-leading-relaxed,
+.ax-lh-relaxed {
+   line-height: var(--ax-line-height-relaxed);
+}
+
+.ax-leading-loose,
+.ax-lh-loose {
+   line-height: var(--ax-line-height-loose);
+}
+
+/* ----------------------------------------
+   Letter Spacing (Tracking)
+   ---------------------------------------- */
+
+.ax-tracking-tighter {
+   letter-spacing: var(--ax-letter-spacing-tighter);
+}
+
+.ax-tracking-tight {
+   letter-spacing: var(--ax-letter-spacing-tight);
+}
+
+.ax-tracking-normal {
+   letter-spacing: var(--ax-letter-spacing-normal);
+}
+
+.ax-tracking-wide {
+   letter-spacing: var(--ax-letter-spacing-wide);
+}
+
+.ax-tracking-wider {
+   letter-spacing: var(--ax-letter-spacing-wider);
+}
+
+.ax-tracking-widest {
+   letter-spacing: var(--ax-letter-spacing-widest);
+}
+
+/* ----------------------------------------
+   Text Alignment
+   ---------------------------------------- */
+
+.ax-text-left {
+   text-align: left;
+}
+
+.ax-text-center {
+   text-align: center;
+}
+
+.ax-text-right {
+   text-align: right;
+}
+
+.ax-text-justify {
+   text-align: justify;
+}
+
+.ax-text-start {
+   text-align: start;
+}
+
+.ax-text-end {
+   text-align: end;
+}
+
+/* ----------------------------------------
+   Text Transform
+   ---------------------------------------- */
+
+.ax-uppercase,
+.ax-text-uppercase {
+   text-transform: uppercase;
+}
+
+.ax-lowercase,
+.ax-text-lowercase {
+   text-transform: lowercase;
+}
+
+.ax-capitalize,
+.ax-text-capitalize {
+   text-transform: capitalize;
+}
+
+.ax-normal-case,
+.ax-text-normal-case {
+   text-transform: none;
+}
+
+/* ----------------------------------------
+   Font Style
+   ---------------------------------------- */
+
+.ax-italic,
+.ax-text-italic {
+   font-style: italic;
+}
+
+.ax-not-italic {
+   font-style: normal;
+}
+
+/* ----------------------------------------
+   Text Overflow & Truncate
+   ---------------------------------------- */
+
+.ax-truncate {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.ax-text-ellipsis {
+   text-overflow: ellipsis;
+}
+
+.ax-text-clip {
+   text-overflow: clip;
+}
+
+/* ----------------------------------------
+   White Space
+   ---------------------------------------- */
+
+.ax-whitespace-normal {
+   white-space: normal;
+}
+
+.ax-whitespace-nowrap {
+   white-space: nowrap;
+}
+
+.ax-whitespace-pre {
+   white-space: pre;
+}
+
+.ax-whitespace-pre-line {
+   white-space: pre-line;
+}
+
+.ax-whitespace-pre-wrap {
+   white-space: pre-wrap;
+}
+
+/* ----------------------------------------
+   Word Breaking
+   ---------------------------------------- */
+
+.ax-break-normal {
+   overflow-wrap: normal;
+   word-break: normal;
+}
+
+.ax-break-words {
+   overflow-wrap: break-word;
+}
+
+.ax-break-all {
+   word-break: break-all;
+}
+
+.ax-break-keep {
+   word-break: keep-all;
+}

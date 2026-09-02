@@ -1,0 +1,10 @@
+/* ========================================
+   Whitespace Utilities
+   ======================================== */
+
+.ax-whitespace-normal { white-space: normal; }
+.ax-whitespace-nowrap { white-space: nowrap; }
+.ax-whitespace-pre { white-space: pre; }
+.ax-whitespace-pre-line { white-space: pre-line; }
+.ax-whitespace-pre-wrap { white-space: pre-wrap; }
+.ax-whitespace-break-spaces { white-space: break-spaces; }

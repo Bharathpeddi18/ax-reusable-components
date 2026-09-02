@@ -1,0 +1,19 @@
+/* ========================================
+   Opacity Utilities
+   ======================================== */
+
+.ax-opacity-0 { opacity: 0; }
+.ax-opacity-5 { opacity: 0.05; }
+.ax-opacity-10 { opacity: 0.1; }
+.ax-opacity-20 { opacity: 0.2; }
+.ax-opacity-25 { opacity: 0.25; }
+.ax-opacity-30 { opacity: 0.3; }
+.ax-opacity-40 { opacity: 0.4; }
+.ax-opacity-50 { opacity: 0.5; }
+.ax-opacity-60 { opacity: 0.6; }
+.ax-opacity-70 { opacity: 0.7; }
+.ax-opacity-75 { opacity: 0.75; }
+.ax-opacity-80 { opacity: 0.8; }
+.ax-opacity-90 { opacity: 0.9; }
+.ax-opacity-95 { opacity: 0.95; }
+.ax-opacity-100 { opacity: 1; }

@@ -1,0 +1,170 @@
+/* ========================================
+   Ring & Focus Ring Utilities
+   ======================================== */
+
+:root {
+  --ax-ring-offset-shadow: 0 0 #0000;
+  --ax-ring-shadow: 0 0 #0000;
+  --ax-ring-offset-width: 0px;
+  --ax-ring-offset-color: #ffffff;
+  --ax-ring-color: rgb(37 99 235 / 0.5);
+}
+
+/* ----------------------------------------
+   Ring Width
+   ---------------------------------------- */
+
+.ax-ring-0 {
+  --ax-ring-shadow: 0 0 #0000;
+  box-shadow: var(--ax-ring-offset-shadow, 0 0 #0000), var(--ax-ring-shadow, 0 0 #0000), var(--ax-shadow, 0 0 #0000);
+}
+
+.ax-ring-1 {
+  --ax-ring-shadow: var(--ax-ring-inset, ) 0 0 0 calc(1px + var(--ax-ring-offset-width, 0px)) var(--ax-ring-color, var(--ax-color-primary));
+  box-shadow: var(--ax-ring-offset-shadow, 0 0 #0000), var(--ax-ring-shadow), var(--ax-shadow, 0 0 #0000);
+}
+
+.ax-ring,
+.ax-ring-2 {
+  --ax-ring-shadow: var(--ax-ring-inset, ) 0 0 0 calc(2px + var(--ax-ring-offset-width, 0px)) var(--ax-ring-color, var(--ax-color-primary));
+  box-shadow: var(--ax-ring-offset-shadow, 0 0 #0000), var(--ax-ring-shadow), var(--ax-shadow, 0 0 #0000);
+}
+
+.ax-ring-4 {
+  --ax-ring-shadow: var(--ax-ring-inset, ) 0 0 0 calc(4px + var(--ax-ring-offset-width, 0px)) var(--ax-ring-color, var(--ax-color-primary));
+  box-shadow: var(--ax-ring-offset-shadow, 0 0 #0000), var(--ax-ring-shadow), var(--ax-shadow, 0 0 #0000);
+}
+
+.ax-ring-8 {
+  --ax-ring-shadow: var(--ax-ring-inset, ) 0 0 0 calc(8px + var(--ax-ring-offset-width, 0px)) var(--ax-ring-color, var(--ax-color-primary));
+  box-shadow: var(--ax-ring-offset-shadow, 0 0 #0000), var(--ax-ring-shadow), var(--ax-shadow, 0 0 #0000);
+}
+
+.ax-ring-inset {
+  --ax-ring-inset: inset;
+}
+
+/* ----------------------------------------
+   Ring Colors
+   ---------------------------------------- */
+
+.ax-ring-primary {
+  --ax-ring-color: var(--ax-color-primary);
+}
+
+.ax-ring-secondary {
+  --ax-ring-color: var(--ax-color-secondary);
+}
+
+.ax-ring-success {
+  --ax-ring-color: var(--ax-color-success);
+}
+
+.ax-ring-warning {
+  --ax-ring-color: var(--ax-color-warning);
+}
+
+.ax-ring-danger {
+  --ax-ring-color: var(--ax-color-danger);
+}
+
+.ax-ring-info {
+  --ax-ring-color: var(--ax-color-info);
+}
+
+.ax-ring-white {
+  --ax-ring-color: var(--ax-color-white);
+}
+
+.ax-ring-black {
+  --ax-ring-color: var(--ax-color-black);
+}
+
+.ax-ring-border {
+  --ax-ring-color: var(--ax-color-border);
+}
+
+.ax-ring-gray-200 {
+  --ax-ring-color: var(--ax-color-gray-200);
+}
+
+.ax-ring-gray-300 {
+  --ax-ring-color: var(--ax-color-gray-300);
+}
+
+.ax-ring-transparent {
+  --ax-ring-color: transparent;
+}
+
+/* ----------------------------------------
+   Ring Offset
+   ---------------------------------------- */
+
+.ax-ring-offset-0 {
+  --ax-ring-offset-width: 0px;
+  --ax-ring-offset-shadow: var(--ax-ring-inset, ) 0 0 0 var(--ax-ring-offset-width) var(--ax-ring-offset-color, #ffffff);
+}
+
+.ax-ring-offset-1 {
+  --ax-ring-offset-width: 1px;
+  --ax-ring-offset-shadow: var(--ax-ring-inset, ) 0 0 0 var(--ax-ring-offset-width) var(--ax-ring-offset-color, #ffffff);
+}
+
+.ax-ring-offset-2 {
+  --ax-ring-offset-width: 2px;
+  --ax-ring-offset-shadow: var(--ax-ring-inset, ) 0 0 0 var(--ax-ring-offset-width) var(--ax-ring-offset-color, #ffffff);
+}
+
+.ax-ring-offset-4 {
+  --ax-ring-offset-width: 4px;
+  --ax-ring-offset-shadow: var(--ax-ring-inset, ) 0 0 0 var(--ax-ring-offset-width) var(--ax-ring-offset-color, #ffffff);
+}
+
+.ax-ring-offset-surface {
+  --ax-ring-offset-color: var(--ax-color-surface);
+}
+
+.ax-ring-offset-background {
+  --ax-ring-offset-color: var(--ax-color-background);
+}
+
+/* ----------------------------------------
+   Focus Rings
+   ---------------------------------------- */
+
+.focus\:ax-ring:focus,
+.focus\:ax-ring-2:focus {
+  --ax-ring-shadow: var(--ax-ring-inset, ) 0 0 0 calc(2px + var(--ax-ring-offset-width, 0px)) var(--ax-ring-color, var(--ax-color-primary));
+  box-shadow: var(--ax-ring-offset-shadow, 0 0 #0000), var(--ax-ring-shadow), var(--ax-shadow, 0 0 #0000);
+  outline: none;
+}
+
+.focus\:ax-ring-1:focus {
+  --ax-ring-shadow: var(--ax-ring-inset, ) 0 0 0 calc(1px + var(--ax-ring-offset-width, 0px)) var(--ax-ring-color, var(--ax-color-primary));
+  box-shadow: var(--ax-ring-offset-shadow, 0 0 #0000), var(--ax-ring-shadow), var(--ax-shadow, 0 0 #0000);
+  outline: none;
+}
+
+.focus\:ax-ring-4:focus {
+  --ax-ring-shadow: var(--ax-ring-inset, ) 0 0 0 calc(4px + var(--ax-ring-offset-width, 0px)) var(--ax-ring-color, var(--ax-color-primary));
+  box-shadow: var(--ax-ring-offset-shadow, 0 0 #0000), var(--ax-ring-shadow), var(--ax-shadow, 0 0 #0000);
+  outline: none;
+}
+
+.focus\:ax-ring-0:focus {
+  --ax-ring-shadow: 0 0 #0000;
+  box-shadow: var(--ax-ring-offset-shadow, 0 0 #0000), var(--ax-ring-shadow, 0 0 #0000), var(--ax-shadow, 0 0 #0000);
+}
+
+.focus\:ax-ring-primary:focus {
+  --ax-ring-color: var(--ax-color-primary);
+}
+
+.focus\:ax-ring-danger:focus {
+  --ax-ring-color: var(--ax-color-danger);
+}
+
+.focus\:ax-ring-offset-2:focus {
+  --ax-ring-offset-width: 2px;
+  --ax-ring-offset-shadow: var(--ax-ring-inset, ) 0 0 0 var(--ax-ring-offset-width) var(--ax-ring-offset-color, #ffffff);
+}

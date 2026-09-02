@@ -1,0 +1,95 @@
+/* ========================================
+   Transform
+   ======================================== */
+
+.ax-transform-none {
+  transform: none;
+}
+
+
+/* ========================================
+   Scale
+   ======================================== */
+
+.ax-scale-90 {
+  transform: scale(0.9);
+}
+
+.ax-scale-95 {
+  transform: scale(0.95);
+}
+
+.ax-scale-100 {
+  transform: scale(1);
+}
+
+.ax-scale-105 {
+  transform: scale(1.05);
+}
+
+.ax-scale-110 {
+  transform: scale(1.1);
+}
+
+
+/* ========================================
+   Rotate
+   ======================================== */
+
+.ax-rotate-0 {
+  transform: rotate(0deg);
+}
+
+.ax-rotate-45 {
+  transform: rotate(45deg);
+}
+
+.ax-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.ax-rotate-180 {
+  transform: rotate(180deg);
+}
+
+
+/* ========================================
+   Translate X
+   ======================================== */
+
+.ax-translate-x-0 {
+  transform: translateX(0);
+}
+
+.ax-translate-x-1 {
+  transform: translateX(var(--ax-space-1));
+}
+
+.ax-translate-x-2 {
+  transform: translateX(var(--ax-space-2));
+}
+
+.ax-translate-x-4 {
+  transform: translateX(var(--ax-space-4));
+}
+
+
+/* ========================================
+   Translate Y
+   ======================================== */
+
+.ax-translate-y-0 {
+  transform: translateY(0);
+}
+
+.ax-translate-y-1 {
+  transform: translateY(var(--ax-space-1));
+}
+
+.ax-translate-y-2 {
+  transform: translateY(var(--ax-space-2));
+}
+
+.ax-translate-y-4 {
+  transform: translateY(var(--ax-space-4));
+}

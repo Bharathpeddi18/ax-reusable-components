@@ -1,0 +1,133 @@
+/* ========================================
+   Divide Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Divide Y (Vertical)
+   ---------------------------------------- */
+
+.ax-divide-y > * + * {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--ax-color-border);
+  border-bottom-width: 0;
+}
+
+.ax-divide-y-0 > * + * {
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+.ax-divide-y-2 > * + * {
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: var(--ax-color-border);
+  border-bottom-width: 0;
+}
+
+.ax-divide-y-4 > * + * {
+  border-top-width: 4px;
+  border-top-style: solid;
+  border-top-color: var(--ax-color-border);
+  border-bottom-width: 0;
+}
+
+.ax-divide-y-reverse > * + * {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--ax-color-border);
+  border-top-width: 0;
+}
+
+/* ----------------------------------------
+   Divide X (Horizontal)
+   ---------------------------------------- */
+
+.ax-divide-x > * + * {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: var(--ax-color-border);
+  border-right-width: 0;
+}
+
+.ax-divide-x-0 > * + * {
+  border-left-width: 0;
+  border-right-width: 0;
+}
+
+.ax-divide-x-2 > * + * {
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: var(--ax-color-border);
+  border-right-width: 0;
+}
+
+.ax-divide-x-4 > * + * {
+  border-left-width: 4px;
+  border-left-style: solid;
+  border-left-color: var(--ax-color-border);
+  border-right-width: 0;
+}
+
+.ax-divide-x-reverse > * + * {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: var(--ax-color-border);
+  border-left-width: 0;
+}
+
+/* ----------------------------------------
+   Divide Style
+   ---------------------------------------- */
+
+.ax-divide-solid > * + * {
+  border-style: solid;
+}
+
+.ax-divide-dashed > * + * {
+  border-style: dashed;
+}
+
+.ax-divide-dotted > * + * {
+  border-style: dotted;
+}
+
+.ax-divide-none > * + * {
+  border-style: none;
+}
+
+/* ----------------------------------------
+   Divide Color
+   ---------------------------------------- */
+
+.ax-divide-border > * + * {
+  border-color: var(--ax-color-border);
+}
+
+.ax-divide-border-secondary > * + * {
+  border-color: var(--ax-color-border-secondary);
+}
+
+.ax-divide-primary > * + * {
+  border-color: var(--ax-color-primary);
+}
+
+.ax-divide-secondary > * + * {
+  border-color: var(--ax-color-secondary);
+}
+
+.ax-divide-gray-100 > * + * {
+  border-color: var(--ax-color-gray-100);
+}
+
+.ax-divide-gray-200 > * + * {
+  border-color: var(--ax-color-gray-200);
+}
+
+.ax-divide-gray-300 > * + * {
+  border-color: var(--ax-color-gray-300);
+}
+
+.ax-divide-transparent > * + * {
+  border-color: transparent;
+}

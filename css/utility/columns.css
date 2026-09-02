@@ -1,0 +1,163 @@
+/* ========================================
+   Multi-Column Layout Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Column Count
+   ---------------------------------------- */
+
+.ax-columns-1 {
+  columns: 1;
+}
+
+.ax-columns-2 {
+  columns: 2;
+}
+
+.ax-columns-3 {
+  columns: 3;
+}
+
+.ax-columns-4 {
+  columns: 4;
+}
+
+.ax-columns-5 {
+  columns: 5;
+}
+
+.ax-columns-6 {
+  columns: 6;
+}
+
+/* ----------------------------------------
+   Column Width
+   ---------------------------------------- */
+
+.ax-columns-auto {
+  column-width: auto;
+}
+
+.ax-columns-xs {
+  column-width: 16rem;
+}
+
+.ax-columns-sm {
+  column-width: 20rem;
+}
+
+.ax-columns-md {
+  column-width: 24rem;
+}
+
+.ax-columns-lg {
+  column-width: 28rem;
+}
+
+.ax-columns-xl {
+  column-width: 32rem;
+}
+
+/* ----------------------------------------
+   Column Gap
+   ---------------------------------------- */
+
+.ax-column-gap-0 {
+  column-gap: 0;
+}
+
+.ax-column-gap-1 {
+  column-gap: var(--ax-space-1);
+}
+
+.ax-column-gap-2 {
+  column-gap: var(--ax-space-2);
+}
+
+.ax-column-gap-4 {
+  column-gap: var(--ax-space-4);
+}
+
+.ax-column-gap-6 {
+  column-gap: var(--ax-space-6);
+}
+
+.ax-column-gap-8 {
+  column-gap: var(--ax-space-8);
+}
+
+/* ----------------------------------------
+   Column Rule Width
+   ---------------------------------------- */
+
+.ax-column-rule-0 {
+  column-rule-width: 0;
+}
+
+.ax-column-rule {
+  column-rule-width: 1px;
+}
+
+.ax-column-rule-2 {
+  column-rule-width: 2px;
+}
+
+/* ----------------------------------------
+   Column Rule Style
+   ---------------------------------------- */
+
+.ax-column-rule-solid {
+  column-rule-style: solid;
+}
+
+.ax-column-rule-dashed {
+  column-rule-style: dashed;
+}
+
+.ax-column-rule-dotted {
+  column-rule-style: dotted;
+}
+
+.ax-column-rule-double {
+  column-rule-style: double;
+}
+
+.ax-column-rule-none {
+  column-rule-style: none;
+}
+
+/* ----------------------------------------
+   Column Rule Color
+   ---------------------------------------- */
+
+.ax-column-rule-current {
+  column-rule-color: currentColor;
+}
+
+.ax-column-rule-transparent {
+  column-rule-color: transparent;
+}
+
+/* ----------------------------------------
+   Column Span
+   ---------------------------------------- */
+
+.ax-column-span-none {
+  column-span: none;
+}
+
+.ax-column-span-all {
+  column-span: all;
+}
+
+/* ----------------------------------------
+   Column Fill
+   ---------------------------------------- */
+
+.ax-column-fill-auto {
+  column-fill: auto;
+}
+
+.ax-column-fill-balance {
+  column-fill: balance;
+}

@@ -1,0 +1,11 @@
+/* ========================================
+   Pointer Events Utilities
+   ======================================== */
+
+.ax-pointer-events-auto {
+  pointer-events: auto;
+}
+
+.ax-pointer-events-none {
+  pointer-events: none;
+}

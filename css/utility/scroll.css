@@ -1,0 +1,53 @@
+/* ========================================
+   Scroll & Snap Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Scroll Behavior
+   ---------------------------------------- */
+
+.ax-scroll-auto { scroll-behavior: auto; }
+.ax-scroll-smooth { scroll-behavior: smooth; }
+
+/* ----------------------------------------
+   Scroll Snap Type
+   ---------------------------------------- */
+
+.ax-snap-none { scroll-snap-type: none; }
+.ax-snap-x { scroll-snap-type: x var(--ax-scroll-snap-strictness, proximity); }
+.ax-snap-y { scroll-snap-type: y var(--ax-scroll-snap-strictness, proximity); }
+.ax-snap-both { scroll-snap-type: both var(--ax-scroll-snap-strictness, proximity); }
+
+/* ----------------------------------------
+   Scroll Snap Strictness
+   ---------------------------------------- */
+
+.ax-snap-proximity { --ax-scroll-snap-strictness: proximity; }
+.ax-snap-mandatory { --ax-scroll-snap-strictness: mandatory; }
+
+/* ----------------------------------------
+   Scroll Snap Alignment
+   ---------------------------------------- */
+
+.ax-snap-start { scroll-snap-align: start; }
+.ax-snap-center { scroll-snap-align: center; }
+.ax-snap-end { scroll-snap-align: end; }
+.ax-snap-align-none { scroll-snap-align: none; }
+
+/* ----------------------------------------
+   Scroll Snap Stop
+   ---------------------------------------- */
+
+.ax-snap-normal { scroll-snap-stop: normal; }
+.ax-snap-always { scroll-snap-stop: always; }
+
+/* ----------------------------------------
+   Scroll Padding
+   ---------------------------------------- */
+
+.ax-scroll-p-0 { scroll-padding: 0; }
+.ax-scroll-p-1 { scroll-padding: var(--ax-space-1); }
+.ax-scroll-p-2 { scroll-padding: var(--ax-space-2); }
+.ax-scroll-p-4 { scroll-padding: var(--ax-space-4); }
+.ax-scroll-p-6 { scroll-padding: var(--ax-space-6); }
+.ax-scroll-p-8 { scroll-padding: var(--ax-space-8); }

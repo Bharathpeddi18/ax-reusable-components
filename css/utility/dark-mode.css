@@ -1,0 +1,130 @@
+/* ========================================
+   Dark Mode Utilities & Themes
+   ======================================== */
+
+/* ----------------------------------------
+   Light Theme
+   ---------------------------------------- */
+
+:root,
+[data-theme="light"] {
+  color-scheme: light;
+
+  --ax-color-background: #ffffff;
+  --ax-color-surface: #ffffff;
+  --ax-color-surface-secondary: #f8fafc;
+  --ax-color-surface-tertiary: #f1f5f9;
+
+  --ax-color-text: #0f172a;
+  --ax-color-text-secondary: #475569;
+  --ax-color-text-muted: #64748b;
+  --ax-color-text-disabled: #94a3b8;
+
+  --ax-color-border: #e2e8f0;
+  --ax-color-border-secondary: #cbd5e1;
+  --ax-color-border-focus: var(--ax-color-primary);
+
+  --ax-color-focus: var(--ax-color-primary);
+
+  --ax-color-primary: #2563eb;
+  --ax-color-primary-hover: #1d4ed8;
+  --ax-color-primary-active: #1e40af;
+  --ax-color-on-primary: #ffffff;
+
+  --ax-color-secondary: #64748b;
+  --ax-color-secondary-hover: #475569;
+  --ax-color-secondary-active: #334155;
+  --ax-color-on-secondary: #ffffff;
+
+  --ax-color-success: #16a34a;
+  --ax-color-success-hover: #15803d;
+
+  --ax-color-warning: #d97706;
+  --ax-color-warning-hover: #b45309;
+
+  --ax-color-danger: #dc2626;
+  --ax-color-danger-hover: #b91c1c;
+
+  --ax-color-info: #0284c7;
+  --ax-color-info-hover: #0369a1;
+}
+
+/* ----------------------------------------
+   Dark Theme
+   ---------------------------------------- */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ax-color-background: #090d16;
+  --ax-color-surface: #0f172a;
+  --ax-color-surface-secondary: #1e293b;
+  --ax-color-surface-tertiary: #334155;
+
+  --ax-color-text: #f8fafc;
+  --ax-color-text-secondary: #cbd5e1;
+  --ax-color-text-muted: #94a3b8;
+  --ax-color-text-disabled: #64748b;
+
+  --ax-color-border: #334155;
+  --ax-color-border-secondary: #1e293b;
+  --ax-color-border-focus: #60a5fa;
+
+  --ax-color-focus: #60a5fa;
+
+  --ax-color-primary: #3b82f6;
+  --ax-color-primary-hover: #60a5fa;
+  --ax-color-primary-active: #93c5fd;
+  --ax-color-on-primary: #ffffff;
+
+  --ax-color-secondary: #94a3b8;
+  --ax-color-secondary-hover: #cbd5e1;
+  --ax-color-secondary-active: #e2e8f0;
+  --ax-color-on-secondary: #0f172a;
+
+  --ax-color-success: #22c55e;
+  --ax-color-warning: #f59e0b;
+  --ax-color-danger: #ef4444;
+  --ax-color-info: #38bdf8;
+}
+
+/* ----------------------------------------
+   System Dark Mode
+   ---------------------------------------- */
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+
+    --ax-color-background: #090d16;
+    --ax-color-surface: #0f172a;
+    --ax-color-surface-secondary: #1e293b;
+    --ax-color-surface-tertiary: #334155;
+
+    --ax-color-text: #f8fafc;
+    --ax-color-text-secondary: #cbd5e1;
+    --ax-color-text-muted: #94a3b8;
+    --ax-color-text-disabled: #64748b;
+
+    --ax-color-border: #334155;
+    --ax-color-border-secondary: #1e293b;
+    --ax-color-border-focus: #60a5fa;
+
+    --ax-color-focus: #60a5fa;
+
+    --ax-color-primary: #3b82f6;
+    --ax-color-primary-hover: #60a5fa;
+    --ax-color-primary-active: #93c5fd;
+    --ax-color-on-primary: #ffffff;
+
+    --ax-color-secondary: #94a3b8;
+    --ax-color-secondary-hover: #cbd5e1;
+    --ax-color-secondary-active: #e2e8f0;
+    --ax-color-on-secondary: #0f172a;
+
+    --ax-color-success: #22c55e;
+    --ax-color-warning: #f59e0b;
+    --ax-color-danger: #ef4444;
+    --ax-color-info: #38bdf8;
+  }
+}

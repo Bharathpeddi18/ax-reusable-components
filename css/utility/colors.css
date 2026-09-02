@@ -1,0 +1,255 @@
+/* ========================================
+   Color Utilities
+   ======================================== */
+
+/* ----------------------------------------
+   Text Colors - Semantic & Brand
+   ---------------------------------------- */
+
+.ax-text-primary {
+  color: var(--ax-color-primary);
+}
+
+.ax-text-secondary {
+  color: var(--ax-color-secondary);
+}
+
+.ax-text-muted {
+  color: var(--ax-color-text-muted);
+}
+
+.ax-text-success {
+  color: var(--ax-color-success);
+}
+
+.ax-text-warning {
+  color: var(--ax-color-warning);
+}
+
+.ax-text-danger {
+  color: var(--ax-color-danger);
+}
+
+.ax-text-info {
+  color: var(--ax-color-info);
+}
+
+.ax-text-white {
+  color: var(--ax-color-white);
+}
+
+.ax-text-black {
+  color: var(--ax-color-black);
+}
+
+.ax-text-inherit {
+  color: inherit;
+}
+
+.ax-text-current {
+  color: currentColor;
+}
+
+/* ----------------------------------------
+   Text Colors - Gray Scale
+   ---------------------------------------- */
+
+.ax-text-gray-50 {
+  color: var(--ax-color-gray-50);
+}
+
+.ax-text-gray-100 {
+  color: var(--ax-color-gray-100);
+}
+
+.ax-text-gray-200 {
+  color: var(--ax-color-gray-200);
+}
+
+.ax-text-gray-300 {
+  color: var(--ax-color-gray-300);
+}
+
+.ax-text-gray-400 {
+  color: var(--ax-color-gray-400);
+}
+
+.ax-text-gray-500 {
+  color: var(--ax-color-gray-500);
+}
+
+.ax-text-gray-600 {
+  color: var(--ax-color-gray-600);
+}
+
+.ax-text-gray-700 {
+  color: var(--ax-color-gray-700);
+}
+
+.ax-text-gray-800 {
+  color: var(--ax-color-gray-800);
+}
+
+.ax-text-gray-900 {
+  color: var(--ax-color-gray-900);
+}
+
+/* ----------------------------------------
+   Background Colors - Semantic & Brand
+   ---------------------------------------- */
+
+.ax-bg-primary {
+  background-color: var(--ax-color-primary);
+}
+
+.ax-bg-secondary {
+  background-color: var(--ax-color-secondary);
+}
+
+.ax-bg-surface {
+  background-color: var(--ax-color-surface);
+}
+
+.ax-bg-surface-secondary {
+  background-color: var(--ax-color-surface-secondary);
+}
+
+.ax-bg-surface-tertiary {
+  background-color: var(--ax-color-surface-tertiary);
+}
+
+.ax-bg-success {
+  background-color: var(--ax-color-success);
+}
+
+.ax-bg-warning {
+  background-color: var(--ax-color-warning);
+}
+
+.ax-bg-danger {
+  background-color: var(--ax-color-danger);
+}
+
+.ax-bg-info {
+  background-color: var(--ax-color-info);
+}
+
+.ax-bg-white {
+  background-color: var(--ax-color-white);
+}
+
+.ax-bg-black {
+  background-color: var(--ax-color-black);
+}
+
+.ax-bg-transparent {
+  background-color: transparent;
+}
+
+/* ----------------------------------------
+   Background Colors - Gray Scale
+   ---------------------------------------- */
+
+.ax-bg-gray-50 {
+  background-color: var(--ax-color-gray-50);
+}
+
+.ax-bg-gray-100 {
+  background-color: var(--ax-color-gray-100);
+}
+
+.ax-bg-gray-200 {
+  background-color: var(--ax-color-gray-200);
+}
+
+.ax-bg-gray-300 {
+  background-color: var(--ax-color-gray-300);
+}
+
+.ax-bg-gray-400 {
+  background-color: var(--ax-color-gray-400);
+}
+
+.ax-bg-gray-500 {
+  background-color: var(--ax-color-gray-500);
+}
+
+.ax-bg-gray-600 {
+  background-color: var(--ax-color-gray-600);
+}
+
+.ax-bg-gray-700 {
+  background-color: var(--ax-color-gray-700);
+}
+
+.ax-bg-gray-800 {
+  background-color: var(--ax-color-gray-800);
+}
+
+.ax-bg-gray-900 {
+  background-color: var(--ax-color-gray-900);
+}
+
+/* ----------------------------------------
+   Border Colors
+   ---------------------------------------- */
+
+.ax-border-primary {
+  border-color: var(--ax-color-primary);
+}
+
+.ax-border-secondary {
+  border-color: var(--ax-color-border-secondary);
+}
+
+.ax-border-default {
+  border-color: var(--ax-color-border);
+}
+
+.ax-border-success {
+  border-color: var(--ax-color-success);
+}
+
+.ax-border-warning {
+  border-color: var(--ax-color-warning);
+}
+
+.ax-border-danger {
+  border-color: var(--ax-color-danger);
+}
+
+.ax-border-info {
+  border-color: var(--ax-color-info);
+}
+
+.ax-border-transparent {
+  border-color: transparent;
+}
+
+/* ----------------------------------------
+   Background Opacity
+   ---------------------------------------- */
+
+.ax-bg-opacity-0 {
+  background-color: color-mix(in srgb, currentColor 0%, transparent);
+}
+
+.ax-bg-opacity-10 {
+  background-color: color-mix(in srgb, currentColor 10%, transparent);
+}
+
+.ax-bg-opacity-25 {
+  background-color: color-mix(in srgb, currentColor 25%, transparent);
+}
+
+.ax-bg-opacity-50 {
+  background-color: color-mix(in srgb, currentColor 50%, transparent);
+}
+
+.ax-bg-opacity-75 {
+  background-color: color-mix(in srgb, currentColor 75%, transparent);
+}
+
+.ax-bg-opacity-100 {
+  background-color: currentColor;
+}
