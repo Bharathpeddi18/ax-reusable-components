@@ -1,0 +1,20 @@
+.ax-app-footer{
+    position: fixed;
+    bottom: 0px;
+    height: var(--ax-app-footer-height);
+    background-color: white;
+    box-shadow: 4px 0px 8px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease-in-out;
+    display: grid;
+    place-items: center;
+    width: calc(100vw - var(--ax-app-nav-collapsed-width));
+    left: var(--ax-app-nav-collapsed-width);
+    z-index: 9998;
+}
+
+@media screen and (min-width: 1200px) {
+    .ax-app-nav-expanded~.ax-app-footer{
+        width: calc(100vw - var(--ax-app-nav-expanded-width));
+        left: var(--ax-app-nav-expanded-width);
+    }
+}
