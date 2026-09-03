@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import Link from 'next/link';
 
 import './menu.css';
@@ -10,8 +10,20 @@ import { IconMenu } from '@/assets/icons';
 
 
 const AppNavigation = () => {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [menuItems, setMenuItems] = useState<MenuItem[]>(menusConfig);
+
+  useLayoutEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1200) {
+        setIsExpanded(true);
+      } else {
+        setIsExpanded(false);
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleToggle = () => setIsExpanded(!isExpanded);
 
