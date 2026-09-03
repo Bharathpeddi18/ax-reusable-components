@@ -2,11 +2,23 @@
 
 import './ax-page-header.css';
 
-export const AXPageHeader = () => {
+export interface AXPageHeaderProps {
+  title?: string;
+  actions?: React.ReactNode;
+}
+
+export const AXPageHeader = ({
+  title = 'Page Header Left',
+  actions = 'Page Header Right',
+}: AXPageHeaderProps) => {
   return (
-    <header className='ax-page-header ax-flex ax-items-center ax-justify-between ax-p-3'>
-      <div className='ax-flex ax-items-center'>Page Header Left</div>
-      <div className='ax-flex ax-items-center'>Page Header Right</div>
+    <header className="ax-page-header flex items-center justify-between px-6 py-3 bg-surface border-b border-default shadow-sm">
+      <div className="flex items-center text-lg font-semibold text-primary">
+        {title}
+      </div>
+      <div className="flex items-center gap-3 text-sm text-secondary">
+        {actions}
+      </div>
     </header>
   );
 };

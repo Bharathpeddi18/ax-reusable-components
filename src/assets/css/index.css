@@ -39,11 +39,14 @@
 @import url("./utility/display.css") layer(utilities);
 @import url("./utility/flex.css") layer(utilities);
 @import url("./utility/grid.css") layer(utilities);
-@import url("./utility/layout.css") layer(utilities);
+@import url("./utility/order.css") layer(utilities);
 @import url("./utility/positions.css") layer(utilities);
 @import url("./utility/spacing.css") layer(utilities);
 @import url("./utility/sizing.css") layer(utilities);
 @import url("./utility/typography.css") layer(utilities);
+@import url("./utility/font-style.css") layer(utilities);
+@import url("./utility/font-variants.css") layer(utilities);
+@import url("./utility/vertical-align.css") layer(utilities);
 @import url("./utility/buttons.css") layer(utilities);
 @import url("./utility/colors.css") layer(utilities);
 @import url("./utility/background.css") layer(utilities);
@@ -53,7 +56,7 @@
 @import url("./utility/shadows.css") layer(utilities);
 @import url("./utility/opacity.css") layer(utilities);
 @import url("./utility/filter.css") layer(utilities);
-@import url("./utility/effects.css") layer(utilities);
+@import url("./utility/mix-blend.css") layer(utilities);
 @import url("./utility/aspect-ratio.css") layer(utilities);
 @import url("./utility/object.css") layer(utilities);
 @import url("./utility/overflow.css") layer(utilities);
@@ -84,7 +87,6 @@
 @import url("./utility/white-space.css") layer(utilities);
 @import url("./utility/word-break.css") layer(utilities);
 @import url("./utility/list.css") layer(utilities);
-@import url("./utility/mix-blend.css") layer(utilities);
 @import url("./utility/accent.css") layer(utilities);
 @import url("./utility/appearance.css") layer(utilities);
 @import url("./utility/caret.css") layer(utilities);
@@ -96,7 +98,7 @@
 @import url("./utility/will-change.css") layer(utilities);
 @import url("./utility/motion.css") layer(utilities);
 @import url("./utility/rtl.css") layer(utilities);
-/* @import url("./utility/dark-mode.css") layer(utilities); */
+@import url("./utility/dark-mode.css") layer(utilities);
 @import url("./utility/print.css") layer(utilities);
 @import url("./utility/accessibility.css") layer(utilities);
 

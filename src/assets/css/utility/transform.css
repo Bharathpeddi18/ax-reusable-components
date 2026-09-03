@@ -1,100 +1,190 @@
 /* ========================================
-   Transform Utilities (100% Tailwind Spec)
+   Transform Utilities (100% Tailwind Spec & Composable)
    ======================================== */
 
-.ax-transform { transform: translate(var(--ax-translate-x, 0), var(--ax-translate-y, 0)) rotate(var(--ax-rotate, 0)) skewX(var(--ax-skew-x, 0)) skewY(var(--ax-skew-y, 0)) scaleX(var(--ax-scale-x, 1)) scaleY(var(--ax-scale-y, 1)); }
-.ax-transform-cpu { transform: translate(var(--ax-translate-x, 0), var(--ax-translate-y, 0)) rotate(var(--ax-rotate, 0)) skewX(var(--ax-skew-x, 0)) skewY(var(--ax-skew-y, 0)) scaleX(var(--ax-scale-x, 1)) scaleY(var(--ax-scale-y, 1)); }
-.ax-transform-gpu { transform: translate3d(var(--ax-translate-x, 0), var(--ax-translate-y, 0), 0) rotate(var(--ax-rotate, 0)) skewX(var(--ax-skew-x, 0)) skewY(var(--ax-skew-y, 0)) scaleX(var(--ax-scale-x, 1)) scaleY(var(--ax-scale-y, 1)); }
-.ax-transform-none { transform: none; }
+:root {
+  --ax-translate-x: 0px;
+  --ax-translate-y: 0px;
+  --ax-rotate: 0deg;
+  --ax-skew-x: 0deg;
+  --ax-skew-y: 0deg;
+  --ax-scale-x: 1;
+  --ax-scale-y: 1;
+}
+
+.ax-transform {
+  transform: translate(var(--ax-translate-x, 0), var(--ax-translate-y, 0)) rotate(var(--ax-rotate, 0)) skewX(var(--ax-skew-x, 0)) skewY(var(--ax-skew-y, 0)) scaleX(var(--ax-scale-x, 1)) scaleY(var(--ax-scale-y, 1));
+}
+
+.ax-transform-cpu {
+  transform: translate(var(--ax-translate-x, 0), var(--ax-translate-y, 0)) rotate(var(--ax-rotate, 0)) skewX(var(--ax-skew-x, 0)) skewY(var(--ax-skew-y, 0)) scaleX(var(--ax-scale-x, 1)) scaleY(var(--ax-scale-y, 1));
+}
+
+.ax-transform-gpu {
+  transform: translate3d(var(--ax-translate-x, 0), var(--ax-translate-y, 0), 0) rotate(var(--ax-rotate, 0)) skewX(var(--ax-skew-x, 0)) skewY(var(--ax-skew-y, 0)) scaleX(var(--ax-scale-x, 1)) scaleY(var(--ax-scale-y, 1));
+}
+
+.ax-transform-none {
+  transform: none;
+  scale: none;
+  rotate: none;
+  translate: none;
+}
 
 /* ----------------------------------------
    Scale
    ---------------------------------------- */
 
-.ax-scale-0 { transform: scale(0); }
-.ax-scale-50 { transform: scale(0.5); }
-.ax-scale-75 { transform: scale(0.75); }
-.ax-scale-90 { transform: scale(0.9); }
-.ax-scale-95 { transform: scale(0.95); }
-.ax-scale-100 { transform: scale(1); }
-.ax-scale-105 { transform: scale(1.05); }
-.ax-scale-110 { transform: scale(1.1); }
-.ax-scale-125 { transform: scale(1.25); }
-.ax-scale-150 { transform: scale(1.5); }
+.ax-scale-0 { --ax-scale-x: 0; --ax-scale-y: 0; scale: 0; }
+.ax-scale-50 { --ax-scale-x: 0.5; --ax-scale-y: 0.5; scale: 0.5; }
+.ax-scale-75 { --ax-scale-x: 0.75; --ax-scale-y: 0.75; scale: 0.75; }
+.ax-scale-90 { --ax-scale-x: 0.9; --ax-scale-y: 0.9; scale: 0.9; }
+.ax-scale-95 { --ax-scale-x: 0.95; --ax-scale-y: 0.95; scale: 0.95; }
+.ax-scale-100 { --ax-scale-x: 1; --ax-scale-y: 1; scale: 1; }
+.ax-scale-105 { --ax-scale-x: 1.05; --ax-scale-y: 1.05; scale: 1.05; }
+.ax-scale-110 { --ax-scale-x: 1.1; --ax-scale-y: 1.1; scale: 1.1; }
+.ax-scale-125 { --ax-scale-x: 1.25; --ax-scale-y: 1.25; scale: 1.25; }
+.ax-scale-150 { --ax-scale-x: 1.5; --ax-scale-y: 1.5; scale: 1.5; }
 
-.ax-scale-x-0 { transform: scaleX(0); }
-.ax-scale-x-50 { transform: scaleX(0.5); }
-.ax-scale-x-75 { transform: scaleX(0.75); }
-.ax-scale-x-90 { transform: scaleX(0.9); }
-.ax-scale-x-95 { transform: scaleX(0.95); }
-.ax-scale-x-100 { transform: scaleX(1); }
-.ax-scale-x-105 { transform: scaleX(1.05); }
-.ax-scale-x-110 { transform: scaleX(1.1); }
-.ax-scale-x-125 { transform: scaleX(1.25); }
-.ax-scale-x-150 { transform: scaleX(1.5); }
+.ax-scale-x-0 { --ax-scale-x: 0; scale: 0 var(--ax-scale-y, 1); }
+.ax-scale-x-50 { --ax-scale-x: 0.5; scale: 0.5 var(--ax-scale-y, 1); }
+.ax-scale-x-75 { --ax-scale-x: 0.75; scale: 0.75 var(--ax-scale-y, 1); }
+.ax-scale-x-90 { --ax-scale-x: 0.9; scale: 0.9 var(--ax-scale-y, 1); }
+.ax-scale-x-95 { --ax-scale-x: 0.95; scale: 0.95 var(--ax-scale-y, 1); }
+.ax-scale-x-100 { --ax-scale-x: 1; scale: 1 var(--ax-scale-y, 1); }
+.ax-scale-x-105 { --ax-scale-x: 1.05; scale: 1.05 var(--ax-scale-y, 1); }
+.ax-scale-x-110 { --ax-scale-x: 1.1; scale: 1.1 var(--ax-scale-y, 1); }
+.ax-scale-x-125 { --ax-scale-x: 1.25; scale: 1.25 var(--ax-scale-y, 1); }
+.ax-scale-x-150 { --ax-scale-x: 1.5; scale: 1.5 var(--ax-scale-y, 1); }
 
-.ax-scale-y-0 { transform: scaleY(0); }
-.ax-scale-y-50 { transform: scaleY(0.5); }
-.ax-scale-y-75 { transform: scaleY(0.75); }
-.ax-scale-y-90 { transform: scaleY(0.9); }
-.ax-scale-y-95 { transform: scaleY(0.95); }
-.ax-scale-y-100 { transform: scaleY(1); }
-.ax-scale-y-105 { transform: scaleY(1.05); }
-.ax-scale-y-110 { transform: scaleY(1.1); }
-.ax-scale-y-125 { transform: scaleY(1.25); }
-.ax-scale-y-150 { transform: scaleY(1.5); }
+.ax-scale-y-0 { --ax-scale-y: 0; scale: var(--ax-scale-x, 1) 0; }
+.ax-scale-y-50 { --ax-scale-y: 0.5; scale: var(--ax-scale-x, 1) 0.5; }
+.ax-scale-y-75 { --ax-scale-y: 0.75; scale: var(--ax-scale-x, 1) 0.75; }
+.ax-scale-y-90 { --ax-scale-y: 0.9; scale: var(--ax-scale-x, 1) 0.9; }
+.ax-scale-y-95 { --ax-scale-y: 0.95; scale: var(--ax-scale-x, 1) 0.95; }
+.ax-scale-y-100 { --ax-scale-y: 1; scale: var(--ax-scale-x, 1) 1; }
+.ax-scale-y-105 { --ax-scale-y: 1.05; scale: var(--ax-scale-x, 1) 1.05; }
+.ax-scale-y-110 { --ax-scale-y: 1.1; scale: var(--ax-scale-x, 1) 1.1; }
+.ax-scale-y-125 { --ax-scale-y: 1.25; scale: var(--ax-scale-x, 1) 1.25; }
+.ax-scale-y-150 { --ax-scale-y: 1.5; scale: var(--ax-scale-x, 1) 1.5; }
 
 /* ----------------------------------------
    Rotate
    ---------------------------------------- */
 
-.ax-rotate-0 { transform: rotate(0deg); }
-.ax-rotate-1 { transform: rotate(1deg); }
-.ax-rotate-2 { transform: rotate(2deg); }
-.ax-rotate-3 { transform: rotate(3deg); }
-.ax-rotate-6 { transform: rotate(6deg); }
-.ax-rotate-12 { transform: rotate(12deg); }
-.ax-rotate-45 { transform: rotate(45deg); }
-.ax-rotate-90 { transform: rotate(90deg); }
-.ax-rotate-180 { transform: rotate(180deg); }
-.ax--rotate-180 { transform: rotate(-180deg); }
-.ax--rotate-90 { transform: rotate(-90deg); }
-.ax--rotate-45 { transform: rotate(-45deg); }
-.ax--rotate-12 { transform: rotate(-12deg); }
-.ax--rotate-6 { transform: rotate(-6deg); }
-.ax--rotate-3 { transform: rotate(-3deg); }
-.ax--rotate-2 { transform: rotate(-2deg); }
-.ax--rotate-1 { transform: rotate(-1deg); }
+.ax-rotate-0 { --ax-rotate: 0deg; rotate: 0deg; }
+.ax-rotate-1 { --ax-rotate: 1deg; rotate: 1deg; }
+.ax-rotate-2 { --ax-rotate: 2deg; rotate: 2deg; }
+.ax-rotate-3 { --ax-rotate: 3deg; rotate: 3deg; }
+.ax-rotate-6 { --ax-rotate: 6deg; rotate: 6deg; }
+.ax-rotate-12 { --ax-rotate: 12deg; rotate: 12deg; }
+.ax-rotate-45 { --ax-rotate: 45deg; rotate: 45deg; }
+.ax-rotate-90 { --ax-rotate: 90deg; rotate: 90deg; }
+.ax-rotate-180 { --ax-rotate: 180deg; rotate: 180deg; }
+.ax--rotate-180 { --ax-rotate: -180deg; rotate: -180deg; }
+.ax--rotate-90 { --ax-rotate: -90deg; rotate: -90deg; }
+.ax--rotate-45 { --ax-rotate: -45deg; rotate: -45deg; }
+.ax--rotate-12 { --ax-rotate: -12deg; rotate: -12deg; }
+.ax--rotate-6 { --ax-rotate: -6deg; rotate: -6deg; }
+.ax--rotate-3 { --ax-rotate: -3deg; rotate: -3deg; }
+.ax--rotate-2 { --ax-rotate: -2deg; rotate: -2deg; }
+.ax--rotate-1 { --ax-rotate: -1deg; rotate: -1deg; }
 
 /* ----------------------------------------
    Translate X / Y
    ---------------------------------------- */
 
-.ax-translate-x-0 { transform: translateX(0px); }
-.ax-translate-x-px { transform: translateX(1px); }
-.ax-translate-x-1 { transform: translateX(var(--ax-space-1)); }
-.ax-translate-x-2 { transform: translateX(var(--ax-space-2)); }
-.ax-translate-x-3 { transform: translateX(var(--ax-space-3)); }
-.ax-translate-x-4 { transform: translateX(var(--ax-space-4)); }
-.ax-translate-x-6 { transform: translateX(var(--ax-space-6)); }
-.ax-translate-x-8 { transform: translateX(var(--ax-space-8)); }
-.ax-translate-x-full { transform: translateX(100%); }
-.ax-translate-x-1\/2 { transform: translateX(50%); }
-.ax--translate-x-full { transform: translateX(-100%); }
-.ax--translate-x-1\/2 { transform: translateX(-50%); }
+.ax-translate-x-0 { --ax-translate-x: 0px; translate: 0px var(--ax-translate-y, 0px); }
+.ax-translate-x-px { --ax-translate-x: 1px; translate: 1px var(--ax-translate-y, 0px); }
+.ax-translate-x-0-5 { --ax-translate-x: var(--ax-space-0-5); translate: var(--ax-space-0-5) var(--ax-translate-y, 0px); }
+.ax-translate-x-1 { --ax-translate-x: var(--ax-space-1); translate: var(--ax-space-1) var(--ax-translate-y, 0px); }
+.ax-translate-x-1-5 { --ax-translate-x: var(--ax-space-1-5); translate: var(--ax-space-1-5) var(--ax-translate-y, 0px); }
+.ax-translate-x-2 { --ax-translate-x: var(--ax-space-2); translate: var(--ax-space-2) var(--ax-translate-y, 0px); }
+.ax-translate-x-2-5 { --ax-translate-x: var(--ax-space-2-5); translate: var(--ax-space-2-5) var(--ax-translate-y, 0px); }
+.ax-translate-x-3 { --ax-translate-x: var(--ax-space-3); translate: var(--ax-space-3) var(--ax-translate-y, 0px); }
+.ax-translate-x-3-5 { --ax-translate-x: var(--ax-space-3-5); translate: var(--ax-space-3-5) var(--ax-translate-y, 0px); }
+.ax-translate-x-4 { --ax-translate-x: var(--ax-space-4); translate: var(--ax-space-4) var(--ax-translate-y, 0px); }
+.ax-translate-x-5 { --ax-translate-x: var(--ax-space-5); translate: var(--ax-space-5) var(--ax-translate-y, 0px); }
+.ax-translate-x-6 { --ax-translate-x: var(--ax-space-6); translate: var(--ax-space-6) var(--ax-translate-y, 0px); }
+.ax-translate-x-8 { --ax-translate-x: var(--ax-space-8); translate: var(--ax-space-8) var(--ax-translate-y, 0px); }
+.ax-translate-x-10 { --ax-translate-x: var(--ax-space-10); translate: var(--ax-space-10) var(--ax-translate-y, 0px); }
+.ax-translate-x-12 { --ax-translate-x: var(--ax-space-12); translate: var(--ax-space-12) var(--ax-translate-y, 0px); }
+.ax-translate-x-16 { --ax-translate-x: var(--ax-space-16); translate: var(--ax-space-16) var(--ax-translate-y, 0px); }
+.ax-translate-x-full { --ax-translate-x: 100%; translate: 100% var(--ax-translate-y, 0px); }
+.ax-translate-x-1\/2 { --ax-translate-x: 50%; translate: 50% var(--ax-translate-y, 0px); }
+.ax-translate-x-1\/3 { --ax-translate-x: 33.333333%; translate: 33.333333% var(--ax-translate-y, 0px); }
+.ax-translate-x-2\/3 { --ax-translate-x: 66.666667%; translate: 66.666667% var(--ax-translate-y, 0px); }
+.ax-translate-x-1\/4 { --ax-translate-x: 25%; translate: 25% var(--ax-translate-y, 0px); }
+.ax-translate-x-3\/4 { --ax-translate-x: 75%; translate: 75% var(--ax-translate-y, 0px); }
+.ax--translate-x-full { --ax-translate-x: -100%; translate: -100% var(--ax-translate-y, 0px); }
+.ax--translate-x-1\/2 { --ax-translate-x: -50%; translate: -50% var(--ax-translate-y, 0px); }
+.ax--translate-x-1\/3 { --ax-translate-x: -33.333333%; translate: -33.333333% var(--ax-translate-y, 0px); }
+.ax--translate-x-2\/3 { --ax-translate-x: -66.666667%; translate: -66.666667% var(--ax-translate-y, 0px); }
+.ax--translate-x-1\/4 { --ax-translate-x: -25%; translate: -25% var(--ax-translate-y, 0px); }
+.ax--translate-x-3\/4 { --ax-translate-x: -75%; translate: -75% var(--ax-translate-y, 0px); }
+.ax--translate-x-1 { --ax-translate-x: calc(var(--ax-space-1) * -1); translate: calc(var(--ax-space-1) * -1) var(--ax-translate-y, 0px); }
+.ax--translate-x-2 { --ax-translate-x: calc(var(--ax-space-2) * -1); translate: calc(var(--ax-space-2) * -1) var(--ax-translate-y, 0px); }
+.ax--translate-x-4 { --ax-translate-x: calc(var(--ax-space-4) * -1); translate: calc(var(--ax-space-4) * -1) var(--ax-translate-y, 0px); }
 
-.ax-translate-y-0 { transform: translateY(0px); }
-.ax-translate-y-px { transform: translateY(1px); }
-.ax-translate-y-1 { transform: translateY(var(--ax-space-1)); }
-.ax-translate-y-2 { transform: translateY(var(--ax-space-2)); }
-.ax-translate-y-3 { transform: translateY(var(--ax-space-3)); }
-.ax-translate-y-4 { transform: translateY(var(--ax-space-4)); }
-.ax-translate-y-6 { transform: translateY(var(--ax-space-6)); }
-.ax-translate-y-8 { transform: translateY(var(--ax-space-8)); }
-.ax-translate-y-full { transform: translateY(100%); }
-.ax-translate-y-1\/2 { transform: translateY(50%); }
-.ax--translate-y-full { transform: translateY(-100%); }
-.ax--translate-y-1\/2 { transform: translateY(-50%); }
+.ax-translate-y-0 { --ax-translate-y: 0px; translate: var(--ax-translate-x, 0px) 0px; }
+.ax-translate-y-px { --ax-translate-y: 1px; translate: var(--ax-translate-x, 0px) 1px; }
+.ax-translate-y-0-5 { --ax-translate-y: var(--ax-space-0-5); translate: var(--ax-translate-x, 0px) var(--ax-space-0-5); }
+.ax-translate-y-1 { --ax-translate-y: var(--ax-space-1); translate: var(--ax-translate-x, 0px) var(--ax-space-1); }
+.ax-translate-y-1-5 { --ax-translate-y: var(--ax-space-1-5); translate: var(--ax-translate-x, 0px) var(--ax-space-1-5); }
+.ax-translate-y-2 { --ax-translate-y: var(--ax-space-2); translate: var(--ax-space-2) var(--ax-translate-y, 0px); }
+.ax-translate-y-2-5 { --ax-translate-y: var(--ax-space-2-5); translate: var(--ax-translate-x, 0px) var(--ax-space-2-5); }
+.ax-translate-y-3 { --ax-translate-y: var(--ax-space-3); translate: var(--ax-space-3) var(--ax-translate-y, 0px); }
+.ax-translate-y-3-5 { --ax-translate-y: var(--ax-space-3-5); translate: var(--ax-space-3-5) var(--ax-translate-y, 0px); }
+.ax-translate-y-4 { --ax-translate-y: var(--ax-space-4); translate: var(--ax-translate-x, 0px) var(--ax-space-4); }
+.ax-translate-y-5 { --ax-translate-y: var(--ax-space-5); translate: var(--ax-space-5) var(--ax-translate-y, 0px); }
+.ax-translate-y-6 { --ax-translate-y: var(--ax-space-6); translate: var(--ax-translate-x, 0px) var(--ax-space-6); }
+.ax-translate-y-8 { --ax-translate-y: var(--ax-space-8); translate: var(--ax-space-8) var(--ax-translate-y, 0px); }
+.ax-translate-y-10 { --ax-translate-y: var(--ax-space-10); translate: var(--ax-space-10) var(--ax-translate-y, 0px); }
+.ax-translate-y-12 { --ax-translate-y: var(--ax-space-12); translate: var(--ax-space-12) var(--ax-translate-y, 0px); }
+.ax-translate-y-16 { --ax-translate-y: var(--ax-space-16); translate: var(--ax-space-16) var(--ax-translate-y, 0px); }
+.ax-translate-y-full { --ax-translate-y: 100%; translate: var(--ax-translate-x, 0px) 100%; }
+.ax-translate-y-1\/2 { --ax-translate-y: 50%; translate: var(--ax-translate-x, 0px) 50%; }
+.ax-translate-y-1\/3 { --ax-translate-y: 33.333333%; translate: var(--ax-translate-x, 0px) 33.333333%; }
+.ax-translate-y-2\/3 { --ax-translate-y: 66.666667%; translate: var(--ax-translate-x, 0px) 66.666667%; }
+.ax-translate-y-1\/4 { --ax-translate-y: 25%; translate: var(--ax-translate-x, 0px) 25%; }
+.ax-translate-y-3\/4 { --ax-translate-y: 75%; translate: var(--ax-translate-x, 0px) 75%; }
+.ax--translate-y-full { --ax-translate-y: -100%; translate: var(--ax-translate-x, 0px) -100%; }
+.ax--translate-y-1\/2 { --ax-translate-y: -50%; translate: var(--ax-translate-x, 0px) -50%; }
+.ax--translate-y-1\/3 { --ax-translate-y: -33.333333%; translate: var(--ax-translate-x, 0px) -33.333333%; }
+.ax--translate-y-2\/3 { --ax-translate-y: -66.666667%; translate: var(--ax-translate-x, 0px) -66.666667%; }
+.ax--translate-y-1\/4 { --ax-translate-y: -25%; translate: var(--ax-translate-x, 0px) -25%; }
+.ax--translate-y-3\/4 { --ax-translate-y: -75%; translate: var(--ax-translate-x, 0px) -75%; }
+.ax--translate-y-1 { --ax-translate-y: calc(var(--ax-space-1) * -1); translate: var(--ax-translate-x, 0px) calc(var(--ax-space-1) * -1); }
+.ax--translate-y-2 { --ax-translate-y: calc(var(--ax-space-2) * -1); translate: var(--ax-translate-x, 0px) calc(var(--ax-space-2) * -1); }
+.ax--translate-y-4 { --ax-translate-y: calc(var(--ax-space-4) * -1); translate: var(--ax-translate-x, 0px) calc(var(--ax-space-4) * -1); }
+
+/* ----------------------------------------
+   Skew
+   ---------------------------------------- */
+
+.ax-skew-x-0 { --ax-skew-x: 0deg; }
+.ax-skew-x-1 { --ax-skew-x: 1deg; }
+.ax-skew-x-2 { --ax-skew-x: 2deg; }
+.ax-skew-x-3 { --ax-skew-x: 3deg; }
+.ax-skew-x-6 { --ax-skew-x: 6deg; }
+.ax-skew-x-12 { --ax-skew-x: 12deg; }
+.ax--skew-x-12 { --ax-skew-x: -12deg; }
+.ax--skew-x-6 { --ax-skew-x: -6deg; }
+.ax--skew-x-3 { --ax-skew-x: -3deg; }
+.ax--skew-x-2 { --ax-skew-x: -2deg; }
+.ax--skew-x-1 { --ax-skew-x: -1deg; }
+
+.ax-skew-y-0 { --ax-skew-y: 0deg; }
+.ax-skew-y-1 { --ax-skew-y: 1deg; }
+.ax-skew-y-2 { --ax-skew-y: 2deg; }
+.ax-skew-y-3 { --ax-skew-y: 3deg; }
+.ax-skew-y-6 { --ax-skew-y: 6deg; }
+.ax-skew-y-12 { --ax-skew-y: 12deg; }
+.ax--skew-y-12 { --ax-skew-y: -12deg; }
+.ax--skew-y-6 { --ax-skew-y: -6deg; }
+.ax--skew-y-3 { --ax-skew-y: -3deg; }
+.ax--skew-y-2 { --ax-skew-y: -2deg; }
+.ax--skew-y-1 { --ax-skew-y: -1deg; }
 
 /* ----------------------------------------
    Transform Origin

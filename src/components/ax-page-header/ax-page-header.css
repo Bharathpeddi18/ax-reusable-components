@@ -1,8 +1,13 @@
-.ax-page-header{
-    height: var(--ax-page-header-height);
-    position: sticky;
-    top: 0;
-    box-shadow: var(--ax-g-box-shadow);
-    background-color: var(--ax-color-white);
-    z-index: 9997;
+/* ==========================================================================
+   Page Header Component Styles
+   ========================================================================== */
+
+.ax-page-header {
+  height: var(--ax-page-header-height);
+  position: sticky;
+  top: 0;
+  box-shadow: var(--ax-shadow-sm);
+  background-color: var(--ax-color-surface);
+  border-bottom: 1px solid var(--ax-color-border);
+  z-index: var(--ax-z-index-layer-2, 1050);
 }

@@ -1,53 +1,62 @@
-.ax-menu {
-
-    --ax-menu-bg-color: var(--ax-color-primary);
-    --ax-menu-fg-color: var(--ax-color-white);
-    --ax-menu-item-hover-bg-color: var(--ax-color-secondary);
-    --ax-menu-item-hover-fg-color: var(--ax-color-white);
-    --ax-menu-item-active-bg-color: var(--ax-color-accent);
-    --ax-menu-item-active-fg-color: var(--ax-color-white);
-
-    --ax-menu-header-height: var(--ax-header-height);
-    --ax-menu-footer-height: var(--ax-footer-height);
-}
+/* ==========================================================================
+   Sidebar Navigation Menu Shell Styles
+   ========================================================================== */
 
 .ax-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: var(--ax-menu-width);
-    background-color: var(--ax-menu-bg-color);
-    transition: var(--ax-g-transition-all);
-    box-shadow: var(--ax-g-box-shadow);
-    z-index: 9999;
-    user-select: none;
+  --ax-menu-bg-color: var(--ax-color-primary);
+  --ax-menu-fg-color: var(--ax-color-white);
+  --ax-menu-item-hover-bg-color: var(--ax-color-primary-hover);
+  --ax-menu-item-hover-fg-color: var(--ax-color-white);
+  --ax-menu-item-active-bg-color: var(--ax-color-primary-active);
+  --ax-menu-item-active-fg-color: var(--ax-color-white);
+
+  --ax-menu-header-height: var(--ax-header-height);
+  --ax-menu-footer-height: var(--ax-footer-height);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: var(--ax-menu-width);
+  background-color: var(--ax-menu-bg-color);
+  box-shadow: var(--ax-shadow-md);
+  z-index: var(--ax-z-index-sticky, 1000);
+  user-select: none;
+  transition: width var(--ax-transition-duration, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
 }
 
 .ax-menu-header {
-    height: var(--ax-menu-header-height);
+  height: var(--ax-menu-header-height);
+  flex-shrink: 0;
 }
 
 .ax-menu-body {
-    height: calc(100% - var(--ax-menu-header-height) - var(--ax-menu-footer-height));
-    overflow: auto;
+  height: calc(100% - var(--ax-menu-header-height) - var(--ax-menu-footer-height));
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .ax-menu-footer {
-    height: var(--ax-menu-footer-height);
+  height: var(--ax-menu-footer-height);
+  flex-shrink: 0;
 }
 
 .ax-menu-toggle {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: right 0.8s ease-in-out;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 4px;
+  border-radius: var(--ax-radius-sm);
+  transition: right var(--ax-transition-duration, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ax-menu-collapsed .ax-menu-toggle {
-    right: -32px;
+  right: -32px;
 }
 
 .ax-menu-expanded .ax-menu-toggle {
-    right: 8px;
+  right: 8px;
 }

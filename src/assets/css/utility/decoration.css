@@ -1,29 +1,28 @@
 /* ========================================
-   Text Decoration Utilities
+   Text Decoration Utilities (Tailwind & AX Spec)
    ======================================== */
 
 /* ----------------------------------------
    Text Decoration Line
    ---------------------------------------- */
 
-.ax-no-underline,
-.ax-text-decoration-none {
+.no-underline, .ax-no-underline, .ax-text-decoration-none {
   text-decoration-line: none;
 }
 
-.ax-underline {
+.underline, .ax-underline {
   text-decoration-line: underline;
 }
 
-.ax-overline {
+.overline, .ax-overline {
   text-decoration-line: overline;
 }
 
-.ax-line-through {
+.line-through, .ax-line-through {
   text-decoration-line: line-through;
 }
 
-.ax-underline-overline {
+.underline-overline, .ax-underline-overline {
   text-decoration-line: underline overline;
 }
 
@@ -31,90 +30,37 @@
    Text Decoration Style
    ---------------------------------------- */
 
-.ax-decoration-solid {
-  text-decoration-style: solid;
-}
-
-.ax-decoration-double {
-  text-decoration-style: double;
-}
-
-.ax-decoration-dotted {
-  text-decoration-style: dotted;
-}
-
-.ax-decoration-dashed {
-  text-decoration-style: dashed;
-}
-
-.ax-decoration-wavy {
-  text-decoration-style: wavy;
-}
+.decoration-solid, .ax-decoration-solid { text-decoration-style: solid; }
+.decoration-double, .ax-decoration-double { text-decoration-style: double; }
+.decoration-dotted, .ax-decoration-dotted { text-decoration-style: dotted; }
+.decoration-dashed, .ax-decoration-dashed { text-decoration-style: dashed; }
+.decoration-wavy, .ax-decoration-wavy { text-decoration-style: wavy; }
 
 /* ----------------------------------------
    Text Decoration Thickness
    ---------------------------------------- */
 
-.ax-decoration-auto {
-  text-decoration-thickness: auto;
-}
-
-.ax-decoration-from-font {
-  text-decoration-thickness: from-font;
-}
-
-.ax-decoration-1 {
-  text-decoration-thickness: 1px;
-}
-
-.ax-decoration-2 {
-  text-decoration-thickness: 2px;
-}
-
-.ax-decoration-4 {
-  text-decoration-thickness: 4px;
-}
+.decoration-auto, .ax-decoration-auto { text-decoration-thickness: auto; }
+.decoration-from-font, .ax-decoration-from-font { text-decoration-thickness: from-font; }
+.decoration-1, .ax-decoration-1 { text-decoration-thickness: 1px; }
+.decoration-2, .ax-decoration-2 { text-decoration-thickness: 2px; }
+.decoration-4, .ax-decoration-4 { text-decoration-thickness: 4px; }
 
 /* ----------------------------------------
    Text Underline Offset
    ---------------------------------------- */
 
-.ax-underline-offset-auto {
-  text-underline-offset: auto;
-}
-
-.ax-underline-offset-1 {
-  text-underline-offset: 1px;
-}
-
-.ax-underline-offset-2 {
-  text-underline-offset: 2px;
-}
-
-.ax-underline-offset-4 {
-  text-underline-offset: 4px;
-}
-
-.ax-underline-offset-8 {
-  text-underline-offset: 8px;
-}
+.underline-offset-auto, .ax-underline-offset-auto { text-underline-offset: auto; }
+.underline-offset-1, .ax-underline-offset-1 { text-underline-offset: 1px; }
+.underline-offset-2, .ax-underline-offset-2 { text-underline-offset: 2px; }
+.underline-offset-4, .ax-underline-offset-4 { text-underline-offset: 4px; }
+.underline-offset-8, .ax-underline-offset-8 { text-underline-offset: 8px; }
 
 /* ----------------------------------------
    Text Decoration Color
    ---------------------------------------- */
 
-.ax-decoration-primary {
-  text-decoration-color: var(--ax-color-primary);
-}
-
-.ax-decoration-secondary {
-  text-decoration-color: var(--ax-color-secondary);
-}
-
-.ax-decoration-current {
-  text-decoration-color: currentColor;
-}
-
-.ax-decoration-transparent {
-  text-decoration-color: transparent;
-}
+.decoration-primary, .ax-decoration-primary { text-decoration-color: var(--ax-color-primary); }
+.decoration-secondary, .ax-decoration-secondary { text-decoration-color: var(--ax-color-secondary); }
+.decoration-current, .ax-decoration-current { text-decoration-color: currentColor; }
+.decoration-transparent, .ax-decoration-transparent { text-decoration-color: transparent; }

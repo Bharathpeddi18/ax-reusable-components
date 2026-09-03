@@ -1,308 +1,226 @@
 /* ========================================
-   State Utilities
+   State Utilities (100% Tailwind Spec)
    ======================================== */
 
 /* ----------------------------------------
    Hover - Effects & Transforms
    ---------------------------------------- */
 
-.ax-hover-opacity:hover,
-.hover\:ax-opacity-80:hover {
-  opacity: var(--ax-state-hover-opacity, 0.8);
-}
+.hover\:opacity-100:hover, .hover\:ax-opacity-100:hover { opacity: 1; }
+.hover\:opacity-90:hover, .hover\:ax-opacity-90:hover { opacity: 0.9; }
+.hover\:opacity-80:hover, .hover\:ax-opacity-80:hover, .ax-hover-opacity:hover { opacity: 0.8; }
+.hover\:opacity-75:hover, .hover\:ax-opacity-75:hover { opacity: 0.75; }
+.hover\:opacity-50:hover, .hover\:ax-opacity-50:hover { opacity: 0.5; }
+.hover\:opacity-0:hover, .hover\:ax-opacity-0:hover { opacity: 0; }
 
-.hover\:ax-opacity-100:hover {
-  opacity: 1;
-}
+.hover\:underline:hover, .hover\:ax-underline:hover, .ax-hover-underline:hover { text-decoration: underline; }
+.hover\:no-underline:hover, .hover\:ax-no-underline:hover, .ax-hover-no-underline:hover { text-decoration: none; }
 
-.hover\:ax-opacity-50:hover {
-  opacity: 0.5;
-}
+.hover\:scale-105:hover, .hover\:ax-scale-105:hover, .ax-hover-scale-105:hover { scale: 1.05; }
+.hover\:scale-110:hover, .hover\:ax-scale-110:hover { scale: 1.1; }
+.hover\:scale-100:hover, .hover\:ax-scale-100:hover { scale: 1; }
+.hover\:scale-95:hover, .hover\:ax-scale-95:hover { scale: 0.95; }
 
-.ax-hover-underline:hover,
-.hover\:ax-underline:hover {
-  text-decoration: underline;
-}
-
-.ax-hover-no-underline:hover,
-.hover\:ax-no-underline:hover {
-  text-decoration: none;
-}
-
-.ax-hover-scale-105:hover,
-.hover\:ax-scale-105:hover {
-  transform: scale(1.05);
-}
-
-.hover\:ax-scale-100:hover {
-  transform: scale(1);
-}
-
-.hover\:ax-scale-95:hover {
-  transform: scale(0.95);
-}
+.hover\:translate-x-1:hover, .hover\:ax-translate-x-1:hover { translate: var(--ax-space-1) 0; }
+.hover\:translate-x-2:hover, .hover\:ax-translate-x-2:hover { translate: var(--ax-space-2) 0; }
+.hover\:-translate-y-1:hover, .hover\:ax--translate-y-1:hover { translate: 0 calc(var(--ax-space-1) * -1); }
+.hover\:-translate-y-2:hover, .hover\:ax--translate-y-2:hover { translate: 0 calc(var(--ax-space-2) * -1); }
 
 /* ----------------------------------------
    Hover - Background Colors
    ---------------------------------------- */
 
-.hover\:ax-bg-primary:hover {
-  background-color: var(--ax-color-primary-hover);
-}
+.hover\:bg-primary:hover, .hover\:ax-bg-primary:hover { background-color: var(--ax-color-primary-hover); }
+.hover\:bg-primary-hover:hover, .hover\:ax-bg-primary-hover:hover { background-color: var(--ax-color-primary-hover); }
+.hover\:bg-secondary:hover, .hover\:ax-bg-secondary:hover { background-color: var(--ax-color-secondary-hover); }
+.hover\:bg-accent:hover, .hover\:ax-bg-accent:hover { background-color: var(--ax-color-accent-hover); }
+.hover\:bg-surface:hover, .hover\:ax-bg-surface:hover { background-color: var(--ax-color-surface); }
+.hover\:bg-surface-secondary:hover, .hover\:ax-bg-surface-secondary:hover { background-color: var(--ax-color-surface-secondary); }
+.hover\:bg-surface-tertiary:hover, .hover\:ax-bg-surface-tertiary:hover { background-color: var(--ax-color-surface-tertiary); }
+.hover\:bg-success:hover, .hover\:ax-bg-success:hover { background-color: var(--ax-color-success-hover); }
+.hover\:bg-danger:hover, .hover\:ax-bg-danger:hover { background-color: var(--ax-color-danger-hover); }
+.hover\:bg-warning:hover, .hover\:ax-bg-warning:hover { background-color: var(--ax-color-warning-hover); }
+.hover\:bg-info:hover, .hover\:ax-bg-info:hover { background-color: var(--ax-color-info-hover); }
 
-.hover\:ax-bg-secondary:hover {
-  background-color: var(--ax-color-secondary-hover);
-}
-
-.hover\:ax-bg-surface:hover {
-  background-color: var(--ax-color-surface);
-}
-
-.hover\:ax-bg-surface-secondary:hover {
-  background-color: var(--ax-color-surface-secondary);
-}
-
-.hover\:ax-bg-surface-tertiary:hover {
-  background-color: var(--ax-color-surface-tertiary);
-}
-
-.hover\:ax-bg-success:hover {
-  background-color: var(--ax-color-success-hover);
-}
-
-.hover\:ax-bg-danger:hover {
-  background-color: var(--ax-color-danger-hover);
-}
-
-.hover\:ax-bg-warning:hover {
-  background-color: var(--ax-color-warning-hover);
-}
-
-.hover\:ax-bg-info:hover {
-  background-color: var(--ax-color-info-hover);
-}
-
-.hover\:ax-bg-gray-50:hover {
-  background-color: var(--ax-color-gray-50);
-}
-
-.hover\:ax-bg-gray-100:hover {
-  background-color: var(--ax-color-gray-100);
-}
-
-.hover\:ax-bg-gray-200:hover {
-  background-color: var(--ax-color-gray-200);
-}
-
-.hover\:ax-bg-transparent:hover {
-  background-color: transparent;
-}
+.hover\:bg-gray-50:hover, .hover\:ax-bg-gray-50:hover { background-color: var(--ax-color-gray-50); }
+.hover\:bg-gray-100:hover, .hover\:ax-bg-gray-100:hover { background-color: var(--ax-color-gray-100); }
+.hover\:bg-gray-200:hover, .hover\:ax-bg-gray-200:hover { background-color: var(--ax-color-gray-200); }
+.hover\:bg-gray-300:hover, .hover\:ax-bg-gray-300:hover { background-color: var(--ax-color-gray-300); }
+.hover\:bg-gray-700:hover, .hover\:ax-bg-gray-700:hover { background-color: var(--ax-color-gray-700); }
+.hover\:bg-gray-800:hover, .hover\:ax-bg-gray-800:hover { background-color: var(--ax-color-gray-800); }
+.hover\:bg-gray-900:hover, .hover\:ax-bg-gray-900:hover { background-color: var(--ax-color-gray-900); }
+.hover\:bg-white:hover, .hover\:ax-bg-white:hover { background-color: var(--ax-color-white); }
+.hover\:bg-black:hover, .hover\:ax-bg-black:hover { background-color: var(--ax-color-black); }
+.hover\:bg-transparent:hover, .hover\:ax-bg-transparent:hover { background-color: transparent; }
 
 /* ----------------------------------------
    Hover - Text Colors
    ---------------------------------------- */
 
-.hover\:ax-text-primary:hover {
-  color: var(--ax-color-primary-hover);
-}
-
-.hover\:ax-text-secondary:hover {
-  color: var(--ax-color-secondary-hover);
-}
-
-.hover\:ax-text-danger:hover {
-  color: var(--ax-color-danger-hover);
-}
-
-.hover\:ax-text-success:hover {
-  color: var(--ax-color-success-hover);
-}
-
-.hover\:ax-text-white:hover {
-  color: var(--ax-color-white);
-}
-
-.hover\:ax-text-black:hover {
-  color: var(--ax-color-black);
-}
-
-.hover\:ax-text-muted:hover {
-  color: var(--ax-color-text-muted);
-}
+.hover\:text-primary:hover, .hover\:ax-text-primary:hover { color: var(--ax-color-primary-hover); }
+.hover\:text-secondary:hover, .hover\:ax-text-secondary:hover { color: var(--ax-color-secondary-hover); }
+.hover\:text-accent:hover, .hover\:ax-text-accent:hover { color: var(--ax-color-accent-hover); }
+.hover\:text-danger:hover, .hover\:ax-text-danger:hover { color: var(--ax-color-danger-hover); }
+.hover\:text-success:hover, .hover\:ax-text-success:hover { color: var(--ax-color-success-hover); }
+.hover\:text-warning:hover, .hover\:ax-text-warning:hover { color: var(--ax-color-warning-hover); }
+.hover\:text-info:hover, .hover\:ax-text-info:hover { color: var(--ax-color-info-hover); }
+.hover\:text-white:hover, .hover\:ax-text-white:hover { color: var(--ax-color-white); }
+.hover\:text-black:hover, .hover\:ax-text-black:hover { color: var(--ax-color-black); }
+.hover\:text-muted:hover, .hover\:ax-text-muted:hover { color: var(--ax-color-text-muted); }
+.hover\:text-gray-900:hover, .hover\:ax-text-gray-900:hover { color: var(--ax-color-gray-900); }
+.hover\:text-gray-700:hover, .hover\:ax-text-gray-700:hover { color: var(--ax-color-gray-700); }
+.hover\:text-gray-500:hover, .hover\:ax-text-gray-500:hover { color: var(--ax-color-gray-500); }
 
 /* ----------------------------------------
    Hover - Borders & Shadows
    ---------------------------------------- */
 
-.hover\:ax-border-primary:hover {
-  border-color: var(--ax-color-primary);
-}
+.hover\:border-primary:hover, .hover\:ax-border-primary:hover { border-color: var(--ax-color-primary); }
+.hover\:border-secondary:hover, .hover\:ax-border-secondary:hover { border-color: var(--ax-color-border-secondary); }
+.hover\:border-accent:hover, .hover\:ax-border-accent:hover { border-color: var(--ax-color-accent); }
+.hover\:border-gray-300:hover, .hover\:ax-border-gray-300:hover { border-color: var(--ax-color-gray-300); }
+.hover\:border-gray-400:hover, .hover\:ax-border-gray-400:hover { border-color: var(--ax-color-gray-400); }
+.hover\:border-transparent:hover, .hover\:ax-border-transparent:hover { border-color: transparent; }
 
-.hover\:ax-border-secondary:hover {
-  border-color: var(--ax-color-border-secondary);
-}
-
-.hover\:ax-shadow-sm:hover {
-  box-shadow: var(--ax-shadow-sm);
-}
-
-.hover\:ax-shadow-md:hover {
-  box-shadow: var(--ax-shadow-md);
-}
-
-.hover\:ax-shadow-lg:hover {
-  box-shadow: var(--ax-shadow-lg);
-}
-
-.hover\:ax-shadow-none:hover {
-  box-shadow: none;
-}
+.hover\:shadow-sm:hover, .hover\:ax-shadow-sm:hover { box-shadow: var(--ax-shadow-sm); }
+.hover\:shadow:hover, .hover\:ax-shadow:hover, .hover\:shadow-md:hover, .hover\:ax-shadow-md:hover { box-shadow: var(--ax-shadow-md); }
+.hover\:shadow-lg:hover, .hover\:ax-shadow-lg:hover { box-shadow: var(--ax-shadow-lg); }
+.hover\:shadow-xl:hover, .hover\:ax-shadow-xl:hover { box-shadow: var(--ax-shadow-xl); }
+.hover\:shadow-2xl:hover, .hover\:ax-shadow-2xl:hover { box-shadow: var(--ax-shadow-2xl); }
+.hover\:shadow-none:hover, .hover\:ax-shadow-none:hover { box-shadow: none; }
 
 /* ----------------------------------------
-   Focus
+   Focus & Focus Visible
    ---------------------------------------- */
 
-.ax-focus-outline:focus,
-.focus\:ax-outline:focus {
+.focus\:outline:focus, .focus\:ax-outline:focus, .ax-focus-outline:focus {
   outline: 2px solid var(--ax-color-focus);
   outline-offset: 2px;
 }
 
-.ax-focus-none:focus,
-.focus\:ax-outline-none:focus {
+.focus\:outline-none:focus, .focus\:ax-outline-none:focus, .ax-focus-none:focus {
   outline: none;
 }
 
-.focus\:ax-border-primary:focus {
-  border-color: var(--ax-color-border-focus);
-}
+.focus\:border-primary:focus, .focus\:ax-border-primary:focus { border-color: var(--ax-color-border-focus); }
+.focus\:border-danger:focus, .focus\:ax-border-danger:focus { border-color: var(--ax-color-danger); }
+.focus\:bg-surface:focus, .focus\:ax-bg-surface:focus { background-color: var(--ax-color-surface); }
+.focus\:text-primary:focus, .focus\:ax-text-primary:focus { color: var(--ax-color-primary); }
 
-.focus\:ax-bg-surface:focus {
-  background-color: var(--ax-color-surface);
-}
-
-/* ----------------------------------------
-   Focus Visible
-   ---------------------------------------- */
-
-.ax-focus-visible-outline:focus-visible,
-.focus-visible\:ax-outline:focus-visible {
+.focus-visible\:outline:focus-visible, .focus-visible\:ax-outline:focus-visible, .ax-focus-visible-outline:focus-visible {
   outline: none;
   outline-offset: 0px;
-  box-shadow:
-    0 0 0 0px var(--ax-color-primary),
-    0 0 0 2px var(--ax-color-primary-light);
+  box-shadow: 0 0 0 2px var(--ax-color-primary-light, #38bdf8);
   border-radius: 2px;
 }
 
-.ax-focus-visible-none:focus-visible,
-.focus-visible\:ax-outline-none:focus-visible {
+.focus-visible\:outline-none:focus-visible, .focus-visible\:ax-outline-none:focus-visible {
   outline: none;
   outline-offset: 0px;
+}
+
+.focus-visible\:ring-2:focus-visible, .focus-visible\:ax-ring-2:focus-visible {
+  box-shadow: var(--ax-ring-offset-shadow, 0 0 #0000), 0 0 0 2px var(--ax-ring-color, var(--ax-color-primary)), var(--ax-shadow, 0 0 #0000);
+}
+
+.focus-visible\:ring-offset-2:focus-visible, .focus-visible\:ax-ring-offset-2:focus-visible {
+  --ax-ring-offset-width: 2px;
+  --ax-ring-offset-shadow: 0 0 0 var(--ax-ring-offset-width) var(--ax-ring-offset-color, #ffffff);
 }
 
 /* ----------------------------------------
    Active
    ---------------------------------------- */
 
-.ax-active-opacity:active,
-.active\:ax-opacity-70:active {
-  opacity: var(--ax-state-active-opacity, 0.7);
-}
+.active\:opacity-70:active, .active\:ax-opacity-70:active, .ax-active-opacity:active { opacity: var(--ax-state-active-opacity, 0.7); }
+.active\:opacity-50:active, .active\:ax-opacity-50:active { opacity: 0.5; }
+.active\:opacity-100:active, .active\:ax-opacity-100:active { opacity: 1; }
 
-.ax-active-scale:active,
-.ax-active-scale-95:active,
-.active\:ax-scale-95:active {
-  transform: scale(0.98);
-}
+.active\:scale-95:active, .active\:ax-scale-95:active, .ax-active-scale:active, .ax-active-scale-95:active { scale: 0.95; }
+.active\:scale-98:active, .active\:ax-scale-98:active { scale: 0.98; }
+.active\:scale-100:active, .active\:ax-scale-100:active { scale: 1; }
 
-.active\:ax-bg-primary-active:active {
-  background-color: var(--ax-color-primary-active);
-}
+.active\:bg-primary-active:active, .active\:ax-bg-primary-active:active { background-color: var(--ax-color-primary-active); }
+.active\:bg-surface-tertiary:active, .active\:ax-bg-surface-tertiary:active { background-color: var(--ax-color-surface-tertiary); }
 
 /* ----------------------------------------
    Disabled
    ---------------------------------------- */
 
-.ax-disabled-opacity:disabled,
-.disabled\:ax-opacity-50:disabled {
-  opacity: var(--ax-state-disabled-opacity, 0.5);
-}
+.disabled\:opacity-50:disabled, .disabled\:ax-opacity-50:disabled, .ax-disabled-opacity:disabled { opacity: var(--ax-state-disabled-opacity, 0.5); }
+.disabled\:opacity-60:disabled, .disabled\:ax-opacity-60:disabled { opacity: 0.6; }
+.disabled\:opacity-75:disabled, .disabled\:ax-opacity-75:disabled { opacity: 0.75; }
 
-.ax-disabled-pointer:disabled,
-.disabled\:ax-pointer-events-none:disabled {
-  pointer-events: none;
-}
+.disabled\:pointer-events-none:disabled, .disabled\:ax-pointer-events-none:disabled, .ax-disabled-pointer:disabled { pointer-events: none; }
+.disabled\:cursor-not-allowed:disabled, .disabled\:ax-cursor-not-allowed:disabled, .ax-disabled-cursor:disabled { cursor: not-allowed; }
 
-.ax-disabled-cursor:disabled,
-.disabled\:ax-cursor-not-allowed:disabled {
-  cursor: not-allowed;
-}
+.disabled\:bg-gray-100:disabled, .disabled\:ax-bg-gray-100:disabled { background-color: var(--ax-color-gray-100); }
+.disabled\:text-disabled:disabled, .disabled\:ax-text-disabled:disabled { color: var(--ax-color-text-disabled); }
 
 /* ----------------------------------------
    Checked
    ---------------------------------------- */
 
-.ax-checked-primary:checked,
-.checked\:ax-bg-primary:checked {
-  accent-color: var(--ax-color-primary);
-}
-
-.ax-checked-success:checked,
-.checked\:ax-bg-success:checked {
-  accent-color: var(--ax-color-success);
-}
+.checked\:bg-primary:checked, .checked\:ax-bg-primary:checked, .ax-checked-primary:checked { accent-color: var(--ax-color-primary); }
+.checked\:bg-success:checked, .checked\:ax-bg-success:checked, .ax-checked-success:checked { accent-color: var(--ax-color-success); }
 
 /* ----------------------------------------
    Valid / Invalid
    ---------------------------------------- */
 
-.ax-valid-border:valid,
-.valid\:ax-border-success:valid {
-  border-color: var(--ax-color-success);
-}
-
-.ax-invalid-border:invalid,
-.invalid\:ax-border-danger:invalid {
-  border-color: var(--ax-color-danger);
-}
+.valid\:border-success:valid, .valid\:ax-border-success:valid, .ax-valid-border:valid { border-color: var(--ax-color-success); }
+.invalid\:border-danger:invalid, .invalid\:ax-border-danger:invalid, .ax-invalid-border:invalid { border-color: var(--ax-color-danger); }
 
 /* ----------------------------------------
-   Required / Optional
+   Placeholder & Selection
    ---------------------------------------- */
 
-.ax-required-border:required {
-  border-color: var(--ax-color-required, var(--ax-color-danger));
-}
-
-/* ----------------------------------------
-   Readonly
-   ---------------------------------------- */
-
-.ax-readonly-opacity:read-only {
-  opacity: var(--ax-state-readonly-opacity, 0.7);
-}
-
-.ax-readonly-cursor:read-only {
-  cursor: default;
-}
-
-/* ----------------------------------------
-   Placeholder
-   ---------------------------------------- */
-
-.ax-placeholder-muted::placeholder,
-.placeholder\:ax-text-muted::placeholder {
+.placeholder\:text-muted::placeholder, .placeholder\:ax-text-muted::placeholder, .ax-placeholder-muted::placeholder {
   color: var(--ax-color-text-muted);
   opacity: 1;
 }
 
-/* ----------------------------------------
-   Selection
-   ---------------------------------------- */
-
-.ax-selection-primary::selection,
-.selection\:ax-bg-primary::selection {
+.selection\:bg-primary::selection, .selection\:ax-bg-primary::selection, .ax-selection-primary::selection {
   background-color: var(--ax-color-primary);
   color: var(--ax-color-on-primary, var(--ax-color-white));
 }
+
+/* ----------------------------------------
+   Group Modifiers (group-hover:*)
+   ---------------------------------------- */
+
+.group:hover .group-hover\:opacity-100, .group:hover .group-hover\:ax-opacity-100 { opacity: 1; }
+.group:hover .group-hover\:opacity-80, .group:hover .group-hover\:ax-opacity-80 { opacity: 0.8; }
+.group:hover .group-hover\:opacity-0, .group:hover .group-hover\:ax-opacity-0 { opacity: 0; }
+.group:hover .group-hover\:block, .group:hover .group-hover\:ax-block { display: block; }
+.group:hover .group-hover\:hidden, .group:hover .group-hover\:ax-hidden { display: none; }
+.group:hover .group-hover\:flex, .group:hover .group-hover\:ax-flex { display: flex; }
+.group:hover .group-hover\:text-primary, .group:hover .group-hover\:ax-text-primary { color: var(--ax-color-primary-hover); }
+.group:hover .group-hover\:text-accent, .group:hover .group-hover\:ax-text-accent { color: var(--ax-color-accent-hover); }
+.group:hover .group-hover\:text-white, .group:hover .group-hover\:ax-text-white { color: var(--ax-color-white); }
+.group:hover .group-hover\:bg-primary, .group:hover .group-hover\:ax-bg-primary { background-color: var(--ax-color-primary-hover); }
+.group:hover .group-hover\:bg-surface-secondary, .group:hover .group-hover\:ax-bg-surface-secondary { background-color: var(--ax-color-surface-secondary); }
+.group:hover .group-hover\:scale-105, .group:hover .group-hover\:ax-scale-105 { scale: 1.05; }
+.group:hover .group-hover\:scale-100, .group:hover .group-hover\:ax-scale-100 { scale: 1; }
+.group:hover .group-hover\:translate-x-1, .group:hover .group-hover\:ax-translate-x-1 { translate: var(--ax-space-1) 0; }
+.group:hover .group-hover\:translate-x-2, .group:hover .group-hover\:ax-translate-x-2 { translate: var(--ax-space-2) 0; }
+.group:hover .group-hover\:underline, .group:hover .group-hover\:ax-underline { text-decoration: underline; }
+
+/* ----------------------------------------
+   Peer Modifiers (peer-checked:*, peer-focus:*)
+   ---------------------------------------- */
+
+.peer:checked ~ .peer-checked\:block, .peer:checked ~ .peer-checked\:ax-block { display: block; }
+.peer:checked ~ .peer-checked\:hidden, .peer:checked ~ .peer-checked\:ax-hidden { display: none; }
+.peer:checked ~ .peer-checked\:flex, .peer:checked ~ .peer-checked\:ax-flex { display: flex; }
+.peer:checked ~ .peer-checked\:bg-primary, .peer:checked ~ .peer-checked\:ax-bg-primary { background-color: var(--ax-color-primary); }
+.peer:checked ~ .peer-checked\:border-primary, .peer:checked ~ .peer-checked\:ax-border-primary { border-color: var(--ax-color-primary); }
+.peer:checked ~ .peer-checked\:text-primary, .peer:checked ~ .peer-checked\:ax-text-primary { color: var(--ax-color-primary); }
+.peer:checked ~ .peer-checked\:opacity-100, .peer:checked ~ .peer-checked\:ax-opacity-100 { opacity: 1; }
+
+.peer:focus ~ .peer-focus\:ring-2, .peer:focus ~ .peer-focus\:ax-ring-2 {
+  box-shadow: 0 0 0 2px var(--ax-color-primary);
+}
+
+.peer:disabled ~ .peer-disabled\:opacity-50, .peer:disabled ~ .peer-disabled\:ax-opacity-50 { opacity: 0.5; }
+.peer:disabled ~ .peer-disabled\:cursor-not-allowed, .peer:disabled ~ .peer-disabled\:ax-cursor-not-allowed { cursor: not-allowed; }

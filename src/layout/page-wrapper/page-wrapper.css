@@ -1,23 +1,29 @@
-.ax-page-wrapper{
-    position: relative;
-    top: var(--ax-header-height);
-    height: calc(100vh - var(--ax-header-height) - var(--ax-footer-height));
-    overflow: auto;
-    transition:var(--ax-g-transition-all);
-    width: calc(100vw - var(--ax-menu-width));
-    left: 0;
+/* ==========================================================================
+   Page Wrapper Shell Layout
+   ========================================================================== */
+
+.ax-page-wrapper {
+  position: relative;
+  top: var(--ax-header-height);
+  height: calc(100dvh - var(--ax-header-height) - var(--ax-footer-height));
+  overflow-y: auto;
+  overflow-x: hidden;
+  width: 100%;
+  left: 0;
+  transition: width var(--ax-transition-duration, 300ms) cubic-bezier(0.4, 0, 0.2, 1),
+              left var(--ax-transition-duration, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media screen and (min-width: 576px) {
-    .ax-page-wrapper {
-        width: calc(100vw - var(--ax-menu-collapsed-width));
-        left: var(--ax-menu-collapsed-width);
-    }
+@media (min-width: 640px) {
+  .ax-page-wrapper {
+    width: calc(100% - var(--ax-menu-collapsed-width));
+    left: var(--ax-menu-collapsed-width);
+  }
 }
 
-@media screen and (min-width: 1200px) {
-    .ax-page-wrapper {
-        width: calc(100vw - var(--ax-menu-width));
-        left: var(--ax-menu-width);
-    }
+@media (min-width: 1280px) {
+  .ax-page-wrapper {
+    width: calc(100% - var(--ax-menu-width));
+    left: var(--ax-menu-width);
+  }
 }

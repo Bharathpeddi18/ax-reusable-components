@@ -6,209 +6,154 @@
    Display
    ---------------------------------------- */
 
-.ax-grid,
-.ax-d-grid {
-  display: grid;
-}
-
-.ax-inline-grid,
-.ax-d-inline-grid {
-  display: inline-grid;
-}
+.grid, .ax-grid, .ax-d-grid { display: grid; }
+.inline-grid, .ax-inline-grid, .ax-d-inline-grid { display: inline-grid; }
 
 /* ----------------------------------------
    Grid Template Columns
    ---------------------------------------- */
 
-.ax-grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-.ax-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.ax-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.ax-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.ax-grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-.ax-grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-.ax-grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
-.ax-grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
-.ax-grid-cols-9 { grid-template-columns: repeat(9, minmax(0, 1fr)); }
-.ax-grid-cols-10 { grid-template-columns: repeat(10, minmax(0, 1fr)); }
-.ax-grid-cols-11 { grid-template-columns: repeat(11, minmax(0, 1fr)); }
-.ax-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
-.ax-grid-cols-none { grid-template-columns: none; }
-.ax-grid-cols-subgrid { grid-template-columns: subgrid; }
+.grid-cols-1, .ax-grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2, .ax-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3, .ax-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4, .ax-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid-cols-5, .ax-grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.grid-cols-6, .ax-grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.grid-cols-7, .ax-grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.grid-cols-8, .ax-grid-cols-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+.grid-cols-9, .ax-grid-cols-9 { grid-template-columns: repeat(9, minmax(0, 1fr)); }
+.grid-cols-10, .ax-grid-cols-10 { grid-template-columns: repeat(10, minmax(0, 1fr)); }
+.grid-cols-11, .ax-grid-cols-11 { grid-template-columns: repeat(11, minmax(0, 1fr)); }
+.grid-cols-12, .ax-grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.grid-cols-none, .ax-grid-cols-none { grid-template-columns: none; }
+.grid-cols-subgrid, .ax-grid-cols-subgrid { grid-template-columns: subgrid; }
 
 /* ----------------------------------------
    Grid Column Span & Placement
    ---------------------------------------- */
 
-.ax-col-auto { grid-column: auto; }
-.ax-col-span-1 { grid-column: span 1 / span 1; }
-.ax-col-span-2 { grid-column: span 2 / span 2; }
-.ax-col-span-3 { grid-column: span 3 / span 3; }
-.ax-col-span-4 { grid-column: span 4 / span 4; }
-.ax-col-span-5 { grid-column: span 5 / span 5; }
-.ax-col-span-6 { grid-column: span 6 / span 6; }
-.ax-col-span-7 { grid-column: span 7 / span 7; }
-.ax-col-span-8 { grid-column: span 8 / span 8; }
-.ax-col-span-9 { grid-column: span 9 / span 9; }
-.ax-col-span-10 { grid-column: span 10 / span 10; }
-.ax-col-span-11 { grid-column: span 11 / span 11; }
-.ax-col-span-12 { grid-column: span 12 / span 12; }
-.ax-col-span-full { grid-column: 1 / -1; }
+.col-auto, .ax-col-auto { grid-column: auto; }
+.col-span-1, .ax-col-span-1 { grid-column: span 1 / span 1; }
+.col-span-2, .ax-col-span-2 { grid-column: span 2 / span 2; }
+.col-span-3, .ax-col-span-3 { grid-column: span 3 / span 3; }
+.col-span-4, .ax-col-span-4 { grid-column: span 4 / span 4; }
+.col-span-5, .ax-col-span-5 { grid-column: span 5 / span 5; }
+.col-span-6, .ax-col-span-6 { grid-column: span 6 / span 6; }
+.col-span-7, .ax-col-span-7 { grid-column: span 7 / span 7; }
+.col-span-8, .ax-col-span-8 { grid-column: span 8 / span 8; }
+.col-span-9, .ax-col-span-9 { grid-column: span 9 / span 9; }
+.col-span-10, .ax-col-span-10 { grid-column: span 10 / span 10; }
+.col-span-11, .ax-col-span-11 { grid-column: span 11 / span 11; }
+.col-span-12, .ax-col-span-12 { grid-column: span 12 / span 12; }
+.col-span-full, .ax-col-span-full { grid-column: 1 / -1; }
 
-.ax-col-start-1 { grid-column-start: 1; }
-.ax-col-start-2 { grid-column-start: 2; }
-.ax-col-start-3 { grid-column-start: 3; }
-.ax-col-start-4 { grid-column-start: 4; }
-.ax-col-start-5 { grid-column-start: 5; }
-.ax-col-start-6 { grid-column-start: 6; }
-.ax-col-start-7 { grid-column-start: 7; }
-.ax-col-start-8 { grid-column-start: 8; }
-.ax-col-start-9 { grid-column-start: 9; }
-.ax-col-start-10 { grid-column-start: 10; }
-.ax-col-start-11 { grid-column-start: 11; }
-.ax-col-start-12 { grid-column-start: 12; }
-.ax-col-start-13 { grid-column-start: 13; }
-.ax-col-start-auto { grid-column-start: auto; }
+.col-start-1, .ax-col-start-1 { grid-column-start: 1; }
+.col-start-2, .ax-col-start-2 { grid-column-start: 2; }
+.col-start-3, .ax-col-start-3 { grid-column-start: 3; }
+.col-start-4, .ax-col-start-4 { grid-column-start: 4; }
+.col-start-5, .ax-col-start-5 { grid-column-start: 5; }
+.col-start-6, .ax-col-start-6 { grid-column-start: 6; }
+.col-start-7, .ax-col-start-7 { grid-column-start: 7; }
+.col-start-8, .ax-col-start-8 { grid-column-start: 8; }
+.col-start-9, .ax-col-start-9 { grid-column-start: 9; }
+.col-start-10, .ax-col-start-10 { grid-column-start: 10; }
+.col-start-11, .ax-col-start-11 { grid-column-start: 11; }
+.col-start-12, .ax-col-start-12 { grid-column-start: 12; }
+.col-start-13, .ax-col-start-13 { grid-column-start: 13; }
+.col-start-auto, .ax-col-start-auto { grid-column-start: auto; }
 
-.ax-col-end-1 { grid-column-end: 1; }
-.ax-col-end-2 { grid-column-end: 2; }
-.ax-col-end-3 { grid-column-end: 3; }
-.ax-col-end-4 { grid-column-end: 4; }
-.ax-col-end-5 { grid-column-end: 5; }
-.ax-col-end-6 { grid-column-end: 6; }
-.ax-col-end-7 { grid-column-end: 7; }
-.ax-col-end-8 { grid-column-end: 8; }
-.ax-col-end-9 { grid-column-end: 9; }
-.ax-col-end-10 { grid-column-end: 10; }
-.ax-col-end-11 { grid-column-end: 11; }
-.ax-col-end-12 { grid-column-end: 12; }
-.ax-col-end-13 { grid-column-end: 13; }
-.ax-col-end-auto { grid-column-end: auto; }
+.col-end-1, .ax-col-end-1 { grid-column-end: 1; }
+.col-end-2, .ax-col-end-2 { grid-column-end: 2; }
+.col-end-3, .ax-col-end-3 { grid-column-end: 3; }
+.col-end-4, .ax-col-end-4 { grid-column-end: 4; }
+.col-end-5, .ax-col-end-5 { grid-column-end: 5; }
+.col-end-6, .ax-col-end-6 { grid-column-end: 6; }
+.col-end-7, .ax-col-end-7 { grid-column-end: 7; }
+.col-end-8, .ax-col-end-8 { grid-column-end: 8; }
+.col-end-9, .ax-col-end-9 { grid-column-end: 9; }
+.col-end-10, .ax-col-end-10 { grid-column-end: 10; }
+.col-end-11, .ax-col-end-11 { grid-column-end: 11; }
+.col-end-12, .ax-col-end-12 { grid-column-end: 12; }
+.col-end-13, .ax-col-end-13 { grid-column-end: 13; }
+.col-end-auto, .ax-col-end-auto { grid-column-end: auto; }
 
 /* ----------------------------------------
    Grid Template Rows
    ---------------------------------------- */
 
-.ax-grid-rows-1 { grid-template-rows: repeat(1, minmax(0, 1fr)); }
-.ax-grid-rows-2 { grid-template-rows: repeat(2, minmax(0, 1fr)); }
-.ax-grid-rows-3 { grid-template-rows: repeat(3, minmax(0, 1fr)); }
-.ax-grid-rows-4 { grid-template-rows: repeat(4, minmax(0, 1fr)); }
-.ax-grid-rows-5 { grid-template-rows: repeat(5, minmax(0, 1fr)); }
-.ax-grid-rows-6 { grid-template-rows: repeat(6, minmax(0, 1fr)); }
-.ax-grid-rows-none { grid-template-rows: none; }
-.ax-grid-rows-subgrid { grid-template-rows: subgrid; }
+.grid-rows-1, .ax-grid-rows-1 { grid-template-rows: repeat(1, minmax(0, 1fr)); }
+.grid-rows-2, .ax-grid-rows-2 { grid-template-rows: repeat(2, minmax(0, 1fr)); }
+.grid-rows-3, .ax-grid-rows-3 { grid-template-rows: repeat(3, minmax(0, 1fr)); }
+.grid-rows-4, .ax-grid-rows-4 { grid-template-rows: repeat(4, minmax(0, 1fr)); }
+.grid-rows-5, .ax-grid-rows-5 { grid-template-rows: repeat(5, minmax(0, 1fr)); }
+.grid-rows-6, .ax-grid-rows-6 { grid-template-rows: repeat(6, minmax(0, 1fr)); }
+.grid-rows-none, .ax-grid-rows-none { grid-template-rows: none; }
+.grid-rows-subgrid, .ax-grid-rows-subgrid { grid-template-rows: subgrid; }
 
 /* ----------------------------------------
    Grid Row Span & Placement
    ---------------------------------------- */
 
-.ax-row-auto { grid-row: auto; }
-.ax-row-span-1 { grid-row: span 1 / span 1; }
-.ax-row-span-2 { grid-row: span 2 / span 2; }
-.ax-row-span-3 { grid-row: span 3 / span 3; }
-.ax-row-span-4 { grid-row: span 4 / span 4; }
-.ax-row-span-5 { grid-row: span 5 / span 5; }
-.ax-row-span-6 { grid-row: span 6 / span 6; }
-.ax-row-span-full { grid-row: 1 / -1; }
-
-.ax-row-start-1 { grid-row-start: 1; }
-.ax-row-start-2 { grid-row-start: 2; }
-.ax-row-start-3 { grid-row-start: 3; }
-.ax-row-start-4 { grid-row-start: 4; }
-.ax-row-start-5 { grid-row-start: 5; }
-.ax-row-start-6 { grid-row-start: 6; }
-.ax-row-start-7 { grid-row-start: 7; }
-.ax-row-start-auto { grid-row-start: auto; }
-
-.ax-row-end-1 { grid-row-end: 1; }
-.ax-row-end-2 { grid-row-end: 2; }
-.ax-row-end-3 { grid-row-end: 3; }
-.ax-row-end-4 { grid-row-end: 4; }
-.ax-row-end-5 { grid-row-end: 5; }
-.ax-row-end-6 { grid-row-end: 6; }
-.ax-row-end-7 { grid-row-end: 7; }
-.ax-row-end-auto { grid-row-end: auto; }
+.row-auto, .ax-row-auto { grid-row: auto; }
+.row-span-1, .ax-row-span-1 { grid-row: span 1 / span 1; }
+.row-span-2, .ax-row-span-2 { grid-row: span 2 / span 2; }
+.row-span-3, .ax-row-span-3 { grid-row: span 3 / span 3; }
+.row-span-4, .ax-row-span-4 { grid-row: span 4 / span 4; }
+.row-span-5, .ax-row-span-5 { grid-row: span 5 / span 5; }
+.row-span-6, .ax-row-span-6 { grid-row: span 6 / span 6; }
+.row-span-full, .ax-row-span-full { grid-row: 1 / -1; }
 
 /* ----------------------------------------
-   Grid Auto Flow & Auto Tracks
+   Grid Auto Flow
    ---------------------------------------- */
 
-.ax-grid-flow-row { grid-auto-flow: row; }
-.ax-grid-flow-col { grid-auto-flow: column; }
-.ax-grid-flow-dense { grid-auto-flow: dense; }
-.ax-grid-flow-row-dense { grid-auto-flow: row dense; }
-.ax-grid-flow-col-dense { grid-auto-flow: column dense; }
-
-.ax-auto-cols-auto { grid-auto-columns: auto; }
-.ax-auto-cols-min { grid-auto-columns: min-content; }
-.ax-auto-cols-max { grid-auto-columns: max-content; }
-.ax-auto-cols-fr { grid-auto-columns: minmax(0, 1fr); }
-
-.ax-auto-rows-auto { grid-auto-rows: auto; }
-.ax-auto-rows-min { grid-auto-rows: min-content; }
-.ax-auto-rows-max { grid-auto-rows: max-content; }
-.ax-auto-rows-fr { grid-auto-rows: minmax(0, 1fr); }
+.grid-flow-row, .ax-grid-flow-row { grid-auto-flow: row; }
+.grid-flow-col, .ax-grid-flow-col { grid-auto-flow: column; }
+.grid-flow-dense, .ax-grid-flow-dense { grid-auto-flow: dense; }
+.grid-flow-row-dense, .ax-grid-flow-row-dense { grid-auto-flow: row dense; }
+.grid-flow-col-dense, .ax-grid-flow-col-dense { grid-auto-flow: column dense; }
 
 /* ----------------------------------------
-   Gap (Grid & Flex)
+   Gap Utilities
    ---------------------------------------- */
 
-.ax-gap-0 { gap: var(--ax-space-0); }
-.ax-gap-px { gap: var(--ax-space-px); }
-.ax-gap-0-5 { gap: var(--ax-space-0-5); }
-.ax-gap-1 { gap: var(--ax-space-1); }
-.ax-gap-1-5 { gap: var(--ax-space-1-5); }
-.ax-gap-2 { gap: var(--ax-space-2); }
-.ax-gap-2-5 { gap: var(--ax-space-2-5); }
-.ax-gap-3 { gap: var(--ax-space-3); }
-.ax-gap-3-5 { gap: var(--ax-space-3-5); }
-.ax-gap-4 { gap: var(--ax-space-4); }
-.ax-gap-5 { gap: var(--ax-space-5); }
-.ax-gap-6 { gap: var(--ax-space-6); }
-.ax-gap-7 { gap: var(--ax-space-7); }
-.ax-gap-8 { gap: var(--ax-space-8); }
-.ax-gap-9 { gap: var(--ax-space-9); }
-.ax-gap-10 { gap: var(--ax-space-10); }
-.ax-gap-11 { gap: var(--ax-space-11); }
-.ax-gap-12 { gap: var(--ax-space-12); }
-.ax-gap-14 { gap: var(--ax-space-14); }
-.ax-gap-16 { gap: var(--ax-space-16); }
-.ax-gap-20 { gap: var(--ax-space-20); }
-.ax-gap-24 { gap: var(--ax-space-24); }
-.ax-gap-28 { gap: var(--ax-space-28); }
-.ax-gap-32 { gap: var(--ax-space-32); }
+.gap-0, .ax-gap-0 { gap: var(--ax-space-0); }
+.gap-px, .ax-gap-px { gap: var(--ax-space-px); }
+.gap-0-5, .ax-gap-0-5 { gap: var(--ax-space-0-5); }
+.gap-1, .ax-gap-1 { gap: var(--ax-space-1); }
+.gap-1-5, .ax-gap-1-5 { gap: var(--ax-space-1-5); }
+.gap-2, .ax-gap-2 { gap: var(--ax-space-2); }
+.gap-2-5, .ax-gap-2-5 { gap: var(--ax-space-2-5); }
+.gap-3, .ax-gap-3 { gap: var(--ax-space-3); }
+.gap-3-5, .ax-gap-3-5 { gap: var(--ax-space-3-5); }
+.gap-4, .ax-gap-4 { gap: var(--ax-space-4); }
+.gap-5, .ax-gap-5 { gap: var(--ax-space-5); }
+.gap-6, .ax-gap-6 { gap: var(--ax-space-6); }
+.gap-7, .ax-gap-7 { gap: var(--ax-space-7); }
+.gap-8, .ax-gap-8 { gap: var(--ax-space-8); }
+.gap-9, .ax-gap-9 { gap: var(--ax-space-9); }
+.gap-10, .ax-gap-10 { gap: var(--ax-space-10); }
+.gap-11, .ax-gap-11 { gap: var(--ax-space-11); }
+.gap-12, .ax-gap-12 { gap: var(--ax-space-12); }
+.gap-14, .ax-gap-14 { gap: var(--ax-space-14); }
+.gap-16, .ax-gap-16 { gap: var(--ax-space-16); }
+.gap-20, .ax-gap-20 { gap: var(--ax-space-20); }
+.gap-24, .ax-gap-24 { gap: var(--ax-space-24); }
 
-.ax-gap-x-0 { column-gap: var(--ax-space-0); }
-.ax-gap-x-px { column-gap: var(--ax-space-px); }
-.ax-gap-x-0-5 { column-gap: var(--ax-space-0-5); }
-.ax-gap-x-1 { column-gap: var(--ax-space-1); }
-.ax-gap-x-1-5 { column-gap: var(--ax-space-1-5); }
-.ax-gap-x-2 { column-gap: var(--ax-space-2); }
-.ax-gap-x-2-5 { column-gap: var(--ax-space-2-5); }
-.ax-gap-x-3 { column-gap: var(--ax-space-3); }
-.ax-gap-x-3-5 { column-gap: var(--ax-space-3-5); }
-.ax-gap-x-4 { column-gap: var(--ax-space-4); }
-.ax-gap-x-5 { column-gap: var(--ax-space-5); }
-.ax-gap-x-6 { column-gap: var(--ax-space-6); }
-.ax-gap-x-7 { column-gap: var(--ax-space-7); }
-.ax-gap-x-8 { column-gap: var(--ax-space-8); }
-.ax-gap-x-10 { column-gap: var(--ax-space-10); }
-.ax-gap-x-12 { column-gap: var(--ax-space-12); }
-.ax-gap-x-16 { column-gap: var(--ax-space-16); }
+.gap-x-0, .ax-gap-x-0 { column-gap: var(--ax-space-0); }
+.gap-x-1, .ax-gap-x-1 { column-gap: var(--ax-space-1); }
+.gap-x-2, .ax-gap-x-2 { column-gap: var(--ax-space-2); }
+.gap-x-3, .ax-gap-x-3 { column-gap: var(--ax-space-3); }
+.gap-x-4, .ax-gap-x-4 { column-gap: var(--ax-space-4); }
+.gap-x-6, .ax-gap-x-6 { column-gap: var(--ax-space-6); }
+.gap-x-8, .ax-gap-x-8 { column-gap: var(--ax-space-8); }
+.gap-x-12, .ax-gap-x-12 { column-gap: var(--ax-space-12); }
 
-.ax-gap-y-0 { row-gap: var(--ax-space-0); }
-.ax-gap-y-px { row-gap: var(--ax-space-px); }
-.ax-gap-y-0-5 { row-gap: var(--ax-space-0-5); }
-.ax-gap-y-1 { row-gap: var(--ax-space-1); }
-.ax-gap-y-1-5 { row-gap: var(--ax-space-1-5); }
-.ax-gap-y-2 { row-gap: var(--ax-space-2); }
-.ax-gap-y-2-5 { row-gap: var(--ax-space-2-5); }
-.ax-gap-y-3 { row-gap: var(--ax-space-3); }
-.ax-gap-y-3-5 { row-gap: var(--ax-space-3-5); }
-.ax-gap-y-4 { row-gap: var(--ax-space-4); }
-.ax-gap-y-5 { row-gap: var(--ax-space-5); }
-.ax-gap-y-6 { row-gap: var(--ax-space-6); }
-.ax-gap-y-7 { row-gap: var(--ax-space-7); }
-.ax-gap-y-8 { row-gap: var(--ax-space-8); }
-.ax-gap-y-10 { row-gap: var(--ax-space-10); }
-.ax-gap-y-12 { row-gap: var(--ax-space-12); }
-.ax-gap-y-16 { row-gap: var(--ax-space-16); }
+.gap-y-0, .ax-gap-y-0 { row-gap: var(--ax-space-0); }
+.gap-y-1, .ax-gap-y-1 { row-gap: var(--ax-space-1); }
+.gap-y-2, .ax-gap-y-2 { row-gap: var(--ax-space-2); }
+.gap-y-3, .ax-gap-y-3 { row-gap: var(--ax-space-3); }
+.gap-y-4, .ax-gap-y-4 { row-gap: var(--ax-space-4); }
+.gap-y-6, .ax-gap-y-6 { row-gap: var(--ax-space-6); }
+.gap-y-8, .ax-gap-y-8 { row-gap: var(--ax-space-8); }
+.gap-y-12, .ax-gap-y-12 { row-gap: var(--ax-space-12); }

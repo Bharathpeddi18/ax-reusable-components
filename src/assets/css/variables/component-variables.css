@@ -10,6 +10,7 @@
   --ax-page-header-height: 48px;
   --ax-footer-height: 32px;
 
+  --ax-transition-duration: 300ms;
   --ax-g-transition-duration: 500ms;
   --ax-g-transition-all: all var(--ax-g-transition-duration) ease-in-out;
 

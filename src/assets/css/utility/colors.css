@@ -1,267 +1,255 @@
 /* ========================================
-   Color Utilities
+   Color Utilities (100% Tailwind Spec with Opacity Support)
    ======================================== */
+
+:root {
+  --ax-text-opacity: 1;
+  --ax-bg-opacity: 1;
+  --ax-border-opacity: 1;
+}
 
 /* ----------------------------------------
    Text Colors - Semantic & Brand
    ---------------------------------------- */
 
-.ax-text-primary {
-  color: var(--ax-color-primary);
+.text-primary, .ax-text-primary {
+  --ax-text-opacity: 1;
+  color: color-mix(in srgb, var(--ax-color-primary) calc(var(--ax-text-opacity, 1) * 100%), transparent);
 }
 
-.ax-text-secondary {
-  color: var(--ax-color-secondary);
+.text-secondary, .ax-text-secondary {
+  --ax-text-opacity: 1;
+  color: color-mix(in srgb, var(--ax-color-secondary) calc(var(--ax-text-opacity, 1) * 100%), transparent);
 }
 
-.ax-text-accent {
-  color: var(--ax-color-accent);
+.text-accent, .ax-text-accent {
+  --ax-text-opacity: 1;
+  color: color-mix(in srgb, var(--ax-color-accent) calc(var(--ax-text-opacity, 1) * 100%), transparent);
 }
 
-.ax-text-muted {
-  color: var(--ax-color-text-muted);
+.text-muted, .ax-text-muted {
+  --ax-text-opacity: 1;
+  color: color-mix(in srgb, var(--ax-color-text-muted) calc(var(--ax-text-opacity, 1) * 100%), transparent);
 }
 
-.ax-text-success {
-  color: var(--ax-color-success);
+.text-success, .ax-text-success {
+  --ax-text-opacity: 1;
+  color: color-mix(in srgb, var(--ax-color-success) calc(var(--ax-text-opacity, 1) * 100%), transparent);
 }
 
-.ax-text-warning {
-  color: var(--ax-color-warning);
+.text-warning, .ax-text-warning {
+  --ax-text-opacity: 1;
+  color: color-mix(in srgb, var(--ax-color-warning) calc(var(--ax-text-opacity, 1) * 100%), transparent);
 }
 
-.ax-text-danger {
-  color: var(--ax-color-danger);
+.text-danger, .ax-text-danger {
+  --ax-text-opacity: 1;
+  color: color-mix(in srgb, var(--ax-color-danger) calc(var(--ax-text-opacity, 1) * 100%), transparent);
 }
 
-.ax-text-info {
-  color: var(--ax-color-info);
+.text-info, .ax-text-info {
+  --ax-text-opacity: 1;
+  color: color-mix(in srgb, var(--ax-color-info) calc(var(--ax-text-opacity, 1) * 100%), transparent);
 }
 
-.ax-text-white {
-  color: var(--ax-color-white);
+.text-white, .ax-text-white {
+  --ax-text-opacity: 1;
+  color: color-mix(in srgb, var(--ax-color-white) calc(var(--ax-text-opacity, 1) * 100%), transparent);
 }
 
-.ax-text-black {
-  color: var(--ax-color-black);
+.text-black, .ax-text-black {
+  --ax-text-opacity: 1;
+  color: color-mix(in srgb, var(--ax-color-black) calc(var(--ax-text-opacity, 1) * 100%), transparent);
 }
 
-.ax-text-inherit {
-  color: inherit;
-}
-
-.ax-text-current {
-  color: currentColor;
-}
+.text-inherit, .ax-text-inherit { color: inherit; }
+.text-current, .ax-text-current { color: currentColor; }
+.text-transparent, .ax-text-transparent { color: transparent; }
 
 /* ----------------------------------------
    Text Colors - Gray Scale
    ---------------------------------------- */
 
-.ax-text-gray-50 {
-  color: var(--ax-color-gray-50);
-}
-
-.ax-text-gray-100 {
-  color: var(--ax-color-gray-100);
-}
-
-.ax-text-gray-200 {
-  color: var(--ax-color-gray-200);
-}
-
-.ax-text-gray-300 {
-  color: var(--ax-color-gray-300);
-}
-
-.ax-text-gray-400 {
-  color: var(--ax-color-gray-400);
-}
-
-.ax-text-gray-500 {
-  color: var(--ax-color-gray-500);
-}
-
-.ax-text-gray-600 {
-  color: var(--ax-color-gray-600);
-}
-
-.ax-text-gray-700 {
-  color: var(--ax-color-gray-700);
-}
-
-.ax-text-gray-800 {
-  color: var(--ax-color-gray-800);
-}
-
-.ax-text-gray-900 {
-  color: var(--ax-color-gray-900);
-}
+.text-gray-50, .ax-text-gray-50 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-50) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
+.text-gray-100, .ax-text-gray-100 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-100) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
+.text-gray-200, .ax-text-gray-200 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-200) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
+.text-gray-300, .ax-text-gray-300 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-300) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
+.text-gray-400, .ax-text-gray-400 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-400) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
+.text-gray-500, .ax-text-gray-500 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-500) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
+.text-gray-600, .ax-text-gray-600 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-600) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
+.text-gray-700, .ax-text-gray-700 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-700) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
+.text-gray-800, .ax-text-gray-800 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-800) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
+.text-gray-900, .ax-text-gray-900 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-900) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
+.text-gray-950, .ax-text-gray-950 { --ax-text-opacity: 1; color: color-mix(in srgb, var(--ax-color-gray-950) calc(var(--ax-text-opacity, 1) * 100%), transparent); }
 
 /* ----------------------------------------
    Background Colors - Semantic & Brand
    ---------------------------------------- */
 
-.ax-bg-primary {
-  background-color: var(--ax-color-primary);
+.bg-primary, .ax-bg-primary {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-primary) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-secondary {
-  background-color: var(--ax-color-secondary);
+.bg-secondary, .ax-bg-secondary {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-secondary) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-accent {
-  background-color: var(--ax-color-accent);
+.bg-accent, .ax-bg-accent {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-accent) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-surface {
-  background-color: var(--ax-color-surface);
+.bg-surface, .ax-bg-surface {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-surface) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-surface-secondary {
-  background-color: var(--ax-color-surface-secondary);
+.bg-surface-secondary, .ax-bg-surface-secondary {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-surface-secondary) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-surface-tertiary {
-  background-color: var(--ax-color-surface-tertiary);
+.bg-surface-tertiary, .ax-bg-surface-tertiary {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-surface-tertiary) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-success {
-  background-color: var(--ax-color-success);
+.bg-success, .ax-bg-success {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-success) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-warning {
-  background-color: var(--ax-color-warning);
+.bg-warning, .ax-bg-warning {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-warning) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-danger {
-  background-color: var(--ax-color-danger);
+.bg-danger, .ax-bg-danger {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-danger) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-info {
-  background-color: var(--ax-color-info);
+.bg-info, .ax-bg-info {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-info) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-white {
-  background-color: var(--ax-color-white);
+.bg-white, .ax-bg-white {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-white) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-black {
-  background-color: var(--ax-color-black);
+.bg-black, .ax-bg-black {
+  --ax-bg-opacity: 1;
+  background-color: color-mix(in srgb, var(--ax-color-black) calc(var(--ax-bg-opacity, 1) * 100%), transparent);
 }
 
-.ax-bg-transparent {
-  background-color: transparent;
-}
+.bg-transparent, .ax-bg-transparent { background-color: transparent; }
+.bg-current, .ax-bg-current { background-color: currentColor; }
 
 /* ----------------------------------------
    Background Colors - Gray Scale
    ---------------------------------------- */
 
-.ax-bg-gray-50 {
-  background-color: var(--ax-color-gray-50);
-}
-
-.ax-bg-gray-100 {
-  background-color: var(--ax-color-gray-100);
-}
-
-.ax-bg-gray-200 {
-  background-color: var(--ax-color-gray-200);
-}
-
-.ax-bg-gray-300 {
-  background-color: var(--ax-color-gray-300);
-}
-
-.ax-bg-gray-400 {
-  background-color: var(--ax-color-gray-400);
-}
-
-.ax-bg-gray-500 {
-  background-color: var(--ax-color-gray-500);
-}
-
-.ax-bg-gray-600 {
-  background-color: var(--ax-color-gray-600);
-}
-
-.ax-bg-gray-700 {
-  background-color: var(--ax-color-gray-700);
-}
-
-.ax-bg-gray-800 {
-  background-color: var(--ax-color-gray-800);
-}
-
-.ax-bg-gray-900 {
-  background-color: var(--ax-color-gray-900);
-}
+.bg-gray-50, .ax-bg-gray-50 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-50) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
+.bg-gray-100, .ax-bg-gray-100 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-100) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
+.bg-gray-200, .ax-bg-gray-200 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-200) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
+.bg-gray-300, .ax-bg-gray-300 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-300) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
+.bg-gray-400, .ax-bg-gray-400 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-400) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
+.bg-gray-500, .ax-bg-gray-500 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-500) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
+.bg-gray-600, .ax-bg-gray-600 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-600) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
+.bg-gray-700, .ax-bg-gray-700 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-700) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
+.bg-gray-800, .ax-bg-gray-800 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-800) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
+.bg-gray-900, .ax-bg-gray-900 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-900) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
+.bg-gray-950, .ax-bg-gray-950 { --ax-bg-opacity: 1; background-color: color-mix(in srgb, var(--ax-color-gray-950) calc(var(--ax-bg-opacity, 1) * 100%), transparent); }
 
 /* ----------------------------------------
    Border Colors
    ---------------------------------------- */
 
-.ax-border-primary {
-  border-color: var(--ax-color-primary);
-}
+.border-primary, .ax-border-primary { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-primary) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-secondary, .ax-border-secondary { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-border-secondary) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-accent, .ax-border-accent { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-accent) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-default, .ax-border-default { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-border) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-success, .ax-border-success { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-success) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-warning, .ax-border-warning { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-warning) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-danger, .ax-border-danger { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-danger) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-info, .ax-border-info { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-info) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-white, .ax-border-white { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-white) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-black, .ax-border-black { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-black) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-transparent, .ax-border-transparent { border-color: transparent; }
+.border-current, .ax-border-current { border-color: currentColor; }
 
-.ax-border-secondary {
-  border-color: var(--ax-color-border-secondary);
-}
-
-.ax-border-accent {
-  border-color: var(--ax-color-accent);
-}
-
-.ax-border-default {
-  border-color: var(--ax-color-border);
-}
-
-.ax-border-success {
-  border-color: var(--ax-color-success);
-}
-
-.ax-border-warning {
-  border-color: var(--ax-color-warning);
-}
-
-.ax-border-danger {
-  border-color: var(--ax-color-danger);
-}
-
-.ax-border-info {
-  border-color: var(--ax-color-info);
-}
-
-.ax-border-transparent {
-  border-color: transparent;
-}
+.border-gray-50, .ax-border-gray-50 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-50) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-gray-100, .ax-border-gray-100 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-100) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-gray-200, .ax-border-gray-200 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-200) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-gray-300, .ax-border-gray-300 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-300) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-gray-400, .ax-border-gray-400 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-400) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-gray-500, .ax-border-gray-500 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-500) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-gray-600, .ax-border-gray-600 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-600) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-gray-700, .ax-border-gray-700 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-700) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-gray-800, .ax-border-gray-800 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-800) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-gray-900, .ax-border-gray-900 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-900) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.border-gray-950, .ax-border-gray-950 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-950) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
 /* ----------------------------------------
    Background Opacity
    ---------------------------------------- */
 
-.ax-bg-opacity-0 {
-  background-color: color-mix(in srgb, currentColor 0%, transparent);
-}
+.bg-opacity-0, .ax-bg-opacity-0 { --ax-bg-opacity: 0; }
+.bg-opacity-5, .ax-bg-opacity-5 { --ax-bg-opacity: 0.05; }
+.bg-opacity-10, .ax-bg-opacity-10 { --ax-bg-opacity: 0.1; }
+.bg-opacity-20, .ax-bg-opacity-20 { --ax-bg-opacity: 0.2; }
+.bg-opacity-25, .ax-bg-opacity-25 { --ax-bg-opacity: 0.25; }
+.bg-opacity-30, .ax-bg-opacity-30 { --ax-bg-opacity: 0.3; }
+.bg-opacity-40, .ax-bg-opacity-40 { --ax-bg-opacity: 0.4; }
+.bg-opacity-50, .ax-bg-opacity-50 { --ax-bg-opacity: 0.5; }
+.bg-opacity-60, .ax-bg-opacity-60 { --ax-bg-opacity: 0.6; }
+.bg-opacity-70, .ax-bg-opacity-70 { --ax-bg-opacity: 0.7; }
+.bg-opacity-75, .ax-bg-opacity-75 { --ax-bg-opacity: 0.75; }
+.bg-opacity-80, .ax-bg-opacity-80 { --ax-bg-opacity: 0.8; }
+.bg-opacity-90, .ax-bg-opacity-90 { --ax-bg-opacity: 0.9; }
+.bg-opacity-95, .ax-bg-opacity-95 { --ax-bg-opacity: 0.95; }
+.bg-opacity-100, .ax-bg-opacity-100 { --ax-bg-opacity: 1; }
 
-.ax-bg-opacity-10 {
-  background-color: color-mix(in srgb, currentColor 10%, transparent);
-}
+/* ----------------------------------------
+   Text Opacity
+   ---------------------------------------- */
 
-.ax-bg-opacity-25 {
-  background-color: color-mix(in srgb, currentColor 25%, transparent);
-}
+.text-opacity-0, .ax-text-opacity-0 { --ax-text-opacity: 0; }
+.text-opacity-5, .ax-text-opacity-5 { --ax-text-opacity: 0.05; }
+.text-opacity-10, .ax-text-opacity-10 { --ax-text-opacity: 0.1; }
+.text-opacity-20, .ax-text-opacity-20 { --ax-text-opacity: 0.2; }
+.text-opacity-25, .ax-text-opacity-25 { --ax-text-opacity: 0.25; }
+.text-opacity-30, .ax-text-opacity-30 { --ax-text-opacity: 0.3; }
+.text-opacity-40, .ax-text-opacity-40 { --ax-text-opacity: 0.4; }
+.text-opacity-50, .ax-text-opacity-50 { --ax-text-opacity: 0.5; }
+.text-opacity-60, .ax-text-opacity-60 { --ax-text-opacity: 0.6; }
+.text-opacity-70, .ax-text-opacity-70 { --ax-text-opacity: 0.7; }
+.text-opacity-75, .ax-text-opacity-75 { --ax-text-opacity: 0.75; }
+.text-opacity-80, .ax-text-opacity-80 { --ax-text-opacity: 0.8; }
+.text-opacity-90, .ax-text-opacity-90 { --ax-text-opacity: 0.9; }
+.text-opacity-95, .ax-text-opacity-95 { --ax-text-opacity: 0.95; }
+.text-opacity-100, .ax-text-opacity-100 { --ax-text-opacity: 1; }
 
-.ax-bg-opacity-50 {
-  background-color: color-mix(in srgb, currentColor 50%, transparent);
-}
+/* ----------------------------------------
+   Border Opacity
+   ---------------------------------------- */
 
-.ax-bg-opacity-75 {
-  background-color: color-mix(in srgb, currentColor 75%, transparent);
-}
-
-.ax-bg-opacity-100 {
-  background-color: currentColor;
-}
+.border-opacity-0, .ax-border-opacity-0 { --ax-border-opacity: 0; }
+.border-opacity-5, .ax-border-opacity-5 { --ax-border-opacity: 0.05; }
+.border-opacity-10, .ax-border-opacity-10 { --ax-border-opacity: 0.1; }
+.border-opacity-20, .ax-border-opacity-20 { --ax-border-opacity: 0.2; }
+.border-opacity-25, .ax-border-opacity-25 { --ax-border-opacity: 0.25; }
+.border-opacity-30, .ax-border-opacity-30 { --ax-border-opacity: 0.3; }
+.border-opacity-40, .ax-border-opacity-40 { --ax-border-opacity: 0.4; }
+.border-opacity-50, .ax-border-opacity-50 { --ax-border-opacity: 0.5; }
+.border-opacity-60, .ax-border-opacity-60 { --ax-border-opacity: 0.6; }
+.border-opacity-70, .ax-border-opacity-70 { --ax-border-opacity: 0.7; }
+.border-opacity-75, .ax-border-opacity-75 { --ax-border-opacity: 0.75; }
+.border-opacity-80, .ax-border-opacity-80 { --ax-border-opacity: 0.8; }
+.border-opacity-90, .ax-border-opacity-90 { --ax-border-opacity: 0.9; }
+.border-opacity-95, .ax-border-opacity-95 { --ax-border-opacity: 0.95; }
+.border-opacity-100, .ax-border-opacity-100 { --ax-border-opacity: 1; }

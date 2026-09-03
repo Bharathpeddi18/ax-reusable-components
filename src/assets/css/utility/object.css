@@ -1,27 +1,27 @@
 /* ========================================
-   Object / Media Utilities
+   Object / Media Utilities (Tailwind & AX Spec)
    ======================================== */
 
 /* ----------------------------------------
    Object Fit
    ---------------------------------------- */
 
-.ax-object-contain { object-fit: contain; }
-.ax-object-cover { object-fit: cover; }
-.ax-object-fill { object-fit: fill; }
-.ax-object-none { object-fit: none; }
-.ax-object-scale-down { object-fit: scale-down; }
+.object-contain, .ax-object-contain { object-fit: contain; }
+.object-cover, .ax-object-cover { object-fit: cover; }
+.object-fill, .ax-object-fill { object-fit: fill; }
+.object-none, .ax-object-none { object-fit: none; }
+.object-scale-down, .ax-object-scale-down { object-fit: scale-down; }
 
 /* ----------------------------------------
    Object Position
    ---------------------------------------- */
 
-.ax-object-center { object-position: center; }
-.ax-object-top { object-position: top; }
-.ax-object-top-right { object-position: top right; }
-.ax-object-right { object-position: right; }
-.ax-object-bottom-right { object-position: bottom right; }
-.ax-object-bottom { object-position: bottom; }
-.ax-object-bottom-left { object-position: bottom left; }
-.ax-object-left { object-position: left; }
-.ax-object-top-left { object-position: top left; }
+.object-center, .ax-object-center { object-position: center; }
+.object-top, .ax-object-top { object-position: top; }
+.object-top-right, .ax-object-top-right { object-position: top right; }
+.object-right, .ax-object-right { object-position: right; }
+.object-bottom-right, .ax-object-bottom-right { object-position: bottom right; }
+.object-bottom, .ax-object-bottom { object-position: bottom; }
+.object-bottom-left, .ax-object-bottom-left { object-position: bottom left; }
+.object-left, .ax-object-left { object-position: left; }
+.object-top-left, .ax-object-top-left { object-position: top left; }

@@ -4,8 +4,10 @@ import './header.css';
 
 export const Header = () => {
   return (
-    <header className='ax-header ax-flex ax-items-center ax-justify-between ax-p-3'>
-      <div className='ax-flex ax-items-center ax-ms-auto'>Header Right</div>
+    <header className="ax-header flex items-center justify-between p-3 bg-surface border-b border-default shadow-sm">
+      <div className="flex items-center ms-auto gap-3 text-sm text-secondary font-medium">
+        <span>Header Right</span>
+      </div>
     </header>
   );
 };
