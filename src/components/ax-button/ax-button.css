@@ -19,14 +19,14 @@
   --ax-btn-transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* Default Theme (Primary) */
-  --ax-btn-bg: #0284c7;
-  --ax-btn-text: #ffffff;
+  --ax-btn-bg: var(--ax-color-primary, #00308F);
+  --ax-btn-text: var(--ax-color-white, #ffffff);
   --ax-btn-border: transparent;
-  --ax-btn-hover-bg: #0369a1;
-  --ax-btn-hover-text: #ffffff;
+  --ax-btn-hover-bg: var(--ax-color-primary-hover, #002776);
+  --ax-btn-hover-text: var(--ax-color-white, #ffffff);
   --ax-btn-hover-border: transparent;
-  --ax-btn-active-bg: #075985;
-  --ax-btn-focus-ring: rgba(2, 132, 199, 0.35);
+  --ax-btn-active-bg: var(--ax-color-primary-active, #001E5B);
+  --ax-btn-focus-ring: rgba(0, 48, 143, 0.35);
   --ax-btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 
   /* Element Reset & Core Flex */
@@ -99,12 +99,12 @@
 .ax-btn-outlined,
 .ax-btn-outline {
   --ax-btn-bg: transparent;
-  --ax-btn-text: var(--ax-btn-base-color, #0284c7);
-  --ax-btn-border: var(--ax-btn-base-color, #0284c7);
-  --ax-btn-hover-bg: rgba(2, 132, 199, 0.08);
-  --ax-btn-hover-text: var(--ax-btn-base-color, #0284c7);
-  --ax-btn-hover-border: var(--ax-btn-base-color, #0284c7);
-  --ax-btn-active-bg: rgba(2, 132, 199, 0.16);
+  --ax-btn-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
+  --ax-btn-border: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
+  --ax-btn-hover-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 10%, transparent);
+  --ax-btn-hover-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
+  --ax-btn-hover-border: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
+  --ax-btn-active-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 20%, transparent);
   --ax-btn-shadow: none;
 }
 
@@ -112,23 +112,23 @@
 .ax-btn-text,
 .ax-btn-ghost {
   --ax-btn-bg: transparent;
-  --ax-btn-text: var(--ax-btn-base-color, #0284c7);
+  --ax-btn-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
   --ax-btn-border: transparent;
-  --ax-btn-hover-bg: rgba(2, 132, 199, 0.08);
-  --ax-btn-hover-text: var(--ax-btn-base-color, #0284c7);
-  --ax-btn-active-bg: rgba(2, 132, 199, 0.16);
+  --ax-btn-hover-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 10%, transparent);
+  --ax-btn-hover-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
+  --ax-btn-active-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 20%, transparent);
   --ax-btn-shadow: none;
 }
 
 /* Soft / Tonal */
 .ax-btn-soft,
 .ax-btn-tonal {
-  --ax-btn-bg: rgba(2, 132, 199, 0.12);
-  --ax-btn-text: var(--ax-btn-base-color, #0284c7);
+  --ax-btn-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 12%, transparent);
+  --ax-btn-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
   --ax-btn-border: transparent;
-  --ax-btn-hover-bg: rgba(2, 132, 199, 0.2);
-  --ax-btn-hover-text: var(--ax-btn-base-color, #0284c7);
-  --ax-btn-active-bg: rgba(2, 132, 199, 0.28);
+  --ax-btn-hover-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 20%, transparent);
+  --ax-btn-hover-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
+  --ax-btn-active-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 28%, transparent);
   --ax-btn-shadow: none;
 }
 
@@ -153,81 +153,92 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. Color Themes (Primary, Secondary, Success, Warning, Danger, Dark, etc.)
+   4. Color Themes (Primary, Secondary, Accent, Success, Warning, Danger, Dark, etc.)
    -------------------------------------------------------------------------- */
 
-/* Primary (Blue) */
+/* Primary (US Air Force Blue) */
 .ax-btn-color-primary {
-  --ax-btn-base-color: #0284c7;
-  --ax-btn-bg: #0284c7;
-  --ax-btn-text: #ffffff;
-  --ax-btn-hover-bg: #0369a1;
-  --ax-btn-active-bg: #075985;
-  --ax-btn-focus-ring: rgba(2, 132, 199, 0.35);
+  --ax-btn-base-color: var(--ax-color-primary, #00308F);
+  --ax-btn-bg: var(--ax-color-primary, #00308F);
+  --ax-btn-text: var(--ax-color-white, #ffffff);
+  --ax-btn-hover-bg: var(--ax-color-primary-hover, #002776);
+  --ax-btn-active-bg: var(--ax-color-primary-active, #001E5B);
+  --ax-btn-focus-ring: rgba(0, 48, 143, 0.35);
 }
 
-/* Secondary (Slate) */
+/* Secondary (US Air Force Steel Gray) */
 .ax-btn-color-secondary {
-  --ax-btn-base-color: #64748b;
-  --ax-btn-bg: #64748b;
-  --ax-btn-text: #ffffff;
-  --ax-btn-hover-bg: #475569;
-  --ax-btn-active-bg: #334155;
-  --ax-btn-focus-ring: rgba(100, 116, 139, 0.35);
+  --ax-btn-base-color: var(--ax-color-secondary, #607D94);
+  --ax-btn-bg: var(--ax-color-secondary, #607D94);
+  --ax-btn-text: var(--ax-color-white, #ffffff);
+  --ax-btn-hover-bg: var(--ax-color-secondary-hover, #4f677a);
+  --ax-btn-active-bg: var(--ax-color-secondary-active, #3e5160);
+  --ax-btn-focus-ring: rgba(96, 125, 148, 0.35);
 }
 
-/* Success (Emerald) */
+/* Accent (US Air Force Insignia Gold) */
+.ax-btn-color-accent {
+  --ax-btn-base-color: var(--ax-color-accent, #C9A227);
+  --ax-btn-bg: var(--ax-color-accent, #C9A227);
+  --ax-btn-text: var(--ax-color-text, #17212B);
+  --ax-btn-hover-bg: var(--ax-color-accent-hover, #b08d22);
+  --ax-btn-hover-text: var(--ax-color-text, #17212B);
+  --ax-btn-active-bg: var(--ax-color-accent-active, #94771c);
+  --ax-btn-focus-ring: rgba(201, 162, 39, 0.35);
+}
+
+/* Success */
 .ax-btn-color-success {
-  --ax-btn-base-color: #10b981;
-  --ax-btn-bg: #10b981;
-  --ax-btn-text: #ffffff;
-  --ax-btn-hover-bg: #059669;
+  --ax-btn-base-color: var(--ax-color-success, #16a34a);
+  --ax-btn-bg: var(--ax-color-success, #16a34a);
+  --ax-btn-text: var(--ax-color-white, #ffffff);
+  --ax-btn-hover-bg: var(--ax-color-success-hover, #15803d);
   --ax-btn-active-bg: #047857;
-  --ax-btn-focus-ring: rgba(16, 185, 129, 0.35);
+  --ax-btn-focus-ring: rgba(22, 163, 74, 0.35);
 }
 
-/* Warning (Amber) */
+/* Warning */
 .ax-btn-color-warning {
-  --ax-btn-base-color: #f59e0b;
-  --ax-btn-bg: #f59e0b;
-  --ax-btn-text: #1c1917;
-  --ax-btn-hover-bg: #d97706;
-  --ax-btn-hover-text: #ffffff;
-  --ax-btn-active-bg: #b45309;
-  --ax-btn-focus-ring: rgba(245, 158, 11, 0.35);
+  --ax-btn-base-color: var(--ax-color-warning, #C9A227);
+  --ax-btn-bg: var(--ax-color-warning, #C9A227);
+  --ax-btn-text: var(--ax-color-text, #17212B);
+  --ax-btn-hover-bg: var(--ax-color-warning-hover, #b08d22);
+  --ax-btn-hover-text: var(--ax-color-text, #17212B);
+  --ax-btn-active-bg: #94771c;
+  --ax-btn-focus-ring: rgba(201, 162, 39, 0.35);
 }
 
-/* Danger / Destructive (Red) */
+/* Danger / Destructive */
 .ax-btn-color-danger,
 .ax-btn-color-destructive {
-  --ax-btn-base-color: #ef4444;
-  --ax-btn-bg: #ef4444;
-  --ax-btn-text: #ffffff;
-  --ax-btn-hover-bg: #dc2626;
-  --ax-btn-active-bg: #b91c1c;
-  --ax-btn-focus-ring: rgba(239, 68, 68, 0.35);
+  --ax-btn-base-color: var(--ax-color-danger, #dc2626);
+  --ax-btn-bg: var(--ax-color-danger, #dc2626);
+  --ax-btn-text: var(--ax-color-white, #ffffff);
+  --ax-btn-hover-bg: var(--ax-color-danger-hover, #b91c1c);
+  --ax-btn-active-bg: #991b1b;
+  --ax-btn-focus-ring: rgba(220, 38, 38, 0.35);
 }
 
-/* Dark (Slate 900) */
+/* Dark (Cockpit Slate) */
 .ax-btn-color-dark {
-  --ax-btn-base-color: #0f172a;
-  --ax-btn-bg: #0f172a;
-  --ax-btn-text: #f8fafc;
-  --ax-btn-hover-bg: #1e293b;
-  --ax-btn-active-bg: #334155;
+  --ax-btn-base-color: var(--ax-color-gray-900, #0f172a);
+  --ax-btn-bg: var(--ax-color-gray-900, #0f172a);
+  --ax-btn-text: var(--ax-color-gray-50, #f8fafc);
+  --ax-btn-hover-bg: var(--ax-color-gray-800, #1e293b);
+  --ax-btn-active-bg: var(--ax-color-gray-700, #334155);
   --ax-btn-focus-ring: rgba(15, 23, 42, 0.35);
 }
 
-/* Light (White / Subtle) */
+/* Light (Clean Surface) */
 .ax-btn-color-light {
-  --ax-btn-base-color: #475569;
-  --ax-btn-bg: #ffffff;
-  --ax-btn-text: #0f172a;
-  --ax-btn-border: #e2e8f0;
-  --ax-btn-hover-bg: #f8fafc;
-  --ax-btn-hover-border: #cbd5e1;
-  --ax-btn-active-bg: #f1f5f9;
-  --ax-btn-focus-ring: rgba(2, 132, 199, 0.25);
+  --ax-btn-base-color: var(--ax-color-text-secondary, #475569);
+  --ax-btn-bg: var(--ax-color-surface, #ffffff);
+  --ax-btn-text: var(--ax-color-text, #17212B);
+  --ax-btn-border: var(--ax-color-border, #d2dbe5);
+  --ax-btn-hover-bg: var(--ax-color-surface-secondary, #ebf0f5);
+  --ax-btn-hover-border: var(--ax-color-border-secondary, #cbd5e1);
+  --ax-btn-active-bg: var(--ax-color-surface-tertiary, #dfe5ec);
+  --ax-btn-focus-ring: rgba(31, 78, 121, 0.25);
   --ax-btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 

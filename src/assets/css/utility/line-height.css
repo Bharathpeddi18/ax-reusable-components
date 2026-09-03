@@ -1,10 +1,19 @@
 /* ========================================
-   Line Height Utilities
+   Line Height Utilities (100% Tailwind Spec)
    ======================================== */
 
-.ax-leading-none, .ax-lh-none { line-height: var(--ax-line-height-none, 1); }
-.ax-leading-tight, .ax-lh-tight { line-height: var(--ax-line-height-tight, 1.25); }
-.ax-leading-snug, .ax-lh-snug { line-height: var(--ax-line-height-snug, 1.375); }
-.ax-leading-normal, .ax-lh-normal { line-height: var(--ax-line-height-normal, 1.5); }
-.ax-leading-relaxed, .ax-lh-relaxed { line-height: var(--ax-line-height-relaxed, 1.625); }
-.ax-leading-loose, .ax-lh-loose { line-height: var(--ax-line-height-loose, 2); }
+.ax-leading-none, .ax-lh-none { line-height: 1; }
+.ax-leading-tight, .ax-lh-tight { line-height: 1.25; }
+.ax-leading-snug, .ax-lh-snug { line-height: 1.375; }
+.ax-leading-normal, .ax-lh-normal { line-height: 1.5; }
+.ax-leading-relaxed, .ax-lh-relaxed { line-height: 1.625; }
+.ax-leading-loose, .ax-lh-loose { line-height: 2; }
+
+.ax-leading-3 { line-height: 0.75rem; }
+.ax-leading-4 { line-height: 1rem; }
+.ax-leading-5 { line-height: 1.25rem; }
+.ax-leading-6 { line-height: 1.5rem; }
+.ax-leading-7 { line-height: 1.75rem; }
+.ax-leading-8 { line-height: 2rem; }
+.ax-leading-9 { line-height: 2.25rem; }
+.ax-leading-10 { line-height: 2.5rem; }

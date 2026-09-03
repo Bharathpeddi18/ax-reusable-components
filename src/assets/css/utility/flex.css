@@ -1,16 +1,18 @@
 /* ========================================
-   Flexbox Utilities
+   Flexbox Utilities (100% Tailwind Spec)
    ======================================== */
 
 /* ----------------------------------------
    Display
    ---------------------------------------- */
 
-.ax-flex, .ax-d-flex {
+.ax-flex,
+.ax-d-flex {
   display: flex;
 }
 
-.ax-inline-flex, .ax-d-inline-flex {
+.ax-inline-flex,
+.ax-d-inline-flex {
   display: inline-flex;
 }
 
@@ -18,80 +20,228 @@
    Flex Direction
    ---------------------------------------- */
 
-.ax-flex-row { flex-direction: row; }
-.ax-flex-row-reverse { flex-direction: row-reverse; }
-.ax-flex-col, .ax-flex-column { flex-direction: column; }
-.ax-flex-col-reverse, .ax-flex-column-reverse { flex-direction: column-reverse; }
+.ax-flex-row,
+.ax-flex-direction-row {
+  flex-direction: row;
+}
+
+.ax-flex-row-reverse,
+.ax-flex-direction-row-reverse {
+  flex-direction: row-reverse;
+}
+
+.ax-flex-col,
+.ax-flex-column,
+.ax-flex-direction-column {
+  flex-direction: column;
+}
+
+.ax-flex-col-reverse,
+.ax-flex-column-reverse,
+.ax-flex-direction-column-reverse {
+  flex-direction: column-reverse;
+}
 
 /* ----------------------------------------
    Flex Wrap
    ---------------------------------------- */
 
-.ax-flex-wrap { flex-wrap: wrap; }
-.ax-flex-nowrap { flex-wrap: nowrap; }
-.ax-flex-wrap-reverse { flex-wrap: wrap-reverse; }
+.ax-flex-wrap {
+  flex-wrap: wrap;
+}
+
+.ax-flex-nowrap,
+.ax-flex-wrap-nowrap {
+  flex-wrap: nowrap;
+}
+
+.ax-flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
 
 /* ----------------------------------------
-   Flex (Shorthand)
+   Flex Basis / Shorthand
    ---------------------------------------- */
 
-.ax-flex-1 { flex: 1 1 0%; }
-.ax-flex-auto { flex: 1 1 auto; }
-.ax-flex-initial { flex: 0 1 auto; }
-.ax-flex-none { flex: none; }
+.ax-flex-1 {
+  flex: 1 1 0%;
+}
+
+.ax-flex-auto {
+  flex: 1 1 auto;
+}
+
+.ax-flex-initial {
+  flex: 0 1 auto;
+}
+
+.ax-flex-none {
+  flex: none;
+}
 
 /* ----------------------------------------
    Flex Grow / Shrink
    ---------------------------------------- */
 
-.ax-grow, .ax-flex-grow { flex-grow: 1; }
-.ax-grow-0, .ax-flex-grow-0 { flex-grow: 0; }
-.ax-shrink, .ax-flex-shrink { flex-shrink: 1; }
-.ax-shrink-0, .ax-flex-shrink-0 { flex-shrink: 0; }
+.ax-grow,
+.ax-flex-grow,
+.ax-flex-grow-1 {
+  flex-grow: 1;
+}
+
+.ax-grow-0,
+.ax-flex-grow-0 {
+  flex-grow: 0;
+}
+
+.ax-shrink,
+.ax-flex-shrink,
+.ax-flex-shrink-1 {
+  flex-shrink: 1;
+}
+
+.ax-shrink-0,
+.ax-flex-shrink-0 {
+  flex-shrink: 0;
+}
 
 /* ----------------------------------------
    Justify Content
    ---------------------------------------- */
 
-.ax-justify-start { justify-content: flex-start; }
-.ax-justify-center { justify-content: center; }
-.ax-justify-end { justify-content: flex-end; }
-.ax-justify-between { justify-content: space-between; }
-.ax-justify-around { justify-content: space-around; }
-.ax-justify-evenly { justify-content: space-evenly; }
-.ax-justify-stretch { justify-content: stretch; }
+.ax-justify-normal {
+  justify-content: normal;
+}
+
+.ax-justify-start,
+.ax-justify-content-start {
+  justify-content: flex-start;
+}
+
+.ax-justify-end,
+.ax-justify-content-end {
+  justify-content: flex-end;
+}
+
+.ax-justify-center,
+.ax-justify-content-center {
+  justify-content: center;
+}
+
+.ax-justify-between,
+.ax-justify-content-between {
+  justify-content: space-between;
+}
+
+.ax-justify-around,
+.ax-justify-content-around {
+  justify-content: space-around;
+}
+
+.ax-justify-evenly,
+.ax-justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.ax-justify-stretch {
+  justify-content: stretch;
+}
+
+/* ----------------------------------------
+   Justify Items & Self
+   ---------------------------------------- */
+
+.ax-justify-items-start { justify-items: start; }
+.ax-justify-items-end { justify-items: end; }
+.ax-justify-items-center { justify-items: center; }
+.ax-justify-items-stretch { justify-items: stretch; }
+
+.ax-justify-self-auto { justify-self: auto; }
+.ax-justify-self-start { justify-self: start; }
+.ax-justify-self-end { justify-self: end; }
+.ax-justify-self-center { justify-self: center; }
+.ax-justify-self-stretch { justify-self: stretch; }
 
 /* ----------------------------------------
    Align Items
    ---------------------------------------- */
 
-.ax-items-start, .ax-align-start { align-items: flex-start; }
-.ax-items-center, .ax-align-center { align-items: center; }
-.ax-items-end, .ax-align-end { align-items: flex-end; }
-.ax-items-baseline, .ax-align-baseline { align-items: baseline; }
-.ax-items-stretch, .ax-align-stretch { align-items: stretch; }
+.ax-items-start,
+.ax-align-items-start,
+.ax-align-start {
+  align-items: flex-start;
+}
+
+.ax-items-end,
+.ax-align-items-end,
+.ax-align-end {
+  align-items: flex-end;
+}
+
+.ax-items-center,
+.ax-align-items-center,
+.ax-align-center {
+  align-items: center;
+}
+
+.ax-items-baseline,
+.ax-align-items-baseline,
+.ax-align-baseline {
+  align-items: baseline;
+}
+
+.ax-items-stretch,
+.ax-align-items-stretch,
+.ax-align-stretch {
+  align-items: stretch;
+}
 
 /* ----------------------------------------
    Align Self
    ---------------------------------------- */
 
-.ax-self-auto, .ax-align-self-auto { align-self: auto; }
-.ax-self-start, .ax-align-self-start { align-self: flex-start; }
-.ax-self-center, .ax-align-self-center { align-self: center; }
-.ax-self-end, .ax-align-self-end { align-self: flex-end; }
-.ax-self-stretch, .ax-align-self-stretch { align-self: stretch; }
-.ax-self-baseline, .ax-align-self-baseline { align-self: baseline; }
+.ax-self-auto,
+.ax-align-self-auto {
+  align-self: auto;
+}
+
+.ax-self-start,
+.ax-align-self-start {
+  align-self: flex-start;
+}
+
+.ax-self-end,
+.ax-align-self-end {
+  align-self: flex-end;
+}
+
+.ax-self-center,
+.ax-align-self-center {
+  align-self: center;
+}
+
+.ax-self-stretch,
+.ax-align-self-stretch {
+  align-self: stretch;
+}
+
+.ax-self-baseline,
+.ax-align-self-baseline {
+  align-self: baseline;
+}
 
 /* ----------------------------------------
    Align Content
    ---------------------------------------- */
 
+.ax-content-normal { align-content: normal; }
 .ax-content-start, .ax-align-content-start { align-content: flex-start; }
-.ax-content-center, .ax-align-content-center { align-content: center; }
 .ax-content-end, .ax-align-content-end { align-content: flex-end; }
+.ax-content-center, .ax-align-content-center { align-content: center; }
 .ax-content-between, .ax-align-content-between { align-content: space-between; }
 .ax-content-around, .ax-align-content-around { align-content: space-around; }
 .ax-content-evenly, .ax-align-content-evenly { align-content: space-evenly; }
+.ax-content-baseline { align-content: baseline; }
 .ax-content-stretch, .ax-align-content-stretch { align-content: stretch; }
 
 /* ----------------------------------------
@@ -107,3 +257,9 @@
 .ax-order-4 { order: 4; }
 .ax-order-5 { order: 5; }
 .ax-order-6 { order: 6; }
+.ax-order-7 { order: 7; }
+.ax-order-8 { order: 8; }
+.ax-order-9 { order: 9; }
+.ax-order-10 { order: 10; }
+.ax-order-11 { order: 11; }
+.ax-order-12 { order: 12; }

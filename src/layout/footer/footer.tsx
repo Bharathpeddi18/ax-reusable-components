@@ -1,26 +1,15 @@
 'use client';
 
-import React from 'react';
 import './footer.css';
 
-export interface AppFooterProps {
-  children?: React.ReactNode;
-  copyrightText?: string;
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-export const AppFooter: React.FC<AppFooterProps> = ({
-  children,
-  copyrightText = 'AstraX All Rights Reserved.',
-  className = '',
-  style,
-}) => {
+export const Footer = () => {
   return (
-    <footer className={`ax-app-footer ${className}`} style={style}>
-      {children || <h4>{copyrightText}</h4>}
+    <footer className="ax-footer ax-flex ax-items-center ax-justify-center">
+      <p className="ax-text-sm ax-text-secondary">
+        © 2026 AstraX. All rights reserved.
+      </p>
     </footer>
   );
 };
 
-export default AppFooter;
+export default Footer;

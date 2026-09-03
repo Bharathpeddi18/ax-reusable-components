@@ -1,0 +1,32 @@
+.app-layout{
+    height: 100vh;
+    width: 100vw;
+}
+
+.app-layout:has(.ax-menu.ax-menu-expanded) {
+  --ax-menu-width: var(--ax-menu-expanded-width);
+}
+
+.app-layout:has(.ax-menu.ax-menu-collapsed) {
+  --ax-menu-width: 0;
+}
+
+@media screen and (min-width: 576px) {
+    .app-layout:has(.ax-menu.ax-menu-expanded) {
+        --ax-menu-width: var(--ax-menu-expanded-width);
+    }
+
+    .app-layout:has(.ax-menu.ax-menu-collapsed) {
+        --ax-menu-width: var(--ax-menu-collapsed-width);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .app-layout:has(.ax-menu.ax-menu-expanded) {
+        --ax-menu-width: var(--ax-menu-expanded-width);
+    }
+
+    .app-layout:has(.ax-menu.ax-menu-collapsed) {
+        --ax-menu-width: var(--ax-menu-collapsed-width);
+    }
+}

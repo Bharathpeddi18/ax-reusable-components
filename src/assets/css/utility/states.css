@@ -187,13 +187,18 @@
 
 .ax-focus-visible-outline:focus-visible,
 .focus-visible\:ax-outline:focus-visible {
-  outline: 2px solid var(--ax-color-focus);
-  outline-offset: 2px;
+  outline: none;
+  outline-offset: 0px;
+  box-shadow:
+    0 0 0 0px var(--ax-color-primary),
+    0 0 0 2px var(--ax-color-primary-light);
+  border-radius: 2px;
 }
 
 .ax-focus-visible-none:focus-visible,
 .focus-visible\:ax-outline-none:focus-visible {
   outline: none;
+  outline-offset: 0px;
 }
 
 /* ----------------------------------------

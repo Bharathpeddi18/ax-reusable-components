@@ -1,20 +1,26 @@
-.ax-app-header{
-    --ax-app-header-bg-color: #FFF;
-}
-
-.ax-app-header{
+.ax-header {
     position: fixed;
-    height: var(--ax-app-header-height);
-    transition: all 0.5s ease-in-out;
-    width: calc(100vw - var(--ax-app-nav-collapsed-width));
-    left: var(--ax-app-nav-collapsed-width);
+    top: 0;
+    height: var(--ax-header-height);
+    background-color: var(--ax-color-white);
+    border-bottom: 1px solid var(--ax-color-border);
+    transition: var(--ax-g-transition-all);
+    box-shadow: var(--ax-g-box-shadow);
+    width:100vw;
+    left:0;
     z-index: 9998;
 }
 
-@media screen and (min-width: 1024px) {
-    .ax-app-nav-expanded~.ax-app-header{
-        width: calc(100vw - var(--ax-app-nav-expanded-width));
-        left: var(--ax-app-nav-expanded-width);
+@media screen and (min-width: 576px) {
+    .ax-header {
+        width: calc(100vw - var(--ax-menu-collapsed-width));
+        left: var(--ax-menu-collapsed-width);
     }
 }
 
+@media screen and (min-width: 1200px) {
+    .ax-header {
+        width: calc(100vw - var(--ax-menu-width));
+        left: var(--ax-menu-width);
+    }
+}

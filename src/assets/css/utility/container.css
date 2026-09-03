@@ -1,55 +1,40 @@
 /* ========================================
-   Container
+   Container (100% Tailwind Spec)
    ======================================== */
 
 .ax-container {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--ax-space-4);
-  padding-right: var(--ax-space-4);
 }
 
-
-/* ========================================
-   Container - Small
-   ======================================== */
-
-@media (min-width: 576px) {
+@media (min-width: 640px) {
   .ax-container {
-    max-width: 540px;
+    max-width: 640px;
   }
 }
-
-
-/* ========================================
-   Container - Medium
-   ======================================== */
 
 @media (min-width: 768px) {
   .ax-container {
     max-width: 720px;
+    max-width: 768px;
   }
 }
 
-
-/* ========================================
-   Container - Large
-   ======================================== */
-
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   .ax-container {
-    max-width: 960px;
+    max-width: 1024px;
   }
 }
 
-
-/* ========================================
-   Container - Extra Large
-   ======================================== */
-
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .ax-container {
-    max-width: 1140px;
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .ax-container {
+    max-width: 1536px;
   }
 }

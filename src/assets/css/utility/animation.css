@@ -1,5 +1,5 @@
 /* ========================================
-   Animation Utilities
+   Animation Utilities (100% Tailwind Spec)
    ======================================== */
 
 /* ----------------------------------------
@@ -50,125 +50,64 @@
 }
 
 .ax-animate-spin {
-  animation: ax-ax-spin 1s linear infinite;
+  animation: ax-spin 1s linear infinite;
 }
 
 .ax-animate-ping {
-  animation: ax-ax-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: ax-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .ax-animate-pulse {
-  animation: ax-ax-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: ax-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .ax-animate-bounce {
-  animation: ax-ax-bounce 1s infinite;
+  animation: ax-bounce 1s infinite;
 }
 
 /* ----------------------------------------
    Animation Duration
    ---------------------------------------- */
 
-.ax-animate-duration-75 {
-  animation-duration: 75ms;
-}
-
-.ax-animate-duration-100 {
-  animation-duration: 100ms;
-}
-
-.ax-animate-duration-150 {
-  animation-duration: 150ms;
-}
-
-.ax-animate-duration-200 {
-  animation-duration: 200ms;
-}
-
-.ax-animate-duration-300 {
-  animation-duration: 300ms;
-}
-
-.ax-animate-duration-500 {
-  animation-duration: 500ms;
-}
-
-.ax-animate-duration-700 {
-  animation-duration: 700ms;
-}
-
-.ax-animate-duration-1000 {
-  animation-duration: 1000ms;
-}
+.ax-animate-duration-75 { animation-duration: 75ms; }
+.ax-animate-duration-100 { animation-duration: 100ms; }
+.ax-animate-duration-150 { animation-duration: 150ms; }
+.ax-animate-duration-200 { animation-duration: 200ms; }
+.ax-animate-duration-300 { animation-duration: 300ms; }
+.ax-animate-duration-500 { animation-duration: 500ms; }
+.ax-animate-duration-700 { animation-duration: 700ms; }
+.ax-animate-duration-1000 { animation-duration: 1000ms; }
 
 /* ----------------------------------------
    Animation Timing Function
    ---------------------------------------- */
 
-.ax-animate-linear {
-  animation-timing-function: linear;
-}
-
-.ax-animate-ease {
-  animation-timing-function: ease;
-}
-
-.ax-animate-ease-in {
-  animation-timing-function: ease-in;
-}
-
-.ax-animate-ease-out {
-  animation-timing-function: ease-out;
-}
-
-.ax-animate-ease-in-out {
-  animation-timing-function: ease-in-out;
-}
+.ax-animate-linear { animation-timing-function: linear; }
+.ax-animate-ease { animation-timing-function: ease; }
+.ax-animate-ease-in { animation-timing-function: ease-in; }
+.ax-animate-ease-out { animation-timing-function: ease-out; }
+.ax-animate-ease-in-out { animation-timing-function: ease-in-out; }
 
 /* ----------------------------------------
    Animation Iteration Count
    ---------------------------------------- */
 
-.ax-animate-once {
-  animation-iteration-count: 1;
-}
-
-.ax-animate-twice {
-  animation-iteration-count: 2;
-}
-
-.ax-animate-infinite {
-  animation-iteration-count: infinite;
-}
+.ax-animate-once { animation-iteration-count: 1; }
+.ax-animate-twice { animation-iteration-count: 2; }
+.ax-animate-infinite { animation-iteration-count: infinite; }
 
 /* ----------------------------------------
    Animation Fill Mode
    ---------------------------------------- */
 
-.ax-animate-fill-none {
-  animation-fill-mode: none;
-}
-
-.ax-animate-fill-forwards {
-  animation-fill-mode: forwards;
-}
-
-.ax-animate-fill-backwards {
-  animation-fill-mode: backwards;
-}
-
-.ax-animate-fill-both {
-  animation-fill-mode: both;
-}
+.ax-animate-fill-none { animation-fill-mode: none; }
+.ax-animate-fill-forwards { animation-fill-mode: forwards; }
+.ax-animate-fill-backwards { animation-fill-mode: backwards; }
+.ax-animate-fill-both { animation-fill-mode: both; }
 
 /* ----------------------------------------
    Animation Play State
    ---------------------------------------- */
 
-.ax-animate-running {
-  animation-play-state: running;
-}
-
-.ax-animate-paused {
-  animation-play-state: paused;
-}
+.ax-animate-running { animation-play-state: running; }
+.ax-animate-paused { animation-play-state: paused; }

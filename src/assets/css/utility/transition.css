@@ -1,53 +1,82 @@
 /* ========================================
-   Transition
+   Transition Utilities (100% Tailwind Spec)
    ======================================== */
 
+/* ----------------------------------------
+   Transition Property
+   ---------------------------------------- */
+
 .ax-transition-none {
-  transition: none;
+  transition-property: none;
+}
+
+.ax-transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 .ax-transition {
-  transition-property: color, background-color, border-color,
-    opacity, box-shadow, transform;
-  transition-duration: 200ms;
-  transition-timing-function: ease;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
-.ax-transition-fast {
-  transition-property: color, background-color, border-color,
-    opacity, box-shadow, transform;
-  transition-duration: 100ms;
-  transition-timing-function: ease;
+.ax-transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
-.ax-transition-slow {
-  transition-property: color, background-color, border-color,
-    opacity, box-shadow, transform;
-  transition-duration: 300ms;
-  transition-timing-function: ease;
+.ax-transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
-
-/* ========================================
-   Transition Timing
-   ======================================== */
-
-.ax-ease-linear {
-  transition-timing-function: linear;
+.ax-transition-shadow {
+  transition-property: box-shadow;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
-.ax-ease {
-  transition-timing-function: ease;
+.ax-transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
-.ax-ease-in {
-  transition-timing-function: ease-in;
-}
+/* ----------------------------------------
+   Transition Duration
+   ---------------------------------------- */
 
-.ax-ease-out {
-  transition-timing-function: ease-out;
-}
+.ax-duration-75 { transition-duration: 75ms; }
+.ax-duration-100 { transition-duration: 100ms; }
+.ax-duration-150 { transition-duration: 150ms; }
+.ax-duration-200 { transition-duration: 200ms; }
+.ax-duration-300 { transition-duration: 300ms; }
+.ax-duration-500 { transition-duration: 500ms; }
+.ax-duration-700 { transition-duration: 700ms; }
+.ax-duration-1000 { transition-duration: 1000ms; }
 
-.ax-ease-in-out {
-  transition-timing-function: ease-in-out;
-}
+/* ----------------------------------------
+   Transition Timing Function
+   ---------------------------------------- */
+
+.ax-ease-linear { transition-timing-function: linear; }
+.ax-ease-in { transition-timing-function: cubic-bezier(0.4, 0, 1, 1); }
+.ax-ease-out { transition-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+.ax-ease-in-out { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* ----------------------------------------
+   Transition Delay
+   ---------------------------------------- */
+
+.ax-delay-75 { transition-delay: 75ms; }
+.ax-delay-100 { transition-delay: 100ms; }
+.ax-delay-150 { transition-delay: 150ms; }
+.ax-delay-200 { transition-delay: 200ms; }
+.ax-delay-300 { transition-delay: 300ms; }
+.ax-delay-500 { transition-delay: 500ms; }
+.ax-delay-700 { transition-delay: 700ms; }
+.ax-delay-1000 { transition-delay: 1000ms; }

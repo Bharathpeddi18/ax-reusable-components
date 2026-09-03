@@ -26,6 +26,7 @@ export type AXButtonVariant =
 export type AXButtonColor =
   | 'primary'
   | 'secondary'
+  | 'accent'
   | 'success'
   | 'warning'
   | 'danger'

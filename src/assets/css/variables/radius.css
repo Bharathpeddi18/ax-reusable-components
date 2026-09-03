@@ -1,11 +1,12 @@
 /* ========================================
-   Border Radius Tokens
+   Border Radius Tokens (100% Tailwind Scale)
    ======================================== */
 
 :root {
-  --ax-radius-none: 0;
-  --ax-radius-xs: 0.125rem;   /* 2px */
-  --ax-radius-sm: 0.25rem;    /* 4px */
+  --ax-radius-none: 0px;
+  --ax-radius-sm: 0.125rem;   /* 2px */
+  --ax-radius-default: 0.25rem; /* 4px */
+  --ax-radius-base: 0.25rem;    /* 4px */
   --ax-radius-md: 0.375rem;   /* 6px */
   --ax-radius-lg: 0.5rem;     /* 8px */
   --ax-radius-xl: 0.75rem;    /* 12px */

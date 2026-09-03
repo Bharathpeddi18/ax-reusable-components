@@ -1,12 +1,11 @@
 /* ========================================
-   Breakpoint Tokens
+   Breakpoint Tokens (Tailwind CSS Aligned)
    ======================================== */
 
 :root {
-  --ax-breakpoint-xs: 360px;
-  --ax-breakpoint-sm: 576px;
+  --ax-breakpoint-sm: 640px;
   --ax-breakpoint-md: 768px;
-  --ax-breakpoint-lg: 992px;
-  --ax-breakpoint-xl: 1200px;
-  --ax-breakpoint-xxl: 1400px;
+  --ax-breakpoint-lg: 1024px;
+  --ax-breakpoint-xl: 1280px;
+  --ax-breakpoint-2xl: 1536px;
 }

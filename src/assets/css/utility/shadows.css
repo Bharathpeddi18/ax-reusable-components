@@ -1,12 +1,12 @@
 /* ========================================
-   Shadow Utilities
+   Shadow Utilities (100% Tailwind Spec)
    ======================================== */
 
-.ax-shadow-none { box-shadow: var(--ax-shadow-none); }
-.ax-shadow-xs { box-shadow: var(--ax-shadow-xs); }
 .ax-shadow-sm { box-shadow: var(--ax-shadow-sm); }
-.ax-shadow, .ax-shadow-md { box-shadow: var(--ax-shadow-md); }
+.ax-shadow, .ax-shadow-default { box-shadow: var(--ax-shadow); }
+.ax-shadow-md { box-shadow: var(--ax-shadow-md); }
 .ax-shadow-lg { box-shadow: var(--ax-shadow-lg); }
 .ax-shadow-xl { box-shadow: var(--ax-shadow-xl); }
 .ax-shadow-2xl { box-shadow: var(--ax-shadow-2xl); }
 .ax-shadow-inner { box-shadow: var(--ax-shadow-inner); }
+.ax-shadow-none { box-shadow: var(--ax-shadow-none); }

@@ -26,8 +26,11 @@
 
 .ax-btn:focus-visible {
   outline: none;
-  --ax-ring-shadow: var(--ax-ring-inset, ) 0 0 0 calc(2px + 2px) var(--ax-color-primary);
-  box-shadow: 0 0 0 2px var(--ax-color-surface), var(--ax-ring-shadow);
+  outline-offset: 0px;
+  box-shadow:
+    0 0 0 0px var(--ax-color-primary),
+    0 0 0 2px var(--ax-color-primary-light);
+  border-radius: 2px;
 }
 
 .ax-btn:disabled,

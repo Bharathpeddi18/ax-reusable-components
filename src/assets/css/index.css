@@ -15,6 +15,7 @@
 @import url("./variables/spacings.css") layer(tokens);
 @import url("./variables/typography.css") layer(tokens);
 @import url("./variables/z-index.css") layer(tokens);
+@import url("./variables/component-variables.css") layer(tokens);
 
 /* ==========================================================================
    2. RESET
@@ -95,7 +96,7 @@
 @import url("./utility/will-change.css") layer(utilities);
 @import url("./utility/motion.css") layer(utilities);
 @import url("./utility/rtl.css") layer(utilities);
-@import url("./utility/dark-mode.css") layer(utilities);
+/* @import url("./utility/dark-mode.css") layer(utilities); */
 @import url("./utility/print.css") layer(utilities);
 @import url("./utility/accessibility.css") layer(utilities);
 

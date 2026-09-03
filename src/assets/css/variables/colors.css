@@ -4,15 +4,25 @@
 
 :root {
   /* ----------------------------------------
-     Brand
+     Brand / US Air Force Theme
      ---------------------------------------- */
-  --ax-color-primary: #2563eb;
-  --ax-color-primary-hover: #1d4ed8;
-  --ax-color-primary-active: #1e40af;
+  /* Primary: USAF Air Force Blue */
+  --ax-color-primary: #00308F;
+  --ax-color-primary-light: #4D70B5;
+  --ax-color-primary-hover: #002776;
+  --ax-color-primary-active: #001E5B;
 
-  --ax-color-secondary: #64748b;
-  --ax-color-secondary-hover: #475569;
-  --ax-color-secondary-active: #334155;
+  /* Secondary: USAF Cadet / Steel Slate Gray */
+  --ax-color-secondary: #607D94;
+  --ax-color-secondary-light: #91A5B5;
+  --ax-color-secondary-hover: #4f677a;
+  --ax-color-secondary-active: #3e5160;
+
+  /* Accent: USAF Aviation Insignia Gold / Amber */
+  --ax-color-accent: #C9A227;
+  --ax-color-accent-light: #DDC96D;
+  --ax-color-accent-hover: #b08d22;
+  --ax-color-accent-active: #94771c;
 
   /* ----------------------------------------
      Semantic
@@ -20,35 +30,35 @@
   --ax-color-success: #16a34a;
   --ax-color-success-hover: #15803d;
 
-  --ax-color-warning: #d97706;
-  --ax-color-warning-hover: #b45309;
+  --ax-color-warning: #C9A227;
+  --ax-color-warning-hover: #b08d22;
 
   --ax-color-danger: #dc2626;
   --ax-color-danger-hover: #b91c1c;
 
-  --ax-color-info: #0284c7;
-  --ax-color-info-hover: #0369a1;
+  --ax-color-info: #00308F;
+  --ax-color-info-hover: #002776;
 
   /* ----------------------------------------
-     Background & Surface
+     Background & Surface (Clean Aircraft / Airfield)
      ---------------------------------------- */
-  --ax-color-background: #ffffff;
+  --ax-color-background: #F5F7FA;
   --ax-color-surface: #ffffff;
-  --ax-color-surface-secondary: #f8fafc;
-  --ax-color-surface-tertiary: #f1f5f9;
+  --ax-color-surface-secondary: #ebf0f5;
+  --ax-color-surface-tertiary: #dfe5ec;
 
   /* ----------------------------------------
-     Text
+     Text (Cockpit Navy / Deep Dark Slate)
      ---------------------------------------- */
-  --ax-color-text: #0f172a;
-  --ax-color-text-secondary: #475569;
-  --ax-color-text-muted: #64748b;
-  --ax-color-text-disabled: #94a3b8;
+  --ax-color-text: #17212B;
+  --ax-color-text-secondary: #4a5a6a;
+  --ax-color-text-muted: #607D94;
+  --ax-color-text-disabled: #9eb1c2;
 
   /* ----------------------------------------
      Border
      ---------------------------------------- */
-  --ax-color-border: #e2e8f0;
+  --ax-color-border: #d2dbe5;
   --ax-color-border-secondary: #cbd5e1;
   --ax-color-border-focus: var(--ax-color-primary);
 
