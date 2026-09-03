@@ -1,0 +1,295 @@
+/* ==========================================================================
+   AstraX (AX) World-Class Popover Component Styles
+   Engineered for Zero Z-Index Collisions, Dynamic Viewport Clamping & Rich Theming
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Popover Portal Container & Base Box
+   -------------------------------------------------------------------------- */
+
+.ax-popover-portal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: var(--ax-z-index-popover, 2000);
+}
+
+.ax-popover {
+  position: absolute;
+  pointer-events: auto;
+  box-sizing: border-box;
+  outline: none;
+  isolation: isolate;
+  transform-origin: var(--ax-popover-transform-origin, center center);
+  transition: opacity 160ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* --------------------------------------------------------------------------
+   2. Entrance & Exit Animations
+   -------------------------------------------------------------------------- */
+
+.ax-popover[data-ax-state="open"] {
+  opacity: 1;
+  transform: scale(1) translate(0, 0);
+  animation: ax-popover-enter 160ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ax-popover[data-ax-state="closed"] {
+  opacity: 0;
+  transform: scale(0.96);
+  pointer-events: none;
+}
+
+@keyframes ax-popover-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(var(--ax-popover-slide-offset, 4px));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Popover Card Surface & Themes
+   -------------------------------------------------------------------------- */
+
+.ax-popover-card {
+  position: relative;
+  border-radius: var(--ax-popover-radius, var(--ax-radius-xl, 12px));
+  box-shadow: var(--ax-popover-shadow, var(--ax-shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1)));
+  background-color: var(--ax-popover-bg, var(--ax-color-surface, #ffffff));
+  color: var(--ax-popover-text, var(--ax-color-text-primary, #0f172a));
+  border: 1px solid var(--ax-popover-border, var(--ax-color-border, #e2e8f0));
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Theme: Surface (Default Clean) */
+.ax-popover-theme-surface {
+  --ax-popover-bg: var(--ax-color-surface, #ffffff);
+  --ax-popover-text: var(--ax-color-text-primary, #0f172a);
+  --ax-popover-border: var(--ax-color-border, #e2e8f0);
+  --ax-popover-shadow: var(--ax-shadow-xl);
+}
+
+/* Theme: Dark / Charcoal */
+.ax-popover-theme-dark {
+  --ax-popover-bg: #0f172a;
+  --ax-popover-text: #f8fafc;
+  --ax-popover-border: #334155;
+  --ax-popover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+}
+
+/* Theme: Primary (Brand Blue) */
+.ax-popover-theme-primary {
+  --ax-popover-bg: var(--ax-color-primary, #00308F);
+  --ax-popover-text: #ffffff;
+  --ax-popover-border: var(--ax-color-primary-active, #001E5B);
+  --ax-popover-shadow: 0 20px 25px -5px rgba(0, 48, 143, 0.25);
+}
+
+/* Theme: Glassmorphic */
+.ax-popover-theme-glass {
+  --ax-popover-bg: rgba(255, 255, 255, 0.82);
+  --ax-popover-text: var(--ax-color-text-primary, #0f172a);
+  --ax-popover-border: rgba(255, 255, 255, 0.45);
+  --ax-popover-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* --------------------------------------------------------------------------
+   4. Size Variants
+   -------------------------------------------------------------------------- */
+
+/* Extra Small (xs) */
+.ax-popover-size-xs {
+  width: max-content;
+  max-width: 220px;
+  font-size: var(--ax-font-size-xs, 0.75rem);
+}
+.ax-popover-size-xs .ax-popover-body {
+  padding: 8px 12px;
+}
+
+/* Small (sm) */
+.ax-popover-size-sm {
+  width: max-content;
+  max-width: 280px;
+  font-size: var(--ax-font-size-sm, 0.875rem);
+}
+.ax-popover-size-sm .ax-popover-body {
+  padding: 12px 14px;
+}
+
+/* Medium (md - Default Standard) */
+.ax-popover-size-md {
+  width: max-content;
+  max-width: 340px;
+  font-size: var(--ax-font-size-sm, 0.875rem);
+}
+.ax-popover-size-md .ax-popover-body {
+  padding: 16px;
+}
+
+/* Large (lg) */
+.ax-popover-size-lg {
+  width: max-content;
+  max-width: 440px;
+  font-size: var(--ax-font-size-base, 1rem);
+}
+.ax-popover-size-lg .ax-popover-body {
+  padding: 20px;
+}
+
+/* Extra Large (xl) */
+.ax-popover-size-xl {
+  width: max-content;
+  max-width: 560px;
+  font-size: var(--ax-font-size-base, 1rem);
+}
+.ax-popover-size-xl .ax-popover-body {
+  padding: 24px;
+}
+
+/* Auto / Content Bound */
+.ax-popover-size-auto {
+  width: auto;
+  max-width: calc(100vw - 32px);
+}
+.ax-popover-size-auto .ax-popover-body {
+  padding: 16px;
+}
+
+/* Match Trigger Width (trigger-width) */
+.ax-popover-size-full {
+  width: var(--ax-popover-trigger-width, 100%);
+  max-width: calc(100vw - 32px);
+}
+.ax-popover-size-full .ax-popover-body {
+  padding: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Internal Anatomy (Header, Body, Footer, Close)
+   -------------------------------------------------------------------------- */
+
+.ax-popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ax-popover-border, var(--ax-color-border));
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1.3;
+}
+
+.ax-popover-title {
+  margin: 0;
+  font-weight: 600;
+  color: inherit;
+}
+
+.ax-popover-body {
+  box-sizing: border-box;
+  color: inherit;
+  line-height: 1.5;
+}
+
+.ax-popover-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--ax-popover-border, var(--ax-color-border));
+  background-color: color-mix(in srgb, var(--ax-popover-bg) 95%, black 5%);
+}
+
+.ax-popover-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--ax-radius-sm, 4px);
+  color: var(--ax-color-text-muted, #94a3b8);
+  cursor: pointer;
+  transition: all 120ms ease;
+}
+
+.ax-popover-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: var(--ax-color-text-primary, #0f172a);
+}
+
+.ax-popover-theme-dark .ax-popover-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   6. Arrow Anchor Indicator
+   -------------------------------------------------------------------------- */
+
+.ax-popover-arrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--ax-popover-bg);
+  border: 1px solid var(--ax-popover-border);
+  transform: rotate(45deg);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Placed on Bottom -> Arrow at Top */
+.ax-popover[data-ax-placement^="bottom"] .ax-popover-arrow {
+  top: -5px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/* Placed on Top -> Arrow at Bottom */
+.ax-popover[data-ax-placement^="top"] .ax-popover-arrow {
+  bottom: -5px;
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+
+/* Placed on Right -> Arrow at Left */
+.ax-popover[data-ax-placement^="right"] .ax-popover-arrow {
+  left: -5px;
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+
+/* Placed on Left -> Arrow at Right */
+.ax-popover[data-ax-placement^="left"] .ax-popover-arrow {
+  right: -5px;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   7. Trigger Wrapper
+   -------------------------------------------------------------------------- */
+
+.ax-popover-trigger {
+  display: inline-flex;
+  cursor: pointer;
+  outline: none;
+}

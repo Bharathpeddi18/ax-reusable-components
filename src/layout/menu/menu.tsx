@@ -31,50 +31,50 @@ const AppNavigation = () => {
       className={`ax-menu ${isExpanded ? 'ax-menu-expanded' : 'ax-menu-collapsed'}`}
       aria-label="Main Navigation"
     >
-      <div className="ax-menu-header flex justify-between items-center relative px-3">
-        <Link href="/" className="flex items-center">
-          <img
-            src={ApplicationLogo.src}
-            alt="AstraX"
-            width={100}
+      <div className="ax-menu-header ax-flex ax-justify-between ax-items-center ax-relative ax-px-3">
+          <Link href="/" className="ax-flex ax-items-center">
+            <img
+              src={ApplicationLogo.src}
+              alt="AstraX"
+              width={100}
             height={50}
-            className="object-contain"
-          />
-        </Link>
+              className="ax-object-contain"
+            />
+          </Link>
         <button
           type="button"
-          className="ax-menu-toggle flex items-center justify-center cursor-pointer"
+          className={`ax-menu-toggle ax-flex ax-items-center ax-justify-center ax-cursor-pointer`}
           onClick={handleToggle}
           title={isExpanded ? 'Collapse Menu' : 'Expand Menu'}
           aria-expanded={isExpanded}
         >
-          <IconMenu className={isExpanded ? 'text-white' : 'text-primary'} />
+          <IconMenu className={isExpanded ? 'ax-text-white' : 'ax-text-primary'} />
         </button>
       </div>
 
       {/* Navigation Menu */}
-      <ul className="ax-menu-body p-2 space-y-1">
+      <ul className="ax-menu-body ax-p-2 ax-space-y-1">
         {menuItems.map((menuItem) => (
           <li key={menuItem.path} className="ax-menu-item">
             <Link
               href={menuItem.path}
-              className="flex flex-row items-center gap-2 p-2 rounded-lg text-white hover:bg-primary-hover hover:shadow-md transition-all duration-150 no-underline"
+              className="ax-flex ax-flex-row ax-items-center ax-gap-2 ax-p-2 ax-rounded-lg ax-text-white hover:ax-bg-primary-hover hover:ax-shadow-md ax-transition-all ax-duration-150 ax-no-underline"
               title={menuItem.label}
             >
               {menuItem.Icon && (
-                <span className="flex items-center justify-center w-6 h-6 shrink-0 font-bold">
+                <span className="ax-flex ax-items-center ax-justify-center ax-w-6 ax-h-6 ax-shrink-0 ax-font-bold">
                   A
                 </span>
               )}
               {isExpanded && (
-                <span className="line-clamp-1 text-sm font-medium">{menuItem.label}</span>
+                <span className="ax-line-clamp-1 ax-text-sm ax-font-medium">{menuItem.label}</span>
               )}
             </Link>
           </li>
         ))}
       </ul>
 
-      <div className="ax-menu-footer flex justify-between items-center" />
+      <div className="ax-menu-footer ax-flex ax-justify-between ax-items-center" />
     </nav>
   );
 };

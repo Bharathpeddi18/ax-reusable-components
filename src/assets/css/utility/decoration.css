@@ -1,28 +1,28 @@
-/* ========================================
-   Text Decoration Utilities (Tailwind & AX Spec)
-   ======================================== */
+/* ==========================================================================
+   Text Decoration Utilities (Canonical AX Namespace Spec)
+   ========================================================================== */
 
 /* ----------------------------------------
    Text Decoration Line
    ---------------------------------------- */
 
-.no-underline, .ax-no-underline, .ax-text-decoration-none {
+.ax-no-underline {
   text-decoration-line: none;
 }
 
-.underline, .ax-underline {
+.ax-underline {
   text-decoration-line: underline;
 }
 
-.overline, .ax-overline {
+.ax-overline {
   text-decoration-line: overline;
 }
 
-.line-through, .ax-line-through {
+.ax-line-through {
   text-decoration-line: line-through;
 }
 
-.underline-overline, .ax-underline-overline {
+.ax-underline-overline {
   text-decoration-line: underline overline;
 }
 
@@ -30,37 +30,37 @@
    Text Decoration Style
    ---------------------------------------- */
 
-.decoration-solid, .ax-decoration-solid { text-decoration-style: solid; }
-.decoration-double, .ax-decoration-double { text-decoration-style: double; }
-.decoration-dotted, .ax-decoration-dotted { text-decoration-style: dotted; }
-.decoration-dashed, .ax-decoration-dashed { text-decoration-style: dashed; }
-.decoration-wavy, .ax-decoration-wavy { text-decoration-style: wavy; }
+.ax-decoration-solid { text-decoration-style: solid; }
+.ax-decoration-double { text-decoration-style: double; }
+.ax-decoration-dotted { text-decoration-style: dotted; }
+.ax-decoration-dashed { text-decoration-style: dashed; }
+.ax-decoration-wavy { text-decoration-style: wavy; }
 
 /* ----------------------------------------
    Text Decoration Thickness
    ---------------------------------------- */
 
-.decoration-auto, .ax-decoration-auto { text-decoration-thickness: auto; }
-.decoration-from-font, .ax-decoration-from-font { text-decoration-thickness: from-font; }
-.decoration-1, .ax-decoration-1 { text-decoration-thickness: 1px; }
-.decoration-2, .ax-decoration-2 { text-decoration-thickness: 2px; }
-.decoration-4, .ax-decoration-4 { text-decoration-thickness: 4px; }
+.ax-decoration-auto { text-decoration-thickness: auto; }
+.ax-decoration-from-font { text-decoration-thickness: from-font; }
+.ax-decoration-1 { text-decoration-thickness: 1px; }
+.ax-decoration-2 { text-decoration-thickness: 2px; }
+.ax-decoration-4 { text-decoration-thickness: 4px; }
 
 /* ----------------------------------------
    Text Underline Offset
    ---------------------------------------- */
 
-.underline-offset-auto, .ax-underline-offset-auto { text-underline-offset: auto; }
-.underline-offset-1, .ax-underline-offset-1 { text-underline-offset: 1px; }
-.underline-offset-2, .ax-underline-offset-2 { text-underline-offset: 2px; }
-.underline-offset-4, .ax-underline-offset-4 { text-underline-offset: 4px; }
-.underline-offset-8, .ax-underline-offset-8 { text-underline-offset: 8px; }
+.ax-underline-offset-auto { text-underline-offset: auto; }
+.ax-underline-offset-1 { text-underline-offset: 1px; }
+.ax-underline-offset-2 { text-underline-offset: 2px; }
+.ax-underline-offset-4 { text-underline-offset: 4px; }
+.ax-underline-offset-8 { text-underline-offset: 8px; }
 
 /* ----------------------------------------
    Text Decoration Color
    ---------------------------------------- */
 
-.decoration-primary, .ax-decoration-primary { text-decoration-color: var(--ax-color-primary); }
-.decoration-secondary, .ax-decoration-secondary { text-decoration-color: var(--ax-color-secondary); }
-.decoration-current, .ax-decoration-current { text-decoration-color: currentColor; }
-.decoration-transparent, .ax-decoration-transparent { text-decoration-color: transparent; }
+.ax-decoration-primary { text-decoration-color: var(--ax-color-primary); }
+.ax-decoration-secondary { text-decoration-color: var(--ax-color-secondary); }
+.ax-decoration-current { text-decoration-color: currentColor; }
+.ax-decoration-transparent { text-decoration-color: transparent; }

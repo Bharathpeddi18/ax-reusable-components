@@ -12,11 +12,11 @@ export const AXPageHeader = ({
   actions = 'Page Header Right',
 }: AXPageHeaderProps) => {
   return (
-    <header className="ax-page-header flex items-center justify-between px-6 py-3 bg-surface border-b border-default shadow-sm">
-      <div className="flex items-center text-lg font-semibold text-primary">
+    <header className="ax-page-header ax-flex ax-items-center ax-justify-between ax-px-6 ax-py-3 ax-bg-surface ax-border-b ax-border-default ax-shadow-sm">
+      <div className="ax-flex ax-items-center ax-text-lg ax-font-semibold ax-text-primary">
         {title}
       </div>
-      <div className="flex items-center gap-3 text-sm text-secondary">
+      <div className="ax-flex ax-items-center ax-gap-3 ax-text-sm ax-text-secondary">
         {actions}
       </div>
     </header>

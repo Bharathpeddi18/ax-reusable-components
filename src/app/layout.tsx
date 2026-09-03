@@ -1,6 +1,5 @@
-
-import '../assets/css/index.css'
-import './layout.css'
+import '../assets/css/index.css';
+import './layout.css';
 
 import Footer from '@/layout/footer/footer';
 import Header from '@/layout/header/header';
@@ -17,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="app-layout">
+        <div className="ax-app-layout">
           <Menu />
           <Header />
           <PageWrapper>

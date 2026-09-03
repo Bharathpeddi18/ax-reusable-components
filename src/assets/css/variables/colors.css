@@ -80,5 +80,5 @@
   --ax-color-gray-900: #0f172a;
   --ax-color-gray-950: #020617;
 
-  --ax-color-focus: var(--ax-color-primary);
+  --ax-color-focus: var(--ax-color-primary-light);
 }

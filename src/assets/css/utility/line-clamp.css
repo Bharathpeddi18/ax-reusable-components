@@ -1,13 +1,13 @@
-/* ========================================
-   Line Clamp Utilities (Tailwind & AX Spec)
-   ======================================== */
+/* ==========================================================================
+   Line Clamp Utilities (Canonical AX Namespace Spec)
+   ========================================================================== */
 
-.line-clamp-none, .ax-line-clamp-none {
+.ax-line-clamp-none {
   line-clamp: none;
   -webkit-line-clamp: none;
 }
 
-.line-clamp-1, .ax-line-clamp-1 {
+.ax-line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -15,7 +15,7 @@
   line-clamp: 1;
 }
 
-.line-clamp-2, .ax-line-clamp-2 {
+.ax-line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -23,7 +23,7 @@
   line-clamp: 2;
 }
 
-.line-clamp-3, .ax-line-clamp-3 {
+.ax-line-clamp-3 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -31,7 +31,7 @@
   line-clamp: 3;
 }
 
-.line-clamp-4, .ax-line-clamp-4 {
+.ax-line-clamp-4 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -39,7 +39,7 @@
   line-clamp: 4;
 }
 
-.line-clamp-5, .ax-line-clamp-5 {
+.ax-line-clamp-5 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -47,7 +47,7 @@
   line-clamp: 5;
 }
 
-.line-clamp-6, .ax-line-clamp-6 {
+.ax-line-clamp-6 {
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;

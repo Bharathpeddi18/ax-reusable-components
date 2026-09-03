@@ -1,18 +1,18 @@
-/* ========================================
-   Display Utilities (Tailwind & AX Spec)
-   ======================================== */
+/* ==========================================================================
+   Display Utilities (Canonical AX Namespace Spec)
+   ========================================================================== */
 
-.hidden, .ax-hidden, .ax-d-none { display: none; }
-.block, .ax-block, .ax-d-block { display: block; }
-.inline, .ax-inline, .ax-d-inline { display: inline; }
-.inline-block, .ax-inline-block, .ax-d-inline-block { display: inline-block; }
-.flex, .ax-flex, .ax-d-flex { display: flex; }
-.inline-flex, .ax-inline-flex, .ax-d-inline-flex { display: inline-flex; }
-.grid, .ax-grid, .ax-d-grid { display: grid; }
-.inline-grid, .ax-inline-grid, .ax-d-inline-grid { display: inline-grid; }
-.table, .ax-table, .ax-d-table { display: table; }
-.table-row, .ax-table-row, .ax-d-table-row { display: table-row; }
-.table-cell, .ax-table-cell, .ax-d-table-cell { display: table-cell; }
-.contents, .ax-contents, .ax-d-contents { display: contents; }
-.list-item, .ax-list-item, .ax-d-list-item { display: list-item; }
-.flow-root, .ax-flow-root, .ax-d-flow-root { display: flow-root; }
+.ax-hidden { display: none; }
+.ax-block { display: block; }
+.ax-inline { display: inline; }
+.ax-inline-block { display: inline-block; }
+.ax-flex { display: flex; }
+.ax-inline-flex { display: inline-flex; }
+.ax-grid { display: grid; }
+.ax-inline-grid { display: inline-grid; }
+.ax-table { display: table; }
+.ax-table-row { display: table-row; }
+.ax-table-cell { display: table-cell; }
+.ax-contents { display: contents; }
+.ax-list-item { display: list-item; }
+.ax-flow-root { display: flow-root; }

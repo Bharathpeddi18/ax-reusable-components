@@ -1,8 +1,8 @@
 /* ==========================================================================
-   Root Application Shell Layout
+   Root Application Shell Layout (Canonical AX Namespace Spec)
    ========================================================================== */
 
-.app-layout {
+.ax-app-layout {
   min-height: 100dvh;
   width: 100%;
   position: relative;
@@ -18,18 +18,18 @@
 
 /* Mobile Base (0px - 639px): Sidebar acts as an off-canvas overlay.
    Shell width is 100% so content is never squashed on mobile screens. */
-.app-layout {
+.ax-app-layout {
   --ax-menu-width: 0px;
 }
 
 /* Tablet & Desktop (>= 640px): Sidebar participates in shell geometry.
    Header and Page Wrapper smoothly transition alongside sidebar toggle. */
 @media (min-width: 640px) {
-  .app-layout:has(.ax-menu.ax-menu-collapsed) {
+  .ax-app-layout:has(.ax-menu.ax-menu-collapsed) {
     --ax-menu-width: var(--ax-menu-collapsed-width);
   }
 
-  .app-layout:has(.ax-menu.ax-menu-expanded) {
+  .ax-app-layout:has(.ax-menu.ax-menu-expanded) {
     --ax-menu-width: var(--ax-menu-expanded-width);
   }
 }

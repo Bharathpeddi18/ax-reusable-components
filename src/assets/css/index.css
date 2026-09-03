@@ -98,7 +98,7 @@
 @import url("./utility/will-change.css") layer(utilities);
 @import url("./utility/motion.css") layer(utilities);
 @import url("./utility/rtl.css") layer(utilities);
-@import url("./utility/dark-mode.css") layer(utilities);
+/* @import url("./utility/dark-mode.css") layer(utilities); */
 @import url("./utility/print.css") layer(utilities);
 @import url("./utility/accessibility.css") layer(utilities);
 
