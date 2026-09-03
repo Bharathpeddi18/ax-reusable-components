@@ -1,12 +1,12 @@
 /* ========================================
-   Responsive Utilities
+   Responsive Utilities (100% Tailwind Spec)
    ======================================== */
 
 /* ========================================
-   1. Small Devices - (min-width: 576px)
+   1. Small Devices - sm: (min-width: 640px)
    ======================================== */
 
-@media (min-width: 576px) {
+@media (min-width: 640px) {
   /* Display */
   .ax-d-sm-none, .sm\:ax-hidden { display: none; }
   .ax-d-sm-block, .sm\:ax-block { display: block; }
@@ -18,21 +18,29 @@
 
   /* Flexbox */
   .ax-flex-sm-row, .sm\:ax-flex-row { flex-direction: row; }
-  .ax-flex-sm-column, .sm\:ax-flex-col { flex-direction: column; }
+  .ax-flex-sm-row-reverse, .sm\:ax-flex-row-reverse { flex-direction: row-reverse; }
+  .ax-flex-sm-column, .ax-flex-sm-col, .sm\:ax-flex-col { flex-direction: column; }
+  .ax-flex-sm-col-reverse, .sm\:ax-flex-col-reverse { flex-direction: column-reverse; }
   .ax-flex-sm-wrap, .sm\:ax-flex-wrap { flex-wrap: wrap; }
   .ax-flex-sm-nowrap, .sm\:ax-flex-nowrap { flex-wrap: nowrap; }
   .sm\:ax-flex-1 { flex: 1 1 0%; }
   .sm\:ax-flex-auto { flex: 1 1 auto; }
+  .sm\:ax-flex-initial { flex: 0 1 auto; }
   .sm\:ax-flex-none { flex: none; }
   .sm\:ax-grow { flex-grow: 1; }
+  .sm\:ax-grow-0 { flex-grow: 0; }
+  .sm\:ax-shrink { flex-shrink: 1; }
   .sm\:ax-shrink-0 { flex-shrink: 0; }
   .ax-justify-sm-start, .sm\:ax-justify-start { justify-content: flex-start; }
   .ax-justify-sm-center, .sm\:ax-justify-center { justify-content: center; }
   .ax-justify-sm-end, .sm\:ax-justify-end { justify-content: flex-end; }
   .ax-justify-sm-between, .sm\:ax-justify-between { justify-content: space-between; }
+  .ax-justify-sm-around, .sm\:ax-justify-around { justify-content: space-around; }
+  .ax-justify-sm-evenly, .sm\:ax-justify-evenly { justify-content: space-evenly; }
   .ax-items-sm-start, .sm\:ax-items-start { align-items: flex-start; }
   .ax-items-sm-center, .sm\:ax-items-center { align-items: center; }
   .ax-items-sm-end, .sm\:ax-items-end { align-items: flex-end; }
+  .ax-items-sm-baseline, .sm\:ax-items-baseline { align-items: baseline; }
   .ax-items-sm-stretch, .sm\:ax-items-stretch { align-items: stretch; }
 
   /* Grid Template Columns */
@@ -108,7 +116,7 @@
   .sm\:ax-gap-y-2 { row-gap: var(--ax-space-2); }
   .sm\:ax-gap-y-4 { row-gap: var(--ax-space-4); }
 
-  /* Width */
+  /* Width & Height */
   .ax-w-sm-auto, .sm\:ax-w-auto { width: auto; }
   .ax-w-sm-full, .sm\:ax-w-full { width: 100%; }
   .ax-w-sm-1\/2, .sm\:ax-w-1\/2 { width: 50%; }
@@ -118,26 +126,23 @@
   .sm\:ax-w-3\/4 { width: 75%; }
   .sm\:ax-w-screen { width: 100vw; }
   .sm\:ax-w-fit { width: fit-content; }
-
-  /* Height */
   .sm\:ax-h-auto { height: auto; }
   .sm\:ax-h-full { height: 100%; }
   .sm\:ax-h-screen { height: 100vh; }
 
-  /* Text Alignment & Typography */
+  /* Typography */
   .ax-text-sm-left, .sm\:ax-text-left { text-align: left; }
   .ax-text-sm-center, .sm\:ax-text-center { text-align: center; }
   .ax-text-sm-right, .sm\:ax-text-right { text-align: right; }
   .sm\:ax-text-xs { font-size: var(--ax-font-size-xs); }
   .sm\:ax-text-sm { font-size: var(--ax-font-size-sm); }
-  .sm\:ax-text-base, .sm\:ax-text-md { font-size: var(--ax-font-size-base, var(--ax-font-size-md)); }
+  .sm\:ax-text-base, .sm\:ax-text-md { font-size: var(--ax-font-size-base); }
   .sm\:ax-text-lg { font-size: var(--ax-font-size-lg); }
   .sm\:ax-text-xl { font-size: var(--ax-font-size-xl); }
 }
 
-
 /* ========================================
-   2. Medium Devices - (min-width: 768px)
+   2. Medium Devices - md: (min-width: 768px)
    ======================================== */
 
 @media (min-width: 768px) {
@@ -152,21 +157,29 @@
 
   /* Flexbox */
   .ax-flex-md-row, .md\:ax-flex-row { flex-direction: row; }
-  .ax-flex-md-column, .md\:ax-flex-col { flex-direction: column; }
+  .ax-flex-md-row-reverse, .md\:ax-flex-row-reverse { flex-direction: row-reverse; }
+  .ax-flex-md-column, .ax-flex-md-col, .md\:ax-flex-col { flex-direction: column; }
+  .ax-flex-md-col-reverse, .md\:ax-flex-col-reverse { flex-direction: column-reverse; }
   .ax-flex-md-wrap, .md\:ax-flex-wrap { flex-wrap: wrap; }
   .ax-flex-md-nowrap, .md\:ax-flex-nowrap { flex-wrap: nowrap; }
   .md\:ax-flex-1 { flex: 1 1 0%; }
   .md\:ax-flex-auto { flex: 1 1 auto; }
+  .md\:ax-flex-initial { flex: 0 1 auto; }
   .md\:ax-flex-none { flex: none; }
   .md\:ax-grow { flex-grow: 1; }
+  .md\:ax-grow-0 { flex-grow: 0; }
+  .md\:ax-shrink { flex-shrink: 1; }
   .md\:ax-shrink-0 { flex-shrink: 0; }
   .ax-justify-md-start, .md\:ax-justify-start { justify-content: flex-start; }
   .ax-justify-md-center, .md\:ax-justify-center { justify-content: center; }
   .ax-justify-md-end, .md\:ax-justify-end { justify-content: flex-end; }
   .ax-justify-md-between, .md\:ax-justify-between { justify-content: space-between; }
+  .ax-justify-md-around, .md\:ax-justify-around { justify-content: space-around; }
+  .ax-justify-md-evenly, .md\:ax-justify-evenly { justify-content: space-evenly; }
   .ax-items-md-start, .md\:ax-items-start { align-items: flex-start; }
   .ax-items-md-center, .md\:ax-items-center { align-items: center; }
   .ax-items-md-end, .md\:ax-items-end { align-items: flex-end; }
+  .ax-items-md-baseline, .md\:ax-items-baseline { align-items: baseline; }
   .ax-items-md-stretch, .md\:ax-items-stretch { align-items: stretch; }
 
   /* Grid Template Columns */
@@ -188,11 +201,7 @@
   .md\:ax-col-span-4 { grid-column: span 4 / span 4; }
   .md\:ax-col-span-5 { grid-column: span 5 / span 5; }
   .md\:ax-col-span-6 { grid-column: span 6 / span 6; }
-  .md\:ax-col-span-7 { grid-column: span 7 / span 7; }
   .md\:ax-col-span-8 { grid-column: span 8 / span 8; }
-  .md\:ax-col-span-9 { grid-column: span 9 / span 9; }
-  .md\:ax-col-span-10 { grid-column: span 10 / span 10; }
-  .md\:ax-col-span-11 { grid-column: span 11 / span 11; }
   .md\:ax-col-span-12 { grid-column: span 12 / span 12; }
   .md\:ax-col-span-full { grid-column: 1 / -1; }
 
@@ -262,7 +271,7 @@
   .md\:ax-gap-y-6 { row-gap: var(--ax-space-6); }
   .md\:ax-gap-y-8 { row-gap: var(--ax-space-8); }
 
-  /* Width */
+  /* Width & Max Width */
   .ax-w-md-auto, .md\:ax-w-auto { width: auto; }
   .ax-w-md-full, .md\:ax-w-full { width: 100%; }
   .ax-w-md-1\/2, .md\:ax-w-1\/2 { width: 50%; }
@@ -287,13 +296,13 @@
   .md\:ax-h-full { height: 100%; }
   .md\:ax-h-screen { height: 100vh; }
 
-  /* Text Alignment & Typography */
+  /* Typography */
   .ax-text-md-left, .md\:ax-text-left { text-align: left; }
   .ax-text-md-center, .md\:ax-text-center { text-align: center; }
   .ax-text-md-right, .md\:ax-text-right { text-align: right; }
   .md\:ax-text-xs { font-size: var(--ax-font-size-xs); }
   .md\:ax-text-sm { font-size: var(--ax-font-size-sm); }
-  .md\:ax-text-base, .md\:ax-text-md { font-size: var(--ax-font-size-base, var(--ax-font-size-md)); }
+  .md\:ax-text-base, .md\:ax-text-md { font-size: var(--ax-font-size-base); }
   .md\:ax-text-lg { font-size: var(--ax-font-size-lg); }
   .md\:ax-text-xl { font-size: var(--ax-font-size-xl); }
   .md\:ax-text-2xl { font-size: var(--ax-font-size-2xl); }
@@ -301,12 +310,11 @@
   .md\:ax-text-4xl { font-size: var(--ax-font-size-4xl); }
 }
 
-
 /* ========================================
-   3. Large Devices - (min-width: 992px)
+   3. Large Devices - lg: (min-width: 1024px)
    ======================================== */
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
   /* Display */
   .ax-d-lg-none, .lg\:ax-hidden { display: none; }
   .ax-d-lg-block, .lg\:ax-block { display: block; }
@@ -318,21 +326,29 @@
 
   /* Flexbox */
   .ax-flex-lg-row, .lg\:ax-flex-row { flex-direction: row; }
-  .ax-flex-lg-column, .lg\:ax-flex-col { flex-direction: column; }
+  .ax-flex-lg-row-reverse, .lg\:ax-flex-row-reverse { flex-direction: row-reverse; }
+  .ax-flex-lg-column, .ax-flex-lg-col, .lg\:ax-flex-col { flex-direction: column; }
+  .ax-flex-lg-col-reverse, .lg\:ax-flex-col-reverse { flex-direction: column-reverse; }
   .ax-flex-lg-wrap, .lg\:ax-flex-wrap { flex-wrap: wrap; }
   .ax-flex-lg-nowrap, .lg\:ax-flex-nowrap { flex-wrap: nowrap; }
   .lg\:ax-flex-1 { flex: 1 1 0%; }
   .lg\:ax-flex-auto { flex: 1 1 auto; }
+  .lg\:ax-flex-initial { flex: 0 1 auto; }
   .lg\:ax-flex-none { flex: none; }
   .lg\:ax-grow { flex-grow: 1; }
+  .lg\:ax-grow-0 { flex-grow: 0; }
+  .lg\:ax-shrink { flex-shrink: 1; }
   .lg\:ax-shrink-0 { flex-shrink: 0; }
   .ax-justify-lg-start, .lg\:ax-justify-start { justify-content: flex-start; }
   .ax-justify-lg-center, .lg\:ax-justify-center { justify-content: center; }
   .ax-justify-lg-end, .lg\:ax-justify-end { justify-content: flex-end; }
   .ax-justify-lg-between, .lg\:ax-justify-between { justify-content: space-between; }
+  .ax-justify-lg-around, .lg\:ax-justify-around { justify-content: space-around; }
+  .ax-justify-lg-evenly, .lg\:ax-justify-evenly { justify-content: space-evenly; }
   .ax-items-lg-start, .lg\:ax-items-start { align-items: flex-start; }
   .ax-items-lg-center, .lg\:ax-items-center { align-items: center; }
   .ax-items-lg-end, .lg\:ax-items-end { align-items: flex-end; }
+  .ax-items-lg-baseline, .lg\:ax-items-baseline { align-items: baseline; }
   .ax-items-lg-stretch, .lg\:ax-items-stretch { align-items: stretch; }
 
   /* Grid Template Columns */
@@ -406,7 +422,7 @@
   .lg\:ax-gap-y-6 { row-gap: var(--ax-space-6); }
   .lg\:ax-gap-y-8 { row-gap: var(--ax-space-8); }
 
-  /* Width */
+  /* Width & Max Width */
   .ax-w-lg-auto, .lg\:ax-w-auto { width: auto; }
   .ax-w-lg-full, .lg\:ax-w-full { width: 100%; }
   .ax-w-lg-1\/2, .lg\:ax-w-1\/2 { width: 50%; }
@@ -428,12 +444,12 @@
   .lg\:ax-h-full { height: 100%; }
   .lg\:ax-h-screen { height: 100vh; }
 
-  /* Text Alignment & Typography */
+  /* Typography */
   .ax-text-lg-left, .lg\:ax-text-left { text-align: left; }
   .ax-text-lg-center, .lg\:ax-text-center { text-align: center; }
   .ax-text-lg-right, .lg\:ax-text-right { text-align: right; }
   .lg\:ax-text-sm { font-size: var(--ax-font-size-sm); }
-  .lg\:ax-text-base, .lg\:ax-text-md { font-size: var(--ax-font-size-base, var(--ax-font-size-md)); }
+  .lg\:ax-text-base, .lg\:ax-text-md { font-size: var(--ax-font-size-base); }
   .lg\:ax-text-lg { font-size: var(--ax-font-size-lg); }
   .lg\:ax-text-xl { font-size: var(--ax-font-size-xl); }
   .lg\:ax-text-2xl { font-size: var(--ax-font-size-2xl); }
@@ -442,22 +458,27 @@
   .lg\:ax-text-5xl { font-size: var(--ax-font-size-5xl); }
 }
 
-
 /* ========================================
-   4. Extra Large Devices - (min-width: 1200px)
+   4. Extra Large Devices - xl: (min-width: 1280px)
    ======================================== */
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   /* Display */
   .ax-d-xl-none, .xl\:ax-hidden { display: none; }
   .ax-d-xl-block, .xl\:ax-block { display: block; }
+  .ax-d-xl-inline, .xl\:ax-inline { display: inline; }
+  .ax-d-xl-inline-block, .xl\:ax-inline-block { display: inline-block; }
   .ax-d-xl-flex, .xl\:ax-flex { display: flex; }
+  .ax-d-xl-inline-flex, .xl\:ax-inline-flex { display: inline-flex; }
   .ax-d-xl-grid, .xl\:ax-grid { display: grid; }
 
   /* Flexbox */
   .ax-flex-xl-row, .xl\:ax-flex-row { flex-direction: row; }
-  .ax-flex-xl-column, .xl\:ax-flex-col { flex-direction: column; }
+  .ax-flex-xl-row-reverse, .xl\:ax-flex-row-reverse { flex-direction: row-reverse; }
+  .ax-flex-xl-column, .ax-flex-xl-col, .xl\:ax-flex-col { flex-direction: column; }
+  .ax-flex-xl-col-reverse, .xl\:ax-flex-col-reverse { flex-direction: column-reverse; }
   .xl\:ax-flex-1 { flex: 1 1 0%; }
+  .xl\:ax-flex-auto { flex: 1 1 auto; }
   .xl\:ax-justify-between { justify-content: space-between; }
   .xl\:ax-items-center { align-items: center; }
 
@@ -498,12 +519,11 @@
   .xl\:ax-w-3\/4 { width: 75%; }
 }
 
-
 /* ========================================
-   5. 2XL Devices - (min-width: 1400px)
+   5. 2XL Devices - 2xl: (min-width: 1536px)
    ======================================== */
 
-@media (min-width: 1400px) {
+@media (min-width: 1536px) {
   .xxl\:ax-hidden, .\32 xl\:ax-hidden { display: none; }
   .xxl\:ax-block, .\32 xl\:ax-block { display: block; }
   .xxl\:ax-flex, .\32 xl\:ax-flex { display: flex; }

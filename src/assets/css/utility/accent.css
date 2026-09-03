@@ -18,6 +18,10 @@
   accent-color: var(--ax-color-secondary);
 }
 
+.ax-accent-accent {
+  accent-color: var(--ax-color-accent);
+}
+
 .ax-accent-success {
   accent-color: var(--ax-color-success);
 }

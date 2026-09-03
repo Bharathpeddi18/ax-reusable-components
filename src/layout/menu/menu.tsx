@@ -1,83 +1,47 @@
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
 import './menu.css';
-import AXButton from '../../components/ax-button/ax-button';
 
-export interface MenuItem {
-  id?: string;
-  label?: string;
-  path?: string;
-  icon?: React.ReactNode;
-}
+import Link from 'next/link';
+import { useState } from 'react';
 
-export interface MenuProps {
-  logo?: string;
-  brandTitle?: string;
-  brandHref?: string;
-  defaultExpanded?: boolean;
-  navToggle?: boolean;
-  onToggle?: (expanded: boolean) => void;
-  items?: MenuItem[];
-  children?: React.ReactNode;
-}
+import { menusConfig } from './menu-config';
 
-const Menu: React.FC<MenuProps> = ({
-  logo,
-  brandTitle = 'AstraX',
-  brandHref = '/',
-  defaultExpanded = true,
-  items,
-  children,
-}) => {
-  const [navToggle, setNavToggle] = useState<boolean>(defaultExpanded);
+import ApplicationLogo from '../../assets/images/application-logo.png';
+import { IconMenu } from '@/assets/icons';
 
-  const runToggleAppNav = () => {
-    setNavToggle(!navToggle);
-  };
+const AppNavigation = () => {
+  const [isExpanded, setIsExpanded] = useState(true);
+  const [menuItems, setMenuItems] = useState(menusConfig);
+
+  const handleToggle = () => setIsExpanded(!isExpanded);
 
   return (
-    <>
-      <nav
-        className={`ax-menu ${navToggle ? 'ax-menu-expanded' : 'ax-menu-collapsed'}`}
-        aria-label="Main Navigation"
-      >
-        <div className="ax-menu-brand">
-          <Link href={brandHref} className="ax-menu-brand-link" title={brandTitle}>
-            {logo ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={logo} alt={brandTitle} height={50} width={150} />
-            ) : (
-              <span style={{ fontSize: '1.2rem', fontWeight: 700, color: '#ffffff', paddingLeft: '16px' }}>
-                {brandTitle}
-              </span>
-            )}
-          </Link>
-          <AXButton
-            id="btn-app-nav-toggle"
-            label="O"
-            className="ax-menu-toggle"
-            onClick={runToggleAppNav}
-            aria-label={navToggle ? 'Collapse Navigation' : 'Expand Navigation'}
-          />
-        </div>
+    <nav
+      className={`ax-menu ${isExpanded ? 'ax-menu-expanded' : 'ax-menu-collapsed'}`} aria-label="Main Navigation">
+      <div className="ax-menu-header ax-d-flex ax-justify-content-between ax-align-items-center ax-position-relative">
+        <Link href="/">
+          <img src={ApplicationLogo.src} alt="AstraX" width={100} height={50} />
+        </Link>
+        <button className={`ax-menu-toggle`} onClick={handleToggle}>
+          <IconMenu className={`${isExpanded ? 'ax-text-white' : 'ax-text-primary'}`}/>
+        </button>
+      </div>
 
-        <ul className="ax-menu-list">
-          {items?.map((item, idx) => (
-            <li key={item.id || idx} className="ax-menu-item">
-              <Link href={item.path || '#'} className="ax-menu-item-link">
-                {item.icon && <span className="ax-menu-item-icon">{item.icon}</span>}
-                <span className="ax-menu-item-label">{item.label}</span>
-              </Link>
-            </li>
-          ))}
-          {children}
-        </ul>
-      </nav>
-    </>
+      {/* Navigation Menu */}
+      <ul className="ax-menu-list">
+        {menuItems.map((menuItem) => (
+          <li key={menuItem.path} className="ax-menu-item">
+            <Link href={menuItem.path} className="ax-menu-link">
+              
+              {menuItem.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+      
+    </nav>
   );
 };
 
-export const AppNavigation = Menu;
-export default Menu;
+export default AppNavigation;

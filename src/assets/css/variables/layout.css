@@ -1,0 +1,15 @@
+/* ========================================
+   App Layout Dimension Tokens
+   ======================================== */
+
+:root {
+  --ax-menu-expanded-width: 250px;
+  --ax-menu-collapsed-width: 60px;
+
+  --ax-header-height: 64px;
+  --ax-footer-height: 48px;
+}
+
+:root {
+  --ax-transition-duration: 300ms;
+}

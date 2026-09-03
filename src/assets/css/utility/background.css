@@ -1,5 +1,5 @@
 /* ========================================
-   Background Utilities
+   Background Utilities (100% Tailwind Spec)
    ======================================== */
 
 /* ----------------------------------------
@@ -31,15 +31,15 @@
    Background Position
    ---------------------------------------- */
 
-.ax-bg-center { background-position: center; }
-.ax-bg-top { background-position: top; }
-.ax-bg-top-right { background-position: top right; }
-.ax-bg-right { background-position: right; }
-.ax-bg-bottom-right { background-position: bottom right; }
 .ax-bg-bottom { background-position: bottom; }
-.ax-bg-bottom-left { background-position: bottom left; }
+.ax-bg-center { background-position: center; }
 .ax-bg-left { background-position: left; }
-.ax-bg-top-left { background-position: top left; }
+.ax-bg-left-bottom { background-position: left bottom; }
+.ax-bg-left-top { background-position: left top; }
+.ax-bg-right { background-position: right; }
+.ax-bg-right-bottom { background-position: right bottom; }
+.ax-bg-right-top { background-position: right top; }
+.ax-bg-top { background-position: top; }
 
 /* ----------------------------------------
    Background Repeat
@@ -59,3 +59,31 @@
 .ax-bg-auto { background-size: auto; }
 .ax-bg-cover { background-size: cover; }
 .ax-bg-contain { background-size: contain; }
+
+/* ----------------------------------------
+   Background Image & Gradients
+   ---------------------------------------- */
+
+.ax-bg-none { background-image: none; }
+.ax-bg-gradient-to-t { background-image: linear-gradient(to top, var(--ax-gradient-stops, var(--ax-gradient-from, transparent), var(--ax-gradient-to, transparent))); }
+.ax-bg-gradient-to-tr { background-image: linear-gradient(to top right, var(--ax-gradient-stops, var(--ax-gradient-from, transparent), var(--ax-gradient-to, transparent))); }
+.ax-bg-gradient-to-r { background-image: linear-gradient(to right, var(--ax-gradient-stops, var(--ax-gradient-from, transparent), var(--ax-gradient-to, transparent))); }
+.ax-bg-gradient-to-br { background-image: linear-gradient(to bottom right, var(--ax-gradient-stops, var(--ax-gradient-from, transparent), var(--ax-gradient-to, transparent))); }
+.ax-bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--ax-gradient-stops, var(--ax-gradient-from, transparent), var(--ax-gradient-to, transparent))); }
+.ax-bg-gradient-to-bl { background-image: linear-gradient(to bottom left, var(--ax-gradient-stops, var(--ax-gradient-from, transparent), var(--ax-gradient-to, transparent))); }
+.ax-bg-gradient-to-l { background-image: linear-gradient(to left, var(--ax-gradient-stops, var(--ax-gradient-from, transparent), var(--ax-gradient-to, transparent))); }
+.ax-bg-gradient-to-tl { background-image: linear-gradient(to top left, var(--ax-gradient-stops, var(--ax-gradient-from, transparent), var(--ax-gradient-to, transparent))); }
+
+.ax-from-primary { --ax-gradient-from: var(--ax-color-primary); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to, rgb(0 48 143 / 0)); }
+.ax-from-secondary { --ax-gradient-from: var(--ax-color-secondary); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to, rgb(96 125 148 / 0)); }
+.ax-from-accent { --ax-gradient-from: var(--ax-color-accent); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to, rgb(201 162 39 / 0)); }
+.ax-from-white { --ax-gradient-from: #ffffff; --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to, rgb(255 255 255 / 0)); }
+.ax-from-black { --ax-gradient-from: #000000; --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to, rgb(0 0 0 / 0)); }
+.ax-from-transparent { --ax-gradient-from: transparent; --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to, transparent); }
+
+.ax-to-primary { --ax-gradient-to: var(--ax-color-primary); }
+.ax-to-secondary { --ax-gradient-to: var(--ax-color-secondary); }
+.ax-to-accent { --ax-gradient-to: var(--ax-color-accent); }
+.ax-to-white { --ax-gradient-to: #ffffff; }
+.ax-to-black { --ax-gradient-to: #000000; }
+.ax-to-transparent { --ax-gradient-to: transparent; }

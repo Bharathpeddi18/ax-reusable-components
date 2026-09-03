@@ -14,6 +14,10 @@
   color: var(--ax-color-secondary);
 }
 
+.ax-text-accent {
+  color: var(--ax-color-accent);
+}
+
 .ax-text-muted {
   color: var(--ax-color-text-muted);
 }
@@ -104,6 +108,10 @@
 
 .ax-bg-secondary {
   background-color: var(--ax-color-secondary);
+}
+
+.ax-bg-accent {
+  background-color: var(--ax-color-accent);
 }
 
 .ax-bg-surface {
@@ -200,6 +208,10 @@
 
 .ax-border-secondary {
   border-color: var(--ax-color-border-secondary);
+}
+
+.ax-border-accent {
+  border-color: var(--ax-color-accent);
 }
 
 .ax-border-default {

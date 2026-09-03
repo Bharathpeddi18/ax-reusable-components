@@ -15,27 +15,6 @@ html {
 }
 
 /* ========================================
-   Body
-   ======================================== */
-
-body {
-  min-width: 320px;
-  min-height: 100vh;
-
-  font-family: var(--ax-font-family-sans);
-  font-size: var(--ax-font-size-md);
-  font-weight: var(--ax-font-weight-normal);
-  line-height: var(--ax-line-height-normal);
-
-  color: var(--ax-color-text);
-  background-color: var(--ax-color-background);
-
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* ========================================
    Selection
    ======================================== */
 

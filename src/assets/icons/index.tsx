@@ -1,0 +1,1 @@
+export { default as IconMenu } from "./all-icons/icon-menu";
