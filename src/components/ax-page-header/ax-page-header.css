@@ -1,0 +1,8 @@
+.ax-page-header{
+    height: var(--ax-page-header-height);
+    position: sticky;
+    top: 0;
+    box-shadow: var(--ax-g-box-shadow);
+    background-color: var(--ax-color-white);
+    z-index: 9997;
+}

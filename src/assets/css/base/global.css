@@ -60,6 +60,27 @@ img {
   outline-offset: 0px;
   box-shadow:
     0 0 0 0px var(--ax-color-primary),
-    0 0 0 4px var(--ax-color-primary-light);
+    0 0 0 2px var(--ax-color-primary-light);
   border-radius: 2px;
+}
+
+/* ========================================
+   Scroll Bar
+   ======================================== */
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--ax-color-primary-light);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--ax-color-primary);
 }

@@ -5,6 +5,7 @@
     background-color: var(--ax-color-white);
     border-bottom: 1px solid var(--ax-color-border);
     transition: var(--ax-g-transition-all);
+    box-shadow: var(--ax-g-box-shadow);
     width:100vw;
     left:0;
     z-index: 9998;

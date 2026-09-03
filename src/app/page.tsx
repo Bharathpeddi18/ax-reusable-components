@@ -1,19 +1,17 @@
 'use client';
 
-import './app.css'
+import AXPageHeader from '@/components/ax-page-header/ax-page-header';
+import ApplicationLogo from '@/assets/images/application-logo.png'
 
-import PageWrapper from "@/layout/page-wrapper/page-wrapper";
-import Header from "@/layout/header/header";
-import Menu from "@/layout/menu/menu";
-import Footer from '@/layout/footer/footer';
-
-export default function App() {
+const Dashboard = () => {
   return (
-    <div className="app-wrapper">
-      <Menu />
-      <Header />
-      <PageWrapper />
-      <Footer />
-    </div>
+    <>
+      <AXPageHeader />
+      <div className="ax-page-content ax-p-3">
+        <img src={ApplicationLogo.src} alt="AstraX" />
+      </div>
+    </>
   );
-}
+};
+
+export default Dashboard;

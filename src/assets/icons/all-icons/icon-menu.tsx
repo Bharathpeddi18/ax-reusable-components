@@ -1,6 +1,8 @@
-const IconMenu = (props: { className?: string }) => {
+import { I_IconProps } from "..";
+
+const IconMenu = ({ className, height = 16, width = 16 }: I_IconProps) => {
     return (
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentcolor" xmlns="http://www.w3.org/2000/svg" {...props}>
+        <svg viewBox="0 0 16 16" style={{ minHeight: height, minWidth: width }} fill="currentcolor" xmlns="http://www.w3.org/2000/svg" className={className}>
             <path d="M0 3C0 1.89543 0.895431 1 2 1H14C15.1046 1 16 1.89543 16 3V13C16 14.1046 15.1046 15 14 15H2C0.895431 15 0 14.1046 0 13V3ZM5 2V14H14C14.5523 14 15 13.5523 15 13V3C15 2.44772 14.5523 2 14 2H5ZM4 2H2C1.44772 2 1 2.44772 1 3V13C1 13.5523 1.44772 14 2 14H4V2Z" />
         </svg>
     );

@@ -1,12 +1,16 @@
 'use client';
 
+import { Children } from 'react';
 import './page-wrapper.css';
 
-export const PageWrapper = () => {
+export const PageWrapper = ({
+    children
+}: {
+    children: React.ReactNode
+}) => {
     return (
         <main className='ax-page-wrapper'>
-            <div className='ax-page-header'>Page Header</div>
-            <div className='ax-page-content'>Page Content</div>
+            {children}
         </main>
     );
 };

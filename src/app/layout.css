@@ -1,32 +1,32 @@
-.app-wrapper{
+.app-layout{
     height: 100vh;
     width: 100vw;
 }
 
-.app-wrapper:has(.ax-menu.ax-menu-expanded) {
+.app-layout:has(.ax-menu.ax-menu-expanded) {
   --ax-menu-width: var(--ax-menu-expanded-width);
 }
 
-.app-wrapper:has(.ax-menu.ax-menu-collapsed) {
+.app-layout:has(.ax-menu.ax-menu-collapsed) {
   --ax-menu-width: 0;
 }
 
 @media screen and (min-width: 576px) {
-    .app-wrapper:has(.ax-menu.ax-menu-expanded) {
+    .app-layout:has(.ax-menu.ax-menu-expanded) {
         --ax-menu-width: var(--ax-menu-expanded-width);
     }
 
-    .app-wrapper:has(.ax-menu.ax-menu-collapsed) {
+    .app-layout:has(.ax-menu.ax-menu-collapsed) {
         --ax-menu-width: var(--ax-menu-collapsed-width);
     }
 }
 
 @media screen and (min-width: 1200px) {
-    .app-wrapper:has(.ax-menu.ax-menu-expanded) {
+    .app-layout:has(.ax-menu.ax-menu-expanded) {
         --ax-menu-width: var(--ax-menu-expanded-width);
     }
 
-    .app-wrapper:has(.ax-menu.ax-menu-collapsed) {
+    .app-layout:has(.ax-menu.ax-menu-collapsed) {
         --ax-menu-width: var(--ax-menu-collapsed-width);
     }
 }

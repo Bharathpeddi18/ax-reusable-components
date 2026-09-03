@@ -7,8 +7,11 @@
   --ax-menu-collapsed-width: 60px;
 
   --ax-header-height: 64px;
+  --ax-page-header-height: 48px;
   --ax-footer-height: 32px;
 
   --ax-g-transition-duration: 500ms;
   --ax-g-transition-all: all var(--ax-g-transition-duration) ease-in-out;
+
+  --ax-g-box-shadow: 0px 0px 8px 0px #0000001A;
 }

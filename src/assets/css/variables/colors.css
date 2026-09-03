@@ -8,19 +8,19 @@
      ---------------------------------------- */
   /* Primary: USAF Air Force Blue */
   --ax-color-primary: #00308F;
-  --ax-color-primary-light: #00308F3A;
+  --ax-color-primary-light: #4D70B5;
   --ax-color-primary-hover: #002776;
   --ax-color-primary-active: #001E5B;
 
   /* Secondary: USAF Cadet / Steel Slate Gray */
   --ax-color-secondary: #607D94;
-  --ax-color-secondary-light: #607D943A;
+  --ax-color-secondary-light: #91A5B5;
   --ax-color-secondary-hover: #4f677a;
   --ax-color-secondary-active: #3e5160;
 
   /* Accent: USAF Aviation Insignia Gold / Amber */
   --ax-color-accent: #C9A227;
-  --ax-color-accent-light: #C9A2273A;
+  --ax-color-accent-light: #DDC96D;
   --ax-color-accent-hover: #b08d22;
   --ax-color-accent-active: #94771c;
 

@@ -1,10 +1,14 @@
 .ax-menu {
+
     --ax-menu-bg-color: var(--ax-color-primary);
     --ax-menu-fg-color: var(--ax-color-white);
     --ax-menu-item-hover-bg-color: var(--ax-color-secondary);
     --ax-menu-item-hover-fg-color: var(--ax-color-white);
     --ax-menu-item-active-bg-color: var(--ax-color-accent);
     --ax-menu-item-active-fg-color: var(--ax-color-white);
+
+    --ax-menu-header-height: var(--ax-header-height);
+    --ax-menu-footer-height: var(--ax-footer-height);
 }
 
 .ax-menu {
@@ -15,11 +19,22 @@
     width: var(--ax-menu-width);
     background-color: var(--ax-menu-bg-color);
     transition: var(--ax-g-transition-all);
+    box-shadow: var(--ax-g-box-shadow);
     z-index: 9999;
+    user-select: none;
 }
 
 .ax-menu-header {
-    height: var(--ax-header-height);
+    height: var(--ax-menu-header-height);
+}
+
+.ax-menu-body {
+    height: calc(100% - var(--ax-menu-header-height) - var(--ax-menu-footer-height));
+    overflow: auto;
+}
+
+.ax-menu-footer {
+    height: var(--ax-menu-footer-height);
 }
 
 .ax-menu-toggle {
