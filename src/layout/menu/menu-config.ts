@@ -51,6 +51,22 @@ export const menusConfig: MenuItem[] = [
     path: '/samples/page-header',
     ActivePath: ['/samples/page-header'],
   },
+  {
+    label: 'AXTabs',
+    Icon: 'queue-list',
+    path: '/samples/tabs',
+    ActivePath: ['/samples/tabs'],
+    badge: 'v2.0',
+    badgeColor: 'accent',
+  },
+  {
+    label: 'AXAccordion',
+    Icon: 'chevron-up-down',
+    path: '/samples/accordion',
+    ActivePath: ['/samples/accordion'],
+    badge: 'New',
+    badgeColor: 'accent',
+  },
 
   // 3. WORKFLOW & SYSTEM
   {

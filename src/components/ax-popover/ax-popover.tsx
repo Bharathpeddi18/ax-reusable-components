@@ -64,7 +64,7 @@ export const useAXPopoverContext = () => {
 };
 
 /* ==========================================================================
-   Helper: Positioning Math & Collision Flipping
+   Positioning & Viewport Collision Engine
    ========================================================================== */
 
 interface Coordinates {
@@ -90,7 +90,7 @@ function computePopoverPosition(
 
   let placement = requestedPlacement;
 
-  // Auto placement logic: pick best vertical space
+  // Auto placement logic: pick optimal vertical space
   if (placement === 'auto') {
     const spaceBelow = viewportHeight - triggerRect.bottom;
     const spaceAbove = triggerRect.top;
@@ -620,29 +620,35 @@ export const AXPopoverHeader = ({
   );
 };
 
+export interface AXPopoverTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  children: React.ReactNode;
+}
+
+export const AXPopoverTitle = ({ children, className = '', ...rest }: AXPopoverTitleProps) => (
+  <h4 className={`ax-popover-title ${className}`} {...rest}>
+    {children}
+  </h4>
+);
+
 export interface AXPopoverBodyProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-export const AXPopoverBody = ({ children, className = '', ...rest }: AXPopoverBodyProps) => {
-  return (
-    <div className={`ax-popover-body ${className}`} {...rest}>
-      {children}
-    </div>
-  );
-};
+export const AXPopoverBody = ({ children, className = '', ...rest }: AXPopoverBodyProps) => (
+  <div className={`ax-popover-body ${className}`} {...rest}>
+    {children}
+  </div>
+);
 
 export interface AXPopoverFooterProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
 }
 
-export const AXPopoverFooter = ({ children, className = '', ...rest }: AXPopoverFooterProps) => {
-  return (
-    <div className={`ax-popover-footer ${className}`} {...rest}>
-      {children}
-    </div>
-  );
-};
+export const AXPopoverFooter = ({ children, className = '', ...rest }: AXPopoverFooterProps) => (
+  <div className={`ax-popover-footer ${className}`} {...rest}>
+    {children}
+  </div>
+);
 
 export interface AXPopoverCloseProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
@@ -654,14 +660,12 @@ export const AXPopoverClose = ({ children, className = '', ...rest }: AXPopoverC
   return (
     <button
       type="button"
-      className={`ax-popover-close ${className}`}
-      onClick={(e) => {
-        rest.onClick?.(e);
-        close();
-      }}
+      className={`ax-popover-close-btn ${className}`}
+      onClick={close}
+      aria-label="Close"
       {...rest}
     >
-      {children || 'Close'}
+      {children ?? <CloseIcon size={14} />}
     </button>
   );
 };

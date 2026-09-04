@@ -3,9 +3,16 @@
 import React, { useState } from 'react';
 import AXPageHeader from '@/components/ax-page-header/ax-page-header';
 import { AXButton } from '@/components/ax-button/ax-button';
-import { ButtonSamples, PopoverSamples, PageHeaderSamples } from '@/samples';
+import { AXTabs, AXTabsList, AXTab } from '@/components/ax-tabs/ax-tabs';
+import {
+  ButtonSamples,
+  PopoverSamples,
+  PageHeaderSamples,
+  TabsSamples,
+  AccordionSamples,
+} from '@/samples';
 
-type TabKey = 'all' | 'button' | 'popover' | 'header';
+type TabKey = 'all' | 'accordion' | 'tabs' | 'button' | 'popover' | 'header';
 
 const SamplesPage = () => {
   const [activeTab, setActiveTab] = useState<TabKey>('all');
@@ -13,7 +20,7 @@ const SamplesPage = () => {
   return (
     <>
       <AXPageHeader
-        title="Reusable Component Samples & Showcase"
+        title="Reusable Component Samples & Interactive Showcase"
         actions={
           <div className="ax-flex ax-items-center ax-gap-2">
             <span className="ax-text-xs ax-text-muted">v2.0.0 Production Ready</span>
@@ -37,41 +44,63 @@ const SamplesPage = () => {
             AstraX Component Library Samples
           </h2>
           <p className="ax-text-secondary ax-max-w-2xl ax-text-sm ax-leading-relaxed ax-m-0">
-            Live interactive documentation showcasing all variations, responsive behaviors, accessibility features, and scoped token theming.
+            Live interactive documentation showcasing all component variations, responsive behaviors, accessibility features, and scoped token theming.
           </p>
 
-          {/* Navigation Filter Tabs */}
-          <div className="ax-flex ax-flex-wrap ax-items-center ax-gap-2 ax-mt-2">
-            <AXButton
-              size="sm"
-              variant={activeTab === 'all' ? 'contained' : 'outlined'}
+          {/* Navigation Filter Tabs Powered by AXTabs */}
+          <div className="ax-w-full ax-max-w-3xl ax-mt-2">
+            <AXTabs
+              value={activeTab}
+              onChange={(val) => setActiveTab(val as TabKey)}
+              variant="pill"
               color="primary"
-              onClick={() => setActiveTab('all')}
-              label="All Components"
-            />
-            <AXButton
-              size="sm"
-              variant={activeTab === 'button' ? 'contained' : 'outlined'}
-              color="primary"
-              onClick={() => setActiveTab('button')}
-              label="AXButton"
-            />
-            <AXButton
-              size="sm"
-              variant={activeTab === 'popover' ? 'contained' : 'outlined'}
-              color="primary"
-              onClick={() => setActiveTab('popover')}
-              label="AXPopover"
-            />
-            <AXButton
-              size="sm"
-              variant={activeTab === 'header' ? 'contained' : 'outlined'}
-              color="primary"
-              onClick={() => setActiveTab('header')}
-              label="AXPageHeader"
-            />
+              fullWidth
+            >
+              <AXTabsList>
+                <AXTab value="all">All</AXTab>
+                <AXTab value="accordion" badge="New" badgeColor="accent">AXAccordion</AXTab>
+                <AXTab value="tabs">AXTabs</AXTab>
+                <AXTab value="button">AXButton</AXTab>
+                <AXTab value="popover">AXPopover</AXTab>
+                <AXTab value="header">AXPageHeader</AXTab>
+              </AXTabsList>
+            </AXTabs>
           </div>
         </div>
+
+        {/* Section: AXAccordion */}
+        {(activeTab === 'all' || activeTab === 'accordion') && (
+          <section className="ax-flex ax-flex-col ax-gap-4">
+            <div className="ax-flex ax-items-center ax-justify-between">
+              <div>
+                <h2 className="ax-text-xl ax-font-bold ax-text-primary ax-m-0">
+                  AXAccordion Component
+                </h2>
+                <p className="ax-text-xs ax-text-secondary ax-m-0">
+                  Hardware-accelerated CSS Grid row fraction interpolation (0fr ➔ 1fr), 4 variants, single/multiple expansion, and WAI-ARIA keyboard navigation.
+                </p>
+              </div>
+            </div>
+            <AccordionSamples />
+          </section>
+        )}
+
+        {/* Section: AXTabs */}
+        {(activeTab === 'all' || activeTab === 'tabs') && (
+          <section className="ax-flex ax-flex-col ax-gap-4">
+            <div className="ax-flex ax-items-center ax-justify-between">
+              <div>
+                <h2 className="ax-text-xl ax-font-bold ax-text-primary ax-m-0">
+                  AXTabs Component
+                </h2>
+                <p className="ax-text-xs ax-text-secondary ax-m-0">
+                  Sliding active indicator, 4 visual variants (Line, Pill, Card, Soft), vertical/horizontal orientations, and WAI-ARIA keyboard navigation.
+                </p>
+              </div>
+            </div>
+            <TabsSamples />
+          </section>
+        )}
 
         {/* Section: AXButton */}
         {(activeTab === 'all' || activeTab === 'button') && (

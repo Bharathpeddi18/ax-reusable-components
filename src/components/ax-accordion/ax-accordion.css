@@ -1,0 +1,245 @@
+/* ==========================================================================
+   AstraX (AX) Accordion Component - Scoped CSS Architecture
+   ========================================================================== */
+
+/* 1. Root Container */
+.ax-accordion {
+  --ax-accordion-border: var(--ax-color-border, #e2e8f0);
+  --ax-accordion-bg: var(--ax-color-surface, #ffffff);
+  --ax-accordion-header-hover-bg: rgba(0, 0, 0, 0.025);
+  --ax-accordion-radius: var(--ax-radius-xl, 12px);
+  --ax-accordion-padding-x: 16px;
+  --ax-accordion-padding-y: 14px;
+  --ax-accordion-font-size: 0.9375rem;
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* 2. Visual Variants */
+
+/* Variant: Flush (Minimal divider lines) */
+.ax-accordion-flush .ax-accordion-item {
+  border-bottom: 1px solid var(--ax-accordion-border);
+}
+.ax-accordion-flush .ax-accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* Variant: Contained / Card (Separated cards with shadows) */
+.ax-accordion-contained {
+  gap: 10px;
+}
+.ax-accordion-contained .ax-accordion-item {
+  background-color: var(--ax-accordion-bg);
+  border: 1px solid var(--ax-accordion-border);
+  border-radius: var(--ax-accordion-radius);
+  box-shadow: var(--ax-shadow-sm);
+  overflow: hidden;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+.ax-accordion-contained .ax-accordion-item[data-state="open"] {
+  border-color: color-mix(in srgb, var(--ax-color-primary, #00308F) 40%, var(--ax-accordion-border));
+  box-shadow: var(--ax-shadow-md);
+}
+
+/* Variant: Bordered (Outer container frame with inner dividers) */
+.ax-accordion-bordered {
+  background-color: var(--ax-accordion-bg);
+  border: 1px solid var(--ax-accordion-border);
+  border-radius: var(--ax-accordion-radius);
+  overflow: hidden;
+}
+.ax-accordion-bordered .ax-accordion-item {
+  border-bottom: 1px solid var(--ax-accordion-border);
+}
+.ax-accordion-bordered .ax-accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* Variant: Filled / Soft (Surface tinted header) */
+.ax-accordion-filled {
+  gap: 8px;
+}
+.ax-accordion-filled .ax-accordion-item {
+  background-color: var(--ax-accordion-bg);
+  border-radius: var(--ax-accordion-radius);
+  border: 1px solid var(--ax-accordion-border);
+  overflow: hidden;
+}
+.ax-accordion-filled .ax-accordion-trigger {
+  background-color: var(--ax-color-surface-secondary, #f8fafc);
+}
+.ax-accordion-filled .ax-accordion-trigger:hover:not(:disabled) {
+  background-color: color-mix(in srgb, var(--ax-color-surface-secondary, #f8fafc) 90%, black 10%);
+}
+
+/* 3. Accordion Item */
+.ax-accordion-item {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.ax-accordion-item[data-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* 4. Heading & Trigger Button */
+.ax-accordion-heading {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  display: flex;
+}
+
+.ax-accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 12px;
+  padding: var(--ax-accordion-padding-y) var(--ax-accordion-padding-x);
+  background: transparent;
+  border: none;
+  border-radius: inherit;
+  font-family: inherit;
+  font-size: var(--ax-accordion-font-size);
+  font-weight: 600;
+  color: var(--ax-color-text-primary, #0f172a);
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.ax-accordion-trigger:hover:not(:disabled) {
+  background-color: var(--ax-accordion-header-hover-bg);
+}
+
+.ax-accordion-trigger:focus-visible {
+  outline: 2px solid var(--ax-color-focus, var(--ax-color-primary));
+  outline-offset: -2px;
+}
+
+.ax-accordion-trigger-start {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.ax-accordion-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--ax-color-primary, #00308F);
+}
+
+.ax-accordion-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ax-accordion-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ax-accordion-subtitle {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--ax-color-text-secondary, #64748b);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Badges inside Accordion */
+.ax-accordion-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  line-height: 1;
+  background-color: rgba(0, 0, 0, 0.06);
+  color: var(--ax-color-text-secondary, #475569);
+  flex-shrink: 0;
+}
+
+.ax-accordion-badge-accent { background-color: var(--ax-color-accent, #C9A227); color: #17212B; }
+.ax-accordion-badge-success { background-color: var(--ax-color-success, #16a34a); color: #ffffff; }
+.ax-accordion-badge-danger { background-color: var(--ax-color-danger, #ef4444); color: #ffffff; }
+
+/* 5. Rotating Chevron Indicator */
+.ax-accordion-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--ax-color-text-muted, #94a3b8);
+  transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1), color 140ms ease;
+}
+
+.ax-accordion-item[data-state="open"] .ax-accordion-chevron {
+  transform: rotate(180deg);
+  color: var(--ax-color-primary, #00308F);
+}
+
+.ax-accordion-chevron-left {
+  order: -1;
+  margin-right: 4px;
+}
+
+/* 6. Hardware-Accelerated CSS Grid Animation */
+.ax-accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.ax-accordion-item[data-state="open"] > .ax-accordion-content {
+  grid-template-rows: 1fr;
+}
+
+.ax-accordion-body {
+  min-height: 0;
+  padding: 0 var(--ax-accordion-padding-x) var(--ax-accordion-padding-y);
+  font-size: 0.875rem;
+  color: var(--ax-color-text-secondary, #475569);
+  line-height: 1.6;
+}
+
+/* 7. Size Presets */
+.ax-accordion-size-sm {
+  --ax-accordion-padding-x: 12px;
+  --ax-accordion-padding-y: 10px;
+  --ax-accordion-font-size: 0.875rem;
+}
+.ax-accordion-size-sm .ax-accordion-body {
+  font-size: 0.8125rem;
+}
+
+.ax-accordion-size-md {
+  --ax-accordion-padding-x: 16px;
+  --ax-accordion-padding-y: 14px;
+  --ax-accordion-font-size: 0.9375rem;
+}
+
+.ax-accordion-size-lg {
+  --ax-accordion-padding-x: 20px;
+  --ax-accordion-padding-y: 18px;
+  --ax-accordion-font-size: 1.0625rem;
+}
+.ax-accordion-size-lg .ax-accordion-body {
+  font-size: 0.9375rem;
+}

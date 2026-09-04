@@ -94,6 +94,8 @@
 @import "../../components/ax-button/ax-button.css";
 @import "../../components/ax-popover/ax-popover.css";
 @import "../../components/ax-page-header/ax-page-header.css";
+@import "../../components/ax-tabs/ax-tabs.css";
+@import "../../components/ax-accordion/ax-accordion.css";
 @import "../../layout/menu/menu.css";
 @import "../../layout/header/header.css";
 @import "../../layout/footer/footer.css";
