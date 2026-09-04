@@ -62,7 +62,7 @@ export const AppNavigation = () => {
           />
         </Link>
         <AXButton
-          size="sm"
+          size="xs"
           className={`ax-menu-toggle ${isExpanded ? 'ax-text-white' : 'ax-text-primary'}`}
           onClick={toggleSidebar}
           title={isExpanded ? 'Collapse Menu' : 'Expand Menu'}
@@ -91,8 +91,8 @@ export const AppNavigation = () => {
               {/* Navigation Link / Submenu Accordion */}
               <li className={`ax-menu-item ${active ? 'ax-menu-item-active' : ''}`}>
                 {hasSubmenus ? (
-                  <button
-                    type="button"
+                  <AXButton
+                    variant="text"
                     onClick={() => toggleSubmenu(item.path)}
                     className={`ax-menu-link ax-menu-button ${active ? 'ax-menu-link-active' : ''}`}
                     title={item.label}
@@ -113,7 +113,7 @@ export const AppNavigation = () => {
                         />
                       </>
                     )}
-                  </button>
+                  </AXButton>
                 ) : (
                   <Link
                     href={item.path}
@@ -158,6 +158,7 @@ export const AppNavigation = () => {
                             <Link
                               href={subItem.path}
                               className={`ax-menu-submenu-link ${subActive ? 'ax-menu-submenu-link-active' : ''}`}
+                              title={subItem.label}
                             >
                               {subItem.label}
                             </Link>

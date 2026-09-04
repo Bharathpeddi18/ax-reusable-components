@@ -225,7 +225,7 @@
   align-items: center;
   justify-content: center;
   gap: inherit;
-  min-width: 0;
+  width: 100%;
   transition: opacity 120ms ease;
 }
 
@@ -238,7 +238,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 0;
+  width: 100%;
 }
 
 .ax-btn-icon {
@@ -251,8 +251,6 @@
 
 .ax-btn-icon > svg {
   display: block;
-  width: 1em;
-  height: 1em;
   flex: 0 0 auto;
 }
 
