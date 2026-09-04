@@ -18,9 +18,13 @@
 
 /* Mobile Base (0px - 639px): Sidebar acts as an off-canvas overlay.
    Shell width is 100% so content is never squashed on mobile screens. */
-.ax-app-layout {
-  --ax-menu-width: 0px;
-}
+ .ax-app-layout:has(.ax-menu.ax-menu-collapsed) {
+    --ax-menu-width: 0;
+  }
+
+  .ax-app-layout:has(.ax-menu.ax-menu-expanded) {
+    --ax-menu-width: var(--ax-menu-expanded-width);
+  }
 
 /* Tablet & Desktop (>= 640px): Sidebar participates in shell geometry.
    Header and Page Wrapper smoothly transition alongside sidebar toggle. */

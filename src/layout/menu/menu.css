@@ -1,61 +1,249 @@
 /* ==========================================================================
-   Sidebar Navigation Menu Shell Styles (Option B: Floating Edge Pill Toggle)
+   Sidebar Navigation Menu - Minimal Scoped Architecture (~130 lines)
    ========================================================================== */
 
 .ax-menu {
-  --ax-menu-bg-color: var(--ax-color-primary);
-  --ax-menu-fg-color: var(--ax-color-white);
-  --ax-menu-item-hover-bg-color: var(--ax-color-primary-hover);
-  --ax-menu-item-hover-fg-color: var(--ax-color-white);
-  --ax-menu-item-active-bg-color: var(--ax-color-primary-active);
-  --ax-menu-item-active-fg-color: var(--ax-color-white);
-
-  --ax-menu-header-height: var(--ax-header-height);
-  --ax-menu-footer-height: var(--ax-footer-height);
+  --ax-menu-item-hover-bg: rgba(255, 255, 255, 0.08);
+  --ax-menu-item-active-bg: rgba(255, 255, 255, 0.1);
 
   position: fixed;
   top: 0;
   left: 0;
   height: 100dvh;
   width: var(--ax-menu-width);
-  background-color: var(--ax-menu-bg-color);
+  background: linear-gradient(180deg, var(--ax-color-primary, #00308F) 0%, #001E5B 100%);
   box-shadow: var(--ax-shadow-md);
   z-index: var(--ax-z-index-fixed, 1200);
   user-select: none;
-  transition: width var(--ax-transition-duration, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  transition: var(--ax-g-transition-all);
 }
 
+/* 1. Header */
 .ax-menu-header {
-  height: var(--ax-menu-header-height);
+  height: var(--ax-header-height, 64px);
   flex-shrink: 0;
-}
-
-.ax-menu-body {
-  height: calc(100% - var(--ax-menu-header-height) - var(--ax-menu-footer-height));
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.ax-menu-footer {
-  height: var(--ax-menu-footer-height);
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 12px;
+  position: relative;
 }
 
 .ax-menu-toggle {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: transparent;
+  transition: var(--ax-g-transition-all);
+}
+
+.ax-menu-collapsed .ax-menu-toggle { right: -32px; }
+.ax-menu-expanded .ax-menu-toggle { right: 12px; }
+/* 2. Navigation Body & Section Headers */
+.ax-menu-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 12px 8px;
+  margin: 0;
+  list-style: none;
+}
+
+.ax-menu-section-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 12px 8px 4px 8px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.ax-menu-collapsed .ax-menu-section-title {
+  text-align: center;
+  font-size: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 8px;
+}
+
+/* 3. Items & Active State */
+.ax-menu-item {
+  position: relative;
+  list-style: none;
+  margin-bottom: 4px;
+}
+
+.ax-menu-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
   border: none;
-  padding: 4px;
-  border-radius: var(--ax-radius-sm);
-  transition: right var(--ax-transition-duration, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 3px solid transparent;
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+  transition: all 140ms ease;
 }
 
-.ax-menu-collapsed .ax-menu-toggle {
-  right: -32px;
+.ax-menu-link:hover {
+  text-decoration: none;
+  background-color: var(--ax-menu-item-hover-bg);
+  color: #ffffff;
 }
 
-.ax-menu-expanded .ax-menu-toggle {
-  right: 8px;
+.ax-menu-item-active > .ax-menu-link,
+.ax-menu-link.ax-menu-link-active {
+  background: var(--ax-menu-item-active-bg);
+  color: #ffffff;
+  font-weight: 600;
 }
+
+.ax-menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.ax-menu-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Badges */
+.ax-menu-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  margin-left: auto;
+}
+.ax-menu-badge-accent { background: var(--ax-color-accent, #C9A227); color: #17212B; }
+.ax-menu-badge-info { background: rgba(255, 255, 255, 0.18); color: #ffffff; }
+.ax-menu-badge-success { background: var(--ax-color-success, #16a34a); color: #ffffff; }
+
+/* 4. Submenu Tree */
+.ax-menu-chevron { margin-left: auto; transition: transform 200ms ease; color: rgba(255, 255, 255, 0.6); }
+.ax-menu-chevron-expanded { margin-left: auto; transform: rotate(90deg); color: #ffffff; }
+
+.ax-menu-submenu-container {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.ax-menu-submenu-container.ax-menu-submenu-open {
+  grid-template-rows: 1fr;
+}
+
+.ax-menu-submenu-list {
+  min-height: 0;
+  padding: 4px 4px 4px 20px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.ax-menu-submenu-link {
+  display: block;
+  padding: 6px 8px;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 140ms ease;
+}
+
+.ax-menu-submenu-link:hover { text-decoration: none; background: rgba(255, 255, 255, 0.08); }
+.ax-menu-submenu-link-active { font-weight: 600; background: rgba(255, 255, 255, 0.1); }
+
+/* 5. Collapsed Tooltip */
+.ax-menu-collapsed .ax-menu-tooltip {
+  position: absolute;
+  left: 68px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.95);
+  background: #0f172a;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+  opacity: 0;
+  transition: all 140ms ease;
+  z-index: 1300;
+}
+
+.ax-menu-collapsed .ax-menu-item:hover .ax-menu-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+/* 6. Footer Profile */
+.ax-menu-footer {
+  height: var(--ax-footer-height);
+  flex-shrink: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.ax-menu-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.ax-menu-profile:hover { background: rgba(255, 255, 255, 0.08); }
+
+.ax-menu-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--ax-color-accent, #C9A227);
+  color: #17212B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.ax-menu-status-dot {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ax-color-success, #16a34a);
+  border: 1.5px solid var(--ax-color-primary, #00308F);
+}
+
+.ax-menu-user-info { display: flex; flex-direction: column; overflow: hidden; flex: 1 1 auto; }
+.ax-menu-user-name { font-size: 0.8125rem; font-weight: 600; color: #ffffff; white-space: nowrap; }
+.ax-menu-user-role { font-size: 0.6875rem; color: rgba(255, 255, 255, 0.6); white-space: nowrap; }

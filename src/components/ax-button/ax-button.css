@@ -1,440 +1,322 @@
 /* ==========================================================================
-   AstraX (AX) World-Class Reusable Button Component Styles
-   Inspired by Material UI, Radix UI & Modern Design Systems
+   AX BUTTON - Scoped Variable Component Architecture
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. Base Button Styles & CSS Variables
+   1. BASE BUTTON
    -------------------------------------------------------------------------- */
 .ax-btn {
-  /* Dimensions & Spacing */
-  --ax-btn-height: 40px;
-  --ax-btn-padding-x: 16px;
-  --ax-btn-padding-y: 8px;
-  --ax-btn-gap: 8px;
-  --ax-btn-radius: 8px;
-  --ax-btn-font-size: 0.875rem;
-  --ax-btn-font-weight: 600;
-  --ax-btn-icon-size: 18px;
-  --ax-btn-transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-
-  /* Default Theme (Primary) */
-  --ax-btn-bg: var(--ax-color-primary, #00308F);
-  --ax-btn-text: var(--ax-color-white, #ffffff);
-  --ax-btn-border: transparent;
-  --ax-btn-hover-bg: var(--ax-color-primary-hover, #002776);
-  --ax-btn-hover-text: var(--ax-color-white, #ffffff);
-  --ax-btn-hover-border: transparent;
-  --ax-btn-active-bg: var(--ax-color-primary-active, #001E5B);
-  --ax-btn-focus-ring: rgba(0, 48, 143, 0.35);
-  --ax-btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-
-  /* Element Reset & Core Flex */
-  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--ax-btn-gap);
-  height: var(--ax-btn-height);
-  padding: var(--ax-btn-padding-y) var(--ax-btn-padding-x);
+  vertical-align: middle;
+  position: relative;
+
+  box-sizing: border-box;
+  min-width: 0;
+
   font-family: inherit;
-  font-size: var(--ax-btn-font-size);
-  font-weight: var(--ax-btn-font-weight);
-  line-height: 1.25;
-  color: var(--ax-btn-text);
-  background-color: var(--ax-btn-bg);
-  border: 1px solid var(--ax-btn-border);
-  border-radius: var(--ax-btn-radius);
-  box-shadow: var(--ax-btn-shadow);
-  cursor: pointer;
-  user-select: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
   text-decoration: none;
   white-space: nowrap;
-  vertical-align: middle;
-  transition: var(--ax-btn-transition);
-  outline: none;
-  box-sizing: border-box;
-  overflow: hidden;
+
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  padding: 0;
+
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    opacity 160ms ease,
+    transform 100ms ease;
+
   -webkit-tap-highlight-color: transparent;
 }
 
-.ax-btn *,
-.ax-btn *::before,
-.ax-btn *::after {
-  box-sizing: border-box;
+/* --------------------------------------------------------------------------
+   2. COLOR THEMES (Defines Scoped Variables)
+   -------------------------------------------------------------------------- */
+.ax-btn-primary {
+  --btn-color: var(--ax-color-primary, #00308F);
+  --btn-hover: var(--ax-color-primary-hover, #002776);
+  --btn-active: var(--ax-color-primary-active, #001E5B);
+  --btn-contrast: #ffffff;
+}
+
+.ax-btn-secondary {
+  --btn-color: var(--ax-color-secondary, #607D94);
+  --btn-hover: var(--ax-color-secondary-hover, #4f677a);
+  --btn-active: var(--ax-color-secondary-active, #3e5160);
+  --btn-contrast: #ffffff;
+}
+
+.ax-btn-accent {
+  --btn-color: var(--ax-color-accent, #C9A227);
+  --btn-hover: var(--ax-color-accent-hover, #b08d22);
+  --btn-active: var(--ax-color-accent-active, #94771c);
+  --btn-contrast: #17212B;
+}
+
+.ax-btn-success {
+  --btn-color: var(--ax-color-success, #16a34a);
+  --btn-hover: var(--ax-color-success-hover, #15803d);
+  --btn-active: #166534;
+  --btn-contrast: #ffffff;
+}
+
+.ax-btn-warning {
+  --btn-color: var(--ax-color-warning, #C9A227);
+  --btn-hover: var(--ax-color-warning-hover, #b08d22);
+  --btn-active: #94771c;
+  --btn-contrast: #17212B;
+}
+
+.ax-btn-danger {
+  --btn-color: var(--ax-color-danger, #dc2626);
+  --btn-hover: var(--ax-color-danger-hover, #b91c1c);
+  --btn-active: #991b1b;
+  --btn-contrast: #ffffff;
+}
+
+.ax-btn-info {
+  --btn-color: var(--ax-color-info, #00308F);
+  --btn-hover: var(--ax-color-info-hover, #002776);
+  --btn-active: var(--ax-color-primary-active, #001E5B);
+  --btn-contrast: #ffffff;
+}
+
+.ax-btn-dark {
+  --btn-color: var(--ax-color-gray-900, #0f172a);
+  --btn-hover: var(--ax-color-black, #000000);
+  --btn-active: #000000;
+  --btn-contrast: #ffffff;
+}
+
+.ax-btn-light {
+  --btn-color: var(--ax-color-surface-secondary, #ebf0f5);
+  --btn-hover: var(--ax-color-surface-tertiary, #dfe5ec);
+  --btn-active: #cbd5e1;
+  --btn-contrast: var(--ax-color-text, #17212B);
 }
 
 /* --------------------------------------------------------------------------
-   2. Interaction States (Hover, Active, Focus)
-   -------------------------------------------------------------------------- */
-.ax-btn:hover:not(:disabled):not(.ax-btn-disabled):not(.ax-btn-loading) {
-  background-color: var(--ax-btn-hover-bg);
-  color: var(--ax-btn-hover-text);
-  border-color: var(--ax-btn-hover-border);
-  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.12), var(--ax-btn-shadow);
-}
-
-.ax-btn:active:not(:disabled):not(.ax-btn-disabled):not(.ax-btn-loading) {
-  background-color: var(--ax-btn-active-bg);
-  transform: scale(0.98) translateY(1px);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-.ax-btn:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--ax-btn-focus-ring);
-}
-
-/* --------------------------------------------------------------------------
-   3. Variants (Contained, Outlined, Text, Soft, Elevated, Glass)
+   3. STYLE VARIANTS (Consumes Scoped Variables)
    -------------------------------------------------------------------------- */
 
-/* Contained / Solid (Default) */
-.ax-btn-contained,
-.ax-btn-solid {
-  /* Uses base theme variables */
+/* Contained */
+.ax-btn-contained {
+  color: var(--btn-contrast, #ffffff);
+  background-color: var(--btn-color, var(--ax-color-primary));
+  border-color: var(--btn-color, var(--ax-color-primary));
+}
+@media (hover: hover) {
+  .ax-btn-contained:hover {
+    background-color: var(--btn-hover, var(--btn-color));
+    border-color: var(--btn-hover, var(--btn-color));
+  }
+}
+.ax-btn-contained:active:not(:disabled) {
+  background-color: var(--btn-active, var(--btn-hover));
+  border-color: var(--btn-active, var(--btn-hover));
 }
 
 /* Outlined */
-.ax-btn-outlined,
-.ax-btn-outline {
-  --ax-btn-bg: transparent;
-  --ax-btn-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
-  --ax-btn-border: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
-  --ax-btn-hover-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 10%, transparent);
-  --ax-btn-hover-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
-  --ax-btn-hover-border: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
-  --ax-btn-active-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 20%, transparent);
-  --ax-btn-shadow: none;
+.ax-btn-outlined {
+  color: var(--btn-color, var(--ax-color-primary));
+  background-color: transparent;
+  border-color: var(--btn-color, var(--ax-color-primary));
+}
+@media (hover: hover) {
+  .ax-btn-outlined:hover {
+    color: var(--btn-contrast, #ffffff);
+    background-color: var(--btn-color, var(--ax-color-primary));
+  }
 }
 
-/* Text / Ghost */
-.ax-btn-text,
-.ax-btn-ghost {
-  --ax-btn-bg: transparent;
-  --ax-btn-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
-  --ax-btn-border: transparent;
-  --ax-btn-hover-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 10%, transparent);
-  --ax-btn-hover-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
-  --ax-btn-active-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 20%, transparent);
-  --ax-btn-shadow: none;
+/* Soft / Subtle / Tonal */
+.ax-btn-soft {
+  color: var(--btn-color, var(--ax-color-primary));
+  background-color: color-mix(in srgb, var(--btn-color, var(--ax-color-primary)) 14%, transparent);
+  border-color: transparent;
+}
+@media (hover: hover) {
+  .ax-btn-soft:hover {
+    background-color: color-mix(in srgb, var(--btn-color, var(--ax-color-primary)) 22%, transparent);
+  }
 }
 
-/* Soft / Tonal */
-.ax-btn-soft,
-.ax-btn-tonal {
-  --ax-btn-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 12%, transparent);
-  --ax-btn-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
-  --ax-btn-border: transparent;
-  --ax-btn-hover-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 20%, transparent);
-  --ax-btn-hover-text: var(--ax-btn-base-color, var(--ax-color-primary, #00308F));
-  --ax-btn-active-bg: color-mix(in srgb, var(--ax-btn-base-color, var(--ax-color-primary, #00308F)) 28%, transparent);
-  --ax-btn-shadow: none;
+/* Text */
+.ax-btn-text {
+  color: var(--btn-color, var(--ax-color-primary));
+  background-color: transparent;
+  border-color: transparent;
+}
+@media (hover: hover) {
+  .ax-btn-text:hover {
+    background-color: color-mix(in srgb, var(--btn-color, var(--ax-color-primary)) 10%, transparent);
+  }
 }
 
-/* Elevated */
-.ax-btn-elevated {
-  --ax-btn-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
-}
-.ax-btn-elevated:hover:not(:disabled):not(.ax-btn-disabled) {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
-}
-
-/* Glass / Frosted */
-.ax-btn-glass {
-  --ax-btn-bg: rgba(255, 255, 255, 0.15);
-  --ax-btn-text: #ffffff;
-  --ax-btn-border: rgba(255, 255, 255, 0.25);
-  --ax-btn-hover-bg: rgba(255, 255, 255, 0.25);
-  --ax-btn-active-bg: rgba(255, 255, 255, 0.35);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-/* --------------------------------------------------------------------------
-   4. Color Themes (Primary, Secondary, Accent, Success, Warning, Danger, Dark, etc.)
-   -------------------------------------------------------------------------- */
-
-/* Primary (US Air Force Blue) */
-.ax-btn-color-primary {
-  --ax-btn-base-color: var(--ax-color-primary, #00308F);
-  --ax-btn-bg: var(--ax-color-primary, #00308F);
-  --ax-btn-text: var(--ax-color-white, #ffffff);
-  --ax-btn-hover-bg: var(--ax-color-primary-hover, #002776);
-  --ax-btn-active-bg: var(--ax-color-primary-active, #001E5B);
-  --ax-btn-focus-ring: rgba(0, 48, 143, 0.35);
-}
-
-/* Secondary (US Air Force Steel Gray) */
-.ax-btn-color-secondary {
-  --ax-btn-base-color: var(--ax-color-secondary, #607D94);
-  --ax-btn-bg: var(--ax-color-secondary, #607D94);
-  --ax-btn-text: var(--ax-color-white, #ffffff);
-  --ax-btn-hover-bg: var(--ax-color-secondary-hover, #4f677a);
-  --ax-btn-active-bg: var(--ax-color-secondary-active, #3e5160);
-  --ax-btn-focus-ring: rgba(96, 125, 148, 0.35);
-}
-
-/* Accent (US Air Force Insignia Gold) */
-.ax-btn-color-accent {
-  --ax-btn-base-color: var(--ax-color-accent, #C9A227);
-  --ax-btn-bg: var(--ax-color-accent, #C9A227);
-  --ax-btn-text: var(--ax-color-text, #17212B);
-  --ax-btn-hover-bg: var(--ax-color-accent-hover, #b08d22);
-  --ax-btn-hover-text: var(--ax-color-text, #17212B);
-  --ax-btn-active-bg: var(--ax-color-accent-active, #94771c);
-  --ax-btn-focus-ring: rgba(201, 162, 39, 0.35);
-}
-
-/* Success */
-.ax-btn-color-success {
-  --ax-btn-base-color: var(--ax-color-success, #16a34a);
-  --ax-btn-bg: var(--ax-color-success, #16a34a);
-  --ax-btn-text: var(--ax-color-white, #ffffff);
-  --ax-btn-hover-bg: var(--ax-color-success-hover, #15803d);
-  --ax-btn-active-bg: #047857;
-  --ax-btn-focus-ring: rgba(22, 163, 74, 0.35);
-}
-
-/* Warning */
-.ax-btn-color-warning {
-  --ax-btn-base-color: var(--ax-color-warning, #C9A227);
-  --ax-btn-bg: var(--ax-color-warning, #C9A227);
-  --ax-btn-text: var(--ax-color-text, #17212B);
-  --ax-btn-hover-bg: var(--ax-color-warning-hover, #b08d22);
-  --ax-btn-hover-text: var(--ax-color-text, #17212B);
-  --ax-btn-active-bg: #94771c;
-  --ax-btn-focus-ring: rgba(201, 162, 39, 0.35);
-}
-
-/* Danger / Destructive */
-.ax-btn-color-danger,
-.ax-btn-color-destructive {
-  --ax-btn-base-color: var(--ax-color-danger, #dc2626);
-  --ax-btn-bg: var(--ax-color-danger, #dc2626);
-  --ax-btn-text: var(--ax-color-white, #ffffff);
-  --ax-btn-hover-bg: var(--ax-color-danger-hover, #b91c1c);
-  --ax-btn-active-bg: #991b1b;
-  --ax-btn-focus-ring: rgba(220, 38, 38, 0.35);
-}
-
-/* Dark (Cockpit Slate) */
-.ax-btn-color-dark {
-  --ax-btn-base-color: var(--ax-color-gray-900, #0f172a);
-  --ax-btn-bg: var(--ax-color-gray-900, #0f172a);
-  --ax-btn-text: var(--ax-color-gray-50, #f8fafc);
-  --ax-btn-hover-bg: var(--ax-color-gray-800, #1e293b);
-  --ax-btn-active-bg: var(--ax-color-gray-700, #334155);
-  --ax-btn-focus-ring: rgba(15, 23, 42, 0.35);
-}
-
-/* Light (Clean Surface) */
-.ax-btn-color-light {
-  --ax-btn-base-color: var(--ax-color-text-secondary, #475569);
-  --ax-btn-bg: var(--ax-color-surface, #ffffff);
-  --ax-btn-text: var(--ax-color-text, #17212B);
-  --ax-btn-border: var(--ax-color-border, #d2dbe5);
-  --ax-btn-hover-bg: var(--ax-color-surface-secondary, #ebf0f5);
-  --ax-btn-hover-border: var(--ax-color-border-secondary, #cbd5e1);
-  --ax-btn-active-bg: var(--ax-color-surface-tertiary, #dfe5ec);
-  --ax-btn-focus-ring: rgba(31, 78, 121, 0.25);
-  --ax-btn-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-}
-
-/* --------------------------------------------------------------------------
-   5. Sizes (xs, sm, md, lg, xl)
-   -------------------------------------------------------------------------- */
-
-/* Extra Small (xs) */
-.ax-btn-size-xs {
-  --ax-btn-height: 28px;
-  --ax-btn-padding-x: 10px;
-  --ax-btn-padding-y: 4px;
-  --ax-btn-font-size: 0.75rem;
-  --ax-btn-gap: 5px;
-  --ax-btn-icon-size: 14px;
-  --ax-btn-radius: 6px;
-}
-
-/* Small (sm) */
-.ax-btn-size-sm {
-  --ax-btn-height: 34px;
-  --ax-btn-padding-x: 12px;
-  --ax-btn-padding-y: 6px;
-  --ax-btn-font-size: 0.8125rem;
-  --ax-btn-gap: 6px;
-  --ax-btn-icon-size: 16px;
-  --ax-btn-radius: 7px;
-}
-
-/* Medium (md - Default) */
-.ax-btn-size-md {
-  --ax-btn-height: 40px;
-  --ax-btn-padding-x: 16px;
-  --ax-btn-padding-y: 8px;
-  --ax-btn-font-size: 0.875rem;
-  --ax-btn-gap: 8px;
-  --ax-btn-icon-size: 18px;
-  --ax-btn-radius: 8px;
-}
-
-/* Large (lg) */
-.ax-btn-size-lg {
-  --ax-btn-height: 48px;
-  --ax-btn-padding-x: 22px;
-  --ax-btn-padding-y: 11px;
-  --ax-btn-font-size: 1rem;
-  --ax-btn-gap: 10px;
-  --ax-btn-icon-size: 20px;
-  --ax-btn-radius: 10px;
-}
-
-/* Extra Large (xl) */
-.ax-btn-size-xl {
-  --ax-btn-height: 56px;
-  --ax-btn-padding-x: 28px;
-  --ax-btn-padding-y: 14px;
-  --ax-btn-font-size: 1.125rem;
-  --ax-btn-gap: 12px;
-  --ax-btn-icon-size: 22px;
-  --ax-btn-radius: 12px;
-}
-
-/* --------------------------------------------------------------------------
-   6. Shapes (Rounded, Pill, Square, Circle)
-   -------------------------------------------------------------------------- */
-.ax-btn-shape-rounded {
-  /* Standard per size */
-}
-
-.ax-btn-shape-pill {
-  border-radius: 9999px;
-}
-
-.ax-btn-shape-square {
-  border-radius: 0px;
-}
-
-.ax-btn-shape-circle {
-  border-radius: 50%;
+/* Link */
+.ax-btn-link {
+  color: var(--btn-color, var(--ax-color-primary));
+  background-color: transparent;
+  border-color: transparent;
   padding: 0 !important;
-  width: var(--ax-btn-height);
-  min-width: var(--ax-btn-height);
-  aspect-ratio: 1 / 1;
+  min-height: auto !important;
+  height: auto !important;
+}
+.ax-btn-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* --------------------------------------------------------------------------
-   7. Icon Only Mode
+   4. SIZES & TYPOGRAPHY
    -------------------------------------------------------------------------- */
-.ax-btn-icon-only {
-  width: var(--ax-btn-height);
-  min-width: var(--ax-btn-height);
-  padding: 0 !important;
-  aspect-ratio: 1 / 1;
-  display: inline-grid;
-  place-items: center;
-}
+.ax-btn-xs { min-height: 28px; padding: 4px 10px; font-size: 0.75rem; border-radius: 4px; gap: 6px; }
+.ax-btn-sm { min-height: 32px; padding: 6px 12px; font-size: 0.8125rem; border-radius: 5px; gap: 6px; }
+.ax-btn-md { min-height: 40px; padding: 8px 16px; font-size: 0.875rem; border-radius: 6px; gap: 8px; }
+.ax-btn-lg { min-height: 48px; padding: 10px 20px; font-size: 1rem; border-radius: 7px; gap: 8px; }
+.ax-btn-xl { min-height: 56px; padding: 12px 24px; font-size: 1.0625rem; border-radius: 8px; gap: 10px; }
 
-.ax-btn-icon-only .ax-btn-icon {
-  margin: 0;
-}
+/* Icon sizes per button size */
+.ax-btn-xs .ax-btn-icon { font-size: 14px; }
+.ax-btn-sm .ax-btn-icon { font-size: 16px; }
+.ax-btn-md .ax-btn-icon { font-size: 18px; }
+.ax-btn-lg .ax-btn-icon { font-size: 20px; }
+.ax-btn-xl .ax-btn-icon { font-size: 22px; }
+
+/* Loader sizes per button size */
+.ax-btn-xs .ax-btn-loader { width: 12px; height: 12px; border-width: 1.5px; }
+.ax-btn-sm .ax-btn-loader { width: 14px; height: 14px; border-width: 1.5px; }
+.ax-btn-md .ax-btn-loader { width: 16px; height: 16px; border-width: 2px; }
+.ax-btn-lg .ax-btn-loader { width: 18px; height: 18px; border-width: 2px; }
+.ax-btn-xl .ax-btn-loader { width: 20px; height: 20px; border-width: 2px; }
 
 /* --------------------------------------------------------------------------
-   8. Icon Elements & Positions
+   5. SHAPES & ICON-ONLY
    -------------------------------------------------------------------------- */
-.ax-btn-icon {
+.ax-btn-icon-only { padding: 0; aspect-ratio: 1 / 1; }
+.ax-btn-icon-only.ax-btn-xs { width: 28px; min-width: 28px; height: 28px; }
+.ax-btn-icon-only.ax-btn-sm { width: 32px; min-width: 32px; height: 32px; }
+.ax-btn-icon-only.ax-btn-md { width: 40px; min-width: 40px; height: 40px; }
+.ax-btn-icon-only.ax-btn-lg { width: 48px; min-width: 48px; height: 48px; }
+.ax-btn-icon-only.ax-btn-xl { width: 56px; min-width: 56px; height: 56px; }
+
+.ax-btn-circle { border-radius: 9999px !important; }
+.ax-btn-pill { border-radius: 9999px !important; }
+.ax-btn-square { border-radius: 0px !important; }
+.ax-btn-full-width { display: flex; width: 100%; }
+
+/* --------------------------------------------------------------------------
+   6. CONTENT & ZERO-CLS LOADING STATE
+   -------------------------------------------------------------------------- */
+.ax-btn-content {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  width: var(--ax-btn-icon-size);
-  height: var(--ax-btn-icon-size);
+  gap: inherit;
+  min-width: 0;
+  transition: opacity 120ms ease;
 }
 
-.ax-btn-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-.ax-btn-icon-start {
-  margin-right: -2px;
-}
-
-.ax-btn-icon-end {
-  margin-left: -2px;
+.ax-btn-content-hidden {
+  visibility: hidden;
+  opacity: 0;
 }
 
 .ax-btn-label {
   display: inline-flex;
   align-items: center;
-  line-height: inherit;
+  justify-content: center;
+  min-width: 0;
 }
 
-/* --------------------------------------------------------------------------
-   9. Loading State & Spinner
-   -------------------------------------------------------------------------- */
-.ax-btn-loading {
-  cursor: wait !important;
-  pointer-events: none;
-  opacity: 0.85;
+.ax-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  line-height: 0;
 }
 
-.ax-btn-spinner {
+.ax-btn-icon > svg {
+  display: block;
+  width: 1em;
+  height: 1em;
+  flex: 0 0 auto;
+}
+
+.ax-btn-loader-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.ax-btn-loader {
   display: inline-block;
-  width: var(--ax-btn-icon-size);
-  height: var(--ax-btn-icon-size);
+  flex: 0 0 auto;
   border: 2px solid currentColor;
   border-right-color: transparent;
   border-radius: 50%;
-  animation: ax-btn-spin 0.75s linear infinite;
-  flex-shrink: 0;
+  animation: ax-btn-spin 650ms linear infinite;
 }
 
 @keyframes ax-btn-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
-/* --------------------------------------------------------------------------
-   10. Disabled State
-   -------------------------------------------------------------------------- */
+.ax-btn:focus,
+.ax-btn:focus-visible {
+  outline: none;
+  outline-offset: 0px;
+  box-shadow:
+    0 0 0 0px var(--ax-color-primary),
+    0 0 0 2px var(--ax-color-focus, var(--ax-color-primary-light, #4D70B5));
+}
+
 .ax-btn:disabled,
-.ax-btn.ax-btn-disabled {
-  opacity: 0.55;
-  cursor: not-allowed !important;
-  pointer-events: none;
-  box-shadow: none !important;
-  transform: none !important;
-}
-
-/* --------------------------------------------------------------------------
-   11. Full Width Modifier
-   -------------------------------------------------------------------------- */
-.ax-btn-full-width {
-  width: 100%;
-  display: flex;
-}
-
-/* --------------------------------------------------------------------------
-   12. Ripple Effect (Material UI Inspired)
-   -------------------------------------------------------------------------- */
-.ax-btn-ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(0);
-  animation: ax-btn-ripple-anim 0.6s linear;
+.ax-btn[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.5;
   pointer-events: none;
 }
 
-@keyframes ax-btn-ripple-anim {
-  to {
-    transform: scale(4);
-    opacity: 0;
+.ax-btn-loading {
+  cursor: wait;
+}
+
+/* High Contrast Mode (Section 508 / WCAG AAA) */
+@media (forced-colors: active) {
+  .ax-btn {
+    border: 1px solid ButtonText;
+  }
+  .ax-btn:disabled,
+  .ax-btn[aria-disabled="true"] {
+    border-color: GrayText;
+    color: GrayText;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .ax-btn,
+  .ax-btn-content {
+    transition: none;
+  }
+  .ax-btn-loader {
+    animation-duration: 1.4s;
   }
 }

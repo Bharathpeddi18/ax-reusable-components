@@ -6,8 +6,6 @@ import Header from '@/layout/header/header';
 import Menu from '@/layout/menu/menu';
 import PageWrapper from '@/layout/page-wrapper/page-wrapper';
 
-import App from './page';
-
 export default function RootLayout({
   children,
 }: {
@@ -20,7 +18,7 @@ export default function RootLayout({
           <Menu />
           <Header />
           <PageWrapper>
-            <App />
+            {children}
           </PageWrapper>
           <Footer />
         </div>

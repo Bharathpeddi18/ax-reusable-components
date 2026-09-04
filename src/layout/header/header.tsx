@@ -1,7 +1,5 @@
 'use client';
 
-import './header.css';
-
 export const Header = () => {
   return (
     <header className="ax-header ax-flex ax-items-center ax-justify-between ax-p-3 ax-bg-surface ax-border-b ax-border-default ax-shadow-sm">

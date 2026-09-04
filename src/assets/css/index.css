@@ -1,115 +1,100 @@
 /* ==========================================================================
-   Main CSS Entry Point
+   Main CSS Entry Point (Statically Bundled, Zero FOUC / Zero Blinking)
    ========================================================================== */
 
-@layer tokens, reset, base, utilities, states, responsive;
+/* 1. Design Tokens */
+@import "./variables/breakpoints.css";
+@import "./variables/colors.css";
+@import "./variables/radius.css";
+@import "./variables/shadows.css";
+@import "./variables/spacings.css";
+@import "./variables/typography.css";
+@import "./variables/z-index.css";
+@import "./variables/component-variables.css";
 
-/* ==========================================================================
-   1. DESIGN TOKENS
-   ========================================================================== */
+/* 2. Reset */
+@import "./base/reset.css";
 
-@import url("./variables/breakpoints.css") layer(tokens);
-@import url("./variables/colors.css") layer(tokens);
-@import url("./variables/radius.css") layer(tokens);
-@import url("./variables/shadows.css") layer(tokens);
-@import url("./variables/spacings.css") layer(tokens);
-@import url("./variables/typography.css") layer(tokens);
-@import url("./variables/z-index.css") layer(tokens);
-@import url("./variables/component-variables.css") layer(tokens);
+/* 3. Base Styles */
+@import "./base/root.css";
+@import "./base/global.css";
+@import "./base/typography.css";
+@import "./base/accessibility.css";
 
-/* ==========================================================================
-   2. RESET
-   ========================================================================== */
+/* 4. Utilities */
+@import "./utility/display.css";
+@import "./utility/flex.css";
+@import "./utility/grid.css";
+@import "./utility/order.css";
+@import "./utility/positions.css";
+@import "./utility/spacing.css";
+@import "./utility/sizing.css";
+@import "./utility/typography.css";
+@import "./utility/font-style.css";
+@import "./utility/font-variants.css";
+@import "./utility/vertical-align.css";
+@import "./utility/colors.css";
+@import "./utility/background.css";
+@import "./utility/borders.css";
+@import "./utility/divide.css";
+@import "./utility/ring.css";
+@import "./utility/shadows.css";
+@import "./utility/opacity.css";
+@import "./utility/filter.css";
+@import "./utility/mix-blend.css";
+@import "./utility/aspect-ratio.css";
+@import "./utility/object.css";
+@import "./utility/overflow.css";
+@import "./utility/visibility.css";
+@import "./utility/z-index.css";
+@import "./utility/cursor.css";
+@import "./utility/pointer-events.css";
+@import "./utility/user-select.css";
+@import "./utility/resize.css";
+@import "./utility/scroll.css";
+@import "./utility/interaction.css";
+@import "./utility/transition.css";
+@import "./utility/transform.css";
+@import "./utility/animation.css";
+@import "./utility/forms.css";
+@import "./utility/table.css";
+@import "./utility/columns.css";
+@import "./utility/columns-break.css";
+@import "./utility/field-sizing.css";
+@import "./utility/decoration.css";
+@import "./utility/text-align.css";
+@import "./utility/text-transform.css";
+@import "./utility/text-overflow.css";
+@import "./utility/text-wrap.css";
+@import "./utility/line-clamp.css";
+@import "./utility/line-height.css";
+@import "./utility/letter-spacing.css";
+@import "./utility/white-space.css";
+@import "./utility/word-break.css";
+@import "./utility/list.css";
+@import "./utility/accent.css";
+@import "./utility/appearance.css";
+@import "./utility/caret.css";
+@import "./utility/outline.css";
+@import "./utility/svg.css";
+@import "./utility/content.css";
+@import "./utility/isolation.css";
+@import "./utility/container.css";
+@import "./utility/will-change.css";
+@import "./utility/motion.css";
+@import "./utility/rtl.css";
+@import "./utility/print.css";
+@import "./utility/accessibility.css";
 
-@import url("./base/reset.css") layer(reset);
+/* 5. States & Responsive */
+@import "./utility/states.css";
+@import "./responsive/responsive.css";
 
-/* ==========================================================================
-   3. BASE STYLES
-   ========================================================================== */
-
-@import url("./base/root.css") layer(base);
-@import url("./base/global.css") layer(base);
-@import url("./base/typography.css") layer(base);
-@import url("./base/accessibility.css") layer(base);
-
-/* ==========================================================================
-   4. UTILITIES
-   ========================================================================== */
-
-@import url("./utility/display.css") layer(utilities);
-@import url("./utility/flex.css") layer(utilities);
-@import url("./utility/grid.css") layer(utilities);
-@import url("./utility/order.css") layer(utilities);
-@import url("./utility/positions.css") layer(utilities);
-@import url("./utility/spacing.css") layer(utilities);
-@import url("./utility/sizing.css") layer(utilities);
-@import url("./utility/typography.css") layer(utilities);
-@import url("./utility/font-style.css") layer(utilities);
-@import url("./utility/font-variants.css") layer(utilities);
-@import url("./utility/vertical-align.css") layer(utilities);
-@import url("./utility/buttons.css") layer(utilities);
-@import url("./utility/colors.css") layer(utilities);
-@import url("./utility/background.css") layer(utilities);
-@import url("./utility/borders.css") layer(utilities);
-@import url("./utility/divide.css") layer(utilities);
-@import url("./utility/ring.css") layer(utilities);
-@import url("./utility/shadows.css") layer(utilities);
-@import url("./utility/opacity.css") layer(utilities);
-@import url("./utility/filter.css") layer(utilities);
-@import url("./utility/mix-blend.css") layer(utilities);
-@import url("./utility/aspect-ratio.css") layer(utilities);
-@import url("./utility/object.css") layer(utilities);
-@import url("./utility/overflow.css") layer(utilities);
-@import url("./utility/visibility.css") layer(utilities);
-@import url("./utility/z-index.css") layer(utilities);
-@import url("./utility/cursor.css") layer(utilities);
-@import url("./utility/pointer-events.css") layer(utilities);
-@import url("./utility/user-select.css") layer(utilities);
-@import url("./utility/resize.css") layer(utilities);
-@import url("./utility/scroll.css") layer(utilities);
-@import url("./utility/interaction.css") layer(utilities);
-@import url("./utility/transition.css") layer(utilities);
-@import url("./utility/transform.css") layer(utilities);
-@import url("./utility/animation.css") layer(utilities);
-@import url("./utility/forms.css") layer(utilities);
-@import url("./utility/table.css") layer(utilities);
-@import url("./utility/columns.css") layer(utilities);
-@import url("./utility/columns-break.css") layer(utilities);
-@import url("./utility/field-sizing.css") layer(utilities);
-@import url("./utility/decoration.css") layer(utilities);
-@import url("./utility/text-align.css") layer(utilities);
-@import url("./utility/text-transform.css") layer(utilities);
-@import url("./utility/text-overflow.css") layer(utilities);
-@import url("./utility/text-wrap.css") layer(utilities);
-@import url("./utility/line-clamp.css") layer(utilities);
-@import url("./utility/line-height.css") layer(utilities);
-@import url("./utility/letter-spacing.css") layer(utilities);
-@import url("./utility/white-space.css") layer(utilities);
-@import url("./utility/word-break.css") layer(utilities);
-@import url("./utility/list.css") layer(utilities);
-@import url("./utility/accent.css") layer(utilities);
-@import url("./utility/appearance.css") layer(utilities);
-@import url("./utility/caret.css") layer(utilities);
-@import url("./utility/outline.css") layer(utilities);
-@import url("./utility/svg.css") layer(utilities);
-@import url("./utility/content.css") layer(utilities);
-@import url("./utility/isolation.css") layer(utilities);
-@import url("./utility/container.css") layer(utilities);
-@import url("./utility/will-change.css") layer(utilities);
-@import url("./utility/motion.css") layer(utilities);
-@import url("./utility/rtl.css") layer(utilities);
-/* @import url("./utility/dark-mode.css") layer(utilities); */
-@import url("./utility/print.css") layer(utilities);
-@import url("./utility/accessibility.css") layer(utilities);
-
-/* ==========================================================================
-   5. STATES
-   ========================================================================== */
-
-@import url("./utility/states.css") layer(states);
-
-/* ==========================================================================
-   6. RESPONSIVE
-   ========================================================================== */
-
-@import url("./responsive/responsive.css") layer(responsive);
+/* 6. Unified Component & Layout Styles (Bundled statically to prevent route flashing) */
+@import "../../components/ax-button/ax-button.css";
+@import "../../components/ax-popover/ax-popover.css";
+@import "../../components/ax-page-header/ax-page-header.css";
+@import "../../layout/menu/menu.css";
+@import "../../layout/header/header.css";
+@import "../../layout/footer/footer.css";
+@import "../../layout/page-wrapper/page-wrapper.css";

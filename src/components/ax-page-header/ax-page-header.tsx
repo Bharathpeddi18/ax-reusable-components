@@ -1,7 +1,5 @@
 'use client';
 
-import './ax-page-header.css';
-
 export interface AXPageHeaderProps {
   title?: string;
   actions?: React.ReactNode;
