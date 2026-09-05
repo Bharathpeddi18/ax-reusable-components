@@ -1,0 +1,134 @@
+/* ==========================================================================
+   AstraX (AX) Layout Primitives Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Container Styles
+   -------------------------------------------------------------------------- */
+
+.ax-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ax-container-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ax-container-padded {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.ax-container-size-sm   { max-width: 640px; }
+.ax-container-size-md   { max-width: 768px; }
+.ax-container-size-lg   { max-width: 1024px; }
+.ax-container-size-xl   { max-width: 1280px; }
+.ax-container-size-2xl  { max-width: 1536px; }
+.ax-container-size-full { max-width: 100%; }
+
+/* --------------------------------------------------------------------------
+   Flex & Gap Utilities
+   -------------------------------------------------------------------------- */
+
+.ax-flex {
+  display: flex;
+}
+
+.ax-inline-flex {
+  display: inline-flex;
+}
+
+.ax-flex-row            { flex-direction: row; }
+.ax-flex-row-reverse    { flex-direction: row-reverse; }
+.ax-flex-column         { flex-direction: column; }
+.ax-flex-column-reverse { flex-direction: column-reverse; }
+
+.ax-flex-align-start    { align-items: flex-start; }
+.ax-flex-align-center   { align-items: center; }
+.ax-flex-align-end      { align-items: flex-end; }
+.ax-flex-align-stretch  { align-items: stretch; }
+.ax-flex-align-baseline { align-items: baseline; }
+
+.ax-flex-justify-start   { justify-content: flex-start; }
+.ax-flex-justify-center  { justify-content: center; }
+.ax-flex-justify-end     { justify-content: flex-end; }
+.ax-flex-justify-between { justify-content: space-between; }
+.ax-flex-justify-around  { justify-content: space-around; }
+.ax-flex-justify-evenly  { justify-content: space-evenly; }
+
+.ax-flex-wrap-nowrap       { flex-wrap: nowrap; }
+.ax-flex-wrap-wrap         { flex-wrap: wrap; }
+.ax-flex-wrap-wrap-reverse { flex-wrap: wrap-reverse; }
+
+.ax-gap-0   { gap: 0; }
+.ax-gap-xs  { gap: 0.25rem; }
+.ax-gap-sm  { gap: 0.5rem; }
+.ax-gap-md  { gap: 1rem; }
+.ax-gap-lg  { gap: 1.5rem; }
+.ax-gap-xl  { gap: 2rem; }
+.ax-gap-2xl { gap: 3rem; }
+
+/* --------------------------------------------------------------------------
+   Stack Styles
+   -------------------------------------------------------------------------- */
+
+.ax-stack {
+  display: flex;
+}
+
+.ax-stack-vertical {
+  flex-direction: column;
+}
+
+.ax-stack-horizontal {
+  flex-direction: row;
+  align-items: center;
+}
+
+.ax-stack-gap-0   { gap: 0; }
+.ax-stack-gap-xs  { gap: 0.25rem; }
+.ax-stack-gap-sm  { gap: 0.5rem; }
+.ax-stack-gap-md  { gap: 1rem; }
+.ax-stack-gap-lg  { gap: 1.5rem; }
+.ax-stack-gap-xl  { gap: 2rem; }
+.ax-stack-gap-2xl { gap: 3rem; }
+
+.ax-stack-divided.ax-stack-vertical > :not(:last-child) {
+  border-bottom: 1px solid var(--color-border, #e2e8f0);
+  padding-bottom: 0.75rem;
+}
+
+.ax-stack-divided.ax-stack-horizontal > :not(:last-child) {
+  border-right: 1px solid var(--color-border, #e2e8f0);
+  padding-right: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   Grid Styles
+   -------------------------------------------------------------------------- */
+
+.ax-grid {
+  display: grid;
+}
+
+.ax-grid-cols-1    { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.ax-grid-cols-2    { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ax-grid-cols-3    { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ax-grid-cols-4    { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.ax-grid-cols-5    { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.ax-grid-cols-6    { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.ax-grid-cols-12   { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+.ax-grid-cols-auto { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+@media (max-width: 768px) {
+  .ax-grid-responsive.ax-grid-cols-2,
+  .ax-grid-responsive.ax-grid-cols-3,
+  .ax-grid-responsive.ax-grid-cols-4,
+  .ax-grid-responsive.ax-grid-cols-5,
+  .ax-grid-responsive.ax-grid-cols-6,
+  .ax-grid-responsive.ax-grid-cols-12 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,310 @@
+/* ==========================================================================
+   AstraX (AX) Input Component - Token-Driven Scoped CSS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Root Input Wrapper
+   -------------------------------------------------------------------------- */
+.ax-input-wrapper {
+  --ax-input-height: 38px;
+  --ax-input-padding-x: 12px;
+  --ax-input-font-size: 0.875rem;
+  --ax-input-radius: var(--ax-radius-md, 8px);
+  --ax-input-border-color: var(--ax-color-border, #e2e8f0);
+  --ax-input-bg: var(--ax-color-surface, #ffffff);
+  --ax-input-focus-border: var(--ax-color-primary, #6366f1);
+  --ax-input-focus-ring: color-mix(in srgb, var(--ax-color-primary, #6366f1) 18%, transparent);
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.ax-input-full-width {
+  width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   2. Size Presets
+   -------------------------------------------------------------------------- */
+.ax-input-size-xs {
+  --ax-input-height: 28px;
+  --ax-input-padding-x: 8px;
+  --ax-input-font-size: 0.75rem;
+  --ax-input-radius: 6px;
+}
+
+.ax-input-size-sm {
+  --ax-input-height: 32px;
+  --ax-input-padding-x: 10px;
+  --ax-input-font-size: 0.8125rem;
+  --ax-input-radius: 6px;
+}
+
+.ax-input-size-md {
+  --ax-input-height: 38px;
+  --ax-input-padding-x: 12px;
+  --ax-input-font-size: 0.875rem;
+  --ax-input-radius: 8px;
+}
+
+.ax-input-size-lg {
+  --ax-input-height: 44px;
+  --ax-input-padding-x: 14px;
+  --ax-input-font-size: 1rem;
+  --ax-input-radius: 10px;
+}
+
+.ax-input-size-xl {
+  --ax-input-height: 50px;
+  --ax-input-padding-x: 18px;
+  --ax-input-font-size: 1.0625rem;
+  --ax-input-radius: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Label & Asterisk
+   -------------------------------------------------------------------------- */
+.ax-input-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: calc(var(--ax-input-font-size) * 0.93);
+  font-weight: 600;
+  color: var(--ax-color-text-primary, #0f172a);
+  user-select: none;
+}
+
+.ax-input-required {
+  color: var(--ax-color-danger, #ef4444);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   4. Outer Container & Addons
+   -------------------------------------------------------------------------- */
+.ax-input-outer-container {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  position: relative;
+}
+
+.ax-input-addon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--ax-input-padding-x);
+  background-color: var(--ax-color-surface-secondary, #f8fafc);
+  border: 1px solid var(--ax-input-border-color);
+  color: var(--ax-color-text-secondary, #64748b);
+  font-size: var(--ax-input-font-size);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.ax-input-prefix-addon {
+  border-right: none;
+  border-top-left-radius: var(--ax-input-radius);
+  border-bottom-left-radius: var(--ax-input-radius);
+}
+
+.ax-input-suffix-addon {
+  border-left: none;
+  border-top-right-radius: var(--ax-input-radius);
+  border-bottom-right-radius: var(--ax-input-radius);
+}
+
+/* --------------------------------------------------------------------------
+   5. Input Container & Field
+   -------------------------------------------------------------------------- */
+.ax-input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: var(--ax-input-height);
+  background-color: var(--ax-input-bg);
+  border: 1px solid var(--ax-input-border-color);
+  border-radius: var(--ax-input-radius);
+  transition: border-color 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+  box-sizing: border-box;
+}
+
+.ax-input-prefix-addon + .ax-input-container {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.ax-input-container:has(+ .ax-input-suffix-addon) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.ax-input-container:focus-within {
+  border-color: var(--ax-input-focus-border);
+  box-shadow: 0 0 0 3px var(--ax-input-focus-ring);
+  z-index: 2;
+}
+
+.ax-input-field {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  padding: 0 var(--ax-input-padding-x);
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: var(--ax-input-font-size);
+  color: var(--ax-color-text-primary, #0f172a);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.ax-input-field::placeholder {
+  color: var(--ax-color-text-muted, #94a3b8);
+}
+
+/* --------------------------------------------------------------------------
+   6. Icons, Clear Button & Password Toggle
+   -------------------------------------------------------------------------- */
+.ax-input-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--ax-color-text-secondary, #64748b);
+  pointer-events: none;
+}
+
+.ax-input-start-icon {
+  padding-left: var(--ax-input-padding-x);
+}
+
+.ax-input-end-icon {
+  padding-right: var(--ax-input-padding-x);
+}
+
+.ax-input-clear-btn,
+.ax-input-password-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--ax-color-text-secondary, #64748b);
+  cursor: pointer;
+  padding: 0 8px;
+  height: 100%;
+  border-radius: inherit;
+  transition: color 120ms ease;
+  outline: none;
+}
+
+.ax-input-clear-btn:hover,
+.ax-input-password-toggle:hover {
+  color: var(--ax-color-text-primary, #0f172a);
+}
+
+/* --------------------------------------------------------------------------
+   7. Visual Variants
+   -------------------------------------------------------------------------- */
+/* Variant: Outlined (Default) */
+.ax-input-variant-outlined .ax-input-container {
+  background-color: var(--ax-color-surface, #ffffff);
+  border: 1px solid var(--ax-input-border-color);
+}
+
+/* Variant: Subtle / Filled */
+.ax-input-variant-subtle .ax-input-container {
+  background-color: var(--ax-color-surface-secondary, #f8fafc);
+  border: 1px solid transparent;
+}
+.ax-input-variant-subtle .ax-input-container:hover {
+  background-color: color-mix(in srgb, var(--ax-color-surface-secondary, #f8fafc) 92%, black 8%);
+}
+.ax-input-variant-subtle .ax-input-container:focus-within {
+  background-color: var(--ax-color-surface, #ffffff);
+  border-color: var(--ax-input-focus-border);
+}
+
+/* Variant: Underlined */
+.ax-input-variant-underlined .ax-input-container {
+  border: none;
+  border-bottom: 2px solid var(--ax-input-border-color);
+  border-radius: 0;
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+.ax-input-variant-underlined .ax-input-field {
+  padding-left: 0;
+  padding-right: 0;
+}
+.ax-input-variant-underlined .ax-input-container:focus-within {
+  box-shadow: none;
+  border-bottom-color: var(--ax-input-focus-border);
+}
+
+/* --------------------------------------------------------------------------
+   8. States (Disabled, ReadOnly, Invalid)
+   -------------------------------------------------------------------------- */
+.ax-input-disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.ax-input-disabled .ax-input-container {
+  background-color: var(--ax-color-surface-secondary, #f1f5f9);
+}
+
+.ax-input-readonly .ax-input-container {
+  background-color: var(--ax-color-surface-secondary, #f8fafc);
+}
+
+.ax-input-invalid {
+  --ax-input-border-color: var(--ax-color-danger, #ef4444);
+  --ax-input-focus-border: var(--ax-color-danger, #ef4444);
+  --ax-input-focus-ring: color-mix(in srgb, var(--ax-color-danger, #ef4444) 18%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   9. Helper, Error Messages & Character Counter
+   -------------------------------------------------------------------------- */
+.ax-input-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.ax-input-message-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.ax-input-message {
+  margin: 0;
+  font-size: calc(var(--ax-input-font-size) * 0.88);
+  line-height: 1.35;
+}
+
+.ax-input-helper-message {
+  color: var(--ax-color-text-secondary, #64748b);
+}
+
+.ax-input-error-message {
+  color: var(--ax-color-danger, #ef4444);
+  font-weight: 500;
+}
+
+.ax-input-count {
+  font-size: calc(var(--ax-input-font-size) * 0.85);
+  color: var(--ax-color-text-secondary, #94a3b8);
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+

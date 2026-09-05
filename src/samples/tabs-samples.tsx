@@ -8,7 +8,6 @@ import {
   AXTabPanel,
   AXTabsVariant,
   AXTabsSize,
-  AXTabsColor,
   AXTabItem,
 } from '@/components/ax-tabs/ax-tabs';
 import { AXButton } from '@/components/ax-button/ax-button';
@@ -25,7 +24,8 @@ import {
 } from '@/assets/icons';
 
 export const TabsSamples: React.FC = () => {
-  const [controlledTab, setControlledTab] = useState('overview');
+  // Size level state
+  const [selectedSize, setSelectedSize] = useState<AXTabsSize>('md');
 
   // Dynamic closable tabs state
   const [dynamicTabs, setDynamicTabs] = useState<string[]>([
@@ -49,24 +49,118 @@ export const TabsSamples: React.FC = () => {
     setActiveFile(newName);
   };
 
-  const variants: { variant: AXTabsVariant; label: string; desc: string }[] = [
-    { variant: 'line', label: '1. Line Variant (Underline Indicator)', desc: 'Clean border with sliding active underline indicator. Ideal for dashboards and settings.' },
-    { variant: 'pill', label: '2. Pill / Segmented Control', desc: 'Capsule surface with hardware-accelerated floating card indicator. Apple / macOS style.' },
-    { variant: 'card', label: '3. Card / Boxed Variant', desc: 'Individual tab enclosures with connected active card border. Ant Design style.' },
-    { variant: 'soft', label: '4. Soft Tint Variant', desc: 'Subtle tinted pill highlight without heavy borders. Modern SaaS look.' },
+  // Reusable Items Array with JSX titles & JSX contents
+  const verticalItems: AXTabItem[] = [
+    {
+      id: 'general',
+      title: (
+        <div className="ax-flex ax-items-center ax-gap-2">
+          <SettingsIcon size={16} />
+          <span>General Settings</span>
+        </div>
+      ),
+      content: (
+        <div className="ax-p-5 ax-bg-surface-secondary ax-rounded-xl ax-border ax-border-default ax-flex ax-flex-col ax-gap-3">
+          <div className="ax-flex ax-items-center ax-justify-between">
+            <h4 className="ax-text-sm ax-font-bold ax-text-primary ax-m-0">Workspace Configuration</h4>
+            <span className="ax-px-2 ax-py-0.5 ax-bg-success-soft ax-text-success ax-rounded-full ax-text-2xs ax-font-semibold">
+              Live
+            </span>
+          </div>
+          <p className="ax-text-xs ax-text-secondary ax-m-0">
+            Configure your application workspace title, default timezone, domain routing, and organization URL.
+          </p>
+          <div className="ax-flex ax-items-center ax-gap-2 ax-pt-2">
+            <AXButton size="xs" color="primary" label="Save Changes" />
+            <AXButton size="xs" variant="outlined" color="secondary" label="Reset" />
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: 'profile',
+      title: (
+        <div className="ax-flex ax-items-center ax-gap-2">
+          <SquaresIcon size={16} />
+          <span>User Profile</span>
+          <span className="ax-px-1.5 ax-py-0.5 ax-bg-primary-soft ax-text-primary ax-rounded-full ax-text-2xs ax-font-bold">
+            PRO
+          </span>
+        </div>
+      ),
+      content: (
+        <div className="ax-p-5 ax-bg-surface-secondary ax-rounded-xl ax-border ax-border-default ax-flex ax-flex-col ax-gap-3">
+          <div className="ax-flex ax-items-center ax-gap-3">
+            <div className="ax-w-10 ax-h-10 ax-rounded-full ax-bg-primary ax-text-white ax-flex ax-items-center ax-justify-center ax-font-bold">
+              BP
+            </div>
+            <div>
+              <h4 className="ax-text-sm ax-font-bold ax-text-primary ax-m-0">Bharath Peddi</h4>
+              <span className="ax-text-xs ax-text-secondary">Lead Design Systems Engineer</span>
+            </div>
+          </div>
+          <p className="ax-text-xs ax-text-secondary ax-m-0">
+            Manage your personal profile information, security credentials, and public developer identity.
+          </p>
+        </div>
+      ),
+    },
+    {
+      id: 'security',
+      title: (
+        <div className="ax-flex ax-items-center ax-gap-2">
+          <DocumentIcon size={16} />
+          <span>Security & Auth</span>
+          <span className="ax-px-1.5 ax-py-0.5 ax-bg-warning-soft ax-text-warning ax-rounded-full ax-text-2xs ax-font-bold">
+            2FA
+          </span>
+        </div>
+      ),
+      content: (
+        <div className="ax-p-5 ax-bg-surface-secondary ax-rounded-xl ax-border ax-border-default ax-flex ax-flex-col ax-gap-3">
+          <h4 className="ax-text-sm ax-font-bold ax-text-primary ax-m-0">Authentication & Access Control</h4>
+          <p className="ax-text-xs ax-text-secondary ax-m-0">
+            Hardware security keys (FIDO2 / WebAuthn) and TOTP authenticator application enabled for all admin operations.
+          </p>
+          <div className="ax-flex ax-items-center ax-gap-2">
+            <CheckIcon size={14} className="ax-text-success" />
+            <span className="ax-text-xs ax-text-success ax-font-semibold">SOC-2 Type II Compliant</span>
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: 'notifications',
+      title: (
+        <div className="ax-flex ax-items-center ax-gap-2">
+          <BellIcon size={16} />
+          <span>Notifications</span>
+          <span className="ax-px-1.5 ax-py-0.5 ax-bg-danger ax-text-white ax-rounded-full ax-text-2xs ax-font-bold">
+            4
+          </span>
+        </div>
+      ),
+      content: (
+        <div className="ax-p-5 ax-bg-surface-secondary ax-rounded-xl ax-border ax-border-default ax-flex ax-flex-col ax-gap-3">
+          <h4 className="ax-text-sm ax-font-bold ax-text-primary ax-m-0">Alert Streams & Webhooks</h4>
+          <p className="ax-text-xs ax-text-secondary ax-m-0">
+            You have 4 unread priority notifications waiting for review in your alert dispatch queue.
+          </p>
+        </div>
+      ),
+    },
   ];
 
-  const sizes: AXTabsSize[] = ['xs', 'sm', 'md', 'lg', 'xl'];
-  const colors: AXTabsColor[] = ['primary', 'accent', 'success', 'dark'];
-
-  // Shorthand data items
-  const shorthandItems: AXTabItem[] = [
+  const horizontalItems: AXTabItem[] = [
     {
-      key: 'metrics',
-      label: 'Performance Metrics',
-      icon: <SquaresIcon size={16} />,
-      badge: '99.9%',
-      badgeColor: 'success',
+      id: 'metrics',
+      title: (
+        <div className="ax-flex ax-items-center ax-gap-2">
+          <SquaresIcon size={14} />
+          <span>Performance Metrics</span>
+          <span className="ax-px-1.5 ax-py-0.2 ax-bg-success-soft ax-text-success ax-rounded-full ax-text-2xs">99.9%</span>
+        </div>
+      ),
       content: (
         <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-text-secondary">
           ⚡ Latency: <strong>14ms</strong> | Uptime: <strong>99.99%</strong> | Throughput: <strong>12.4k req/sec</strong>
@@ -74,11 +168,13 @@ export const TabsSamples: React.FC = () => {
       ),
     },
     {
-      key: 'security',
-      label: 'Security & RBAC',
-      icon: <DocumentIcon size={16} />,
-      badge: 'Audit',
-      badgeColor: 'accent',
+      id: 'security',
+      title: (
+        <div className="ax-flex ax-items-center ax-gap-2">
+          <DocumentIcon size={14} />
+          <span>Security Audit</span>
+        </div>
+      ),
       content: (
         <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-text-secondary">
           🛡️ Zero Trust Architecture | OAuth2 & OIDC Configured | Session TTL: 24h
@@ -86,9 +182,13 @@ export const TabsSamples: React.FC = () => {
       ),
     },
     {
-      key: 'integrations',
-      label: 'Cloud Integrations',
-      icon: <ShareIcon size={16} />,
+      id: 'integrations',
+      title: (
+        <div className="ax-flex ax-items-center ax-gap-2">
+          <ShareIcon size={14} />
+          <span>Cloud Integrations</span>
+        </div>
+      ),
       content: (
         <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-text-secondary">
           ☁️ AWS S3 Connected | GitHub Actions CI Active | Cloudflare CDN Operational
@@ -99,236 +199,164 @@ export const TabsSamples: React.FC = () => {
 
   return (
     <div className="ax-flex ax-flex-col ax-gap-8">
-      {/* 1. All 4 Visual Variants */}
-      {variants.map(({ variant, label, desc }) => (
-        <div
-          key={variant}
-          className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4"
-        >
+      {/* ====================================================================
+          1. Vertical Tabs (Left Tab List -> Right Content)
+          ==================================================================== */}
+      <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
+        <div>
+          <div className="ax-inline-flex ax-items-center ax-gap-1.5 ax-px-2.5 ax-py-0.5 ax-bg-primary-soft ax-rounded-full ax-text-xs ax-font-bold ax-text-primary ax-mb-1">
+            Vertical Layout
+          </div>
+          <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
+            Vertical Tabs: Left Tab Title Click ➔ Right Content Display
+          </h3>
+          <p className="ax-text-xs ax-text-secondary ax-mt-1 ax-mb-0">
+            Clicking any tab on the left immediately switches the corresponding panel content on the right. Titles and contents accept custom JSX elements.
+          </p>
+        </div>
+
+        <div className="ax-border ax-border-default ax-rounded-xl ax-p-6 ax-bg-surface">
+          <AXTabs
+            orientation="vertical"
+            size="md"
+            variant="line"
+            color="primary"
+            items={verticalItems}
+          />
+        </div>
+      </div>
+
+      {/* ====================================================================
+          2. Horizontal Tabs with Rich JSX Titles & Content
+          ==================================================================== */}
+      <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
+        <div>
+          <div className="ax-inline-flex ax-items-center ax-gap-1.5 ax-px-2.5 ax-py-0.5 ax-bg-success-soft ax-rounded-full ax-text-xs ax-font-bold ax-text-success ax-mb-1">
+            Horizontal Layout
+          </div>
+          <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
+            Horizontal Tabs: Top Tab Strip ➔ Content Below
+          </h3>
+          <p className="ax-text-xs ax-text-secondary ax-mt-1 ax-mb-0">
+            Standard horizontal tabs supporting custom JSX elements for tab titles and panel contents.
+          </p>
+        </div>
+
+        <div className="ax-border ax-border-default ax-rounded-xl ax-p-6 ax-bg-surface">
+          <AXTabs
+            orientation="horizontal"
+            size="md"
+            variant="pill"
+            color="primary"
+            items={horizontalItems}
+          />
+        </div>
+      </div>
+
+      {/* ====================================================================
+          3. Sizing Presets (XS to XL)
+          ==================================================================== */}
+      <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
+        <div className="ax-flex ax-items-center ax-justify-between ax-flex-wrap ax-gap-3">
           <div>
-            <div className="ax-inline-flex ax-items-center ax-gap-2 ax-px-2 ax-py-0.5 ax-bg-surface-secondary ax-rounded ax-text-xs ax-font-medium ax-text-primary ax-mb-1">
-              Variant: {variant.toUpperCase()}
+            <div className="ax-inline-flex ax-items-center ax-gap-1.5 ax-px-2.5 ax-py-0.5 ax-bg-accent-soft ax-rounded-full ax-text-xs ax-font-bold ax-text-accent ax-mb-1">
+              Size Hierarchy
             </div>
-            <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">{label}</h3>
-            <p className="ax-text-xs ax-text-secondary ax-mt-1">{desc}</p>
+            <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
+              Size-Driven Token Spacing (XS to XL)
+            </h3>
+            <p className="ax-text-xs ax-text-secondary ax-mt-1 ax-mb-0">
+              Heights, paddings, gaps, and font sizes scale cleanly via CSS tokens.
+            </p>
           </div>
 
-          <AXTabs defaultValue="tab1" variant={variant}>
-            <AXTabsList>
-              <AXTab value="tab1" startIcon={<CubeIcon size={16} />}>Overview</AXTab>
-              <AXTab value="tab2" startIcon={<DocumentIcon size={16} />} badge="3">Specifications</AXTab>
-              <AXTab value="tab3" startIcon={<SettingsIcon size={16} />}>Preferences</AXTab>
-              <AXTab value="tab4" disabled>Disabled Tab</AXTab>
-            </AXTabsList>
+          <div className="ax-flex ax-items-center ax-gap-2">
+            {(['xs', 'sm', 'md', 'lg', 'xl'] as AXTabsSize[]).map((sz) => (
+              <button
+                key={sz}
+                type="button"
+                onClick={() => setSelectedSize(sz)}
+                className={`ax-px-3 ax-py-1 ax-text-xs ax-font-semibold ax-rounded-md ax-transition-all ${
+                  selectedSize === sz
+                    ? 'ax-bg-primary ax-text-white ax-shadow-sm'
+                    : 'ax-bg-surface ax-text-primary ax-border ax-border-default hover:ax-border-primary'
+                }`}
+              >
+                {sz.toUpperCase()}
+              </button>
+            ))}
+          </div>
+        </div>
 
+        <div className="ax-border ax-border-default ax-rounded-xl ax-p-6 ax-bg-surface">
+          <AXTabs defaultValue="tab1" size={selectedSize} variant="line">
+            <AXTabsList>
+              <AXTab value="tab1" startIcon={<SparklesIcon size={14} />}>
+                Active ({selectedSize.toUpperCase()})
+              </AXTab>
+              <AXTab value="tab2">Analytics</AXTab>
+              <AXTab value="tab3" badge="New">Activity</AXTab>
+            </AXTabsList>
             <AXTabPanel value="tab1">
               <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-text-secondary">
-                Displaying <strong>Overview</strong> panel contents with smooth entrance transition.
+                Rendered with size token preset: <strong>{selectedSize.toUpperCase()}</strong>
               </div>
             </AXTabPanel>
             <AXTabPanel value="tab2">
               <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-text-secondary">
-                Displaying <strong>Specifications</strong> panel with active badge counter.
+                Analytics data panel.
               </div>
             </AXTabPanel>
             <AXTabPanel value="tab3">
               <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-text-secondary">
-                Displaying <strong>Preferences</strong> configuration panel.
+                Activity log panel.
               </div>
             </AXTabPanel>
           </AXTabs>
         </div>
-      ))}
-
-      {/* 2. Size Hierarchy Progression */}
-      <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
-        <div>
-          <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
-            5. Size Presets Hierarchy (XS to XL)
-          </h3>
-          <p className="ax-text-xs ax-text-secondary ax-mt-1">
-            Five standardized size presets adapting heights, padding, font scaling, and icon dimensions.
-          </p>
-        </div>
-
-        <div className="ax-flex ax-flex-col ax-gap-4">
-          {sizes.map((sz) => (
-            <div key={sz} className="ax-flex ax-flex-col ax-gap-1">
-              <span className="ax-text-xs ax-font-semibold ax-text-secondary">
-                Size: <code className="ax-text-primary">{sz.toUpperCase()}</code>
-              </span>
-              <AXTabs defaultValue="active" size={sz} variant="pill">
-                <AXTabsList>
-                  <AXTab value="active" startIcon={<SparklesIcon size={sz === 'xs' ? 12 : sz === 'sm' ? 14 : 16} />}>
-                    Active Size ({sz})
-                  </AXTab>
-                  <AXTab value="tab2">Secondary Tab</AXTab>
-                  <AXTab value="tab3" badge="New">Badge</AXTab>
-                </AXTabsList>
-              </AXTabs>
-            </div>
-          ))}
-        </div>
       </div>
 
-      {/* 3. Color Themes */}
+      {/* ====================================================================
+          4. Compound Subcomponents Pattern
+          ==================================================================== */}
       <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
         <div>
+          <div className="ax-inline-flex ax-items-center ax-gap-1.5 ax-px-2.5 ax-py-0.5 ax-bg-surface-secondary ax-rounded-full ax-text-xs ax-font-bold ax-text-primary ax-mb-1">
+            Compound API
+          </div>
           <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
-            6. Color Theme Presets
+            Compound Subcomponents: Full Markup Control
           </h3>
-          <p className="ax-text-xs ax-text-secondary ax-mt-1">
-            Coordinated color highlights for sliding indicators, active text, and badges.
+          <p className="ax-text-xs ax-text-secondary ax-mt-1 ax-mb-0">
+            Build custom tab hierarchies using AXTabs, AXTabsList, AXTab, and AXTabPanel.
           </p>
         </div>
 
-        <div className="ax-grid ax-grid-cols-1 md:ax-grid-cols-2 ax-gap-4">
-          {colors.map((c) => (
-            <div key={c} className="ax-p-3 ax-border ax-border-default ax-rounded-lg">
-              <span className="ax-text-xs ax-font-semibold ax-text-secondary ax-mb-2 ax-block">
-                Color: <code className="ax-text-primary">{c.toUpperCase()}</code>
-              </span>
-              <AXTabs defaultValue="one" color={c} variant="line">
-                <AXTabsList>
-                  <AXTab value="one" badge="Live">Selected</AXTab>
-                  <AXTab value="two">Inactive</AXTab>
-                  <AXTab value="three">Settings</AXTab>
-                </AXTabsList>
-              </AXTabs>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 4. Vertical Left-Rail Navigation */}
-      <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
-        <div>
-          <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
-            7. Vertical Left-Rail Navigation Layout
-          </h3>
-          <p className="ax-text-xs ax-text-secondary ax-mt-1">
-            Side navigation layout with vertical sliding indicator and synchronized content panels.
-          </p>
-        </div>
-
-        <div className="ax-border ax-border-default ax-rounded-lg ax-p-4">
-          <AXTabs defaultValue="general" orientation="vertical" variant="line">
-            <AXTabsList style={{ width: '220px' }}>
-              <AXTab value="general" startIcon={<SettingsIcon size={16} />}>General Settings</AXTab>
-              <AXTab value="profile" startIcon={<SquaresIcon size={16} />}>User Profile</AXTab>
-              <AXTab value="security" startIcon={<DocumentIcon size={16} />} badge="2FA">Security & Auth</AXTab>
-              <AXTab value="notifications" startIcon={<BellIcon size={16} />} badge="4" badgeColor="danger">
-                Notifications
-              </AXTab>
+        <div className="ax-border ax-border-default ax-rounded-xl ax-p-6 ax-bg-surface">
+          <AXTabs defaultValue="overview" variant="card">
+            <AXTabsList>
+              <AXTab value="overview" startIcon={<CubeIcon size={16} />}>Overview</AXTab>
+              <AXTab value="specs" startIcon={<DocumentIcon size={16} />} badge="3">Specs</AXTab>
+              <AXTab value="settings" startIcon={<SettingsIcon size={16} />}>Config</AXTab>
             </AXTabsList>
 
-            <AXTabPanel value="general">
+            <AXTabPanel value="overview">
               <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-text-secondary">
-                <h4 className="ax-text-sm ax-font-bold ax-text-primary ax-m-0 ax-mb-2">General Workspace Settings</h4>
-                <p className="ax-m-0">Configure your application workspace title, default timezone, and organization URL.</p>
+                Overview panel content with seamless tab transitions.
               </div>
             </AXTabPanel>
-            <AXTabPanel value="profile">
+            <AXTabPanel value="specs">
               <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-text-secondary">
-                <h4 className="ax-text-sm ax-font-bold ax-text-primary ax-m-0 ax-mb-2">User Profile & Identity</h4>
-                <p className="ax-m-0">Signed in as <strong>Alex Cross (Chief Architect)</strong> with full administrative privileges.</p>
+                Detailed technical specifications and hardware parameters.
               </div>
             </AXTabPanel>
-            <AXTabPanel value="security">
+            <AXTabPanel value="settings">
               <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-text-secondary">
-                <h4 className="ax-text-sm ax-font-bold ax-text-primary ax-m-0 ax-mb-2">Multi-Factor Authentication (2FA)</h4>
-                <p className="ax-m-0">Hardware security keys (FIDO2 / WebAuthn) and TOTP authenticator app enabled.</p>
-              </div>
-            </AXTabPanel>
-            <AXTabPanel value="notifications">
-              <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-text-secondary">
-                <h4 className="ax-text-sm ax-font-bold ax-text-primary ax-m-0 ax-mb-2">Notification Streams</h4>
-                <p className="ax-m-0">4 unread priority alerts waiting for review in system queue.</p>
+                Settings and configuration preferences.
               </div>
             </AXTabPanel>
           </AXTabs>
         </div>
-      </div>
-
-      {/* 5. Full-Width Segmented Control */}
-      <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
-        <div>
-          <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
-            8. Full-Width Equalized Segmented Tabs
-          </h3>
-          <p className="ax-text-xs ax-text-secondary ax-mt-1">
-            Equal width distribution across the entire container (<code className="ax-text-primary">fullWidth=true</code>), ideal for mobile or segmented toggle cards.
-          </p>
-        </div>
-
-        <AXTabs defaultValue="monthly" variant="pill" fullWidth color="accent">
-          <AXTabsList>
-            <AXTab value="monthly">Monthly Billing ($29/mo)</AXTab>
-            <AXTab value="annual" badge="Save 20%" badgeColor="accent">Annual Billing ($279/yr)</AXTab>
-            <AXTab value="enterprise">Custom Enterprise</AXTab>
-          </AXTabsList>
-        </AXTabs>
-      </div>
-
-      {/* 6. Dynamic Closable Tabs (IDE File Editor Style) */}
-      <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
-        <div className="ax-flex ax-items-center ax-justify-between">
-          <div>
-            <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
-              9. Dynamic Closable File Tabs (IDE Style)
-            </h3>
-            <p className="ax-text-xs ax-text-secondary ax-mt-1">
-              Interactive dismissible tab buttons with add/close lifecycle handlers.
-            </p>
-          </div>
-          <AXButton
-            size="xs"
-            color="primary"
-            variant="soft"
-            startIcon={<PlusIcon size={14} />}
-            onClick={handleAddFile}
-            label="New File"
-          />
-        </div>
-
-        <AXTabs
-          value={activeFile}
-          onChange={setActiveFile}
-          variant="card"
-          onTabClose={handleCloseFile}
-        >
-          <AXTabsList>
-            {dynamicTabs.map((file) => (
-              <AXTab key={file} value={file} closable startIcon={<DocumentIcon size={14} />}>
-                {file}
-              </AXTab>
-            ))}
-          </AXTabsList>
-
-          {dynamicTabs.map((file) => (
-            <AXTabPanel key={file} value={file}>
-              <div className="ax-p-4 ax-bg-surface-secondary ax-rounded-lg ax-text-xs ax-font-mono">
-                // Active file buffer: {file}
-                <br />
-                export default function {file.replace(/\.[^/.]+$/, '')}() &#123; return &lt;div&gt;Active Buffer Content&lt;/div&gt;; &#125;
-              </div>
-            </AXTabPanel>
-          ))}
-        </AXTabs>
-      </div>
-
-      {/* 7. Concise Data-Driven Shorthand API */}
-      <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
-        <div>
-          <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
-            10. Concise Data-Driven Shorthand API
-          </h3>
-          <p className="ax-text-xs ax-text-secondary ax-mt-1">
-            Declarative setup via <code className="ax-text-primary">items=&#123;[...]&#125;</code> for rapid development without manually managing compound JSX trees.
-          </p>
-        </div>
-
-        <AXTabs items={shorthandItems} variant="soft" color="primary" />
       </div>
     </div>
   );

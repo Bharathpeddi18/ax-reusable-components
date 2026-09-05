@@ -1,0 +1,397 @@
+/* ==========================================================================
+   AstraX (AX) File Upload Component Styles - 10/10 Enterprise Dropzone
+   ========================================================================== */
+
+.ax-file-upload-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ax-file-upload-gap, 0.5rem);
+  font-family: inherit;
+  color: var(--color-foreground, #1e293b);
+  box-sizing: border-box;
+}
+
+.ax-file-upload-full-width {
+  width: 100%;
+}
+
+.ax-file-upload-hidden-input {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Label & Messages
+   -------------------------------------------------------------------------- */
+
+.ax-file-upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--ax-file-upload-label-size, 0.875rem);
+  font-weight: 500;
+  color: var(--color-foreground, #334155);
+  user-select: none;
+}
+
+.ax-file-upload-required {
+  color: var(--color-danger, #ef4444);
+  font-weight: 600;
+}
+
+.ax-file-upload-message {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.ax-file-upload-error-message {
+  color: var(--color-danger, #ef4444);
+}
+
+.ax-file-upload-helper-message {
+  color: var(--color-muted, #64748b);
+}
+
+/* --------------------------------------------------------------------------
+   Dropzone Surface
+   -------------------------------------------------------------------------- */
+
+.ax-file-upload-dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--ax-file-upload-padding, 1.5rem 1rem);
+  background-color: var(--color-surface, #ffffff);
+  border: 2px dashed var(--color-border, #cbd5e1);
+  border-radius: var(--ax-file-upload-radius, 0.625rem);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  gap: 0.75rem;
+  user-select: none;
+}
+
+.ax-file-upload-dropzone:hover {
+  border-color: var(--color-primary, #6366f1);
+  background-color: var(--color-surface-hover, #f8fafc);
+}
+
+.ax-file-upload-dropzone:focus-visible,
+.ax-file-upload-dropzone-active {
+  border-color: var(--color-primary, #6366f1);
+  background-color: var(--color-primary-light, #eef2ff);
+  box-shadow: 0 0 0 3px var(--color-primary-light, rgba(99, 102, 241, 0.15));
+}
+
+.ax-file-upload-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: var(--color-surface-subtle, #f1f5f9);
+  color: var(--color-primary, #6366f1);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ax-file-upload-dropzone:hover .ax-file-upload-icon-container,
+.ax-file-upload-dropzone-active .ax-file-upload-icon-container {
+  transform: translateY(-2px);
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.ax-file-upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ax-file-upload-title {
+  font-size: var(--ax-file-upload-title-size, 0.9375rem);
+  font-weight: 500;
+  color: var(--color-foreground, #1e293b);
+}
+
+.ax-file-upload-hint {
+  font-size: 0.8125rem;
+  color: var(--color-muted, #64748b);
+}
+
+/* --------------------------------------------------------------------------
+   Button Trigger Variant
+   -------------------------------------------------------------------------- */
+
+.ax-file-upload-btn-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: var(--ax-file-upload-btn-height, 2.625rem);
+  padding: 0 1rem;
+  font-size: var(--ax-file-upload-title-size, 0.875rem);
+  font-weight: 500;
+  color: #ffffff;
+  background-color: var(--color-primary, #6366f1);
+  border: 1px solid transparent;
+  border-radius: var(--ax-file-upload-radius, 0.5rem);
+  cursor: pointer;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  user-select: none;
+}
+
+.ax-file-upload-btn-trigger:hover {
+  background-color: var(--color-primary-dark, #4f46e5);
+}
+
+.ax-file-upload-btn-trigger:active {
+  transform: scale(0.98);
+}
+
+/* --------------------------------------------------------------------------
+   Uploaded Files List
+   -------------------------------------------------------------------------- */
+
+.ax-file-upload-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.ax-file-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.75rem;
+  background-color: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: var(--ax-file-upload-radius, 0.5rem);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ax-file-item:hover {
+  border-color: var(--color-border-hover, #cbd5e1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+.ax-file-item-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.375rem;
+  background-color: var(--color-surface-subtle, #f1f5f9);
+  color: var(--color-muted, #64748b);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ax-file-item-thumbnail-clickable {
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.ax-file-item-thumbnail-clickable:hover {
+  transform: scale(1.08);
+}
+
+.ax-file-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ax-file-item-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  gap: 0.25rem;
+}
+
+.ax-file-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.ax-file-item-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-foreground, #1e293b);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ax-file-item-size {
+  font-size: 0.75rem;
+  color: var(--color-muted, #64748b);
+  flex-shrink: 0;
+}
+
+.ax-file-item-progress-bar {
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-surface-subtle, #f1f5f9);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.ax-file-item-progress-fill {
+  height: 100%;
+  background-color: var(--color-primary, #6366f1);
+  transition: width 0.2s ease;
+}
+
+.ax-file-item-error {
+  font-size: 0.75rem;
+  color: var(--color-danger, #ef4444);
+}
+
+.ax-file-item-remove-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--color-muted, #94a3b8);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.ax-file-item-remove-btn:hover {
+  color: var(--color-danger, #ef4444);
+  background-color: var(--color-surface-hover, #fef2f2);
+}
+
+/* --------------------------------------------------------------------------
+   Image Lightbox Preview Modal
+   -------------------------------------------------------------------------- */
+
+.ax-file-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: ax-fade-in 0.15s ease-out;
+}
+
+.ax-file-lightbox-content {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ax-file-lightbox-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc;
+}
+
+.ax-file-lightbox-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.ax-file-lightbox-close {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: inline-flex;
+}
+
+.ax-file-lightbox-img {
+  max-width: 80vw;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Size Tokens
+   -------------------------------------------------------------------------- */
+
+.ax-file-upload-size-xs {
+  --ax-file-upload-padding: 0.75rem 0.5rem;
+  --ax-file-upload-title-size: 0.75rem;
+  --ax-file-upload-label-size: 0.75rem;
+  --ax-file-upload-radius: 0.375rem;
+  --ax-file-upload-btn-height: 2rem;
+}
+
+.ax-file-upload-size-sm {
+  --ax-file-upload-padding: 1rem 0.75rem;
+  --ax-file-upload-title-size: 0.8125rem;
+  --ax-file-upload-label-size: 0.8125rem;
+  --ax-file-upload-radius: 0.375rem;
+  --ax-file-upload-btn-height: 2.25rem;
+}
+
+.ax-file-upload-size-md {
+  --ax-file-upload-padding: 1.5rem 1rem;
+  --ax-file-upload-title-size: 0.9375rem;
+  --ax-file-upload-label-size: 0.875rem;
+  --ax-file-upload-radius: 0.5rem;
+  --ax-file-upload-btn-height: 2.625rem;
+}
+
+.ax-file-upload-size-lg {
+  --ax-file-upload-padding: 2rem 1.25rem;
+  --ax-file-upload-title-size: 1rem;
+  --ax-file-upload-label-size: 0.9375rem;
+  --ax-file-upload-radius: 0.625rem;
+  --ax-file-upload-btn-height: 3rem;
+}
+
+.ax-file-upload-size-xl {
+  --ax-file-upload-padding: 2.5rem 1.5rem;
+  --ax-file-upload-title-size: 1.125rem;
+  --ax-file-upload-label-size: 1rem;
+  --ax-file-upload-radius: 0.75rem;
+  --ax-file-upload-btn-height: 3.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Invalid & Disabled States
+   -------------------------------------------------------------------------- */
+
+.ax-file-upload-invalid .ax-file-upload-dropzone {
+  border-color: var(--color-danger, #ef4444);
+  background-color: var(--color-surface-error, #fef2f2);
+}
+
+.ax-file-upload-disabled .ax-file-upload-dropzone,
+.ax-file-upload-disabled .ax-file-upload-btn-trigger {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}

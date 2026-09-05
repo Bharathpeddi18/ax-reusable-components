@@ -4,7 +4,6 @@ import React, {
   createContext,
   useContext,
   useState,
-  useRef,
   useCallback,
   useId,
   forwardRef,
@@ -12,31 +11,43 @@ import React, {
 import { ChevronDownIcon } from '@/assets/icons';
 
 /* ==========================================================================
-   TypeScript Types & Interfaces
+   AstraX (AX) Accordion Component - Minimal, Size-Driven UI Collapsible
+   ==========================================================================
+   Structure:
+   - Header / Trigger: Title, subtitle, icons & badges passed from outside
+   - Content / Body: Expandable body region passed from outside
+   - Size-Driven: Padding, gaps, and typography dynamically scale via CSS tokens
+   - Dual API: Data-driven items array + Compound subcomponents
    ========================================================================== */
 
-export type AXAccordionVariant = 'flush' | 'contained' | 'bordered' | 'filled';
+/* ==========================================================================
+   SECTION 1: TypeScript Types & Interfaces
+   ========================================================================== */
+
 export type AXAccordionType = 'single' | 'multiple';
-export type AXAccordionSize = 'sm' | 'md' | 'lg';
+export type AXAccordionSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type AXAccordionVariant = 'contained' | 'flush' | 'bordered' | 'subtle' | 'filled';
 export type AXAccordionChevronPosition = 'right' | 'left' | 'none';
 
 export interface AXAccordionItemData {
-  /** Unique key/value identifying this accordion item */
-  key: string;
-  /** Primary title text or node */
+  /** Unique key or id identifying this accordion item */
+  id?: string;
+  key?: string;
+  value?: string;
+  /** Header title text or custom JSX element passed from outside */
   title: React.ReactNode;
   /** Optional subtitle or descriptive helper */
   subtitle?: React.ReactNode;
-  /** Optional prefix icon */
+  /** Main body content rendered inside collapsible region */
+  content: React.ReactNode;
+  /** Optional icon prefix */
   icon?: React.ReactNode;
-  /** Optional badge count or status pill */
+  /** Optional badge */
   badge?: React.ReactNode;
   /** Badge color variant */
-  badgeColor?: 'accent' | 'success' | 'danger';
+  badgeColor?: 'accent' | 'success' | 'danger' | string;
   /** Disabled item state */
   disabled?: boolean;
-  /** Body content rendered inside collapsible panel */
-  content: React.ReactNode;
 }
 
 export interface AXAccordionContextValue {
@@ -44,10 +55,8 @@ export interface AXAccordionContextValue {
   toggleItem: (value: string) => void;
   variant: AXAccordionVariant;
   size: AXAccordionSize;
-  type: AXAccordionType;
   chevronPosition: AXAccordionChevronPosition;
   baseId: string;
-  triggerElementsRef: React.MutableRefObject<Map<string, HTMLButtonElement>>;
 }
 
 const AccordionContext = createContext<AXAccordionContextValue | null>(null);
@@ -55,38 +64,54 @@ const AccordionContext = createContext<AXAccordionContextValue | null>(null);
 export const useAXAccordionContext = () => {
   const context = useContext(AccordionContext);
   if (!context) {
-    throw new Error('AXAccordion compound components must be used within an <AXAccordion /> container.');
+    throw new Error('AXAccordion components must be used within an <AXAccordion /> container.');
   }
   return context;
 };
 
 /* ==========================================================================
-   Root AXAccordion Component
+   SECTION 2: Root AXAccordion Component
    ========================================================================== */
 
-export interface AXAccordionProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
-  /** Accordion expansion behavior mode */
+export interface AXAccordionProps
+  extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'> {
+  /** Single item expansion or multiple concurrent expansion. @default 'single' */
   type?: AXAccordionType;
-  /** When type="single", allows closing the active item by clicking it */
+  /** Allows collapsing the active item when in single mode. @default true */
   collapsible?: boolean;
-  /** Initial expanded item value (uncontrolled) */
+  /** Initial expanded value (uncontrolled) */
   defaultValue?: string | string[];
   /** Controlled expanded value */
   value?: string | string[];
   /** Callback fired when expanded items change */
   onValueChange?: (value: string | string[]) => void;
-  /** Visual appearance variant */
+  /** Visual appearance variant. @default 'contained' */
   variant?: AXAccordionVariant;
-  /** Size preset */
+  /** Size preset controlling padding, gaps, and font size. @default 'md' */
   size?: AXAccordionSize;
-  /** Chevron indicator alignment */
+  /** Chevron indicator alignment. @default 'right' */
   chevronPosition?: AXAccordionChevronPosition;
-  /** Data-driven items configuration (alternative to compound children) */
+  /** Data-driven items array (alternative to compound children) */
   items?: AXAccordionItemData[];
-  /** Compound children or custom content */
+  /** Custom children for compound usage */
   children?: React.ReactNode;
 }
 
+/**
+ * `AXAccordion` is a clean, minimal collapsible component with size-driven tokens
+ * and smooth CSS Grid height animations.
+ *
+ * @example Items Array:
+ * ```tsx
+ * <AXAccordion
+ *   size="md"
+ *   items={[
+ *     { id: '1', title: 'Account Settings', content: <p>Profile details...</p> },
+ *     { id: '2', title: 'Billing Info', content: <p>Card details...</p> },
+ *   ]}
+ * />
+ * ```
+ */
 export const AXAccordion = forwardRef<HTMLDivElement, AXAccordionProps>(
   (
     {
@@ -107,9 +132,7 @@ export const AXAccordion = forwardRef<HTMLDivElement, AXAccordionProps>(
   ) => {
     const isControlled = controlledValue !== undefined;
     const baseId = useId();
-    const triggerElementsRef = useRef<Map<string, HTMLButtonElement>>(new Map());
 
-    // Normalize initial state to a Set<string>
     const normalizeValues = (val?: string | string[]): Set<string> => {
       if (!val) return new Set();
       return new Set(Array.isArray(val) ? val : [val]);
@@ -160,10 +183,8 @@ export const AXAccordion = forwardRef<HTMLDivElement, AXAccordionProps>(
       toggleItem,
       variant,
       size,
-      type,
       chevronPosition,
       baseId,
-      triggerElementsRef,
     };
 
     return (
@@ -174,19 +195,22 @@ export const AXAccordion = forwardRef<HTMLDivElement, AXAccordionProps>(
           {...rest}
         >
           {items ? (
-            items.map((item) => (
-              <AXAccordionItem key={item.key} value={item.key} disabled={item.disabled}>
-                <AXAccordionTrigger
-                  startIcon={item.icon}
-                  subtitle={item.subtitle}
-                  badge={item.badge}
-                  badgeColor={item.badgeColor}
-                >
-                  {item.title}
-                </AXAccordionTrigger>
-                <AXAccordionContent>{item.content}</AXAccordionContent>
-              </AXAccordionItem>
-            ))
+            items.map((item) => {
+              const key = item.id ?? item.key ?? item.value ?? '';
+              return (
+                <AXAccordionItem key={key} value={key} disabled={item.disabled}>
+                  <AXAccordionTrigger
+                    startIcon={item.icon}
+                    subtitle={item.subtitle}
+                    badge={item.badge}
+                    badgeColor={item.badgeColor}
+                  >
+                    {item.title}
+                  </AXAccordionTrigger>
+                  <AXAccordionContent>{item.content}</AXAccordionContent>
+                </AXAccordionItem>
+              );
+            })
           ) : (
             children
           )}
@@ -199,14 +223,17 @@ export const AXAccordion = forwardRef<HTMLDivElement, AXAccordionProps>(
 AXAccordion.displayName = 'AXAccordion';
 
 /* ==========================================================================
-   AXAccordionItem (Collapsible Unit)
+   SECTION 3: Compound Sub-Components
    ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   3.1 AXAccordionItem (Individual Collapsible Item)
+   -------------------------------------------------------------------------- */
 
 interface ItemContextValue {
   itemValue: string;
   isOpen: boolean;
   disabled: boolean;
-  itemId: string;
   triggerId: string;
   contentId: string;
 }
@@ -216,7 +243,7 @@ const ItemContext = createContext<ItemContextValue | null>(null);
 const useItemContext = () => {
   const context = useContext(ItemContext);
   if (!context) {
-    throw new Error('AXAccordion trigger and content must be used within an <AXAccordionItem />.');
+    throw new Error('AXAccordionTrigger and AXAccordionContent must be used within an <AXAccordionItem />.');
   }
   return context;
 };
@@ -234,7 +261,6 @@ export const AXAccordionItem = forwardRef<HTMLDivElement, AXAccordionItemProps>(
     const { expandedItems, baseId } = useAXAccordionContext();
     const isOpen = expandedItems.has(value);
 
-    const itemId = `${baseId}-item-${value}`;
     const triggerId = `${baseId}-trigger-${value}`;
     const contentId = `${baseId}-content-${value}`;
 
@@ -244,14 +270,12 @@ export const AXAccordionItem = forwardRef<HTMLDivElement, AXAccordionItemProps>(
           itemValue: value,
           isOpen,
           disabled,
-          itemId,
           triggerId,
           contentId,
         }}
       >
         <div
           ref={ref}
-          id={itemId}
           data-state={isOpen ? 'open' : 'closed'}
           data-disabled={disabled || undefined}
           className={`ax-accordion-item ${className}`.trim()}
@@ -266,65 +290,39 @@ export const AXAccordionItem = forwardRef<HTMLDivElement, AXAccordionItemProps>(
 
 AXAccordionItem.displayName = 'AXAccordionItem';
 
-/* ==========================================================================
-   AXAccordionTrigger (Header Interactive Button)
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   3.2 AXAccordionTrigger (Header Trigger Button)
+   -------------------------------------------------------------------------- */
 
 export interface AXAccordionTriggerProps
   extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'value'> {
-  /** Heading semantic level wrapper (h1 - h6) */
-  headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
-  /** Optional prefix icon */
+  /** Leading icon graphic */
   startIcon?: React.ReactNode;
   /** Optional subtitle or description helper */
   subtitle?: React.ReactNode;
-  /** Optional status or count badge */
+  /** Optional badge */
   badge?: React.ReactNode;
-  /** Badge color accent */
-  badgeColor?: 'accent' | 'success' | 'danger';
-  /** Custom action buttons or slots in the header */
-  actionSlot?: React.ReactNode;
+  /** Optional badge color variant */
+  badgeColor?: 'accent' | 'success' | 'danger' | string;
   children: React.ReactNode;
 }
 
 export const AXAccordionTrigger = forwardRef<HTMLButtonElement, AXAccordionTriggerProps>(
   (
     {
-      headingLevel = 3,
       startIcon,
       subtitle,
       badge,
       badgeColor,
-      actionSlot,
       children,
       className = '',
       onClick,
-      onKeyDown,
       ...rest
     },
-    forwardedRef
+    ref
   ) => {
-    const { toggleItem, chevronPosition, triggerElementsRef } = useAXAccordionContext();
+    const { toggleItem, chevronPosition } = useAXAccordionContext();
     const { itemValue, isOpen, disabled, triggerId, contentId } = useItemContext();
-
-    const HeadingTag = `h${headingLevel}` as React.ElementType;
-
-    const setRefs = useCallback(
-      (node: HTMLButtonElement | null) => {
-        if (node) {
-          triggerElementsRef.current.set(itemValue, node);
-        } else {
-          triggerElementsRef.current.delete(itemValue);
-        }
-
-        if (typeof forwardedRef === 'function') {
-          forwardedRef(node);
-        } else if (forwardedRef) {
-          (forwardedRef as React.MutableRefObject<HTMLButtonElement | null>).current = node;
-        }
-      },
-      [itemValue, triggerElementsRef, forwardedRef]
-    );
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
       if (disabled) return;
@@ -332,42 +330,10 @@ export const AXAccordionTrigger = forwardRef<HTMLButtonElement, AXAccordionTrigg
       onClick?.(e);
     };
 
-    // Keyboard navigation across accordion triggers
-    const handleKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>) => {
-      if (disabled) return;
-
-      const triggers = Array.from(triggerElementsRef.current.entries()).filter(
-        ([, el]) => !el.disabled
-      );
-      const currentIndex = triggers.findIndex(([key]) => key === itemValue);
-
-      if (currentIndex === -1) return;
-
-      let targetIndex = -1;
-
-      if (e.key === 'ArrowDown') {
-        targetIndex = (currentIndex + 1) % triggers.length;
-      } else if (e.key === 'ArrowUp') {
-        targetIndex = (currentIndex - 1 + triggers.length) % triggers.length;
-      } else if (e.key === 'Home') {
-        targetIndex = 0;
-      } else if (e.key === 'End') {
-        targetIndex = triggers.length - 1;
-      }
-
-      if (targetIndex !== -1) {
-        e.preventDefault();
-        const [, nextEl] = triggers[targetIndex];
-        nextEl.focus();
-      }
-
-      onKeyDown?.(e);
-    };
-
     return (
-      <HeadingTag className="ax-accordion-heading">
+      <h3 className="ax-accordion-heading">
         <button
-          ref={setRefs}
+          ref={ref}
           id={triggerId}
           type="button"
           aria-expanded={isOpen}
@@ -376,7 +342,6 @@ export const AXAccordionTrigger = forwardRef<HTMLButtonElement, AXAccordionTrigg
           disabled={disabled}
           className={`ax-accordion-trigger ${className}`.trim()}
           onClick={handleClick}
-          onKeyDown={handleKeyDown}
           {...rest}
         >
           <div className="ax-accordion-trigger-start">
@@ -387,14 +352,12 @@ export const AXAccordionTrigger = forwardRef<HTMLButtonElement, AXAccordionTrigg
             </div>
             {badge !== undefined && badge !== null && (
               <span
-                className={`ax-accordion-badge ${badgeColor ? `ax-accordion-badge-${badgeColor}` : ''}`}
+                className={`ax-accordion-badge ${badgeColor ? `ax-accordion-badge-${badgeColor}` : ''}`.trim()}
               >
                 {badge}
               </span>
             )}
           </div>
-
-          {actionSlot && <div className="ax-accordion-action-slot">{actionSlot}</div>}
 
           {chevronPosition !== 'none' && (
             <span
@@ -405,16 +368,16 @@ export const AXAccordionTrigger = forwardRef<HTMLButtonElement, AXAccordionTrigg
             </span>
           )}
         </button>
-      </HeadingTag>
+      </h3>
     );
   }
 );
 
 AXAccordionTrigger.displayName = 'AXAccordionTrigger';
 
-/* ==========================================================================
-   AXAccordionContent (Collapsible Region)
-   ========================================================================== */
+/* --------------------------------------------------------------------------
+   3.3 AXAccordionContent (Collapsible Content Region)
+   -------------------------------------------------------------------------- */
 
 export interface AXAccordionContentProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode;

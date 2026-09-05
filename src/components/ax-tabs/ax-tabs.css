@@ -1,18 +1,20 @@
 /* ==========================================================================
-   AstraX (AX) Tabs Component - Scoped CSS Architecture
+   AstraX (AX) Tabs Component - Token-Driven Minimal CSS
    ========================================================================== */
 
-/* 1. Root Container */
+/* --------------------------------------------------------------------------
+   1. Root Container
+   -------------------------------------------------------------------------- */
 .ax-tabs {
   --ax-tab-height: 38px;
   --ax-tab-padding-x: 16px;
   --ax-tab-font-size: 0.875rem;
   --ax-tab-gap: 6px;
   --ax-tab-radius: var(--ax-radius-md, 8px);
-  --ax-tab-active-color: var(--ax-color-primary, #00308F);
+  --ax-tab-active-color: var(--ax-color-primary, #6366f1);
   --ax-tab-inactive-color: var(--ax-color-text-secondary, #64748b);
   --ax-tab-hover-color: var(--ax-color-text-primary, #0f172a);
-  --ax-tab-indicator-bg: var(--ax-color-primary, #00308F);
+  --ax-tab-indicator-bg: var(--ax-color-primary, #6366f1);
 
   display: flex;
   width: 100%;
@@ -28,7 +30,52 @@
   gap: 24px;
 }
 
-/* 2. Tabs List (Header Strip) */
+/* --------------------------------------------------------------------------
+   2. Size Presets (Drive Heights, Padding, Gap & Typography via tokens)
+   -------------------------------------------------------------------------- */
+.ax-tabs-size-xs {
+  --ax-tab-height: 28px;
+  --ax-tab-padding-x: 10px;
+  --ax-tab-font-size: 0.75rem;
+  --ax-tab-gap: 4px;
+  --ax-tab-radius: 6px;
+}
+
+.ax-tabs-size-sm {
+  --ax-tab-height: 32px;
+  --ax-tab-padding-x: 12px;
+  --ax-tab-font-size: 0.8125rem;
+  --ax-tab-gap: 6px;
+  --ax-tab-radius: 8px;
+}
+
+.ax-tabs-size-md {
+  --ax-tab-height: 38px;
+  --ax-tab-padding-x: 16px;
+  --ax-tab-font-size: 0.875rem;
+  --ax-tab-gap: 6px;
+  --ax-tab-radius: 8px;
+}
+
+.ax-tabs-size-lg {
+  --ax-tab-height: 44px;
+  --ax-tab-padding-x: 20px;
+  --ax-tab-font-size: 1rem;
+  --ax-tab-gap: 8px;
+  --ax-tab-radius: 10px;
+}
+
+.ax-tabs-size-xl {
+  --ax-tab-height: 50px;
+  --ax-tab-padding-x: 24px;
+  --ax-tab-font-size: 1.0625rem;
+  --ax-tab-gap: 10px;
+  --ax-tab-radius: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Tabs List (Header Strip / Rail)
+   -------------------------------------------------------------------------- */
 .ax-tabs-list {
   position: relative;
   display: flex;
@@ -55,11 +102,14 @@
   flex-direction: column;
   align-items: stretch;
   flex-shrink: 0;
+  min-width: 180px;
 }
 
-/* 3. Visual Variants */
+/* --------------------------------------------------------------------------
+   4. Visual Appearance Variants
+   -------------------------------------------------------------------------- */
 
-/* Variant: Line (Underline / Border indicator) */
+/* Variant: Line (Underline / Right Border indicator) */
 .ax-tabs-list-line {
   border-bottom: 1px solid var(--ax-color-border, #e2e8f0);
   gap: var(--ax-tab-gap);
@@ -89,8 +139,8 @@
   height: 2px;
   background-color: var(--ax-tab-indicator-bg);
   border-radius: 2px;
-  transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1),
-              width 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              width 220ms cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   z-index: 1;
 }
@@ -98,16 +148,16 @@
   bottom: auto;
   right: -1px;
   width: 2px;
-  height: var(--ax-tab-indicator-h, 38px);
-  transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1),
-              height 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: var(--ax-tab-height);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              height 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Variant: Pill / Segmented Control */
 .ax-tabs-list-pill {
   background-color: var(--ax-color-surface-secondary, #f1f5f9);
   padding: 4px;
-  border-radius: var(--ax-radius-lg, 10px);
+  border-radius: calc(var(--ax-tab-radius) + 4px);
   gap: 4px;
   border: 1px solid rgba(0, 0, 0, 0.04);
 }
@@ -115,7 +165,7 @@
 .ax-tabs-list-pill .ax-tab {
   border: none;
   background: transparent;
-  border-radius: calc(var(--ax-radius-lg, 10px) - 3px);
+  border-radius: var(--ax-tab-radius);
   color: var(--ax-tab-inactive-color);
   z-index: 2;
 }
@@ -130,11 +180,11 @@
 .ax-tabs-list-pill .ax-tabs-indicator {
   position: absolute;
   background-color: var(--ax-color-surface, #ffffff);
-  border-radius: calc(var(--ax-radius-lg, 10px) - 3px);
+  border-radius: var(--ax-tab-radius);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
-  transition: transform 220ms cubic-bezier(0.4, 0, 0.2, 1),
-              width 220ms cubic-bezier(0.4, 0, 0.2, 1),
-              height 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              width 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              height 220ms cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   z-index: 1;
 }
@@ -148,7 +198,7 @@
   background: var(--ax-color-surface-secondary, #f8fafc);
   border: 1px solid var(--ax-color-border, #e2e8f0);
   border-bottom: none;
-  border-radius: var(--ax-radius-md, 8px) var(--ax-radius-md, 8px) 0 0;
+  border-radius: var(--ax-tab-radius) var(--ax-tab-radius) 0 0;
   color: var(--ax-tab-inactive-color);
   margin-bottom: -1px;
 }
@@ -161,14 +211,14 @@
   z-index: 2;
 }
 
-/* Variant: Soft (Subtle Pill Tint) */
+/* Variant: Soft */
 .ax-tabs-list-soft {
   gap: 6px;
 }
 .ax-tabs-list-soft .ax-tab {
   border: none;
   background: transparent;
-  border-radius: var(--ax-radius-md, 8px);
+  border-radius: var(--ax-tab-radius);
   color: var(--ax-tab-inactive-color);
 }
 .ax-tabs-list-soft .ax-tab:hover:not(:disabled) {
@@ -181,7 +231,9 @@
   font-weight: 600;
 }
 
-/* 4. Tab Trigger Button */
+/* --------------------------------------------------------------------------
+   5. Tab Trigger Button
+   -------------------------------------------------------------------------- */
 .ax-tab {
   display: inline-flex;
   align-items: center;
@@ -202,7 +254,7 @@
 }
 
 .ax-tab:focus-visible {
-  outline: 2px solid var(--ax-color-focus, var(--ax-color-primary));
+  outline: 2px solid var(--ax-color-focus, var(--ax-color-primary, #6366f1));
   outline-offset: 2px;
 }
 
@@ -246,9 +298,11 @@
   color: #ffffff;
 }
 
-.ax-tab-badge-accent { background-color: var(--ax-color-accent, #C9A227); color: #17212B !important; }
-.ax-tab-badge-danger { background-color: var(--ax-color-danger, #ef4444); color: #ffffff !important; }
-.ax-tab-badge-success { background-color: var(--ax-color-success, #16a34a); color: #ffffff !important; }
+.ax-tab-badge-primary   { background-color: var(--ax-color-primary, #6366f1); color: #ffffff !important; }
+.ax-tab-badge-secondary { background-color: var(--ax-color-secondary, #64748b); color: #ffffff !important; }
+.ax-tab-badge-accent    { background-color: var(--ax-color-accent, #C9A227); color: #17212B !important; }
+.ax-tab-badge-danger    { background-color: var(--ax-color-danger, #ef4444); color: #ffffff !important; }
+.ax-tab-badge-success   { background-color: var(--ax-color-success, #10b981); color: #ffffff !important; }
 
 /* Close Dismiss Button */
 .ax-tab-close-btn {
@@ -272,10 +326,12 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* 5. Color Themes */
+/* --------------------------------------------------------------------------
+   6. Color Themes
+   -------------------------------------------------------------------------- */
 .ax-tabs-color-primary {
-  --ax-tab-active-color: var(--ax-color-primary, #00308F);
-  --ax-tab-indicator-bg: var(--ax-color-primary, #00308F);
+  --ax-tab-active-color: var(--ax-color-primary, #6366f1);
+  --ax-tab-indicator-bg: var(--ax-color-primary, #6366f1);
 }
 
 .ax-tabs-color-secondary {
@@ -289,8 +345,8 @@
 }
 
 .ax-tabs-color-success {
-  --ax-tab-active-color: var(--ax-color-success, #16a34a);
-  --ax-tab-indicator-bg: var(--ax-color-success, #16a34a);
+  --ax-tab-active-color: var(--ax-color-success, #10b981);
+  --ax-tab-indicator-bg: var(--ax-color-success, #10b981);
 }
 
 .ax-tabs-color-warning {
@@ -308,38 +364,9 @@
   --ax-tab-indicator-bg: #0f172a;
 }
 
-/* 6. Size Presets */
-.ax-tabs-size-xs {
-  --ax-tab-height: 28px;
-  --ax-tab-padding-x: 10px;
-  --ax-tab-font-size: 0.75rem;
-}
-
-.ax-tabs-size-sm {
-  --ax-tab-height: 32px;
-  --ax-tab-padding-x: 12px;
-  --ax-tab-font-size: 0.8125rem;
-}
-
-.ax-tabs-size-md {
-  --ax-tab-height: 38px;
-  --ax-tab-padding-x: 16px;
-  --ax-tab-font-size: 0.875rem;
-}
-
-.ax-tabs-size-lg {
-  --ax-tab-height: 44px;
-  --ax-tab-padding-x: 20px;
-  --ax-tab-font-size: 1rem;
-}
-
-.ax-tabs-size-xl {
-  --ax-tab-height: 50px;
-  --ax-tab-padding-x: 24px;
-  --ax-tab-font-size: 1.0625rem;
-}
-
-/* 7. Tab Panel (Content Area) */
+/* --------------------------------------------------------------------------
+   7. Tab Panel (Content Area)
+   -------------------------------------------------------------------------- */
 .ax-tab-panel {
   box-sizing: border-box;
   padding-top: 16px;
@@ -350,6 +377,7 @@
 .ax-tabs-vertical .ax-tab-panel {
   padding-top: 0;
   flex: 1 1 auto;
+  min-width: 0;
 }
 
 .ax-tab-panel[hidden] {
@@ -364,5 +392,30 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive Mobile Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .ax-tabs-vertical {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .ax-tabs-vertical .ax-tabs-list {
+    min-width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--ax-color-border, #e2e8f0);
+  }
+
+  .ax-tabs-vertical .ax-tabs-list-line .ax-tabs-indicator {
+    bottom: -1px;
+    right: auto;
+    height: 2px;
+    width: auto;
   }
 }

@@ -1,13 +1,84 @@
 /* ==========================================================================
-   Page Header Component Styles
+   AstraX (AX) Page Header Component - Clean Minimal 2-Section CSS
    ========================================================================== */
 
 .ax-page-header {
-  height: var(--ax-page-header-height);
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--ax-color-surface, #ffffff);
+  color: var(--ax-color-text-primary, #0f172a);
+  position: relative;
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.ax-page-header-sticky {
   position: sticky;
   top: 0;
-  box-shadow: var(--ax-shadow-sm);
-  background-color: var(--ax-color-surface);
-  border-bottom: 1px solid var(--ax-color-border);
-  z-index: var(--ax-z-index-layer-2, 1050);
+  z-index: var(--ax-z-index-sticky, 100);
+  background-color: color-mix(in srgb, var(--ax-color-surface, #ffffff) 92%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.ax-page-header-divider {
+  border-bottom: 1px solid var(--ax-color-border, #e2e8f0);
+}
+
+.ax-page-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  min-height: 56px;
+  padding: 12px 24px;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Left Section (Title / Left Content)
+   -------------------------------------------------------------------------- */
+.ax-page-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.ax-page-header-title {
+  margin: 0;
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--ax-color-text-primary, #0f172a);
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --------------------------------------------------------------------------
+   Right Section (Actions / Controls / Inputs)
+   -------------------------------------------------------------------------- */
+.ax-page-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .ax-page-header-inner {
+    padding: 10px 16px;
+    gap: 10px;
+  }
+
+  .ax-page-header-title {
+    font-size: 1.0625rem;
+  }
 }

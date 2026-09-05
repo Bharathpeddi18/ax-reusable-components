@@ -40,6 +40,141 @@ import { AXButton } from '@/components/ax-button/ax-button';
     setTimeout(() => setCopied(false), 2000);
   };
 
+  const propsList = [
+    {
+      prop: 'placement',
+      type: "'top' | 'top-start' | 'top-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end' | 'right' | 'right-start' | 'right-end' | 'auto'",
+      default: "'bottom'",
+      desc: 'Anchor placement direction relative to the trigger element with smart viewport flipping.',
+    },
+    {
+      prop: 'size',
+      type: "'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'auto' | 'full'",
+      default: "'md'",
+      desc: 'Width preset hierarchy for the floating surface container.',
+    },
+    {
+      prop: 'theme',
+      type: "'surface' | 'dark' | 'primary' | 'glass'",
+      default: "'surface'",
+      desc: 'Visual surface aesthetic styling, border illumination, and glassmorphism blur.',
+    },
+    {
+      prop: 'trigger',
+      type: "'click' | 'hover' | 'focus' | 'manual'",
+      default: "'click'",
+      desc: 'Interaction mode to open and dismiss the popover.',
+    },
+    {
+      prop: 'showArrow',
+      type: 'boolean',
+      default: 'true',
+      desc: 'Displays dynamic directional pointer arrow aligned with the trigger center.',
+    },
+    {
+      prop: 'offset',
+      type: 'number',
+      default: '8',
+      desc: 'Distance in pixels between trigger and popover panel.',
+    },
+    {
+      prop: 'openDelay',
+      type: 'number',
+      default: '80',
+      desc: 'Delay in milliseconds before opening when trigger is set to hover.',
+    },
+    {
+      prop: 'closeDelay',
+      type: 'number',
+      default: '150',
+      desc: 'Delay in milliseconds before closing when trigger is set to hover (zero-flicker bridge).',
+    },
+    {
+      prop: 'closeOnOutsideClick',
+      type: 'boolean',
+      default: 'true',
+      desc: 'Automatically closes popover when clicking anywhere outside.',
+    },
+    {
+      prop: 'closeOnEsc',
+      type: 'boolean',
+      default: 'true',
+      desc: 'Closes popover and returns keyboard focus to the trigger on Escape key.',
+    },
+    {
+      prop: 'trapFocus',
+      type: 'boolean',
+      default: 'false',
+      desc: 'Traps keyboard Tab cycle within the popover container for modal dialogs.',
+    },
+    {
+      prop: 'autoFocus',
+      type: 'boolean',
+      default: 'false',
+      desc: 'Automatically focuses the first interactive element when opened.',
+    },
+    {
+      prop: 'open',
+      type: 'boolean',
+      default: 'undefined',
+      desc: 'Controlled open state for external state orchestration.',
+    },
+    {
+      prop: 'onOpenChange',
+      type: '(open: boolean) => void',
+      default: 'undefined',
+      desc: 'Callback fired whenever the popover open state transitions.',
+    },
+    {
+      prop: 'title',
+      type: 'React.ReactNode',
+      default: 'undefined',
+      desc: 'Shorthand prop to render header with title automatically.',
+    },
+    {
+      prop: 'content',
+      type: 'React.ReactNode',
+      default: 'undefined',
+      desc: 'Shorthand prop to render popover body content directly.',
+    },
+    {
+      prop: 'footer',
+      type: 'React.ReactNode',
+      default: 'undefined',
+      desc: 'Shorthand prop to render popover footer actions directly.',
+    },
+    {
+      prop: 'boundary',
+      type: "'viewport' | 'clipping-parents' | HTMLElement | RefObject",
+      default: "'clipping-parents'",
+      desc: 'Container boundary for collision detection and auto-flip clipping calculations.',
+    },
+    {
+      prop: 'collisionPadding',
+      type: 'number',
+      default: '10',
+      desc: 'Minimum safety distance in pixels from the boundary edge to prevent clipping.',
+    },
+    {
+      prop: 'modal / preventScroll',
+      type: 'boolean',
+      default: 'false',
+      desc: 'Locks background body scrolling while the popover is active, preventing layout shift.',
+    },
+    {
+      prop: 'portalContainer',
+      type: 'HTMLElement | RefObject | null',
+      default: 'document.body',
+      desc: 'Target DOM node for portal rendering, supporting modals, shadow DOM, and iframes.',
+    },
+    {
+      prop: 'asChild (AXPopoverTrigger)',
+      type: 'boolean',
+      default: 'false',
+      desc: 'Enables polymorphic slot triggering directly on child elements without extra wrapper divs.',
+    },
+  ];
+
   return (
     <>
       <AXPageHeader
@@ -68,7 +203,7 @@ import { AXButton } from '@/components/ax-button/ax-button';
             Portal-Driven Popover & Floating Panel System
           </h2>
           <p className="ax-text-secondary ax-max-w-2xl ax-text-sm ax-leading-relaxed ax-m-0">
-            Engineered with React Portals for absolute zero-collision z-index hierarchy, smart boundary collision flipping, multi-theme aesthetics, and 5 size progressions.
+            Engineered with React Portals for absolute zero-collision z-index hierarchy, smart boundary collision flipping, multi-theme aesthetics, and 7 size progressions.
           </p>
         </div>
 
@@ -92,30 +227,18 @@ import { AXButton } from '@/components/ax-button/ax-button';
                 </tr>
               </thead>
               <tbody className="ax-divide-y ax-divide-default">
-                <tr>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-primary">placement</td>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-xs ax-text-secondary">'top' | 'bottom' | 'left' | 'right' | 'auto'</td>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-xs">'bottom'</td>
-                  <td className="ax-py-2 ax-px-3 ax-text-secondary">Anchor direction relative to trigger element.</td>
-                </tr>
-                <tr>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-primary">size</td>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-xs ax-text-secondary">'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'auto'</td>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-xs">'md'</td>
-                  <td className="ax-py-2 ax-px-3 ax-text-secondary">Width preset for the popover surface container.</td>
-                </tr>
-                <tr>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-primary">theme</td>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-xs ax-text-secondary">'surface' | 'dark' | 'primary' | 'glass'</td>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-xs">'surface'</td>
-                  <td className="ax-py-2 ax-px-3 ax-text-secondary">Visual surface styling and glassmorphism.</td>
-                </tr>
-                <tr>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-primary">trigger</td>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-xs ax-text-secondary">'click' | 'hover' | 'focus' | 'manual'</td>
-                  <td className="ax-py-2 ax-px-3 ax-font-mono ax-text-xs">'click'</td>
-                  <td className="ax-py-2 ax-px-3 ax-text-secondary">Event trigger for opening/closing.</td>
-                </tr>
+                {propsList.map(({ prop, type, default: def, desc }) => (
+                  <tr key={prop}>
+                    <td className="ax-py-2.5 ax-px-3 ax-font-mono ax-text-primary ax-font-bold ax-text-xs">
+                      {prop}
+                    </td>
+                    <td className="ax-py-2.5 ax-px-3 ax-font-mono ax-text-xs ax-text-secondary">
+                      {type}
+                    </td>
+                    <td className="ax-py-2.5 ax-px-3 ax-font-mono ax-text-xs ax-text-muted">{def}</td>
+                    <td className="ax-py-2.5 ax-px-3 ax-text-secondary ax-text-xs">{desc}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

@@ -1,0 +1,69 @@
+/* ==========================================================================
+   AX-EMPTY-STATE - Empty, Not Found, Initial Action States
+   ========================================================================== */
+
+.ax-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  font-family: inherit;
+  width: 100%;
+}
+
+/* Sizing */
+.ax-empty-state-size-sm { padding: 1.5rem 1rem; }
+.ax-empty-state-size-md { padding: 3rem 1.5rem; }
+.ax-empty-state-size-lg { padding: 4.5rem 2rem; }
+
+/* Icon / Media Slot */
+.ax-empty-state-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  background-color: var(--color-bg-secondary, #f1f5f9);
+  color: var(--color-text-tertiary, #94a3b8);
+  margin-bottom: 1.25rem;
+}
+
+.ax-empty-state-size-sm .ax-empty-state-icon {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.ax-empty-state-size-lg .ax-empty-state-icon {
+  width: 5.5rem;
+  height: 5.5rem;
+  margin-bottom: 1.75rem;
+}
+
+/* Title & Description */
+.ax-empty-state-title {
+  font-size: var(--font-size-lg, 1.125rem);
+  font-weight: var(--font-weight-semibold, 600);
+  color: var(--color-text-primary, #0f172a);
+  margin: 0 0 0.5rem 0;
+  max-width: 440px;
+}
+
+.ax-empty-state-description {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-secondary, #64748b);
+  margin: 0;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+/* Actions Slot */
+.ax-empty-state-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}

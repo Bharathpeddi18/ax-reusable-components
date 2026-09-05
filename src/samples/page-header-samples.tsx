@@ -1,90 +1,122 @@
 'use client';
 
 import React from 'react';
-import { AXPageHeader } from '@/components/ax-page-header/ax-page-header';
+import {
+  AXPageHeader,
+  AXPageHeaderLeft,
+  AXPageHeaderRight,
+} from '@/components/ax-page-header/ax-page-header';
 import { AXButton } from '@/components/ax-button/ax-button';
-
-import { DownloadIcon, PlusIcon, FilterIcon } from '@/assets/icons';
+import {
+  DownloadIcon,
+  PlusIcon,
+  FilterIcon,
+  SettingsIcon,
+  CubeIcon,
+  SparklesIcon,
+} from '@/assets/icons';
 
 export const PageHeaderSamples: React.FC = () => {
   return (
     <div className="ax-flex ax-flex-col ax-gap-8">
-      {/* 1. Standard CRUD Action Headers */}
+      {/* 1. Standard Title on Left + Action Buttons on Right */}
       <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
         <div>
-          <div className="ax-inline-flex ax-items-center ax-gap-2 ax-px-2 ax-py-0.5 ax-bg-surface-secondary ax-rounded ax-text-xs ax-font-medium ax-text-primary ax-mb-1">
-            CRUD & Workflow Actions
+          <div className="ax-inline-flex ax-items-center ax-gap-1.5 ax-px-2.5 ax-py-0.5 ax-bg-primary-soft ax-rounded-full ax-text-xs ax-font-bold ax-text-primary ax-mb-1">
+            Pattern 1
           </div>
           <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
-            1. Standard Action Header Configurations
+            Standard Page Title & Action Buttons
           </h3>
-          <p className="ax-text-xs ax-text-secondary ax-mt-1">
-            Sticky surface headers equipped with export, filter, and primary creation CTA buttons.
+          <p className="ax-text-xs ax-text-secondary ax-mt-1 ax-mb-0">
+            Consistent page title on the left with primary action buttons on the right.
           </p>
         </div>
 
         <div className="ax-border ax-border-default ax-rounded-lg ax-overflow-hidden">
           <AXPageHeader
-            title="User Management & RBAC Permissions"
+            title="User & Team Management"
             actions={
               <div className="ax-flex ax-items-center ax-gap-2">
-                <AXButton size="xs" variant="outlined" color="secondary" startIcon={<DownloadIcon />} label="Export CSV" />
-                <AXButton size="xs" variant="soft" color="accent" startIcon={<FilterIcon />} label="Filters" />
-                <AXButton size="xs" color="primary" startIcon={<PlusIcon />} label="Invite User" />
+                <AXButton size="xs" variant="outlined" color="secondary" startIcon={<DownloadIcon size={14} />} label="Export CSV" />
+                <AXButton size="xs" color="primary" startIcon={<PlusIcon size={14} />} label="Add Member" />
               </div>
             }
           />
         </div>
       </div>
 
-      {/* 2. Header with Status Indicators & Badges */}
+      {/* 2. Page Title with Status Badge + Search Input on Right */}
       <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
         <div>
+          <div className="ax-inline-flex ax-items-center ax-gap-1.5 ax-px-2.5 ax-py-0.5 ax-bg-success-soft ax-rounded-full ax-text-xs ax-font-bold ax-text-success ax-mb-1">
+            Pattern 2
+          </div>
           <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
-            2. Header with Live Status Badges & Telemetry
+            Title with Status Pill + Search & Filters
           </h3>
-          <p className="ax-text-xs ax-text-secondary ax-mt-1">
-            Incorporating real-time status indicators, environment tags, and system telemetry pills.
+          <p className="ax-text-xs ax-text-secondary ax-mt-1 ax-mb-0">
+            Rich left-side title with status pill paired with search inputs and filter buttons.
           </p>
         </div>
 
         <div className="ax-border ax-border-default ax-rounded-lg ax-overflow-hidden">
           <AXPageHeader
-            title="Cluster Telemetry & Health"
-            actions={
+            left={
               <div className="ax-flex ax-items-center ax-gap-3">
-                <div className="ax-flex ax-items-center ax-gap-1.5 ax-px-2.5 ax-py-1 ax-bg-surface-secondary ax-rounded-full ax-text-xs">
-                  <span className="ax-w-2 ax-h-2 ax-rounded-full ax-bg-success" />
-                  <span className="ax-font-semibold ax-text-success">Operational</span>
-                  <span className="ax-text-muted">| 99.99% Uptime</span>
-                </div>
-                <AXButton size="xs" variant="soft" color="primary" label="Restart Services" />
-                <AXButton size="xs" color="danger" label="Purge Cache" />
+                <h1 className="ax-page-header-title">Cluster Telemetry & Health</h1>
+                <span className="ax-inline-flex ax-items-center ax-gap-1.5 ax-px-2.5 ax-py-0.5 ax-bg-success-soft ax-text-success ax-rounded-full ax-text-xs ax-font-semibold">
+                  <span className="ax-w-1.5 ax-h-1.5 ax-rounded-full ax-bg-success" /> Live
+                </span>
+              </div>
+            }
+            right={
+              <div className="ax-flex ax-items-center ax-gap-2">
+                <input
+                  type="text"
+                  placeholder="Filter nodes..."
+                  className="ax-py-1.5 ax-px-3 ax-text-xs ax-bg-surface ax-border ax-border-default ax-rounded-lg ax-text-primary ax-outline-none focus:ax-border-primary ax-w-40"
+                />
+                <AXButton size="xs" variant="outlined" startIcon={<FilterIcon size={14} />} label="Filter" />
+                <AXButton size="xs" color="primary" label="Restart Services" />
               </div>
             }
           />
         </div>
       </div>
 
-      {/* 3. Header with Breadcrumb-Style Context */}
+      {/* 3. Entity Avatar Prefix on Left + Settings Controls on Right */}
       <div className="ax-p-6 ax-bg-surface ax-rounded-xl ax-border ax-border-default ax-shadow-sm ax-flex ax-flex-col ax-gap-4">
         <div>
+          <div className="ax-inline-flex ax-items-center ax-gap-1.5 ax-px-2.5 ax-py-0.5 ax-bg-surface-secondary ax-rounded-full ax-text-xs ax-font-bold ax-text-primary ax-mb-1">
+            Pattern 3
+          </div>
           <h3 className="ax-text-lg ax-font-bold ax-text-primary ax-m-0">
-            3. Deep Hierarchy & Contextual Headers
+            Entity Icon Prefix on Left + Multi-Action Toolbar on Right
           </h3>
-          <p className="ax-text-xs ax-text-secondary ax-mt-1">
-            Path breadcrumb titles paired with workflow state transitions.
+          <p className="ax-text-xs ax-text-secondary ax-mt-1 ax-mb-0">
+            Custom left section with icon and subtitle, paired with settings controls on the right.
           </p>
         </div>
 
         <div className="ax-border ax-border-default ax-rounded-lg ax-overflow-hidden">
           <AXPageHeader
-            title="Projects / Defense-Grid / Satellite Telemetry"
-            actions={
+            left={
+              <div className="ax-flex ax-items-center ax-gap-3">
+                <div className="ax-w-9 ax-height-9 ax-rounded-lg ax-bg-primary ax-text-white ax-flex ax-items-center ax-justify-center ax-font-bold">
+                  <CubeIcon size={18} />
+                </div>
+                <div className="ax-flex ax-flex-col">
+                  <h1 className="ax-page-header-title">Satellite Mesh v2.4</h1>
+                  <span className="ax-text-xs ax-text-secondary">us-east-1 production gateway</span>
+                </div>
+              </div>
+            }
+            right={
               <div className="ax-flex ax-items-center ax-gap-2">
-                <span className="ax-text-xs ax-text-muted">Last synced: 2 mins ago</span>
-                <AXButton size="xs" variant="outlined" color="primary" label="Sync Now" />
-                <AXButton size="xs" variant="contained" color="accent" label="Deploy Model" />
+                <span className="ax-text-xs ax-text-muted">Updated: 2m ago</span>
+                <AXButton size="xs" variant="outlined" startIcon={<SettingsIcon size={14} />} label="Configure" />
+                <AXButton size="xs" color="primary" startIcon={<SparklesIcon size={14} />} label="Deploy" />
               </div>
             }
           />

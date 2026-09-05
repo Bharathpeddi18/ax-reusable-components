@@ -1,0 +1,239 @@
+/* ==========================================================================
+   AstraX (AX) Card Component - Size-Driven Token CSS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Base Card Root Container
+   -------------------------------------------------------------------------- */
+.ax-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: var(--ax-color-surface, #ffffff);
+  color: var(--ax-color-text-primary, #0f172a);
+  border: 1px solid var(--ax-color-border, #e2e8f0);
+  border-radius: var(--ax-card-radius, 12px);
+  overflow: hidden;
+  transition: 
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. Size-Driven Token Presets (Paddings, Gaps & Typography scale)
+   -------------------------------------------------------------------------- */
+
+/* XS Size: Compact widgets, mini stat tiles */
+.ax-card-xs {
+  --ax-card-padding-x: 12px;
+  --ax-card-padding-y: 10px;
+  --ax-card-header-padding-y: 8px;
+  --ax-card-footer-padding-y: 6px;
+  --ax-card-gap: 8px;
+  --ax-card-radius: 8px;
+  --ax-card-font-size: 0.8125rem;
+}
+
+/* SM Size: Compact dashboard cards, sidebars */
+.ax-card-sm {
+  --ax-card-padding-x: 16px;
+  --ax-card-padding-y: 12px;
+  --ax-card-header-padding-y: 10px;
+  --ax-card-footer-padding-y: 8px;
+  --ax-card-gap: 10px;
+  --ax-card-radius: 10px;
+  --ax-card-font-size: 0.875rem;
+}
+
+/* MD Size: Standard default card */
+.ax-card-md {
+  --ax-card-padding-x: 20px;
+  --ax-card-padding-y: 16px;
+  --ax-card-header-padding-y: 12px;
+  --ax-card-footer-padding-y: 10px;
+  --ax-card-gap: 14px;
+  --ax-card-radius: 12px;
+  --ax-card-font-size: 0.9375rem;
+}
+
+/* LG Size: Spacious analytical summaries, media cards */
+.ax-card-lg {
+  --ax-card-padding-x: 24px;
+  --ax-card-padding-y: 20px;
+  --ax-card-header-padding-y: 16px;
+  --ax-card-footer-padding-y: 12px;
+  --ax-card-gap: 18px;
+  --ax-card-radius: 16px;
+  --ax-card-font-size: 1rem;
+}
+
+/* XL Size: Wide panels, settings groups */
+.ax-card-xl {
+  --ax-card-padding-x: 32px;
+  --ax-card-padding-y: 24px;
+  --ax-card-header-padding-y: 20px;
+  --ax-card-footer-padding-y: 16px;
+  --ax-card-gap: 24px;
+  --ax-card-radius: 20px;
+  --ax-card-font-size: 1.0625rem;
+}
+
+/* Full & Auto modifiers */
+.ax-card-full {
+  width: 100%;
+}
+.ax-card-auto {
+  width: auto;
+}
+
+/* --------------------------------------------------------------------------
+   3. Header Section (Header Left & Header Right)
+   -------------------------------------------------------------------------- */
+.ax-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ax-card-gap, 14px);
+  padding: var(--ax-card-header-padding-y, 12px) var(--ax-card-padding-x, 20px);
+  box-sizing: border-box;
+}
+
+.ax-card-header-divider {
+  border-bottom: 1px solid var(--ax-color-border, #e2e8f0);
+}
+
+.ax-card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.ax-card-header-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Body Section
+   -------------------------------------------------------------------------- */
+.ax-card-body {
+  position: relative;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: var(--ax-card-padding-y, 16px) var(--ax-card-padding-x, 20px);
+  font-size: var(--ax-card-font-size, 0.9375rem);
+  line-height: 1.55;
+  color: var(--ax-color-text-primary, #1e293b);
+}
+
+/* --------------------------------------------------------------------------
+   5. Footer Section (Footer Left & Footer Right)
+   -------------------------------------------------------------------------- */
+.ax-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ax-card-gap, 14px);
+  padding: var(--ax-card-footer-padding-y, 10px) var(--ax-card-padding-x, 20px);
+  box-sizing: border-box;
+  background-color: color-mix(in srgb, var(--ax-color-surface, #ffffff) 96%, var(--ax-color-text-primary, #0f172a) 4%);
+}
+
+.ax-card-footer-divider {
+  border-top: 1px solid var(--ax-color-border, #e2e8f0);
+}
+
+.ax-card-footer-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 auto;
+  color: var(--ax-color-text-secondary, #64748b);
+  font-size: calc(var(--ax-card-font-size, 0.9375rem) * 0.88);
+}
+
+.ax-card-footer-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. Visual Surface Variants
+   -------------------------------------------------------------------------- */
+.ax-card-default {
+  background-color: var(--ax-color-surface, #ffffff);
+  border-color: var(--ax-color-border, #e2e8f0);
+  box-shadow: var(--ax-shadow-sm, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+}
+
+.ax-card-elevated {
+  background-color: var(--ax-color-surface, #ffffff);
+  border-color: color-mix(in srgb, var(--ax-color-border, #e2e8f0) 60%, transparent);
+  box-shadow: 
+    0 10px 25px -5px rgba(15, 23, 42, 0.08),
+    0 8px 10px -6px rgba(15, 23, 42, 0.04);
+}
+
+.ax-card-outlined {
+  background-color: var(--ax-color-surface, #ffffff);
+  border: 1.5px solid var(--ax-color-border, #cbd5e1);
+  box-shadow: none;
+}
+
+.ax-card-subtle {
+  background-color: var(--ax-color-surface-subtle, #f8fafc);
+  border-color: var(--ax-color-border-subtle, #f1f5f9);
+  box-shadow: none;
+}
+
+.ax-card-glass {
+  background: color-mix(in srgb, var(--ax-color-surface, #ffffff) 72%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: color-mix(in srgb, var(--ax-color-border, #ffffff) 40%, transparent);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   7. Mobile Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .ax-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .ax-card-header-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .ax-card-footer {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ax-card-footer-left,
+  .ax-card-footer-right {
+    width: 100%;
+  }
+
+  .ax-card-footer-right {
+    justify-content: stretch;
+  }
+}

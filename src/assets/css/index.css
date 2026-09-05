@@ -92,10 +92,29 @@
 
 /* 6. Unified Component & Layout Styles (Bundled statically to prevent route flashing) */
 @import "../../components/ax-button/ax-button.css";
+@import "../../components/ax-typography/ax-typography.css";
+@import "../../components/ax-layout/ax-layout.css";
+@import "../../components/ax-inputs/ax-inputs.css";
+@import "../../components/ax-date-picker/ax-date-picker.css";
+@import "../../components/ax-tooltip/ax-tooltip.css";
 @import "../../components/ax-popover/ax-popover.css";
-@import "../../components/ax-page-header/ax-page-header.css";
+@import "../../components/ax-dropdown/ax-dropdown.css";
+@import "../../components/ax-dialog/ax-dialog.css";
+@import "../../components/ax-drawer/ax-drawer.css";
+@import "../../components/ax-card/ax-card.css";
+@import "../../components/ax-badge/ax-badge.css";
+@import "../../components/ax-avatar/ax-avatar.css";
+@import "../../components/ax-table/ax-table.css";
+@import "../../components/ax-pagination/ax-pagination.css";
 @import "../../components/ax-tabs/ax-tabs.css";
 @import "../../components/ax-accordion/ax-accordion.css";
+@import "../../components/ax-page-header/ax-page-header.css";
+@import "../../components/ax-alert/ax-alert.css";
+@import "../../components/ax-toast/ax-toast.css";
+@import "../../components/ax-spinner/ax-spinner.css";
+@import "../../components/ax-skeleton/ax-skeleton.css";
+@import "../../components/ax-progress/ax-progress.css";
+@import "../../components/ax-empty-state/ax-empty-state.css";
 @import "../../layout/menu/menu.css";
 @import "../../layout/header/header.css";
 @import "../../layout/footer/footer.css";
