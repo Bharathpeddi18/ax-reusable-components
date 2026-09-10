@@ -1,7 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
-name: Build and deploy Node.js app to Azure Web App - astrax-trail-web-bkp
+name: Build and deploy Next.js app to Azure Web App - astrax-trail-web-bkp
 
 on:
   push:
@@ -12,42 +9,58 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     permissions:
-      contents: read #This is required for actions/checkout
+      contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js version
-        uses: actions/setup-node@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: '24.x'
+          cache: 'npm'
 
-      - name: npm install, build, and test
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js application
+        run: npm run build
+
+      - name: Prepare standalone deployment
         run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+          mkdir -p deploy/.next
+          cp -r .next/standalone/. deploy/
+          cp -r .next/static deploy/.next/static
 
-      - name: Upload artifact for deployment job
+          if [ -d "public" ]; then
+            cp -r public deploy/public
+          fi
+
+      - name: Upload deployment artifact
         uses: actions/upload-artifact@v4
         with:
-          name: node-app
-          path: .
+          name: nextjs-app
+          path: deploy
+          include-hidden-files: true
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
+
     permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
+      id-token: write
+      contents: read
 
     steps:
-      - name: Download artifact from build job
+      - name: Download deployment artifact
         uses: actions/download-artifact@v4
         with:
-          name: node-app
-      
+          name: nextjs-app
+          path: deploy
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -55,11 +68,9 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_531EC11FE08C4D459145E8444A83DE2E }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_467B57FE1E824E3CB5A05EB31C8ECC8E }}
 
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
+      - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'astrax-trail-web-bkp'
-          slot-name: 'Production'
-          package: .
-          
+          app-name: astrax-trail-web-bkp
+          slot-name: Production
+          package: deploy
