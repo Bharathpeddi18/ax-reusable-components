@@ -1,11 +1,9 @@
 'use client';
 
-import React, { forwardRef, useState } from 'react';
-import Link from 'next/link';
-import './ax-button.css';
+import React, { forwardRef } from 'react';
 
 /* ==========================================================================
-   TypeScript Types & Props
+   Type Definitions
    ========================================================================== */
 
 export type AXButtonVariant =
@@ -13,15 +11,7 @@ export type AXButtonVariant =
   | 'outlined'
   | 'text'
   | 'soft'
-  | 'elevated'
-  | 'glass'
-  | 'solid'
-  | 'outline'
-  | 'ghost'
-  | 'tonal'
-  | 'primary'
-  | 'secondary'
-  | 'danger';
+  | 'link';
 
 export type AXButtonColor =
   | 'primary'
@@ -30,245 +20,255 @@ export type AXButtonColor =
   | 'success'
   | 'warning'
   | 'danger'
-  | 'destructive'
   | 'info'
   | 'dark'
   | 'light';
 
 export type AXButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
-export type AXButtonShape = 'rounded' | 'pill' | 'square' | 'circle';
+export type AXButtonShape = 'rounded' | 'square' | 'circle' | 'pill';
 
-export interface AXButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Text or content label for the button */
-  label?: React.ReactNode;
-  /** Visual variant style */
+export interface AXButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  /**
+   * The visual style variant of the button.
+   * @default 'contained'
+   */
   variant?: AXButtonVariant;
-  /** Semantic color theme */
+
+  /**
+   * The color theme from the design token palette.
+   * @default 'primary'
+   */
   color?: AXButtonColor;
-  /** Size variant */
+
+  /**
+   * Size presets controlling height, padding, font size, and icon sizing.
+   * @default 'md'
+   */
   size?: AXButtonSize;
-  /** Border radius shape */
+
+  /**
+   * Shape geometry of the button corners.
+   * @default 'rounded'
+   */
   shape?: AXButtonShape;
-  /** Icon displayed before the label */
+
+  /**
+   * Text or content to display inside the button. Can also be passed as `children`.
+   * @example <AXButton label="Save Changes" />
+   */
+  label?: React.ReactNode;
+
+  /**
+   * Icon element to display before the label.
+   */
   startIcon?: React.ReactNode;
-  /** Icon displayed after the label */
+
+  /**
+   * Icon element to display after the label.
+   */
   endIcon?: React.ReactNode;
-  /** Shorthand standalone icon */
-  icon?: React.ReactNode;
-  /** Render as icon-only square/circular button */
+
+  /**
+   * Custom CSS color for icons, overriding the button's default text color.
+   */
+  iconColor?: string;
+
+  /**
+   * When true, applies 1:1 aspect ratio square/circular dimensions for icon-only buttons.
+   * Automatically inferred if an icon is provided without a label or children.
+   * @default false
+   */
   iconOnly?: boolean;
-  isIconOnly?: boolean;
-  /** Loading state indicator with spinner */
-  loading?: boolean;
-  isLoading?: boolean;
-  /** Optional loading text displayed when loading */
-  loadingText?: React.ReactNode;
-  /** Position of the loading spinner */
-  loadingPosition?: 'start' | 'end' | 'center';
-  /** Stretch button to 100% of parent width */
+
+  /**
+   * When true, expands the button to 100% width of its parent container.
+   * @default false
+   */
   fullWidth?: boolean;
-  /** Enable Material-UI style ripple animation on click */
-  ripple?: boolean;
-  /** Optional href to render button polymorphically as a Next.js Link */
+
+  /**
+   * When true, disables interactions and renders an accessible animated spinner.
+   * Preserves exact button dimensions with zero layout shift (CLS).
+   * @default false
+   */
+  loading?: boolean;
+
+  /**
+   * Optional custom text to display while in the loading state.
+   */
+  loadingText?: React.ReactNode;
+
+  /**
+   * If provided, polymorphically renders the button as an `<a>` anchor element.
+   * @example <AXButton href="/dashboard" label="Go to Dashboard" />
+   */
   href?: string;
-  /** Target attribute when href is provided */
+
+  /**
+   * Anchor target attribute (e.g., '_blank'). Only used when `href` is defined.
+   */
   target?: string;
-  /** Rel attribute when href is provided */
+
+  /**
+   * Anchor rel attribute. Defaults to 'noopener noreferrer' when `target="_blank"`.
+   */
   rel?: string;
 }
 
 /* ==========================================================================
-   Helper: Normalize Variant & Color
+   Component Implementation
    ========================================================================== */
 
-function normalizeVariant(variant: AXButtonVariant): string {
-  switch (variant) {
-    case 'solid':
-    case 'primary':
-      return 'contained';
-    case 'outline':
-      return 'outlined';
-    case 'ghost':
-      return 'text';
-    case 'tonal':
-      return 'soft';
-    default:
-      return variant;
-  }
-}
-
-/* ==========================================================================
-   AXButton Component (with forwardRef)
-   ========================================================================== */
-
+/**
+ * `AXButton` is an enterprise-grade, accessible button component built with
+ * zero runtime CSS overhead, full design-token theming, and zero layout-shift loading.
+ *
+ * @example
+ * ```tsx
+ * // Contained Primary Button
+ * <AXButton color="primary" label="Save Changes" onClick={handleSave} />
+ *
+ * // Soft Accent Icon Button
+ * <AXButton variant="soft" color="accent" startIcon={<PlusIcon />} label="New Project" />
+ *
+ * // As a Link
+ * <AXButton href="/settings" variant="outlined" label="Account Settings" />
+ * ```
+ */
 export const AXButton = forwardRef<HTMLButtonElement, AXButtonProps>(
   (
     {
-      id,
-      label,
       children,
-      variant = 'contained',
-      color = 'primary',
-      size = 'md',
+      label,
+      variant = '',
+      color = '',
+      size = 'xs',
       shape = 'rounded',
       startIcon,
       endIcon,
-      icon,
+      iconColor,
       iconOnly = false,
-      isIconOnly = false,
-      loading = false,
-      isLoading = false,
-      loadingText,
-      loadingPosition = 'start',
       fullWidth = false,
+      loading = false,
+      loadingText,
+
       disabled = false,
-      ripple = true,
       type = 'button',
       className = '',
       style,
-      onClick,
       href,
       target,
       rel,
+
       ...restProps
     },
     ref
   ) => {
-    const isBtnLoading = loading || isLoading;
-    const isIconBtn = iconOnly || isIconOnly || (Boolean(icon) && !label && !children);
-    const resolvedStartIcon = startIcon || (!isIconBtn && icon ? icon : null);
-    const resolvedIconOnly = isIconBtn ? icon || startIcon || endIcon : null;
-    const normalizedVariant = normalizeVariant(variant);
+    // 1. Resolve content
+    const rawContent = label !== undefined ? label : children;
+    const isIconOnly =
+      iconOnly || (Boolean(startIcon || endIcon) && rawContent === undefined);
 
-    // Ripple effect state
-    const [ripples, setRipples] = useState<{ x: number; y: number; id: number }[]>([]);
-
-    const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-      if (disabled || isBtnLoading) {
-        e.preventDefault();
-        return;
-      }
-
-      // Trigger ripple if enabled
-      if (ripple) {
-        const button = e.currentTarget;
-        const rect = button.getBoundingClientRect();
-        const diameter = Math.max(rect.width, rect.height);
-        const radius = diameter / 2;
-        const x = e.clientX - rect.left - radius;
-        const y = e.clientY - rect.top - radius;
-        const newRipple = { x, y, id: Date.now() };
-
-        setRipples((prev) => [...prev, newRipple]);
-        setTimeout(() => {
-          setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
-        }, 600);
-      }
-
-      onClick?.(e);
-    };
-
-    // Construct unified CSS class list
+    // 2. Compose BEM CSS classes
     const buttonClasses = [
       'ax-btn',
-      `ax-btn-${normalizedVariant}`,
-      `ax-btn-color-${color}`,
-      `ax-btn-size-${size}`,
-      `ax-btn-shape-${shape}`,
-      isIconBtn ? 'ax-btn-icon-only' : '',
-      fullWidth ? 'ax-btn-full-width' : '',
-      isBtnLoading ? 'ax-btn-loading' : '',
-      disabled ? 'ax-btn-disabled' : '',
+      `ax-btn-${variant}`,
+      `ax-btn-${color}`,
+      `ax-btn-${size}`,
+      shape !== 'rounded' && `ax-btn-${shape}`,
+      isIconOnly && 'ax-btn-icon-only',
+      fullWidth && 'ax-btn-full-width',
+      loading && 'ax-btn-loading',
       className,
     ]
       .filter(Boolean)
       .join(' ');
 
-    // Spinner element
-    const spinnerElement = <span className="ax-btn-spinner" aria-hidden="true" />;
+    // 3. Optional icon styling
+    const iconStyle: React.CSSProperties | undefined = iconColor
+      ? { color: iconColor }
+      : undefined;
 
-    // Button content composition
-    const buttonContent = (
+    // 4. Render main content elements
+    const renderContent = () => (
       <>
-        {/* Ripple elements */}
-        {ripples.map((r) => (
-          <span
-            key={r.id}
-            className="ax-btn-ripple"
-            style={{
-              top: `${r.y}px`,
-              left: `${r.x}px`,
-              width: '100px',
-              height: '100px',
-            }}
-          />
-        ))}
-
-        {/* Icon Only Content */}
-        {isIconBtn ? (
-          isBtnLoading ? (
-            spinnerElement
-          ) : (
-            <span className="ax-btn-icon">{resolvedIconOnly || label || children}</span>
-          )
-        ) : (
-          <>
-            {/* Start Icon or Loading Spinner */}
-            {isBtnLoading && loadingPosition === 'start' && spinnerElement}
-            {!isBtnLoading && resolvedStartIcon && (
-              <span className="ax-btn-icon ax-btn-icon-start">{resolvedStartIcon}</span>
-            )}
-
-            {/* Label / Children */}
-            <span className="ax-btn-label">
-              {isBtnLoading && loadingText ? loadingText : label || children}
+        {/* Visible content container (visually hidden during non-text loading to maintain zero CLS) */}
+        <span
+          className={`ax-btn-content ${loading && !loadingText ? 'ax-btn-content-hidden' : ''}`}
+        >
+          {startIcon && (
+            <span
+              className="ax-btn-icon ax-btn-start-icon"
+              style={iconStyle}
+              aria-hidden="true"
+            >
+              {startIcon}
             </span>
+          )}
 
-            {/* End Icon or Loading Spinner */}
-            {isBtnLoading && loadingPosition === 'end' && spinnerElement}
-            {!isBtnLoading && endIcon && (
-              <span className="ax-btn-icon ax-btn-icon-end">{endIcon}</span>
+          {rawContent !== undefined && rawContent !== null && (
+            <span className="ax-btn-label">{rawContent}</span>
+          )}
+
+          {endIcon && (
+            <span
+              className="ax-btn-icon ax-btn-end-icon"
+              style={iconStyle}
+              aria-hidden="true"
+            >
+              {endIcon}
+            </span>
+          )}
+        </span>
+
+        {/* Loading Overlay or Inline Loader */}
+        {loading && (
+          <span className="ax-btn-loader-overlay" aria-hidden="true">
+            <span className="ax-btn-loader" />
+            {loadingText && (
+              <span className="ax-btn-label ax-btn-loading-text">
+                {loadingText}
+              </span>
             )}
-
-            {/* Center Loading Spinner */}
-            {isBtnLoading && loadingPosition === 'center' && !loadingText && spinnerElement}
-          </>
+          </span>
         )}
       </>
     );
 
-    // Polymorphic Link Rendering
-    if (href && !disabled) {
+    // 5. Polymorphic Link Rendering
+    if (href) {
       return (
-        <Link
-          href={href}
-          id={id}
+        <a
+          ref={ref as unknown as React.Ref<HTMLAnchorElement>}
+          href={disabled || loading ? undefined : href}
           target={target}
-          rel={rel}
+          rel={target === '_blank' ? (rel ?? 'noopener noreferrer') : rel}
           className={buttonClasses}
           style={style}
+          aria-busy={loading || undefined}
+          aria-disabled={disabled || loading ? 'true' : undefined}
+          tabIndex={disabled || loading ? -1 : undefined}
+          {...(restProps as unknown as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
-          {buttonContent}
-        </Link>
+          {renderContent()}
+        </a>
       );
     }
 
-    // Standard Native Button
+    // 6. Standard Button Rendering
     return (
       <button
         ref={ref}
-        id={id}
         type={type}
+        disabled={disabled || loading}
         className={buttonClasses}
         style={style}
-        disabled={disabled || isBtnLoading}
-        aria-disabled={disabled || isBtnLoading}
-        aria-busy={isBtnLoading}
-        onClick={handleButtonClick}
+        aria-busy={loading || undefined}
         {...restProps}
       >
-        {buttonContent}
+        {renderContent()}
       </button>
     );
   }

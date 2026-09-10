@@ -1,6 +1,6 @@
-/* ========================================
-   Typography Utilities (100% Tailwind Spec)
-   ======================================== */
+/* ==========================================================================
+   Typography Utilities (Canonical AX Namespace Spec)
+   ========================================================================== */
 
 /* ----------------------------------------
    Font Family
@@ -32,15 +32,15 @@
    Font Weight
    ---------------------------------------- */
 
-.ax-font-thin, .ax-fw-100 { font-weight: 100; }
-.ax-font-extralight, .ax-fw-200 { font-weight: 200; }
-.ax-font-light, .ax-fw-300, .ax-fw-light { font-weight: 300; }
-.ax-font-normal, .ax-fw-400, .ax-fw-normal { font-weight: 400; }
-.ax-font-medium, .ax-fw-500, .ax-fw-medium { font-weight: 500; }
-.ax-font-semibold, .ax-fw-600, .ax-fw-semibold { font-weight: 600; }
-.ax-font-bold, .ax-fw-700, .ax-fw-bold { font-weight: 700; }
-.ax-font-extrabold, .ax-fw-800, .ax-fw-extrabold { font-weight: 800; }
-.ax-font-black, .ax-fw-900, .ax-fw-black { font-weight: 900; }
+.ax-font-thin { font-weight: 100; }
+.ax-font-extralight { font-weight: 200; }
+.ax-font-light { font-weight: 300; }
+.ax-font-normal { font-weight: 400; }
+.ax-font-medium { font-weight: 500; }
+.ax-font-semibold { font-weight: 600; }
+.ax-font-bold { font-weight: 700; }
+.ax-font-extrabold { font-weight: 800; }
+.ax-font-black { font-weight: 900; }
 
 /* ----------------------------------------
    Font Style
@@ -64,14 +64,34 @@
 .ax-stacked-fractions { font-variant-numeric: stacked-fractions; }
 
 /* ----------------------------------------
-   Vertical Alignment
+   Letter Spacing (Tracking)
    ---------------------------------------- */
 
-.ax-align-baseline { vertical-align: baseline; }
-.ax-align-top { vertical-align: top; }
-.ax-align-middle { vertical-align: middle; }
-.ax-align-bottom { vertical-align: bottom; }
-.ax-align-text-top { vertical-align: text-top; }
-.ax-align-text-bottom { vertical-align: text-bottom; }
-.ax-align-sub { vertical-align: sub; }
-.ax-align-super { vertical-align: super; }
+.ax-tracking-tighter { letter-spacing: var(--ax-tracking-tighter); }
+.ax-tracking-tight { letter-spacing: var(--ax-tracking-tight); }
+.ax-tracking-normal { letter-spacing: var(--ax-tracking-normal); }
+.ax-tracking-wide { letter-spacing: var(--ax-tracking-wide); }
+.ax-tracking-wider { letter-spacing: var(--ax-tracking-wider); }
+.ax-tracking-widest { letter-spacing: var(--ax-tracking-widest); }
+
+/* ----------------------------------------
+   Line Height (Leading)
+   ---------------------------------------- */
+
+.ax-leading-none { line-height: 1; }
+.ax-leading-tight { line-height: 1.25; }
+.ax-leading-snug { line-height: 1.375; }
+.ax-leading-normal { line-height: 1.5; }
+.ax-leading-relaxed { line-height: 1.625; }
+.ax-leading-loose { line-height: 2; }
+
+/* ----------------------------------------
+   Text Align
+   ---------------------------------------- */
+
+.ax-text-left { text-align: left; }
+.ax-text-center { text-align: center; }
+.ax-text-right { text-align: right; }
+.ax-text-justify { text-align: justify; }
+.ax-text-start { text-align: start; }
+.ax-text-end { text-align: end; }

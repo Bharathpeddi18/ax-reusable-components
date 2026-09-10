@@ -1,0 +1,194 @@
+/* ==========================================================================
+   AstraX (AX) Textarea Component - Scoped CSS
+   ========================================================================== */
+
+.ax-textarea-wrapper {
+  --ax-textarea-padding: 12px;
+  --ax-textarea-font-size: 0.875rem;
+  --ax-textarea-radius: var(--ax-radius-md, 8px);
+  --ax-textarea-border-color: var(--ax-color-border, #e2e8f0);
+  --ax-textarea-bg: var(--ax-color-surface, #ffffff);
+  --ax-textarea-focus-border: var(--ax-color-primary, #6366f1);
+  --ax-textarea-focus-ring: color-mix(in srgb, var(--ax-color-primary, #6366f1) 18%, transparent);
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.ax-textarea-full-width {
+  width: 100%;
+}
+
+/* Size Presets */
+.ax-textarea-size-xs {
+  --ax-textarea-padding: 8px;
+  --ax-textarea-font-size: 0.75rem;
+  --ax-textarea-radius: 6px;
+}
+
+.ax-textarea-size-sm {
+  --ax-textarea-padding: 10px;
+  --ax-textarea-font-size: 0.8125rem;
+  --ax-textarea-radius: 6px;
+}
+
+.ax-textarea-size-md {
+  --ax-textarea-padding: 12px;
+  --ax-textarea-font-size: 0.875rem;
+  --ax-textarea-radius: 8px;
+}
+
+.ax-textarea-size-lg {
+  --ax-textarea-padding: 16px;
+  --ax-textarea-font-size: 1rem;
+  --ax-textarea-radius: 10px;
+}
+
+.ax-textarea-size-xl {
+  --ax-textarea-padding: 20px;
+  --ax-textarea-font-size: 1.0625rem;
+  --ax-textarea-radius: 12px;
+}
+
+/* Label */
+.ax-textarea-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: calc(var(--ax-textarea-font-size) * 0.93);
+  font-weight: 600;
+  color: var(--ax-color-text-primary, #0f172a);
+  user-select: none;
+}
+
+.ax-textarea-required {
+  color: var(--ax-color-danger, #ef4444);
+  font-weight: 700;
+}
+
+/* Container & Field */
+.ax-textarea-container {
+  display: flex;
+  position: relative;
+  width: 100%;
+  background-color: var(--ax-textarea-bg);
+  border: 1px solid var(--ax-textarea-border-color);
+  border-radius: var(--ax-textarea-radius);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+  box-sizing: border-box;
+}
+
+.ax-textarea-container:focus-within {
+  border-color: var(--ax-textarea-focus-border);
+  box-shadow: 0 0 0 3px var(--ax-textarea-focus-ring);
+}
+
+.ax-textarea-field {
+  width: 100%;
+  min-height: 80px;
+  padding: var(--ax-textarea-padding);
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: var(--ax-textarea-font-size);
+  color: var(--ax-color-text-primary, #0f172a);
+  line-height: 1.55;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.ax-textarea-field::placeholder {
+  color: var(--ax-color-text-muted, #94a3b8);
+}
+
+.ax-textarea-clear-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--ax-color-text-muted, #94a3b8);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: color 120ms ease, background-color 120ms ease;
+}
+
+.ax-textarea-clear-btn:hover {
+  color: var(--ax-color-text-primary, #0f172a);
+  background-color: var(--ax-color-surface-secondary, #f1f5f9);
+}
+
+
+/* Variants */
+.ax-textarea-variant-outlined .ax-textarea-container {
+  background-color: var(--ax-color-surface, #ffffff);
+  border: 1px solid var(--ax-textarea-border-color);
+}
+
+.ax-textarea-variant-subtle .ax-textarea-container {
+  background-color: var(--ax-color-surface-secondary, #f8fafc);
+  border: 1px solid transparent;
+}
+.ax-textarea-variant-subtle .ax-textarea-container:focus-within {
+  background-color: var(--ax-color-surface, #ffffff);
+  border-color: var(--ax-textarea-focus-border);
+}
+
+/* States */
+.ax-textarea-disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.ax-textarea-disabled .ax-textarea-container {
+  background-color: var(--ax-color-surface-secondary, #f1f5f9);
+}
+
+.ax-textarea-readonly .ax-textarea-container {
+  background-color: var(--ax-color-surface-secondary, #f8fafc);
+}
+
+.ax-textarea-invalid {
+  --ax-textarea-border-color: var(--ax-color-danger, #ef4444);
+  --ax-textarea-focus-border: var(--ax-color-danger, #ef4444);
+  --ax-textarea-focus-ring: color-mix(in srgb, var(--ax-color-danger, #ef4444) 18%, transparent);
+}
+
+/* Footer & Count */
+.ax-textarea-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ax-textarea-message-container {
+  flex: 1 1 auto;
+}
+
+.ax-textarea-message {
+  margin: 0;
+  font-size: calc(var(--ax-textarea-font-size) * 0.88);
+  line-height: 1.35;
+}
+
+.ax-textarea-helper-message {
+  color: var(--ax-color-text-secondary, #64748b);
+}
+
+.ax-textarea-error-message {
+  color: var(--ax-color-danger, #ef4444);
+  font-weight: 500;
+}
+
+.ax-textarea-count {
+  font-size: calc(var(--ax-textarea-font-size) * 0.85);
+  color: var(--ax-color-text-muted, #94a3b8);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}

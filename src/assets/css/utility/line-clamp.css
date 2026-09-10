@@ -1,6 +1,6 @@
-/* ========================================
-   Line Clamp Utilities
-   ======================================== */
+/* ==========================================================================
+   Line Clamp Utilities (Canonical AX Namespace Spec)
+   ========================================================================== */
 
 .ax-line-clamp-none {
   line-clamp: none;
@@ -45,7 +45,6 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
   line-clamp: 5;
-
 }
 
 .ax-line-clamp-6 {

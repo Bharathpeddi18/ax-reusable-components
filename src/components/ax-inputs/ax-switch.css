@@ -1,0 +1,178 @@
+/* ==========================================================================
+   AstraX (AX) Switch Component - Scoped CSS
+   ========================================================================== */
+
+.ax-switch-wrapper {
+  --ax-switch-width: 40px;
+  --ax-switch-height: 22px;
+  --ax-switch-thumb-size: 18px;
+  --ax-switch-offset: 2px;
+  --ax-switch-bg: #cbd5e1;
+  --ax-switch-active-bg: var(--ax-color-primary, #6366f1);
+  --ax-switch-focus-ring: color-mix(in srgb, var(--ax-color-primary, #6366f1) 20%, transparent);
+
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  cursor: pointer;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+/* Size Presets */
+.ax-switch-size-xs {
+  --ax-switch-width: 28px;
+  --ax-switch-height: 16px;
+  --ax-switch-thumb-size: 12px;
+  --ax-switch-offset: 2px;
+}
+
+.ax-switch-size-sm {
+  --ax-switch-width: 34px;
+  --ax-switch-height: 19px;
+  --ax-switch-thumb-size: 15px;
+  --ax-switch-offset: 2px;
+}
+
+.ax-switch-size-md {
+  --ax-switch-width: 40px;
+  --ax-switch-height: 22px;
+  --ax-switch-thumb-size: 18px;
+  --ax-switch-offset: 2px;
+}
+
+.ax-switch-size-lg {
+  --ax-switch-width: 48px;
+  --ax-switch-height: 26px;
+  --ax-switch-thumb-size: 22px;
+  --ax-switch-offset: 2px;
+}
+
+.ax-switch-size-xl {
+  --ax-switch-width: 56px;
+  --ax-switch-height: 30px;
+  --ax-switch-thumb-size: 26px;
+  --ax-switch-offset: 2px;
+}
+
+/* Track Container & Hidden Input */
+.ax-switch-track-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: var(--ax-switch-width);
+  height: var(--ax-switch-height);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.ax-switch-input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  cursor: inherit;
+  z-index: 1;
+}
+
+/* Track */
+.ax-switch-track {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ax-switch-bg);
+  border-radius: 9999px;
+  padding: var(--ax-switch-offset);
+  transition: background-color 180ms ease, box-shadow 180ms ease;
+  box-sizing: border-box;
+}
+
+.ax-switch-input:focus-visible + .ax-switch-track {
+  box-shadow: 0 0 0 3px var(--ax-switch-focus-ring);
+}
+
+.ax-switch-input:checked + .ax-switch-track {
+  background-color: var(--ax-switch-active-bg);
+}
+
+/* Thumb */
+.ax-switch-thumb {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ax-switch-thumb-size);
+  height: var(--ax-switch-thumb-size);
+  background-color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transform: translateX(0);
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ax-switch-input:checked + .ax-switch-track .ax-switch-thumb {
+  transform: translateX(calc(var(--ax-switch-width) - var(--ax-switch-thumb-size) - (var(--ax-switch-offset) * 2)));
+}
+
+/* Spinner inside Thumb */
+.ax-switch-spinner {
+  display: inline-flex;
+  animation: ax-switch-spin 0.8s linear infinite;
+  color: var(--ax-color-primary, #6366f1);
+}
+
+@keyframes ax-switch-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Icons inside Thumb */
+.ax-switch-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: calc(var(--ax-switch-thumb-size) * 0.65);
+}
+
+.ax-switch-checked-icon { display: none; }
+.ax-switch-unchecked-icon { display: flex; }
+
+.ax-switch-input:checked + .ax-switch-track .ax-switch-checked-icon { display: flex; }
+.ax-switch-input:checked + .ax-switch-track .ax-switch-unchecked-icon { display: none; }
+
+/* Text Content */
+.ax-switch-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ax-switch-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--ax-color-text-primary, #0f172a);
+  line-height: 1.35;
+}
+
+.ax-switch-description {
+  font-size: 0.75rem;
+  color: var(--ax-color-text-secondary, #64748b);
+  line-height: 1.4;
+}
+
+/* Disabled */
+.ax-switch-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Color Themes */
+.ax-switch-color-primary { --ax-switch-active-bg: var(--ax-color-primary, #6366f1); --ax-switch-focus-ring: color-mix(in srgb, #6366f1 20%, transparent); }
+.ax-switch-color-accent  { --ax-switch-active-bg: var(--ax-color-accent, #C9A227); --ax-switch-focus-ring: color-mix(in srgb, #C9A227 20%, transparent); }
+.ax-switch-color-success { --ax-switch-active-bg: var(--ax-color-success, #10b981); --ax-switch-focus-ring: color-mix(in srgb, #10b981 20%, transparent); }
+.ax-switch-color-danger  { --ax-switch-active-bg: var(--ax-color-danger, #ef4444); --ax-switch-focus-ring: color-mix(in srgb, #ef4444 20%, transparent); }
+.ax-switch-color-dark    { --ax-switch-active-bg: #0f172a; --ax-switch-focus-ring: color-mix(in srgb, #0f172a 20%, transparent); }

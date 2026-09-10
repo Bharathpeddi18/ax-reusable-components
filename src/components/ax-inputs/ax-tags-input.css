@@ -1,0 +1,200 @@
+/* ==========================================================================
+   AstraX (AX) Tags Input Component - Scoped CSS
+   ========================================================================== */
+
+.ax-tags-input-wrapper {
+  --ax-tags-input-min-height: 38px;
+  --ax-tags-input-padding-x: 10px;
+  --ax-tags-input-padding-y: 6px;
+  --ax-tags-input-font-size: 0.875rem;
+  --ax-tags-input-radius: var(--ax-radius-md, 8px);
+  --ax-tags-input-border: var(--ax-color-border, #e2e8f0);
+  --ax-tags-input-bg: var(--ax-color-surface, #ffffff);
+  --ax-tags-input-focus-border: var(--ax-color-primary, #6366f1);
+  --ax-tags-input-focus-ring: color-mix(in srgb, var(--ax-color-primary, #6366f1) 18%, transparent);
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Size Presets */
+.ax-tags-input-size-xs {
+  --ax-tags-input-min-height: 28px;
+  --ax-tags-input-padding-x: 6px;
+  --ax-tags-input-padding-y: 3px;
+  --ax-tags-input-font-size: 0.75rem;
+  --ax-tags-input-radius: 4px;
+}
+
+.ax-tags-input-size-sm {
+  --ax-tags-input-min-height: 32px;
+  --ax-tags-input-padding-x: 8px;
+  --ax-tags-input-padding-y: 4px;
+  --ax-tags-input-font-size: 0.8125rem;
+  --ax-tags-input-radius: 6px;
+}
+
+.ax-tags-input-size-md {
+  --ax-tags-input-min-height: 38px;
+  --ax-tags-input-padding-x: 10px;
+  --ax-tags-input-padding-y: 6px;
+  --ax-tags-input-font-size: 0.875rem;
+  --ax-tags-input-radius: 8px;
+}
+
+.ax-tags-input-size-lg {
+  --ax-tags-input-min-height: 44px;
+  --ax-tags-input-padding-x: 12px;
+  --ax-tags-input-padding-y: 8px;
+  --ax-tags-input-font-size: 1rem;
+  --ax-tags-input-radius: 10px;
+}
+
+.ax-tags-input-size-xl {
+  --ax-tags-input-min-height: 52px;
+  --ax-tags-input-padding-x: 14px;
+  --ax-tags-input-padding-y: 10px;
+  --ax-tags-input-font-size: 1.125rem;
+  --ax-tags-input-radius: 12px;
+}
+
+/* Label */
+.ax-tags-input-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: calc(var(--ax-tags-input-font-size) * 0.93);
+  font-weight: 600;
+  color: var(--ax-color-text-primary, #0f172a);
+  user-select: none;
+}
+
+.ax-tags-input-required {
+  color: var(--ax-color-danger, #ef4444);
+  font-weight: 700;
+}
+
+/* Container */
+.ax-tags-input-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: var(--ax-tags-input-min-height);
+  padding: var(--ax-tags-input-padding-y) var(--ax-tags-input-padding-x);
+  background-color: var(--ax-tags-input-bg);
+  border: 1px solid var(--ax-tags-input-border);
+  border-radius: var(--ax-tags-input-radius);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+  box-sizing: border-box;
+  cursor: text;
+}
+
+.ax-tags-input-container:focus-within {
+  border-color: var(--ax-tags-input-focus-border);
+  box-shadow: 0 0 0 3px var(--ax-tags-input-focus-ring);
+}
+
+/* Tag Chip */
+.ax-tag-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background-color: color-mix(in srgb, var(--ax-color-primary, #6366f1) 12%, transparent);
+  color: var(--ax-color-primary, #6366f1);
+  border-radius: calc(var(--ax-tags-input-radius) - 2px);
+  font-size: calc(var(--ax-tags-input-font-size) * 0.88);
+  font-weight: 500;
+  user-select: none;
+  cursor: default;
+}
+
+.ax-tag-chip-label {
+  white-space: nowrap;
+}
+
+.ax-tag-chip-remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: opacity 120ms ease;
+}
+
+.ax-tag-chip-remove:hover {
+  opacity: 1;
+}
+
+.ax-tag-chip-edit-input {
+  border: 1px solid var(--ax-color-primary, #6366f1);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: calc(var(--ax-tags-input-font-size) * 0.88);
+  outline: none;
+  background: #ffffff;
+  color: var(--ax-color-text-primary, #0f172a);
+}
+
+/* Field */
+.ax-tags-input-field {
+  flex: 1 1 80px;
+  min-width: 60px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: var(--ax-tags-input-font-size);
+  color: var(--ax-color-text-primary, #0f172a);
+  outline: none;
+}
+
+.ax-tags-input-field::placeholder {
+  color: var(--ax-color-text-muted, #94a3b8);
+}
+
+/* States */
+.ax-tags-input-disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.ax-tags-input-disabled .ax-tags-input-container {
+  background-color: var(--ax-color-surface-secondary, #f1f5f9);
+}
+
+.ax-tags-input-readonly .ax-tags-input-container {
+  background-color: var(--ax-color-surface-secondary, #f8fafc);
+  cursor: default;
+}
+
+.ax-tags-input-invalid {
+  --ax-tags-input-border: var(--ax-color-danger, #ef4444);
+  --ax-tags-input-focus-border: var(--ax-color-danger, #ef4444);
+  --ax-tags-input-focus-ring: color-mix(in srgb, var(--ax-color-danger, #ef4444) 18%, transparent);
+}
+
+/* Messages */
+.ax-tags-input-message {
+  margin: 0;
+  font-size: calc(var(--ax-tags-input-font-size) * 0.88);
+  line-height: 1.35;
+}
+
+.ax-tags-input-helper-message {
+  color: var(--ax-color-text-secondary, #64748b);
+}
+
+.ax-tags-input-error-message {
+  color: var(--ax-color-danger, #ef4444);
+  font-weight: 500;
+}

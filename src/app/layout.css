@@ -1,32 +1,39 @@
-.app-layout{
-    height: 100vh;
-    width: 100vw;
+/* ==========================================================================
+   Root Application Shell Layout (Canonical AX Namespace Spec)
+   ========================================================================== */
+
+.ax-app-layout {
+  min-height: 100dvh;
+  width: 100%;
+  position: relative;
+  background-color: var(--ax-color-background);
+  color: var(--ax-color-text-primary);
+  display: flex;
+  flex-direction: column;
 }
 
-.app-layout:has(.ax-menu.ax-menu-expanded) {
-  --ax-menu-width: var(--ax-menu-expanded-width);
-}
+/* --------------------------------------------------------------------------
+   Dynamic Menu Width Bounds (Mobile-First Shell Architecture)
+   -------------------------------------------------------------------------- */
 
-.app-layout:has(.ax-menu.ax-menu-collapsed) {
-  --ax-menu-width: 0;
-}
+/* Mobile Base (0px - 639px): Sidebar acts as an off-canvas overlay.
+   Shell width is 100% so content is never squashed on mobile screens. */
+ .ax-app-layout:has(.ax-menu.ax-menu-collapsed) {
+    --ax-menu-width: 0;
+  }
 
-@media screen and (min-width: 576px) {
-    .app-layout:has(.ax-menu.ax-menu-expanded) {
-        --ax-menu-width: var(--ax-menu-expanded-width);
-    }
+  .ax-app-layout:has(.ax-menu.ax-menu-expanded) {
+    --ax-menu-width: var(--ax-menu-expanded-width);
+  }
 
-    .app-layout:has(.ax-menu.ax-menu-collapsed) {
-        --ax-menu-width: var(--ax-menu-collapsed-width);
-    }
-}
+/* Tablet & Desktop (>= 640px): Sidebar participates in shell geometry.
+   Header and Page Wrapper smoothly transition alongside sidebar toggle. */
+@media (min-width: 640px) {
+  .ax-app-layout:has(.ax-menu.ax-menu-collapsed) {
+    --ax-menu-width: var(--ax-menu-collapsed-width);
+  }
 
-@media screen and (min-width: 1200px) {
-    .app-layout:has(.ax-menu.ax-menu-expanded) {
-        --ax-menu-width: var(--ax-menu-expanded-width);
-    }
-
-    .app-layout:has(.ax-menu.ax-menu-collapsed) {
-        --ax-menu-width: var(--ax-menu-collapsed-width);
-    }
+  .ax-app-layout:has(.ax-menu.ax-menu-expanded) {
+    --ax-menu-width: var(--ax-menu-expanded-width);
+  }
 }

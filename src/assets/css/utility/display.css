@@ -1,18 +1,18 @@
-/* ========================================
-   Display Utilities
-   ======================================== */
+/* ==========================================================================
+   Display Utilities (Canonical AX Namespace Spec)
+   ========================================================================== */
 
-.ax-d-none, .ax-hidden { display: none; }
-.ax-d-block, .ax-block { display: block; }
-.ax-d-inline, .ax-inline { display: inline; }
-.ax-d-inline-block, .ax-inline-block { display: inline-block; }
-.ax-d-flex, .ax-flex { display: flex; }
-.ax-d-inline-flex, .ax-inline-flex { display: inline-flex; }
-.ax-d-grid, .ax-grid { display: grid; }
-.ax-d-inline-grid, .ax-inline-grid { display: inline-grid; }
-.ax-d-table, .ax-table { display: table; }
-.ax-d-table-row, .ax-table-row { display: table-row; }
-.ax-d-table-cell, .ax-table-cell { display: table-cell; }
-.ax-d-contents, .ax-contents { display: contents; }
-.ax-d-list-item, .ax-list-item { display: list-item; }
-.ax-d-flow-root, .ax-flow-root { display: flow-root; }
+.ax-hidden { display: none; }
+.ax-block { display: block; }
+.ax-inline { display: inline; }
+.ax-inline-block { display: inline-block; }
+.ax-flex { display: flex; }
+.ax-inline-flex { display: inline-flex; }
+.ax-grid { display: grid; }
+.ax-inline-grid { display: inline-grid; }
+.ax-table { display: table; }
+.ax-table-row { display: table-row; }
+.ax-table-cell { display: table-cell; }
+.ax-contents { display: contents; }
+.ax-list-item { display: list-item; }
+.ax-flow-root { display: flow-root; }

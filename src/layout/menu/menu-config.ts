@@ -3,32 +3,110 @@ export interface MenuItem {
   Icon?: string;
   path: string;
   ActivePath?: string[];
+  badge?: string;
+  badgeColor?: 'accent' | 'success' | 'info';
+  section?: string;
   subMenus?: MenuItem[];
 }
 
 export const menusConfig: MenuItem[] = [
+  // 1. OVERVIEW
   {
     label: 'Dashboard',
-    Icon: 'A',
-    path: '/dashboard',
-    ActivePath: ['/dashboard'],
-    subMenus: []
+    Icon: 'squares-2x2',
+    path: '/',
+    ActivePath: ['/', '/dashboard'],
+    section: 'Main',
   },
   {
+    label: 'All Components',
+    Icon: 'cube',
+    path: '/samples',
+    ActivePath: ['/samples'],
+    badge: 'Overview',
+    badgeColor: 'info',
+  },
+
+  // 2. REUSABLE COMPONENTS
+  {
+    label: 'AXButton',
+    Icon: 'cursor-arrow-rays',
+    path: '/samples/button',
+    ActivePath: ['/samples/button'],
+    section: 'Components',
+    badge: 'v2.0',
+    badgeColor: 'accent',
+  },
+  {
+    label: 'AXInputs',
+    Icon: 'pencil-square',
+    path: '/samples/inputs',
+    ActivePath: ['/samples/inputs'],
+    badge: 'Suite',
+    badgeColor: 'accent',
+  },
+  {
+    label: 'AXCard',
+    Icon: 'squares-2x2',
+    path: '/samples/card',
+    ActivePath: ['/samples/card'],
+    badge: '10/10',
+    badgeColor: 'accent',
+  },
+  {
+    label: 'AXPopover',
+    Icon: 'chat-bubble-bottom-center-text',
+    path: '/samples/popover',
+    ActivePath: ['/samples/popover'],
+    badge: 'Portals',
+    badgeColor: 'info',
+  },
+  {
+    label: 'AXPageHeader',
+    Icon: 'rectangle-stack',
+    path: '/samples/page-header',
+    ActivePath: ['/samples/page-header'],
+  },
+  {
+    label: 'AXTabs',
+    Icon: 'queue-list',
+    path: '/samples/tabs',
+    ActivePath: ['/samples/tabs'],
+    badge: 'v2.0',
+    badgeColor: 'accent',
+  },
+  {
+    label: 'AXAccordion',
+    Icon: 'chevron-up-down',
+    path: '/samples/accordion',
+    ActivePath: ['/samples/accordion'],
+    badge: '10/10',
+    badgeColor: 'accent',
+  },
+  {
+    label: 'AXDatePicker',
+    Icon: 'calendar',
+    path: '/samples/date-picker',
+    ActivePath: ['/samples/date-picker'],
+    badge: '10/10',
+    badgeColor: 'accent',
+  },
+
+  // 3. WORKFLOW & SYSTEM
+  {
     label: 'Create',
-    Icon: 'A',
+    Icon: 'plus-circle',
     path: '/create-requirement',
     ActivePath: ['/create-requirement', '/create-enhancement'],
+    section: 'Workspace',
     subMenus: [
       {
-        label: 'Requirement',
-        Icon: 'A',
+        label: 'New Requirement',
         path: '/create-requirement',
         ActivePath: ['/create-requirement'],
       },
       {
-        label: 'Enhancement',
-        Icon: 'A',
+        label: 'New Enhancement',
         path: '/create-enhancement',
         ActivePath: ['/create-enhancement'],
       },
@@ -36,72 +114,45 @@ export const menusConfig: MenuItem[] = [
   },
   {
     label: 'Requirements',
-    Icon: 'A',
+    Icon: 'document-text',
     path: '/requirements',
     ActivePath: ['/requirements', '/requirement-details'],
-    subMenus: []
+    badge: 'Active',
+    badgeColor: 'success',
   },
   {
     label: 'Knowledge Graph',
-    Icon: 'A',
+    Icon: 'share',
     path: '/knowledge-graph',
     ActivePath: ['/knowledge-graph'],
-    subMenus: []
   },
   {
     label: 'Announcements',
-    Icon: 'A',
+    Icon: 'bell',
     path: '/announcements',
     ActivePath: ['/announcements'],
-    subMenus: []
   },
-  {
-    label: 'Quick Links',
-    Icon: 'A',
-    path: '/quick-links',
-    ActivePath: ['/quick-links'],
-    subMenus: []
-  },
-  {
-    label: 'Points of Contact Points of Contact',
-    Icon: 'A',
-    path: '/points-of-contact',
-    ActivePath: ['/points-of-contact'],
-    subMenus: []
-  },
-  {
-    label: 'AAMO',
-    Icon: 'A',
-    path: '/aamo',
-    ActivePath: ['/aamo'],
-    subMenus: []
-  },
-  {
-    label: 'Memo & Guidance',
-    Icon: 'A',
-    path: '/memo-guidance',
-    ActivePath: ['/memo-guidance'],
-    subMenus: []
-  },
+
+  // 4. MANAGEMENT & SUPPORT
   {
     label: 'Settings',
-    Icon: 'A',
+    Icon: 'cog-6-tooth',
     path: '/settings',
     ActivePath: ['/settings'],
-    subMenus: []
+    section: 'Preferences',
   },
   {
     label: 'Site Feedback',
-    Icon: 'A',
+    Icon: 'chat-bubble-left-right',
     path: '/site-feedback',
     ActivePath: ['/site-feedback'],
-    subMenus: []
   },
   {
     label: 'Release Notes',
-    Icon: 'A',
+    Icon: 'sparkles',
     path: '/release-notes',
     ActivePath: ['/release-notes'],
-    subMenus: []
+    badge: 'v2.0.0',
+    badgeColor: 'accent',
   },
 ];

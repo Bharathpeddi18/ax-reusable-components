@@ -1,0 +1,14 @@
+/* ==========================================================================
+   AstraX (AX) Inputs Suite - Master CSS Bundle
+   ========================================================================== */
+
+@import "./ax-input.css";
+@import "./ax-textarea.css";
+@import "./ax-checkbox.css";
+@import "./ax-radio.css";
+@import "./ax-switch.css";
+@import "./ax-tags-input.css";
+@import "./ax-select.css";
+@import "./ax-file-upload.css";
+@import "./ax-rich-text.css";
+@import "./ax-input-group.css";

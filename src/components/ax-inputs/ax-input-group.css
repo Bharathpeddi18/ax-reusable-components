@@ -1,0 +1,81 @@
+/* ==========================================================================
+   AstraX (AX) InputGroup Component - Scoped CSS
+   ========================================================================== */
+
+.ax-input-group-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-sizing: border-box;
+}
+
+.ax-input-group-full-width {
+  width: 100%;
+}
+
+.ax-input-group-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--ax-color-text-primary, #0f172a);
+  user-select: none;
+}
+
+.ax-input-group-required {
+  color: var(--ax-color-danger, #ef4444);
+  font-weight: 700;
+}
+
+/* Container joining adjacent items */
+.ax-input-group-container {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  position: relative;
+}
+
+/* Border Snapping Rules for Input Group children */
+.ax-input-group-container > * {
+  border-radius: 0 !important;
+  margin-left: -1px;
+}
+
+.ax-input-group-container > *:first-child,
+.ax-input-group-container > *:first-child .ax-input-container,
+.ax-input-group-container > *:first-child .ax-select-container,
+.ax-input-group-container > *:first-child.ax-btn {
+  margin-left: 0;
+  border-top-left-radius: var(--ax-radius-md, 8px) !important;
+  border-bottom-left-radius: var(--ax-radius-md, 8px) !important;
+}
+
+.ax-input-group-container > *:last-child,
+.ax-input-group-container > *:last-child .ax-input-container,
+.ax-input-group-container > *:last-child .ax-select-container,
+.ax-input-group-container > *:last-child.ax-btn {
+  border-top-right-radius: var(--ax-radius-md, 8px) !important;
+  border-bottom-right-radius: var(--ax-radius-md, 8px) !important;
+}
+
+.ax-input-group-container > *:focus-within,
+.ax-input-group-container > *:focus {
+  z-index: 2;
+}
+
+/* Messages */
+.ax-input-group-message {
+  margin: 0;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.ax-input-group-helper-message {
+  color: var(--ax-color-text-secondary, #64748b);
+}
+
+.ax-input-group-error-message {
+  color: var(--ax-color-danger, #ef4444);
+  font-weight: 500;
+}

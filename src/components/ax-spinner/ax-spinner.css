@@ -1,0 +1,47 @@
+/* ==========================================================================
+   AX-SPINNER - High Performance Loading Spinners
+   ========================================================================== */
+
+.ax-spinner-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  vertical-align: middle;
+}
+
+.ax-spinner {
+  display: inline-block;
+  animation: axSpin 0.75s linear infinite;
+  transform-origin: center;
+  flex-shrink: 0;
+}
+
+@keyframes axSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Spinner Sizes */
+.ax-spinner-size-xs { width: 0.875rem; height: 0.875rem; }
+.ax-spinner-size-sm { width: 1.125rem; height: 1.125rem; }
+.ax-spinner-size-md { width: 1.5rem; height: 1.5rem; }
+.ax-spinner-size-lg { width: 2rem; height: 2rem; }
+.ax-spinner-size-xl { width: 2.75rem; height: 2.75rem; }
+
+/* Variants */
+.ax-spinner-variant-primary { color: var(--color-primary-600, #2563eb); }
+.ax-spinner-variant-secondary { color: var(--color-text-secondary, #64748b); }
+.ax-spinner-variant-success { color: #16a34a; }
+.ax-spinner-variant-warning { color: #d97706; }
+.ax-spinner-variant-danger { color: #dc2626; }
+.ax-spinner-variant-white { color: #ffffff; }
+
+.ax-spinner-label {
+  font-size: var(--font-size-sm, 0.875rem);
+  color: var(--color-text-secondary, #64748b);
+  user-select: none;
+}

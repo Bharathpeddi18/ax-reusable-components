@@ -1,15 +1,24 @@
 'use client';
 
+import React from 'react';
 import AXPageHeader from '@/components/ax-page-header/ax-page-header';
-import ApplicationLogo from '@/assets/images/application-logo.png'
+import { AXButton } from '@/components/ax-button/ax-button';
+import {
+  AXPopover,
+  AXPopoverTrigger,
+  AXPopoverContent,
+  AXPopoverHeader,
+  AXPopoverBody,
+  AXPopoverFooter,
+} from '@/components/ax-popover/ax-popover';
 
 const Dashboard = () => {
   return (
     <>
-      <AXPageHeader />
-      <div className="ax-page-content ax-p-3">
-        <img src={ApplicationLogo.src} alt="AstraX" />
-      </div>
+      <AXPageHeader
+        title="Dashboard"
+        actions={<span className="ax-text-xs ax-text-muted">v1.0.0 Production Ready</span>}
+      />
     </>
   );
 };
