@@ -1,26 +1,31 @@
+/* ==========================================================================
+   Header Component Shell Styles
+   ========================================================================== */
+
 .ax-header {
-    position: fixed;
-    top: 0;
-    height: var(--ax-header-height);
-    background-color: var(--ax-color-white);
-    border-bottom: 1px solid var(--ax-color-border);
-    transition: var(--ax-g-transition-all);
-    box-shadow: var(--ax-g-box-shadow);
-    width:100vw;
-    left:0;
-    z-index: 9998;
+  position: fixed;
+  top: 0;
+  height: var(--ax-header-height);
+  background-color: var(--ax-color-surface);
+  border-bottom: 1px solid var(--ax-color-border);
+  box-shadow: var(--ax-shadow-sm);
+  width: 100%;
+  left: 0;
+  z-index: var(--ax-z-index-header, 1100);
+  transition: width var(--ax-transition-duration, 300ms) cubic-bezier(0.4, 0, 0.2, 1),
+              left var(--ax-transition-duration, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media screen and (min-width: 576px) {
-    .ax-header {
-        width: calc(100vw - var(--ax-menu-collapsed-width));
-        left: var(--ax-menu-collapsed-width);
-    }
+@media (min-width: 640px) {
+  .ax-header {
+    width: calc(100% - var(--ax-menu-collapsed-width));
+    left: var(--ax-menu-collapsed-width);
+  }
 }
 
-@media screen and (min-width: 1200px) {
-    .ax-header {
-        width: calc(100vw - var(--ax-menu-width));
-        left: var(--ax-menu-width);
-    }
+@media (min-width: 1280px) {
+  .ax-header {
+    width: calc(100% - var(--ax-menu-width));
+    left: var(--ax-menu-width);
+  }
 }

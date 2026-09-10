@@ -1,6 +1,6 @@
-/* ========================================
-   Shadow Utilities (100% Tailwind Spec)
-   ======================================== */
+/* ==========================================================================
+   Shadow Utilities (Canonical AX Namespace Spec)
+   ========================================================================== */
 
 .ax-shadow-sm { box-shadow: var(--ax-shadow-sm); }
 .ax-shadow, .ax-shadow-default { box-shadow: var(--ax-shadow); }

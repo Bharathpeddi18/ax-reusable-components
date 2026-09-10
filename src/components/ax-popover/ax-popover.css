@@ -1,0 +1,548 @@
+/* ==========================================================================
+   AstraX (AX) Popover Component - 10/10 World-Class & Hardened Scoped CSS
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Portal & Base Positioning Layer (Clickjacking & Overlay Protection)
+   -------------------------------------------------------------------------- */
+.ax-popover-portal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: visible;
+  pointer-events: none; /* Crucial: clicks outside fall through to application */
+  z-index: var(--ax-z-index-popover, 2000);
+}
+
+.ax-popover {
+  /* Scoped CSS Custom Property Tokens */
+  --ax-popover-bg: var(--ax-color-surface, #ffffff);
+  --ax-popover-color: var(--ax-color-text-primary, #0f172a);
+  --ax-popover-border: var(--ax-color-border, #e2e8f0);
+  --ax-popover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+  --ax-popover-radius: var(--ax-radius-xl, 12px);
+  --ax-popover-arrow-size: 14px;
+  --ax-popover-offset: 8px;
+
+  position: fixed;
+  pointer-events: auto;
+  box-sizing: border-box;
+  outline: none;
+  isolation: isolate;
+  will-change: transform, opacity;
+  animation-duration: 160ms;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  animation-fill-mode: forwards;
+
+  /* Dynamic Viewport Safety Clamping for All Screen Resolutions (320px to 4K) */
+  max-height: var(--ax-popover-max-height, calc(100dvh - 24px));
+  max-width: var(--ax-popover-max-width, calc(100dvw - 20px));
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fallbacks for older browsers without dvh/dvw support */
+@supports not (height: 100dvh) {
+  .ax-popover {
+    max-height: var(--ax-popover-max-height, calc(100vh - 24px));
+    max-width: var(--ax-popover-max-width, calc(100vw - 20px));
+  }
+}
+
+/* Offscreen reference concealment (Prevents detached phantom overlays) */
+.ax-popover[data-ax-reference-hidden="true"] {
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Direction-Aware Enter Animations
+   -------------------------------------------------------------------------- */
+.ax-popover[data-ax-placement^="bottom"] {
+  animation-name: ax-popover-enter-bottom;
+  transform-origin: top center;
+}
+
+.ax-popover[data-ax-placement^="top"] {
+  animation-name: ax-popover-enter-top;
+  transform-origin: bottom center;
+}
+
+.ax-popover[data-ax-placement^="right"] {
+  animation-name: ax-popover-enter-right;
+  transform-origin: left center;
+}
+
+.ax-popover[data-ax-placement^="left"] {
+  animation-name: ax-popover-enter-left;
+  transform-origin: right center;
+}
+
+@keyframes ax-popover-enter-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ax-popover-enter-top {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ax-popover-enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(-6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes ax-popover-enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Hover Bridge Corridor (Zero-Flicker Geometry)
+   -------------------------------------------------------------------------- */
+.ax-popover-hover-bridge {
+  position: absolute;
+  pointer-events: auto;
+  background: transparent;
+  z-index: 1;
+}
+
+.ax-popover[data-ax-placement^="bottom"] .ax-popover-hover-bridge {
+  top: calc(-1 * var(--ax-popover-offset));
+  left: 0;
+  width: 100%;
+  height: var(--ax-popover-offset);
+}
+
+.ax-popover[data-ax-placement^="top"] .ax-popover-hover-bridge {
+  bottom: calc(-1 * var(--ax-popover-offset));
+  left: 0;
+  width: 100%;
+  height: var(--ax-popover-offset);
+}
+
+.ax-popover[data-ax-placement^="right"] .ax-popover-hover-bridge {
+  left: calc(-1 * var(--ax-popover-offset));
+  top: 0;
+  height: 100%;
+  width: var(--ax-popover-offset);
+}
+
+.ax-popover[data-ax-placement^="left"] .ax-popover-hover-bridge {
+  right: calc(-1 * var(--ax-popover-offset));
+  top: 0;
+  height: 100%;
+  width: var(--ax-popover-offset);
+}
+
+/* --------------------------------------------------------------------------
+   4. Popover Card Surface & Overscroll Containment
+   -------------------------------------------------------------------------- */
+.ax-popover-card {
+  position: relative;
+  background-color: var(--ax-popover-bg);
+  color: var(--ax-popover-color);
+  border: 1px solid var(--ax-popover-border);
+  border-radius: var(--ax-popover-radius);
+  box-shadow: var(--ax-popover-shadow);
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  max-height: inherit;
+  max-width: inherit;
+  width: 100%;
+  z-index: 2;
+  overscroll-behavior: contain; /* Prevents scroll chaining/bleeding to parent */
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease;
+}
+
+/* --------------------------------------------------------------------------
+   5. Surface Aesthetic Themes
+   -------------------------------------------------------------------------- */
+
+/* 5.1 Surface Theme (Default Light) */
+.ax-popover-theme-surface {
+  --ax-popover-bg: var(--ax-color-surface, #ffffff);
+  --ax-popover-color: var(--ax-color-text-primary, #0f172a);
+  --ax-popover-border: var(--ax-color-border, #e2e8f0);
+  --ax-popover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+}
+
+/* 5.2 Dark Theme (High-Contrast Slate) */
+.ax-popover-theme-dark {
+  --ax-popover-bg: #0f172a;
+  --ax-popover-color: #f8fafc;
+  --ax-popover-border: #334155;
+  --ax-popover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+
+/* 5.3 Primary Brand Theme (AstraX Navy) */
+.ax-popover-theme-primary {
+  --ax-popover-bg: var(--ax-color-primary, #00308F);
+  --ax-popover-color: #ffffff;
+  --ax-popover-border: var(--ax-color-primary-active, #001E5B);
+  --ax-popover-shadow: 0 20px 30px -5px rgba(0, 48, 143, 0.35);
+}
+
+/* 5.4 Glassmorphism Theme (Frosted Acrylic) */
+.ax-popover-theme-glass {
+  --ax-popover-bg: rgba(255, 255, 255, 0.82);
+  --ax-popover-color: var(--ax-color-text-primary, #0f172a);
+  --ax-popover-border: rgba(255, 255, 255, 0.65);
+  --ax-popover-shadow: 0 20px 35px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+/* --------------------------------------------------------------------------
+   6. Size Hierarchy (xs -> xl, auto, full)
+   -------------------------------------------------------------------------- */
+.ax-popover-size-xs {
+  width: max-content;
+  max-width: min(220px, calc(100dvw - 20px));
+  font-size: var(--ax-font-size-xs, 0.75rem);
+}
+.ax-popover-size-xs .ax-popover-body { padding: 8px 12px; }
+
+.ax-popover-size-sm {
+  width: max-content;
+  max-width: min(280px, calc(100dvw - 20px));
+  font-size: var(--ax-font-size-sm, 0.875rem);
+}
+.ax-popover-size-sm .ax-popover-body { padding: 12px 14px; }
+
+.ax-popover-size-md {
+  width: max-content;
+  max-width: min(340px, calc(100dvw - 20px));
+  font-size: var(--ax-font-size-sm, 0.875rem);
+}
+.ax-popover-size-md .ax-popover-body { padding: 16px; }
+
+.ax-popover-size-lg {
+  width: max-content;
+  max-width: min(440px, calc(100dvw - 20px));
+  font-size: var(--ax-font-size-base, 1rem);
+}
+.ax-popover-size-lg .ax-popover-body { padding: 20px; }
+
+.ax-popover-size-xl {
+  width: max-content;
+  max-width: min(560px, calc(100dvw - 20px));
+  font-size: var(--ax-font-size-base, 1rem);
+}
+.ax-popover-size-xl .ax-popover-body { padding: 24px; }
+
+.ax-popover-size-auto {
+  width: auto;
+  max-width: calc(100dvw - 20px);
+}
+.ax-popover-size-auto .ax-popover-body { padding: 16px; }
+
+.ax-popover-size-full {
+  width: var(--ax-popover-trigger-width, 100%);
+  max-width: calc(100dvw - 20px);
+}
+.ax-popover-size-full .ax-popover-body { padding: 16px; }
+
+/* --------------------------------------------------------------------------
+   7. Compound Anatomy (Header, Title, Body, Footer, Close)
+   -------------------------------------------------------------------------- */
+
+/* 7.1 Header (Pinned Top) */
+.ax-popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ax-popover-border);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  line-height: 1.3;
+  flex-shrink: 0;
+  z-index: 2;
+  background-color: var(--ax-popover-bg);
+}
+
+/* 7.2 Title */
+.ax-popover-title {
+  margin: 0;
+  font-weight: 600;
+  font-size: inherit;
+  color: inherit;
+  letter-spacing: -0.01em;
+}
+
+/* 7.3 Body (Scrollable Flex Container with Inertia) */
+.ax-popover-body {
+  box-sizing: border-box;
+  color: inherit;
+  line-height: 1.55;
+  word-break: break-word;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.ax-popover-body-scrollable {
+  overflow-y: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
+}
+
+/* Sleek WebKit Custom Scrollbars */
+.ax-popover-body-scrollable::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.ax-popover-body-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ax-popover-body-scrollable::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.45);
+  border-radius: 9999px;
+}
+
+.ax-popover-body-scrollable::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.7);
+}
+
+/* 7.4 Footer (Pinned Bottom) */
+.ax-popover-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-top: 1px solid var(--ax-popover-border);
+  background-color: color-mix(in srgb, var(--ax-popover-bg) 94%, black 6%);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.ax-popover-footer-align-start { justify-content: flex-start; }
+.ax-popover-footer-align-center { justify-content: center; }
+.ax-popover-footer-align-end { justify-content: flex-end; }
+.ax-popover-footer-align-between { justify-content: space-between; }
+
+.ax-popover-theme-primary .ax-popover-footer {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.ax-popover-theme-dark .ax-popover-footer {
+  background-color: #0b1120;
+}
+
+.ax-popover-theme-glass .ax-popover-footer {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* 7.5 Close Button (Touch Friendly) */
+.ax-popover-close-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  margin: -4px -4px -4px 0;
+  background: transparent;
+  border: none;
+  border-radius: var(--ax-radius-sm, 6px);
+  color: var(--ax-color-text-muted, #94a3b8);
+  cursor: pointer;
+  transition: all 140ms ease;
+  outline: none;
+}
+
+/* WCAG 2.5.5 touch target size expansion on mobile/touch screens */
+.ax-popover-close-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.ax-popover-close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+  color: var(--ax-color-text-primary, #0f172a);
+}
+
+.ax-popover-close-btn:focus-visible {
+  outline: 2px solid var(--ax-color-primary, #00308F);
+  outline-offset: 1px;
+}
+
+.ax-popover-theme-dark .ax-popover-close-btn {
+  color: #94a3b8;
+}
+
+.ax-popover-theme-dark .ax-popover-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.ax-popover-theme-primary .ax-popover-close-btn {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.ax-popover-theme-primary .ax-popover-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   8. Precision Vector Arrow Indicator (SVG)
+   -------------------------------------------------------------------------- */
+.ax-popover-arrow-wrapper {
+  position: absolute;
+  width: 14px;
+  height: 8px;
+  pointer-events: none;
+  z-index: 10;
+  overflow: visible;
+}
+
+.ax-popover-arrow-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.ax-popover-arrow-fill {
+  fill: var(--ax-popover-bg);
+}
+
+.ax-popover-arrow-stroke {
+  stroke: var(--ax-popover-border);
+}
+
+/* Bottom placement arrow (pointing up) */
+.ax-popover[data-ax-placement^="bottom"] .ax-popover-arrow-wrapper {
+  top: -7px;
+}
+
+/* Top placement arrow (pointing down) */
+.ax-popover[data-ax-placement^="top"] .ax-popover-arrow-wrapper {
+  bottom: -7px;
+  transform: rotate(180deg);
+}
+
+/* Right placement arrow (pointing left) */
+.ax-popover[data-ax-placement^="right"] .ax-popover-arrow-wrapper {
+  left: -10px;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+/* Left placement arrow (pointing right) */
+.ax-popover[data-ax-placement^="left"] .ax-popover-arrow-wrapper {
+  right: -10px;
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+/* Legacy CSS Arrow Fallback */
+.ax-popover-arrow {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: var(--ax-popover-bg);
+  border: 1px solid var(--ax-popover-border);
+  transform: rotate(45deg);
+  pointer-events: none;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   9. Trigger Wrapper & Accessibility
+   -------------------------------------------------------------------------- */
+.ax-popover-trigger {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.ax-popover-trigger:focus-visible {
+  outline: 2px solid var(--ax-color-primary, #00308F);
+  outline-offset: 2px;
+  border-radius: var(--ax-radius-md, 8px);
+}
+
+.ax-popover-trigger-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   10. Extreme Resolution & Mobile Responsiveness
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .ax-popover {
+    max-width: calc(100dvw - 16px) !important;
+    max-height: calc(100dvh - 20px) !important;
+  }
+
+  .ax-popover-size-lg,
+  .ax-popover-size-xl,
+  .ax-popover-size-auto {
+    width: calc(100dvw - 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .ax-popover-size-md {
+    width: calc(100dvw - 16px);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   11. Accessibility & Reduced Motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .ax-popover {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

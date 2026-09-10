@@ -1,20 +1,13 @@
-/* ========================================
-   Grid Utilities (100% Tailwind Spec)
-   ======================================== */
+/* ==========================================================================
+   Grid Utilities (Canonical AX Namespace Spec)
+   ========================================================================== */
 
 /* ----------------------------------------
    Display
    ---------------------------------------- */
 
-.ax-grid,
-.ax-d-grid {
-  display: grid;
-}
-
-.ax-inline-grid,
-.ax-d-inline-grid {
-  display: inline-grid;
-}
+.ax-grid { display: grid; }
+.ax-inline-grid { display: inline-grid; }
 
 /* ----------------------------------------
    Grid Template Columns
@@ -110,26 +103,8 @@
 .ax-row-span-6 { grid-row: span 6 / span 6; }
 .ax-row-span-full { grid-row: 1 / -1; }
 
-.ax-row-start-1 { grid-row-start: 1; }
-.ax-row-start-2 { grid-row-start: 2; }
-.ax-row-start-3 { grid-row-start: 3; }
-.ax-row-start-4 { grid-row-start: 4; }
-.ax-row-start-5 { grid-row-start: 5; }
-.ax-row-start-6 { grid-row-start: 6; }
-.ax-row-start-7 { grid-row-start: 7; }
-.ax-row-start-auto { grid-row-start: auto; }
-
-.ax-row-end-1 { grid-row-end: 1; }
-.ax-row-end-2 { grid-row-end: 2; }
-.ax-row-end-3 { grid-row-end: 3; }
-.ax-row-end-4 { grid-row-end: 4; }
-.ax-row-end-5 { grid-row-end: 5; }
-.ax-row-end-6 { grid-row-end: 6; }
-.ax-row-end-7 { grid-row-end: 7; }
-.ax-row-end-auto { grid-row-end: auto; }
-
 /* ----------------------------------------
-   Grid Auto Flow & Auto Tracks
+   Grid Auto Flow
    ---------------------------------------- */
 
 .ax-grid-flow-row { grid-auto-flow: row; }
@@ -138,18 +113,8 @@
 .ax-grid-flow-row-dense { grid-auto-flow: row dense; }
 .ax-grid-flow-col-dense { grid-auto-flow: column dense; }
 
-.ax-auto-cols-auto { grid-auto-columns: auto; }
-.ax-auto-cols-min { grid-auto-columns: min-content; }
-.ax-auto-cols-max { grid-auto-columns: max-content; }
-.ax-auto-cols-fr { grid-auto-columns: minmax(0, 1fr); }
-
-.ax-auto-rows-auto { grid-auto-rows: auto; }
-.ax-auto-rows-min { grid-auto-rows: min-content; }
-.ax-auto-rows-max { grid-auto-rows: max-content; }
-.ax-auto-rows-fr { grid-auto-rows: minmax(0, 1fr); }
-
 /* ----------------------------------------
-   Gap (Grid & Flex)
+   Gap Utilities
    ---------------------------------------- */
 
 .ax-gap-0 { gap: var(--ax-space-0); }
@@ -174,41 +139,21 @@
 .ax-gap-16 { gap: var(--ax-space-16); }
 .ax-gap-20 { gap: var(--ax-space-20); }
 .ax-gap-24 { gap: var(--ax-space-24); }
-.ax-gap-28 { gap: var(--ax-space-28); }
-.ax-gap-32 { gap: var(--ax-space-32); }
 
 .ax-gap-x-0 { column-gap: var(--ax-space-0); }
-.ax-gap-x-px { column-gap: var(--ax-space-px); }
-.ax-gap-x-0-5 { column-gap: var(--ax-space-0-5); }
 .ax-gap-x-1 { column-gap: var(--ax-space-1); }
-.ax-gap-x-1-5 { column-gap: var(--ax-space-1-5); }
 .ax-gap-x-2 { column-gap: var(--ax-space-2); }
-.ax-gap-x-2-5 { column-gap: var(--ax-space-2-5); }
 .ax-gap-x-3 { column-gap: var(--ax-space-3); }
-.ax-gap-x-3-5 { column-gap: var(--ax-space-3-5); }
 .ax-gap-x-4 { column-gap: var(--ax-space-4); }
-.ax-gap-x-5 { column-gap: var(--ax-space-5); }
 .ax-gap-x-6 { column-gap: var(--ax-space-6); }
-.ax-gap-x-7 { column-gap: var(--ax-space-7); }
 .ax-gap-x-8 { column-gap: var(--ax-space-8); }
-.ax-gap-x-10 { column-gap: var(--ax-space-10); }
 .ax-gap-x-12 { column-gap: var(--ax-space-12); }
-.ax-gap-x-16 { column-gap: var(--ax-space-16); }
 
 .ax-gap-y-0 { row-gap: var(--ax-space-0); }
-.ax-gap-y-px { row-gap: var(--ax-space-px); }
-.ax-gap-y-0-5 { row-gap: var(--ax-space-0-5); }
 .ax-gap-y-1 { row-gap: var(--ax-space-1); }
-.ax-gap-y-1-5 { row-gap: var(--ax-space-1-5); }
 .ax-gap-y-2 { row-gap: var(--ax-space-2); }
-.ax-gap-y-2-5 { row-gap: var(--ax-space-2-5); }
 .ax-gap-y-3 { row-gap: var(--ax-space-3); }
-.ax-gap-y-3-5 { row-gap: var(--ax-space-3-5); }
 .ax-gap-y-4 { row-gap: var(--ax-space-4); }
-.ax-gap-y-5 { row-gap: var(--ax-space-5); }
 .ax-gap-y-6 { row-gap: var(--ax-space-6); }
-.ax-gap-y-7 { row-gap: var(--ax-space-7); }
 .ax-gap-y-8 { row-gap: var(--ax-space-8); }
-.ax-gap-y-10 { row-gap: var(--ax-space-10); }
 .ax-gap-y-12 { row-gap: var(--ax-space-12); }
-.ax-gap-y-16 { row-gap: var(--ax-space-16); }

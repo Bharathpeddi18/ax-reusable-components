@@ -1,8 +1,5 @@
 'use client';
 
-import { Children } from 'react';
-import './page-wrapper.css';
-
 export const PageWrapper = ({
     children
 }: {

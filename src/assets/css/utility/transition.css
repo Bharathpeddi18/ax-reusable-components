@@ -1,6 +1,6 @@
-/* ========================================
-   Transition Utilities (100% Tailwind Spec)
-   ======================================== */
+/* ==========================================================================
+   Transition Utilities (Canonical AX Namespace Spec)
+   ========================================================================== */
 
 /* ----------------------------------------
    Transition Property
@@ -60,7 +60,7 @@
 .ax-duration-1000 { transition-duration: 1000ms; }
 
 /* ----------------------------------------
-   Transition Timing Function
+   Transition Timing Function (Ease)
    ---------------------------------------- */
 
 .ax-ease-linear { transition-timing-function: linear; }

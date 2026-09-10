@@ -5,17 +5,45 @@
 :root {
   --ax-z-index-negative: -1;
   --ax-z-index-base: 0;
+  --ax-z-index-0: 0;
   --ax-z-index-10: 10;
   --ax-z-index-20: 20;
   --ax-z-index-30: 30;
   --ax-z-index-40: 40;
   --ax-z-index-50: 50;
-  --ax-z-index-dropdown: 1000;
-  --ax-z-index-sticky: 1100;
+  --ax-z-index-100: 100;
+
+  /* Layer 1: In-Page Elements */
+  --ax-z-index-layer-1: 10;
+
+  /* Layer 2: Layout & Navigation */
+  --ax-z-index-layer-2: 1000;
+  --ax-z-index-sticky: 1000;
+  --ax-z-index-header: 1100;
+  --ax-z-index-footer: 1100;
   --ax-z-index-fixed: 1200;
-  --ax-z-index-overlay: 1300;
-  --ax-z-index-modal: 1400;
-  --ax-z-index-popover: 1500;
-  --ax-z-index-tooltip: 1600;
-  --ax-z-index-toast: 1700;
+  --ax-z-index-menu: 1300;
+  --ax-z-index-drawer: 1400;
+
+  /* Layer 3: Floating UI & Popups */
+  --ax-z-index-layer-3: 2000;
+  --ax-z-index-dropdown: 2000;
+  --ax-z-index-popover: 2100;
+  --ax-z-index-tooltip: 2200;
+
+  /* Layer 4: Overlays & Modals */
+  --ax-z-index-layer-4: 3000;
+  --ax-z-index-overlay: 3000;
+  --ax-z-index-backdrop: 3000;
+  --ax-z-index-modal: 3100;
+  --ax-z-index-dialog: 3100;
+  --ax-z-index-sheet: 3200;
+
+  /* Layer 5: Top Priority & Feedback */
+  --ax-z-index-layer-5: 9000;
+  --ax-z-index-toast: 9000;
+  --ax-z-index-notification: 9000;
+  --ax-z-index-banner: 9500;
+  --ax-z-index-loader: 9999;
+  --ax-z-index-max: 9999;
 }

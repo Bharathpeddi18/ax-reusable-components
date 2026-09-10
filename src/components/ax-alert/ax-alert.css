@@ -1,0 +1,129 @@
+/* ==========================================================================
+   AX-ALERT - Feedback, Warning, Error, Success Banners
+   ========================================================================== */
+
+.ax-alert {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-lg, 0.5rem);
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: var(--font-size-sm, 0.875rem);
+  line-height: 1.5;
+  transition: all 0.2s ease;
+}
+
+/* Banner variant (flat borderless top/bottom edge) */
+.ax-alert-banner {
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}
+
+/* Variants */
+.ax-alert-variant-info {
+  background-color: #f0f9ff;
+  border-color: #bae6fd;
+  color: #0369a1;
+}
+
+.ax-alert-variant-info .ax-alert-icon {
+  color: #0284c7;
+}
+
+.ax-alert-variant-success {
+  background-color: #f0fdf4;
+  border-color: #bbf7d0;
+  color: #15803d;
+}
+
+.ax-alert-variant-success .ax-alert-icon {
+  color: #16a34a;
+}
+
+.ax-alert-variant-warning {
+  background-color: #fffbeb;
+  border-color: #fde68a;
+  color: #b45309;
+}
+
+.ax-alert-variant-warning .ax-alert-icon {
+  color: #d97706;
+}
+
+.ax-alert-variant-danger {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.ax-alert-variant-danger .ax-alert-icon {
+  color: #dc2626;
+}
+
+.ax-alert-variant-neutral {
+  background-color: #f8fafc;
+  border-color: #e2e8f0;
+  color: #475569;
+}
+
+.ax-alert-variant-neutral .ax-alert-icon {
+  color: #64748b;
+}
+
+/* Icon */
+.ax-alert-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  margin-top: 0.125rem;
+}
+
+/* Content */
+.ax-alert-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ax-alert-title {
+  font-weight: var(--font-weight-semibold, 600);
+  font-size: var(--font-size-sm, 0.875rem);
+  margin: 0 0 0.25rem 0;
+  color: inherit;
+}
+
+.ax-alert-description {
+  margin: 0;
+  color: inherit;
+  opacity: 0.9;
+}
+
+/* Actions & Close */
+.ax-alert-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.ax-alert-close-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  opacity: 0.6;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: var(--radius-sm, 0.25rem);
+  flex-shrink: 0;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.ax-alert-close-btn:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.05);
+}
