@@ -8,13 +8,13 @@ import PageWrapper from '@/layout/page-wrapper/page-wrapper';
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <body>
-        <div className="ax-app-layout">
+        <div className="app-layout">
           <Menu />
           <Header />
           <PageWrapper>
