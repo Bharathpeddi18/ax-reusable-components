@@ -13,6 +13,8 @@ interface SubmissionsResponse {
   submissions: Submission[];
 }
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL
+
 export default function Home() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -25,7 +27,7 @@ export default function Home() {
 
   const fetchSubmissions = async () => {
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}/submissions`);
+      const response = await fetch(`${BACKEND_URL}/submissions`);
 
       if (!response.ok) {
         throw new Error('Failed to fetch submissions');
@@ -41,7 +43,7 @@ export default function Home() {
 
   const handleDelete = async (id: number) => {
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}/submissions-delete/${id}`, {
+      const response = await fetch(`${BACKEND_URL}/submissions-delete/${id}`, {
         method: 'GET',
       });
 
@@ -64,7 +66,7 @@ export default function Home() {
     event.preventDefault();
 
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}/submit`, {
+      const response = await fetch(`${BACKEND_URL}/submit`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
