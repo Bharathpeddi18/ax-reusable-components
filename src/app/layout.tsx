@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="app-layout">
+        <div className="ax-app-layout">
           <Menu />
           <Header />
           <PageWrapper>
