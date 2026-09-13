@@ -13,7 +13,7 @@ interface SubmissionsResponse {
   submissions: Submission[];
 }
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL
 
 export default function Home() {
   const [name, setName] = useState('');
