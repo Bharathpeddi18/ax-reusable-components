@@ -3,87 +3,122 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { menusConfig } from './menu-config';
+import { MenuItem, menusConfig } from './menu-config';
 import ApplicationLogo from '../../assets/images/application-logo.png';
-import { AXButton } from '@/components/ax-button/ax-button';
 import { Icon, IconMenu } from '@/assets/icons';
 
 const BREAKPOINT_XL = 1280;
 
-/* ==========================================================================
-   Main Navigation Component
-   ========================================================================== */
+export interface MenuProps {
+  items?: MenuItem[];
+  defaultExpanded?: boolean;
+  className?: string;
+}
 
 /**
- * `AppNavigation` is an enterprise sidebar navigation component supporting
- * responsive collapse, nested submenus, section dividers, and active route sync.
- * Uses high-performance vector icons from the unified SVG Sprite system.
+ * `AppNavigation` / `Menu` is a self-contained, enterprise sidebar navigation component
+ * supporting responsive collapse, nested accordion submenus, section dividers,
+ * active route sync, badge indicators, and accessible keyboard navigation.
  */
-export const AppNavigation = () => {
-  const [isExpanded, setIsExpanded] = useState(true);
-  const [openSubmenus, setOpenSubmenus] = useState<Record<string, boolean>>({
-    '/create-requirement': true,
-  });
+export const AppNavigation: React.FC<MenuProps> = ({
+  items = menusConfig,
+  defaultExpanded = true,
+  className = '',
+}) => {
+  const [isExpanded, setIsExpanded] = useState<boolean>(defaultExpanded);
+  const [openSubmenus, setOpenSubmenus] = useState<Record<string, boolean>>({});
   const pathname = usePathname();
 
-  // Handle responsive layout bounds
+  // Helper to test if a route or its activePaths match the current pathname
+  const isRouteActive = (path: string, activePaths?: string[]): boolean => {
+    if (pathname === path) return true;
+    if (activePaths && activePaths.length > 0) {
+      return activePaths.some((p) => pathname === p || (p !== '/' && pathname.startsWith(p)));
+    }
+    return path !== '/' && pathname.startsWith(path);
+  };
+
+  // Auto-expand any submenu parent if current pathname is inside it
   useEffect(() => {
-    const checkViewport = () => setIsExpanded(window.innerWidth >= BREAKPOINT_XL);
+    const activeSubmenuKeys: Record<string, boolean> = {};
+    items.forEach((item) => {
+      if (item.subMenus?.some((sub) => isRouteActive(sub.path, sub.ActivePath))) {
+        activeSubmenuKeys[item.path] = true;
+      }
+    });
+    if (Object.keys(activeSubmenuKeys).length > 0) {
+      setOpenSubmenus((prev) => ({ ...prev, ...activeSubmenuKeys }));
+    }
+  }, [pathname, items]);
+
+  // Handle responsive layout bounds on initial load & resize
+  useEffect(() => {
+    const checkViewport = () => {
+      setIsExpanded(window.innerWidth >= BREAKPOINT_XL);
+    };
     checkViewport();
     window.addEventListener('resize', checkViewport);
     return () => window.removeEventListener('resize', checkViewport);
   }, []);
 
-  const toggleSidebar = () => setIsExpanded((prev) => !prev);
-
-  const isRouteActive = (path: string, activePaths?: string[]) => {
-    if (pathname === path) return true;
-    return Boolean(activePaths?.some((p) => pathname === p || (p !== '/' && pathname.startsWith(p))));
+  const toggleSidebar = () => {
+    setIsExpanded((prev) => !prev);
   };
 
   const toggleSubmenu = (path: string) => {
+    // If sidebar is collapsed, expanding a submenu should also expand the sidebar
+    if (!isExpanded) {
+      setIsExpanded(true);
+      setOpenSubmenus((prev) => ({ ...prev, [path]: true }));
+      return;
+    }
     setOpenSubmenus((prev) => ({ ...prev, [path]: !prev[path] }));
   };
 
   return (
     <nav
-      className={`ax-menu ${isExpanded ? 'ax-menu-expanded' : 'ax-menu-collapsed'}`}
+      className={`ax-menu ${isExpanded ? 'ax-menu-expanded' : 'ax-menu-collapsed'} ${className}`.trim()}
       aria-label="Main Navigation"
     >
       {/* 1. Header & Brand Logo */}
       <div className="ax-menu-header">
-        <Link href="/" className="ax-flex ax-items-center">
+        <Link href="/" className="ax-menu-brand" title="AstraX Home">
           <img
             src={ApplicationLogo.src}
-            alt="AstraX"
-            width={isExpanded ? 100 : 36}
-            height={40}
-            className="ax-object-contain ax-transition-all"
+            alt="AstraX Logo"
+            width={isExpanded ? 100 : 32}
+            height={36}
+            className="ax-menu-logo"
           />
         </Link>
-        <AXButton
-          size="xs"
-          className={`ax-menu-toggle ${isExpanded ? 'ax-text-white' : 'ax-text-primary'}`}
+        <button
+          type="button"
+          className="ax-menu-toggle"
           onClick={toggleSidebar}
-          title={isExpanded ? 'Collapse Menu' : 'Expand Menu'}
+          title={isExpanded ? 'Collapse Navigation' : 'Expand Navigation'}
+          aria-label={isExpanded ? 'Collapse Navigation' : 'Expand Navigation'}
           aria-expanded={isExpanded}
-          startIcon={<IconMenu />}
-          iconOnly
-        />
+        >
+          <IconMenu size={18} />
+        </button>
       </div>
 
       {/* 2. Menu Navigation Body */}
       <ul className="ax-menu-body">
-        {menusConfig.map((item) => {
-          const active = isRouteActive(item.path, item.ActivePath);
+        {items.map((item) => {
           const hasSubmenus = Boolean(item.subMenus?.length);
+          const active = isRouteActive(
+            item.path,
+            item.ActivePath || (hasSubmenus ? item.subMenus?.flatMap((s) => [s.path, ...(s.ActivePath || [])]) : undefined)
+          );
           const isSubmenuOpen = Boolean(openSubmenus[item.path]);
+          const submenuId = `submenu-${item.path.replace(/[^a-zA-Z0-9_-]/g, '-')}`;
 
           return (
             <React.Fragment key={item.path}>
               {/* Category Section Header */}
               {item.section && (
-                <li className="ax-menu-section-title">
+                <li className="ax-menu-section-title" title={item.section}>
                   {isExpanded ? item.section : '•••'}
                 </li>
               )}
@@ -91,14 +126,14 @@ export const AppNavigation = () => {
               {/* Navigation Link / Submenu Accordion */}
               <li className={`ax-menu-item ${active ? 'ax-menu-item-active' : ''}`}>
                 {hasSubmenus ? (
-                  <AXButton
-                    variant="text"
+                  <button
+                    type="button"
                     onClick={() => toggleSubmenu(item.path)}
                     className={`ax-menu-link ax-menu-button ${active ? 'ax-menu-link-active' : ''}`}
                     title={item.label}
                     aria-expanded={isSubmenuOpen}
                     aria-haspopup="true"
-                    aria-controls={`submenu-${item.path.replace(/^\//, '')}`}
+                    aria-controls={submenuId}
                   >
                     <span className="ax-menu-icon">
                       <Icon name={item.Icon ?? 'cube'} size={18} />
@@ -113,7 +148,7 @@ export const AppNavigation = () => {
                         />
                       </>
                     )}
-                  </AXButton>
+                  </button>
                 ) : (
                   <Link
                     href={item.path}
@@ -143,10 +178,10 @@ export const AppNavigation = () => {
                   </span>
                 )}
 
-                {/* Nested Submenu Tree with Smooth Animation */}
+                {/* Nested Submenu Tree */}
                 {hasSubmenus && isExpanded && (
                   <div
-                    id={`submenu-${item.path.replace(/^\//, '')}`}
+                    id={submenuId}
                     className={`ax-menu-submenu-container ${isSubmenuOpen ? 'ax-menu-submenu-open' : ''}`}
                     aria-hidden={!isSubmenuOpen}
                   >
@@ -154,7 +189,7 @@ export const AppNavigation = () => {
                       {item.subMenus!.map((subItem) => {
                         const subActive = isRouteActive(subItem.path, subItem.ActivePath);
                         return (
-                          <li key={subItem.path}>
+                          <li key={subItem.path} className="ax-menu-submenu-item">
                             <Link
                               href={subItem.path}
                               className={`ax-menu-submenu-link ${subActive ? 'ax-menu-submenu-link-active' : ''}`}
@@ -173,24 +208,9 @@ export const AppNavigation = () => {
           );
         })}
       </ul>
-
-      {/* 3. User Profile Footer */}
-      <div className="ax-menu-footer">
-        <div className="ax-menu-profile" title="Signed in as Alex Cross (Chief Architect)">
-          <div className="ax-menu-avatar">
-            AC
-            <span className="ax-menu-status-dot" title="Operational" />
-          </div>
-          {isExpanded && (
-            <div className="ax-menu-user-info">
-              <span className="ax-menu-user-name">Alex Cross</span>
-              <span className="ax-menu-user-role">USAF AstraX Chief</span>
-            </div>
-          )}
-        </div>
-      </div>
     </nav>
   );
 };
 
+export const Menu = AppNavigation;
 export default AppNavigation;
