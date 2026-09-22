@@ -36,15 +36,6 @@
   right: 12px;
 }
 
-.ax-menu.ax-menu-collapsed {
-  width: var(--ax-menu-collapsed-width, 72px);
-}
-
-.ax-menu.ax-menu-expanded {
-  width: var(--ax-menu-expanded-width, 250px);
-}
-
-
 
 /* 1. Header */
 .ax-menu-header {

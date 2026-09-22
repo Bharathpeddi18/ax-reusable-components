@@ -1,5 +1,6 @@
 'use client';
 
+import AXInputText from '@/ax-reusable-components/ax-input/ax-input-text/ax-input-text';
 import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import { FormEvent, useEffect, useState } from 'react';
 
@@ -14,7 +15,7 @@ interface SubmissionsResponse {
   submissions: Submission[];
 }
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function Home() {
   const [name, setName] = useState('');
@@ -61,7 +62,7 @@ export default function Home() {
       console.error('Delete error:', error);
       setMessage('Something went wrong');
     }
-  }
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -103,42 +104,57 @@ export default function Home() {
         propsHasLeftContent
         propsLeftContent={
           <>
-            <h1 className='ax-text-base' tabIndex={0} aria-label='Create Student'>Create Student</h1>
+            <h1 className="ax-text-base" tabIndex={0} aria-label="Create Student">
+              Create Student
+            </h1>
           </>
         }
       />
       <main>
         <div style={{ padding: '20px' }}>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name">Name</label>
+          <form noValidate onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '400px' }}>
+            <AXInputText
+              propsLabel="Name"
+              propsIsMandatory="*"
+              propsPlaceholder="Enter student name"
+              propsStartIcon="person"
+              propsAllowClear
+              propsValue={name}
+              propsOnChange={(event) => setName(event.target.value)}
+              propsAutoComplete="name"
+              propsRequired
+            />
 
-              <input
-                id="name"
-                type="text"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                required
-              />
-            </div>
+            <AXInputText
+              propsLabel="Phone Number"
+              propsPlaceholder="Enter phone number"
+              propsStartIcon="telephone"
+              propsAllowClear
+              propsValue={number}
+              propsOnChange={(event) => setNumber(event.target.value)}
+              propsAutoComplete="tel"
+              propsRequired
+            />
 
-            <div>
-              <label htmlFor="number">Number</label>
-
-              <input
-                id="number"
-                type="text"
-                value={number}
-                onChange={(event) => setNumber(event.target.value)}
-                required
-              />
-            </div>
-
-            <button type="submit">Submit</button>
+            <button
+              type="submit"
+              style={{
+                backgroundColor: 'var(--ax-color-primary, #00308F)',
+                color: '#ffffff',
+                border: 'none',
+                padding: '8px 16px',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                fontWeight: 600,
+                alignSelf: 'flex-start',
+              }}
+            >
+              Submit
+            </button>
           </form>
 
           {message && (
-            <div>
+            <div style={{ marginTop: '20px' }}>
               <h2>Server Response</h2>
               <p>{message}</p>
             </div>

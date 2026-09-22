@@ -27,6 +27,7 @@
 @import "../../layout/ax-footer/ax-footer.css";
 @import "../../layout/ax-page-wrapper/ax-page-wrapper.css";
 @import "../../ax-reusable-components/ax-page-header/ax-page-header.css";
+@import "../../ax-reusable-components/ax-input/ax-input.css";
 
 /* 5. Utilities */
 @import "./utility/display.css";
