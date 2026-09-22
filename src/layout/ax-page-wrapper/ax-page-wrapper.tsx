@@ -1,6 +1,7 @@
 'use client';
 
-export const PageWrapper = ({
+// region Main Component
+export const AXPageWrapper = ({
     children
 }: {
     children: React.ReactNode
@@ -12,4 +13,4 @@ export const PageWrapper = ({
     );
 };
 
-export default PageWrapper;
+export default AXPageWrapper;

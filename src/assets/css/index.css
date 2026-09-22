@@ -21,7 +21,14 @@
 @import "./base/typography.css";
 @import "./base/accessibility.css";
 
-/* 4. Utilities */
+/* 4. Unified Component & Layout Styles (Bundled statically to prevent route flashing) */
+@import "../../layout/ax-menu/ax-menu.css";
+@import "../../layout/ax-header/ax-header.css";
+@import "../../layout/ax-footer/ax-footer.css";
+@import "../../layout/ax-page-wrapper/ax-page-wrapper.css";
+@import "../../ax-reusable-components/ax-page-header/ax-page-header.css";
+
+/* 5. Utilities */
 @import "./utility/display.css";
 @import "./utility/flex.css";
 @import "./utility/grid.css";
@@ -86,12 +93,6 @@
 @import "./utility/print.css";
 @import "./utility/accessibility.css";
 
-/* 5. States & Responsive */
+/* 6. States & Responsive */
 @import "./utility/states.css";
 @import "./responsive/responsive.css";
-
-/* 6. Unified Component & Layout Styles (Bundled statically to prevent route flashing) */
-@import "../../layout/menu/menu.css";
-@import "../../layout/header/header.css";
-@import "../../layout/footer/footer.css";
-@import "../../layout/page-wrapper/page-wrapper.css";
