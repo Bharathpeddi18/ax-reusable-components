@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Header Component Shell Styles
+   ========================================================================== */
+
+.ax-header {
+  position: fixed;
+  top: 0;
+  height: var(--ax-header-height);
+  background-color: var(--ax-color-surface);
+  border-bottom: 1px solid var(--ax-color-border);
+  width: 100%;
+  left: 0;
+  z-index: var(--ax-z-index-header);
+  transition: var(--ax-g-transition-all);
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
+}
+
+.ax-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ax-header-right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .ax-header {
+    width: calc(100% - var(--ax-menu-collapsed-width));
+    left: var(--ax-menu-collapsed-width);
+  }
+}
+
+@media (min-width: 1280px) {
+  .ax-header {
+    width: calc(100% - var(--ax-menu-width));
+    left: var(--ax-menu-width);
+  }
+}

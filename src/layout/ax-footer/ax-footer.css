@@ -1,0 +1,35 @@
+/* ==========================================================================
+   Footer Component Shell Styles
+   ========================================================================== */
+
+.ax-footer {
+  position: fixed;
+  bottom: 0;
+  height: var(--ax-footer-height);
+  background-color: var(--ax-color-surface);
+  border-top: 1px solid var(--ax-color-border);
+  box-shadow: var(--ax-shadow-sm);
+  width: 100%;
+  left: 0;
+  z-index: var(--ax-z-index-footer);
+  transition: var(--ax-g-transition-all);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--ax-font-size-xs);
+  color: var(--ax-color-text-muted);
+}
+
+@media (min-width: 640px) {
+  .ax-footer {
+    width: calc(100% - var(--ax-menu-collapsed-width));
+    left: var(--ax-menu-collapsed-width);
+  }
+}
+
+@media (min-width: 1280px) {
+  .ax-footer {
+    width: calc(100% - var(--ax-menu-width));
+    left: var(--ax-menu-width);
+  }
+}

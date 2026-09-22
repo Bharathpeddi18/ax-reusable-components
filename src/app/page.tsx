@@ -1,5 +1,6 @@
 'use client';
 
+import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import { FormEvent, useEffect, useState } from 'react';
 
 interface Submission {
@@ -96,76 +97,85 @@ export default function Home() {
   };
 
   return (
-    <main>
-      <div style={{ padding: '20px' }}>
-        <h1>Create Student</h1>
+    <>
+      <AXPageHeader
+        propsPageTitle="Create Student"
+        propsHasLeftContent
+        propsLeftContent={
+          <>
+            <h1 className='ax-text-base' tabIndex={0} aria-label='Create Student'>Create Student</h1>
+          </>
+        }
+      />
+      <main>
+        <div style={{ padding: '20px' }}>
+          <form onSubmit={handleSubmit}>
+            <div>
+              <label htmlFor="name">Name</label>
 
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Name</label>
+              <input
+                id="name"
+                type="text"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                required
+              />
+            </div>
 
-            <input
-              id="name"
-              type="text"
-              value={name}
-              onChange={(event) => setName(event.target.value)}
-              required
-            />
-          </div>
+            <div>
+              <label htmlFor="number">Number</label>
 
-          <div>
-            <label htmlFor="number">Number</label>
+              <input
+                id="number"
+                type="text"
+                value={number}
+                onChange={(event) => setNumber(event.target.value)}
+                required
+              />
+            </div>
 
-            <input
-              id="number"
-              type="text"
-              value={number}
-              onChange={(event) => setNumber(event.target.value)}
-              required
-            />
-          </div>
+            <button type="submit">Submit</button>
+          </form>
 
-          <button type="submit">Submit</button>
-        </form>
+          {message && (
+            <div>
+              <h2>Server Response</h2>
+              <p>{message}</p>
+            </div>
+          )}
 
-        {message && (
-          <div>
-            <h2>Server Response</h2>
-            <p>{message}</p>
-          </div>
-        )}
+          <div style={{ paddingTop: '20px' }}>
+            <h2>Fetched Data</h2>
 
-        <div style={{ paddingTop: '20px' }}>
-          <h2>Fetched Data</h2>
-
-          <table>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Number</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              {tableData.length > 0 ? (
-                tableData.map((item) => (
-                  <tr key={item.id}>
-                    <td>{item.id}</td>
-                    <td>{item.name}</td>
-                    <td>{item.number}</td>
-                    <td onClick={() => handleDelete(item.id)}>delete</td>
-                  </tr>
-                ))
-              ) : (
+            <table>
+              <thead>
                 <tr>
-                  <td colSpan={3}>No Data Found</td>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Number</th>
                 </tr>
-              )}
-            </tbody>
-          </table>
+              </thead>
+
+              <tbody>
+                {tableData.length > 0 ? (
+                  tableData.map((item) => (
+                    <tr key={item.id}>
+                      <td>{item.id}</td>
+                      <td>{item.name}</td>
+                      <td>{item.number}</td>
+                      <td onClick={() => handleDelete(item.id)}>delete</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan={3}>No Data Found</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
