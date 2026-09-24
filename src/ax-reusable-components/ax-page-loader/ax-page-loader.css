@@ -1,0 +1,45 @@
+/* region Base */
+
+.ax-page-loader {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* endregion */
+
+/* region Spinner */
+
+.ax-page-loader-spinner {
+  width: 24px;
+  height: 24px;
+
+  border: 3px solid var(--ax-color-primary-light, #4d70b5);
+  border-top-color: var(--ax-color-primary, #00308f);
+
+  border-radius: 50%;
+
+  animation: ax-page-loader-spin 0.8s linear infinite;
+}
+
+/* endregion */
+
+/* region Animation */
+
+@keyframes ax-page-loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* endregion */

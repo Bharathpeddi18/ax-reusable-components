@@ -1,7 +1,10 @@
 'use client';
 
+import Icon from '@/assets/icons';
+import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import AXInputText from '@/ax-reusable-components/ax-input/ax-input-text/ax-input-text';
 import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
+import AXPageLoader from '@/ax-reusable-components/ax-page-loader/ax-page-loader';
 import { FormEvent, useEffect, useState } from 'react';
 
 interface Submission {
@@ -22,12 +25,18 @@ export default function Home() {
   const [number, setNumber] = useState('');
   const [tableData, setTableData] = useState<Submission[]>([]);
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState({
+    submit: false,
+    delete: false,
+    page: true
+  });
 
   useEffect(() => {
     fetchSubmissions();
   }, []);
 
   const fetchSubmissions = async () => {
+    setLoading((prev) => ({...prev, page: true}))
     try {
       const response = await fetch(`${BACKEND_URL}/submissions`);
 
@@ -41,9 +50,11 @@ export default function Home() {
     } catch (error) {
       console.error('Fetch submissions error:', error);
     }
+    setLoading((prev) => ({...prev, page: false}))
   };
 
   const handleDelete = async (id: number) => {
+    setLoading((prev) => ({...prev, delete: true}))
     try {
       const response = await fetch(`${BACKEND_URL}/submissions-delete/${id}`, {
         method: 'GET',
@@ -62,11 +73,11 @@ export default function Home() {
       console.error('Delete error:', error);
       setMessage('Something went wrong');
     }
+    setLoading((prev) => ({...prev, delete: false}))
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
+  const handleSubmit = async () => {
+    setLoading((prev) => ({...prev, submit: true}))
     try {
       const response = await fetch(`${BACKEND_URL}/submit`, {
         method: 'POST',
@@ -95,13 +106,14 @@ export default function Home() {
       console.error('Submit error:', error);
       setMessage('Something went wrong');
     }
+    setLoading((prev) => ({...prev, submit: false}))
   };
 
   return (
     <>
+      {loading.page ? <AXPageLoader/> : ''}
       <AXPageHeader
         propsPageTitle="Create Student"
-        propsHasLeftContent
         propsLeftContent={
           <>
             <h1 className="ax-text-base" tabIndex={0} aria-label="Create Student">
@@ -109,10 +121,22 @@ export default function Home() {
             </h1>
           </>
         }
+        propsRightContent={
+          <>
+            <AXButton
+              propsLabel='Submit'
+              propsSize="xs"
+              propsLabelClassName='ax-hidden md:ax-inline-flex'
+              propsClassName='ax-bg-primary ax-text-white ax-rounded-md'
+              propsStartIcon={<Icon name={"check"} />}
+              onClick={handleSubmit}
+              propsLoading={loading.submit}
+            />
+          </>
+        }
       />
       <main>
         <div style={{ padding: '20px' }}>
-          <form noValidate onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '400px' }}>
             <AXInputText
               propsLabel="Name"
               propsIsMandatory="*"
@@ -136,23 +160,6 @@ export default function Home() {
               propsRequired
             />
 
-            <button
-              type="submit"
-              style={{
-                backgroundColor: 'var(--ax-color-primary, #00308F)',
-                color: '#ffffff',
-                border: 'none',
-                padding: '8px 16px',
-                borderRadius: '6px',
-                cursor: 'pointer',
-                fontWeight: 600,
-                alignSelf: 'flex-start',
-              }}
-            >
-              Submit
-            </button>
-          </form>
-
           {message && (
             <div style={{ marginTop: '20px' }}>
               <h2>Server Response</h2>
@@ -169,6 +176,7 @@ export default function Home() {
                   <th>ID</th>
                   <th>Name</th>
                   <th>Number</th>
+                  <th></th>
                 </tr>
               </thead>
 
@@ -179,7 +187,14 @@ export default function Home() {
                       <td>{item.id}</td>
                       <td>{item.name}</td>
                       <td>{item.number}</td>
-                      <td onClick={() => handleDelete(item.id)}>delete</td>
+                      <AXButton
+                        propsLabel='Delete'
+                        propsSize="xs"
+                        propsStartIcon={<Icon name={"trash"} size={10}/>}
+                        propsLabelClassName='ax-hidden md:ax-inline-flex'
+                        propsClassName='ax-text-danger ax-rounded-md'
+                        onClick={() => handleDelete(item.id)}
+                      />
                     </tr>
                   ))
                 ) : (
