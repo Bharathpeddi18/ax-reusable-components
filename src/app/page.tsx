@@ -1,6 +1,10 @@
 'use client';
 
+import Icon from '@/assets/icons';
+import AXButton from '@/ax-reusable-components/ax-button/ax-button';
+import AXInputText from '@/ax-reusable-components/ax-input/ax-input-text/ax-input-text';
 import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
+import AXPageLoader from '@/ax-reusable-components/ax-page-loader/ax-page-loader';
 import { FormEvent, useEffect, useState } from 'react';
 
 interface Submission {
@@ -14,19 +18,25 @@ interface SubmissionsResponse {
   submissions: Submission[];
 }
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function Home() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   const [tableData, setTableData] = useState<Submission[]>([]);
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState({
+    submit: false,
+    delete: false,
+    page: true
+  });
 
   useEffect(() => {
     fetchSubmissions();
   }, []);
 
   const fetchSubmissions = async () => {
+    setLoading((prev) => ({...prev, page: true}))
     try {
       const response = await fetch(`${BACKEND_URL}/submissions`);
 
@@ -40,9 +50,11 @@ export default function Home() {
     } catch (error) {
       console.error('Fetch submissions error:', error);
     }
+    setLoading((prev) => ({...prev, page: false}))
   };
 
   const handleDelete = async (id: number) => {
+    setLoading((prev) => ({...prev, delete: true}))
     try {
       const response = await fetch(`${BACKEND_URL}/submissions-delete/${id}`, {
         method: 'GET',
@@ -61,11 +73,11 @@ export default function Home() {
       console.error('Delete error:', error);
       setMessage('Something went wrong');
     }
-  }
+    setLoading((prev) => ({...prev, delete: false}))
+  };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-
+  const handleSubmit = async () => {
+    setLoading((prev) => ({...prev, submit: true}))
     try {
       const response = await fetch(`${BACKEND_URL}/submit`, {
         method: 'POST',
@@ -94,51 +106,62 @@ export default function Home() {
       console.error('Submit error:', error);
       setMessage('Something went wrong');
     }
+    setLoading((prev) => ({...prev, submit: false}))
   };
 
   return (
     <>
+      {loading.page ? <AXPageLoader/> : ''}
       <AXPageHeader
         propsPageTitle="Create Student"
-        propsHasLeftContent
         propsLeftContent={
           <>
-            <h1 className='ax-text-base' tabIndex={0} aria-label='Create Student'>Create Student</h1>
+            <h1 className="ax-text-base" tabIndex={0} aria-label="Create Student">
+              Create Student
+            </h1>
+          </>
+        }
+        propsRightContent={
+          <>
+            <AXButton
+              propsLabel='Submit'
+              propsSize="xs"
+              propsLabelClassName='ax-hidden md:ax-inline-flex'
+              propsClassName='ax-bg-primary ax-text-white ax-rounded-md'
+              propsStartIcon={<Icon name={"check"} />}
+              onClick={handleSubmit}
+              propsLoading={loading.submit}
+            />
           </>
         }
       />
       <main>
         <div style={{ padding: '20px' }}>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor="name">Name</label>
+            <AXInputText
+              propsLabel="Name"
+              propsIsMandatory="*"
+              propsPlaceholder="Enter student name"
+              propsStartIcon="person"
+              propsAllowClear
+              propsValue={name}
+              propsOnChange={(event) => setName(event.target.value)}
+              propsAutoComplete="name"
+              propsRequired
+            />
 
-              <input
-                id="name"
-                type="text"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                required
-              />
-            </div>
-
-            <div>
-              <label htmlFor="number">Number</label>
-
-              <input
-                id="number"
-                type="text"
-                value={number}
-                onChange={(event) => setNumber(event.target.value)}
-                required
-              />
-            </div>
-
-            <button type="submit">Submit</button>
-          </form>
+            <AXInputText
+              propsLabel="Phone Number"
+              propsPlaceholder="Enter phone number"
+              propsStartIcon="telephone"
+              propsAllowClear
+              propsValue={number}
+              propsOnChange={(event) => setNumber(event.target.value)}
+              propsAutoComplete="tel"
+              propsRequired
+            />
 
           {message && (
-            <div>
+            <div style={{ marginTop: '20px' }}>
               <h2>Server Response</h2>
               <p>{message}</p>
             </div>
@@ -153,6 +176,7 @@ export default function Home() {
                   <th>ID</th>
                   <th>Name</th>
                   <th>Number</th>
+                  <th></th>
                 </tr>
               </thead>
 
@@ -163,7 +187,14 @@ export default function Home() {
                       <td>{item.id}</td>
                       <td>{item.name}</td>
                       <td>{item.number}</td>
-                      <td onClick={() => handleDelete(item.id)}>delete</td>
+                      <AXButton
+                        propsLabel='Delete'
+                        propsSize="xs"
+                        propsStartIcon={<Icon name={"trash"} size={10}/>}
+                        propsLabelClassName='ax-hidden md:ax-inline-flex'
+                        propsClassName='ax-text-danger ax-rounded-md'
+                        onClick={() => handleDelete(item.id)}
+                      />
                     </tr>
                   ))
                 ) : (

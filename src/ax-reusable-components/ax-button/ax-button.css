@@ -1,0 +1,93 @@
+/* region Base */
+
+.ax-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  border: 1px solid transparent;
+  border-radius: var(--ax-radius-none);
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.ax-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* endregion */
+
+/* region Loader */
+
+.ax-btn-loading{
+  cursor: wait;
+  width: 16px;
+  height: 16px;
+
+  border: 3px solid #00308f55;
+  border-top-color: #00308f;
+
+  border-radius: 50%;
+
+  animation: ax-btn-loader-spin 0.8s linear infinite;
+}
+
+@keyframes ax-btn-loader-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* endregion */
+
+/* region Icons */
+
+.ax-btn-start-icon,
+.ax-btn-end-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* endregion */
+
+/* region Sizes */
+
+.ax-btn-xs {
+  min-height: 24px;
+  padding: 0 8px;
+  font-size: 11px;
+}
+
+.ax-btn-sm {
+  min-height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.ax-btn-md {
+  min-height: 34px;
+  padding: 0 14px;
+  font-size: 13px;
+}
+
+.ax-btn-lg {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.ax-btn-xl {
+  min-height: 48px;
+  padding: 0 20px;
+  font-size: 16px;
+}
+
+/* endregion */

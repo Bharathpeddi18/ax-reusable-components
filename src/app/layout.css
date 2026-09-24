@@ -3,11 +3,10 @@
    ========================================================================== */
 
 .ax-app-layout {
-  min-height: 100dvh;
-  width: 100%;
+  height: 100dvh;
+  width: 100dvw;
+  background-color: var(--ax-color-surface);
   position: relative;
-  background-color: var(--ax-color-background);
-  color: var(--ax-color-text-primary);
   display: flex;
   flex-direction: column;
 }

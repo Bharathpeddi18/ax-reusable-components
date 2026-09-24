@@ -12,5 +12,7 @@
   --ax-radius-xl: 0.75rem;    /* 12px */
   --ax-radius-2xl: 1rem;      /* 16px */
   --ax-radius-3xl: 1.5rem;    /* 24px */
-  --ax-radius-full: 9999px;
+  --ax-radius-4xl: 2rem;      /* 32px */
+  --ax-radius-half: 50%;      /* 50% */
+  --ax-radius-full: 9999px;   /* Full */
 }

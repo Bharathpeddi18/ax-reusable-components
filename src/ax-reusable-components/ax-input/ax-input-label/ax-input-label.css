@@ -1,0 +1,38 @@
+/* ==========================================================================
+   AXInputLabel Component Styles
+   ========================================================================== */
+
+.ax-input-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    font-size: var(--ax-font-size-sm, 0.875rem);
+    font-weight: var(--ax-font-weight-medium, 500);
+    color: var(--ax-color-text, #17212B);
+    line-height: 1.4;
+    position: relative;
+}
+
+/* Mandatory asterisk */
+.ax-input-label-mandatory {
+    color: var(--ax-color-danger, #dc2626);
+    font-weight: var(--ax-font-weight-semibold, 600);
+}
+
+/* Currency text/badge */
+.ax-input-label-currency {
+    font-size: var(--ax-font-size-xs, 0.75rem);
+    font-weight: var(--ax-font-weight-semibold, 600);
+    color: var(--ax-color-text-secondary, #4a5a6a);
+}
+
+/* Badge */
+.ax-input-label-badge {
+    font-size: 0.6875rem;
+    font-weight: var(--ax-font-weight-bold, 700);
+    color: var(--ax-color-white, #ffffff);
+    background-color: var(--ax-color-primary, #00308F);
+    padding: 1px 6px;
+    border-radius: var(--ax-radius-4xl, 9999px);
+    line-height: 1.2;
+}

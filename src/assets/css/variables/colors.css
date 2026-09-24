@@ -3,9 +3,6 @@
    ======================================== */
 
 :root {
-  /* ----------------------------------------
-     Brand / US Air Force Theme
-     ---------------------------------------- */
   /* Primary: USAF Air Force Blue */
   --ax-color-primary: #00308F;
   --ax-color-primary-light: #4D70B5;
@@ -80,5 +77,5 @@
   --ax-color-gray-900: #0f172a;
   --ax-color-gray-950: #020617;
 
-  --ax-color-focus: var(--ax-color-primary-light);
+  --ax-color-focus: #00308f55;
 }
