@@ -55,7 +55,6 @@ export const AXButton = ({
   propsEndIcon,
 
   propsLoading = false,
-  propsLoadingText = 'Loading...',
 
   propsDisabled = false,
 
@@ -70,9 +69,6 @@ export const AXButton = ({
   const buttonClasses = [
     'ax-btn',
     `ax-btn-${propsSize}`,
-
-    propsLoading ? 'ax-btn-loading' : '',
-
     propsClassName,
   ]
     .filter(Boolean)
@@ -90,9 +86,7 @@ export const AXButton = ({
     >
       {propsLoading ? 
         <>
-        <span className="ax-btn-loading">
-          {propsLoadingText}
-        </span>
+        <span className="ax-btn-loading"></span>
         </>
       :
         <>
