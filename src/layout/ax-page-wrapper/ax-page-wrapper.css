@@ -8,7 +8,7 @@
   height: calc(100dvh - var(--ax-header-height) - var(--ax-footer-height));
   overflow-y: auto;
   overflow-x: hidden;
-  width: calc(100% - var(var(--ax-menu-collapsed-width)));
+  width: calc(100% - var(--ax-menu-collapsed-width));
   left: var(--ax-menu-collapsed-width);
   transition: var(--ax-g-transition-all);
 }
