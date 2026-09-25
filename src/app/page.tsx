@@ -5,6 +5,7 @@ import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import AXInputText from '@/ax-reusable-components/ax-input/ax-input-text/ax-input-text';
 import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import AXPageLoader from '@/ax-reusable-components/ax-page-loader/ax-page-loader';
+
 import { FormEvent, useEffect, useState } from 'react';
 
 interface Submission {
@@ -123,6 +124,7 @@ export default function Home() {
         }
         propsRightContent={
           <>
+
             <AXButton
               propsLabel='Submit'
               propsSize="xs"
@@ -137,6 +139,7 @@ export default function Home() {
       />
       <main>
         <div style={{ padding: '20px' }}>
+
             <AXInputText
               propsLabel="Name"
               propsIsMandatory="*"
