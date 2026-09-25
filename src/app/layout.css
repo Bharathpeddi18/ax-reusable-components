@@ -18,7 +18,7 @@
 /* Mobile Base (0px - 639px): Sidebar acts as an off-canvas overlay.
    Shell width is 100% so content is never squashed on mobile screens. */
  .ax-app-layout:has(.ax-menu.ax-menu-collapsed) {
-    --ax-menu-width: 0;
+    --ax-menu-width: var(--ax-menu-collapsed-width);
   }
 
   .ax-app-layout:has(.ax-menu.ax-menu-expanded) {
