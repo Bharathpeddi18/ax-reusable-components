@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">ax-reusable-components</string>
-    <string name="title_activity_main">ax-reusable-components</string>
-    <string name="package_name">com.ax.reusablecomponents</string>
-    <string name="custom_url_scheme">com.ax.reusablecomponents</string>
-</resources>
