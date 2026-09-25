@@ -5,7 +5,7 @@ import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import AXInputText from '@/ax-reusable-components/ax-input/ax-input-text/ax-input-text';
 import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import AXPageLoader from '@/ax-reusable-components/ax-page-loader/ax-page-loader';
-import { FormEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Submission {
   id: number;
