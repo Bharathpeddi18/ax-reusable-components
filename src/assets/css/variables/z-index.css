@@ -46,7 +46,7 @@
 
   /* Custom */
   --ax-z-index-menu: 8889;
-  --ax-z-index-header: 8889;
-  --ax-z-index-footer: 8889;
+  --ax-z-index-header: 8888;
+  --ax-z-index-footer: 8888;
   --ax-z-index-page-header: 8888;
 }

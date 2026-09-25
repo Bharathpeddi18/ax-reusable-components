@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { MenuItem, menusConfig } from './ax-menu-config';
 import ApplicationLogo from '../../assets/images/application-logo.png';
 import { Icon } from '@/assets/icons';
+import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 
 // region Interfaces
 export interface MenuProps {
@@ -41,16 +42,14 @@ export const AXMenu: React.FC<MenuProps> = ({
             className="ax-menu-logo"
           />
         </Link>
-        <button
-          type="button"
-          className={`ax-menu-toggle ${isCollapsed ? 'ax-text-primary' : 'ax-text-white'}`}
+        <AXButton
+          propsSize='xs'
+          propsStartIcon={<Icon name="sidebar" width={16} height={16} />}
+          propsLabel={isCollapsed ? 'Expand Menu' : 'Collapse Menu'}
+          propsLabelClassName='ax-hidden'
+          propsClassName={`ax-menu-toggle ${isCollapsed ? 'ax-text-primary' : 'ax-text-white'}`}
           onClick={handleToggle}
-          title={isCollapsed ? 'Expand Menu' : 'Collapse Menu'}
-          aria-label={isCollapsed ? 'Expand Menu' : 'Collapse Menu'}
-          aria-expanded={!isCollapsed}
-        >
-          <Icon name="sidebar" width={16} height={16} />
-        </button>
+        />
       </div>
 
       {/* Menu Body */}
