@@ -1,0 +1,137 @@
+/* region Root */
+
+.ax-text-area {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  gap: var(--ax-spacing-2);
+}
+
+/* endregion */
+
+
+/* region Field */
+
+.ax-text-area-field {
+  width: 100%;
+
+  min-height: 96px;
+
+  padding: 10px 12px;
+
+  border: 1px solid var(--ax-color-gray-300);
+
+  border-radius: var(--ax-radius-md);
+
+  background-color: var(--ax-color-white);
+
+  color: var(--ax-color-gray-900);
+
+  font-family: inherit;
+
+  font-size: var(--ax-font-size-sm);
+
+  line-height: 1.5;
+
+  resize: vertical;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* endregion */
+
+
+/* region Placeholder */
+
+.ax-text-area-field::placeholder {
+  color: var(--ax-color-gray-400);
+}
+
+/* endregion */
+
+
+/* region Hover */
+
+.ax-text-area-field:hover {
+  border-color:
+    color-mix(
+      in srgb,
+      var(--ax-color-primary) 45%,
+      var(--ax-color-gray-300)
+    );
+}
+
+/* endregion */
+
+
+/* region Focus */
+
+.ax-text-area-field:focus {
+  border-color: var(--ax-color-primary);
+
+  box-shadow:
+    0 0 0 2px
+    color-mix(
+      in srgb,
+      var(--ax-color-primary) 10%,
+      transparent
+    );
+}
+
+/* endregion */
+
+
+/* region Disabled */
+
+.ax-text-area-disabled .ax-text-area-field {
+  background-color: var(--ax-color-gray-100);
+
+  color: var(--ax-color-gray-400);
+
+  cursor: not-allowed;
+
+  resize: none;
+
+  opacity: 0.7;
+}
+
+/* endregion */
+
+
+/* region Read Only */
+
+.ax-text-area-field:read-only {
+  background-color: var(--ax-color-gray-100);
+
+  cursor: default;
+}
+
+/* endregion */
+
+
+/* region Error */
+
+.ax-text-area-error .ax-text-area-field {
+  border-color: var(--ax-color-danger);
+}
+
+.ax-text-area-error .ax-text-area-field:focus {
+  border-color: var(--ax-color-danger);
+
+  box-shadow:
+    0 0 0 2px
+    color-mix(
+      in srgb,
+      var(--ax-color-danger) 10%,
+      transparent
+    );
+}
+
+/* endregion */

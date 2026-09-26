@@ -1,0 +1,186 @@
+/* region Root */
+
+.ax-input-date {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  gap: var(--ax-spacing-2);
+}
+
+/* endregion */
+
+
+/* region Input */
+
+.ax-input-date-field {
+  width: 100%;
+
+  min-height: 40px;
+
+  padding: 6px 10px;
+
+  border:
+    1px solid
+    var(--ax-color-gray-300);
+
+  border-radius:
+    var(--ax-radius-md);
+
+  background-color:
+    var(--ax-color-white);
+
+  color:
+    var(--ax-color-gray-900);
+
+  font-family: inherit;
+
+  font-size:
+    var(--ax-font-size-sm);
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* endregion */
+
+
+/* region Hover */
+
+.ax-input-date-field:hover {
+  border-color:
+    color-mix(
+      in srgb,
+      var(--ax-color-primary) 45%,
+      var(--ax-color-gray-300)
+    );
+}
+
+/* endregion */
+
+
+/* region Focus */
+
+.ax-input-date-field:focus {
+  border-color:
+    var(--ax-color-primary);
+
+  box-shadow:
+    0 0 0 2px
+    color-mix(
+      in srgb,
+      var(--ax-color-primary) 10%,
+      transparent
+    );
+}
+
+/* endregion */
+
+
+/* region Date Text */
+
+.ax-input-date-field::-webkit-datetime-edit {
+  color:
+    var(--ax-color-gray-900);
+}
+
+.ax-input-date-field::-webkit-datetime-edit-fields-wrapper {
+  padding: 0;
+}
+
+/* endregion */
+
+
+/* region Calendar Icon */
+
+.ax-input-date-field::-webkit-calendar-picker-indicator {
+  padding: 4px;
+
+  border-radius:
+    var(--ax-radius-sm);
+
+  cursor: pointer;
+
+  opacity: 0.7;
+
+  transition:
+    background-color 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.ax-input-date-field::-webkit-calendar-picker-indicator:hover {
+  background-color:
+    color-mix(
+      in srgb,
+      var(--ax-color-primary) 10%,
+      transparent
+    );
+
+  opacity: 1;
+}
+
+/* endregion */
+
+
+/* region Disabled */
+
+.ax-input-date-disabled {
+  opacity: 0.7;
+}
+
+.ax-input-date-disabled
+.ax-input-date-field {
+  background-color:
+    var(--ax-color-gray-100);
+
+  color:
+    var(--ax-color-gray-400);
+
+  cursor: not-allowed;
+}
+
+/* endregion */
+
+
+/* region Read Only */
+
+.ax-input-date-field:read-only {
+  background-color:
+    var(--ax-color-gray-100);
+
+  cursor: default;
+}
+
+/* endregion */
+
+
+/* region Error */
+
+.ax-input-date-error
+.ax-input-date-field {
+  border-color:
+    var(--ax-color-danger);
+}
+
+.ax-input-date-error
+.ax-input-date-field:focus {
+  border-color:
+    var(--ax-color-danger);
+
+  box-shadow:
+    0 0 0 2px
+    color-mix(
+      in srgb,
+      var(--ax-color-danger) 10%,
+      transparent
+    );
+}
+
+/* endregion */
