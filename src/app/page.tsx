@@ -3,6 +3,8 @@
 import Icon from '@/assets/icons';
 import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import AXCard from '@/ax-reusable-components/ax-card/ax-card';
+import AXInputCheck from '@/ax-reusable-components/ax-input/ax-input-check/ax-input-check';
+import AXInputRadio from '@/ax-reusable-components/ax-input/ax-input-radio/ax-input-radio';
 import AXInputText from '@/ax-reusable-components/ax-input/ax-input-text/ax-input-text';
 import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import AXPageLoader from '@/ax-reusable-components/ax-page-loader/ax-page-loader';
@@ -145,6 +147,29 @@ export default function Home() {
             propsSize="sm"
             propsBody={
               <div className="ax-grid ax-grid-cols-12 ax-gap-4">
+                <div className="ax-col-span-12 md:ax-col-span-6 lg:ax-col-span-4">
+                  <AXInputCheck
+                    propsId="student-active"
+                    propsLabel="Active Student"
+                    propsLabelPosition="after"
+                  />
+                </div>
+                <div className="ax-col-span-12 md:ax-col-span-6 lg:ax-col-span-4">
+                  <AXInputRadio
+                    propsId="gender-male"
+                    propsName="gender"
+                    propsLabel="Male"
+                    propsValue="male"
+                  />
+                </div>
+                <div className="ax-col-span-12 md:ax-col-span-6 lg:ax-col-span-4">
+                  <AXInputRadio
+                    propsId="gender-male"
+                    propsName="gender"
+                    propsLabel="Female"
+                    propsValue="female"
+                  />
+                </div>
                 <div className="ax-col-span-12 md:ax-col-span-6 lg:ax-col-span-4">
                   <AXInputText
                     propsClassName='ax-input-vertical'
