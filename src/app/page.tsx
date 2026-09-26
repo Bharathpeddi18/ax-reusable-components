@@ -2,6 +2,7 @@
 
 import Icon from '@/assets/icons';
 import AXButton from '@/ax-reusable-components/ax-button/ax-button';
+import AXCard from '@/ax-reusable-components/ax-card/ax-card';
 import AXInputText from '@/ax-reusable-components/ax-input/ax-input-text/ax-input-text';
 import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import AXPageLoader from '@/ax-reusable-components/ax-page-loader/ax-page-loader';
@@ -32,12 +33,8 @@ export default function Home() {
     page: true
   });
 
-  useEffect(() => {
-    fetchSubmissions();
-  }, []);
-
   const fetchSubmissions = async () => {
-    setLoading((prev) => ({...prev, page: true}))
+    setLoading((prev) => ({...prev, page: true}));
     try {
       const response = await fetch(`${BACKEND_URL}/submissions`);
 
@@ -50,9 +47,14 @@ export default function Home() {
       setTableData(data.submissions);
     } catch (error) {
       console.error('Fetch submissions error:', error);
+    } finally {
+      setLoading((prev) => ({...prev, page: false}));
     }
-    setLoading((prev) => ({...prev, page: false}))
   };
+
+  useEffect(() => {
+    fetchSubmissions();
+  }, []);
 
   const handleDelete = async (id: number) => {
     setLoading((prev) => ({...prev, delete: true}))
@@ -138,31 +140,38 @@ export default function Home() {
         }
       />
       <main>
-        <div style={{ padding: '20px' }}>
-
-            <AXInputText
-              propsLabel="Name"
-              propsIsMandatory="*"
-              propsPlaceholder="Enter student name"
-              propsStartIcon="person"
-              propsAllowClear
-              propsValue={name}
-              propsOnChange={(event) => setName(event.target.value)}
-              propsAutoComplete="name"
-              propsRequired
-            />
-
-            <AXInputText
-              propsLabel="Phone Number"
-              propsPlaceholder="Enter phone number"
-              propsStartIcon="telephone"
-              propsAllowClear
-              propsValue={number}
-              propsOnChange={(event) => setNumber(event.target.value)}
-              propsAutoComplete="tel"
-              propsRequired
-            />
-
+        <div className='ax-container'>
+          <AXCard
+            propsSize="sm"
+            propsBody={
+              <div className="ax-grid ax-grid-cols-12 ax-gap-4">
+                <div className="ax-col-span-12 md:ax-col-span-6 lg:ax-col-span-4">
+                  <AXInputText
+                    propsClassName='ax-input-vertical'
+                    propsLabel="Name"
+                    propsMandatory
+                    propsPlaceholder="Enter student name"
+                    propsStartIcon={<Icon name={"person"} />}
+                    propsValue={name}
+                    propsOnChange={(event) => setName(event.target.value)}
+                    propsAutoComplete="name"
+                  />
+                </div>
+                <div className="ax-col-span-12 md:ax-col-span-6 lg:ax-col-span-4">
+                  <AXInputText
+                    propsLabel="Phone Number"
+                    propsPlaceholder="Enter phone number"
+                    propsStartIcon={<Icon name={"phone"} />}
+                    propsEndIcon={<Icon name={"person"} className='ax-text-primary' />}
+                    propsValue={number}
+                    propsOnChange={(event) => setNumber(event.target.value)}
+                    propsAutoComplete="tel"
+                  />
+                </div>
+              </div>
+            }
+          />
+          
           {message && (
             <div style={{ marginTop: '20px' }}>
               <h2>Server Response</h2>

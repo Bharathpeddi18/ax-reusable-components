@@ -1,245 +1,121 @@
-/* ==========================================================================
-   AXInputText Component Styles
-   ========================================================================== */
+/* region Input Wrapper */
 
-/* 1. Container Layout */
-.ax-input-text-container {
+.ax-input-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--ax-space-1, 4px);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.ax-input-text-container.ax-input-horizontal {
-  flex-direction: row;
-  align-items: center;
-  gap: var(--ax-space-2, 8px);
-}
-
-.ax-input-text-container * {
-  box-sizing: border-box;
-}
-
-/* 2. Input Box Wrapper */
-.ax-input-text-wrapper {
-  display: inline-flex;
   align-items: center;
   width: 100%;
-  position: relative;
-  background-color: var(--ax-color-surface, #ffffff);
-  border: 1px solid var(--ax-color-border, #d2dbe5);
-  border-radius: var(--ax-radius-md, 6px);
-  color: var(--ax-color-text, #17212B);
-  transition: border-color var(--ax-transition-duration, 200ms) ease,
-              box-shadow var(--ax-transition-duration, 200ms) ease,
-              background-color var(--ax-transition-duration, 200ms) ease;
-  overflow: hidden;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #ffffff;
 }
 
-/* Focus State */
-.ax-input-text-wrapper:focus-within {
-  border-color: var(--ax-color-border-focus, #00308F);
-  box-shadow: 0 0 0 3px rgba(0, 48, 143, 0.15);
+.ax-input-wrapper:focus-within {
+  border-color: #00308f;
+
+  box-shadow:
+    0 0 0 2px rgba(0, 48, 143, 0.12);
 }
 
-/* Hover State */
-.ax-input-text-wrapper:hover:not(.ax-input-text-disabled):not(:focus-within) {
-  border-color: var(--ax-color-border-secondary, #91A5B5);
-}
+/* endregion */
 
-/* Status States */
-.ax-input-text-wrapper.ax-input-status-error {
-  border-color: var(--ax-color-danger, #dc2626);
-}
 
-.ax-input-text-wrapper.ax-input-status-error:focus-within {
-  border-color: var(--ax-color-danger, #dc2626);
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
-}
+/* region Input */
 
-.ax-input-text-wrapper.ax-input-status-success {
-  border-color: var(--ax-color-success, #16a34a);
-}
+.ax-input-field {
+  flex: 1;
 
-.ax-input-text-wrapper.ax-input-status-success:focus-within {
-  border-color: var(--ax-color-success, #16a34a);
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
-}
-
-.ax-input-text-wrapper.ax-input-status-warning {
-  border-color: var(--ax-color-warning, #C9A227);
-}
-
-.ax-input-text-wrapper.ax-input-status-warning:focus-within {
-  border-color: var(--ax-color-warning, #C9A227);
-  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.2);
-}
-
-/* Disabled & ReadOnly States */
-.ax-input-text-wrapper.ax-input-text-disabled {
-  background-color: var(--ax-color-surface-secondary, #ebf0f5);
-  border-color: var(--ax-color-border, #d2dbe5);
-  cursor: not-allowed;
-  opacity: 0.75;
-}
-
-.ax-input-text-wrapper.ax-input-text-readonly {
-  background-color: var(--ax-color-surface-secondary, #ebf0f5);
-  border-color: var(--ax-color-border, #d2dbe5);
-}
-
-/* 3. Sizes */
-.ax-input-text-sm {
-  min-height: 28px;
-  font-size: var(--ax-font-size-xs, 0.75rem);
-  padding: 0 8px;
-}
-
-.ax-input-text-sm .ax-input-text-control {
-  padding: 4px 0;
-  font-size: var(--ax-font-size-xs, 0.75rem);
-}
-
-.ax-input-text-md {
-  min-height: 36px;
-  font-size: var(--ax-font-size-sm, 0.875rem);
-  padding: 0 10px;
-}
-
-.ax-input-text-md .ax-input-text-control {
-  padding: 7px 0;
-  font-size: var(--ax-font-size-sm, 0.875rem);
-}
-
-.ax-input-text-lg {
-  min-height: 44px;
-  font-size: var(--ax-font-size-base, 1rem);
-  padding: 0 12px;
-}
-
-.ax-input-text-lg .ax-input-text-control {
-  padding: 10px 0;
-  font-size: var(--ax-font-size-base, 1rem);
-}
-
-/* 4. Native Input Control */
-.ax-input-text-control {
-  flex: 1 1 auto;
-  width: 100%;
   min-width: 0;
-  background: transparent;
+
   border: none;
   outline: none;
-  color: var(--ax-color-text, #17212B);
+
+  background: transparent;
+
+  color: #111827;
+
   font-family: inherit;
-  line-height: 1.4;
-  margin: 0;
+  font-size: 14px;
 }
 
-.ax-input-text-control::placeholder {
-  color: var(--ax-color-text-disabled, #9eb1c2);
-  opacity: 1;
+.ax-input-field::placeholder {
+  color: #9ca3af;
 }
 
-.ax-input-text-control:disabled {
-  cursor: not-allowed;
-  color: var(--ax-color-text-disabled, #9eb1c2);
-}
+/* endregion */
 
-/* 5. Affixes & Icons */
-.ax-input-text-start-icon,
-.ax-input-text-end-icon {
+
+/* region Icons */
+
+.ax-input-start-icon,
+.ax-input-end-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--ax-color-text-muted, #607D94);
+
   flex-shrink: 0;
+
+  color: #6b7280;
 }
 
-.ax-input-text-start-icon {
+.ax-input-start-icon {
   margin-right: 8px;
 }
 
-.ax-input-text-end-icon {
+.ax-input-end-icon {
   margin-left: 8px;
 }
 
-.ax-input-text-prefix,
-.ax-input-text-suffix {
-  display: inline-flex;
-  align-items: center;
-  color: var(--ax-color-text-secondary, #4a5a6a);
-  font-size: inherit;
-  font-weight: var(--ax-font-weight-medium, 500);
-  user-select: none;
-  flex-shrink: 0;
+/* endregion */
+
+
+/* region Sizes */
+
+.ax-input-sm {
+  min-height: 32px;
+  padding: 4px 8px;
 }
 
-.ax-input-text-prefix {
-  margin-right: 6px;
+.ax-input-md {
+  min-height: 40px;
+  padding: 6px 12px;
 }
 
-.ax-input-text-suffix {
-  margin-left: 6px;
+.ax-input-lg {
+  min-height: 48px;
+  padding: 8px 14px;
 }
 
-/* Action Buttons (Clear, Password Toggle) */
-.ax-input-text-action-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin-left: 6px;
-  color: var(--ax-color-text-muted, #607D94);
-  cursor: pointer;
-  outline: none;
-  line-height: 0;
-  flex-shrink: 0;
-  transition: color var(--ax-transition-duration, 150ms) ease;
+/* endregion */
+
+
+/* region Error */
+
+.ax-input-error {
+  border-color: #dc2626;
 }
 
-.ax-input-text-action-btn:hover {
-  color: var(--ax-color-text, #17212B);
+.ax-input-error:focus-within {
+  border-color: #dc2626;
+
+  box-shadow:
+    0 0 0 2px rgba(220, 38, 38, 0.12);
 }
 
-.ax-input-text-action-btn:focus-visible {
-  color: var(--ax-color-primary, #00308F);
+/* endregion */
+
+
+/* region Disabled */
+
+.ax-input-disabled {
+  cursor: not-allowed;
+
+  background-color: #f3f4f6;
+
+  opacity: 0.7;
 }
 
-/* 6. Footer Messages & Character Count */
-.ax-input-text-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 8px;
-  font-size: var(--ax-font-size-xs, 0.75rem);
-  line-height: 1.3;
-  margin-top: 2px;
+.ax-input-disabled .ax-input-field {
+  cursor: not-allowed;
 }
 
-.ax-input-text-message {
-  color: var(--ax-color-text-muted, #607D94);
-  flex: 1 1 auto;
-}
-
-.ax-input-text-error-message {
-  color: var(--ax-color-danger, #dc2626);
-  font-weight: var(--ax-font-weight-medium, 500);
-}
-
-.ax-input-text-counter {
-  color: var(--ax-color-text-disabled, #9eb1c2);
-  font-variant-numeric: tabular-nums;
-  margin-left: auto;
-  flex-shrink: 0;
-}
-
-.ax-input-text-counter-exceeded {
-  color: var(--ax-color-danger, #dc2626);
-  font-weight: var(--ax-font-weight-semibold, 600);
-}
+/* endregion */

@@ -19,7 +19,7 @@ export interface AXInputLabelProps {
   /** Aria label */
   'aria-label'?: string;
   /** Marks the input as required / mandatory, rendering a red asterisk */
-  propsIsMandatory?: string;
+  propsMandatory?: boolean;
   /** Currency symbol or text to display (e.g. "$", "USD") */
   propsCurrency?: string;
   /** Badge count or badge text */
@@ -35,7 +35,7 @@ export interface AXInputLabelProps {
   /** Tooltip placement position */
   propsInfoPosition?: 'top' | 'bottom' | 'left' | 'right';
   /** Disabled state to mute label appearance */
-  propsIsDisabled?: boolean;
+  propsDisabled?: boolean;
 
 }
 
@@ -47,16 +47,16 @@ export const AXInputLabel: React.FC<AXInputLabelProps> = (props) => {
     propsClassName,
     propsStyle,
     propsId,
-    propsIsMandatory,
+    propsMandatory,
     propsCurrency,
     propsBadge,
-    propsIsDisabled,
+    propsDisabled,
   } = props;
 
   const rootClasses = [
     'ax-input-label',
     propsClassName,
-    propsIsDisabled ? 'ax-input-label-disabled' : '',
+    propsDisabled ? 'ax-input-label-disabled' : '',
   ]
     .filter(Boolean)
     .join(' ');
@@ -80,7 +80,7 @@ export const AXInputLabel: React.FC<AXInputLabelProps> = (props) => {
       {propsBadge && <span className='ax-input-label-badge'>{propsBadge}</span>}
 
       {/* Mandatory Asterisk */}
-      {propsIsMandatory && <span className="ax-input-label-mandatory">{propsIsMandatory}</span>}
+      {propsMandatory && <span className="ax-input-label-mandatory">*</span>}
 
     </label>
   );

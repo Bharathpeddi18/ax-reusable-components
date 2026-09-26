@@ -29,6 +29,7 @@
 @import "../../ax-reusable-components/ax-page-header/ax-page-header.css";
 @import "../../ax-reusable-components/ax-input/ax-input.css";
 @import "../../ax-reusable-components/ax-button/ax-button.css";
+@import "../../ax-reusable-components/ax-card/ax-card.css";
 
 /* 5. Utilities */
 @import "./utility/display.css";
