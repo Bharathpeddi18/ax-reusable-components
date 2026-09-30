@@ -1,6 +1,18 @@
 /* region Root */
 
 .ax-input-date {
+  --ax-date-bg: var(--ax-color-white);
+  --ax-date-text: var(--ax-color-gray-900);
+
+  --ax-date-border: var(--ax-color-gray-300);
+
+  --ax-date-placeholder: var(--ax-color-gray-400);
+
+  --ax-date-disabled-bg: var(--ax-color-gray-100);
+  --ax-date-disabled-text: var(--ax-color-gray-400);
+
+  --ax-date-radius: var(--ax-radius-md);
+
   display: flex;
   flex-direction: column;
 
@@ -23,16 +35,16 @@
 
   border:
     1px solid
-    var(--ax-color-gray-300);
+    var(--ax-date-border);
 
   border-radius:
-    var(--ax-radius-md);
+    var(--ax-date-radius);
 
   background-color:
-    var(--ax-color-white);
+    var(--ax-date-bg);
 
   color:
-    var(--ax-color-gray-900);
+    var(--ax-date-text);
 
   font-family: inherit;
 
@@ -42,6 +54,8 @@
   outline: none;
 
   cursor: pointer;
+
+  color-scheme: light;
 
   transition:
     border-color 0.2s ease,
@@ -54,13 +68,9 @@
 
 /* region Hover */
 
-.ax-input-date-field:hover {
+.ax-input-date-field:hover:not(:disabled):not(:read-only) {
   border-color:
-    color-mix(
-      in srgb,
-      var(--ax-color-primary) 45%,
-      var(--ax-color-gray-300)
-    );
+    var(--ax-color-primary-hover);
 }
 
 /* endregion */
@@ -76,9 +86,19 @@
     0 0 0 2px
     color-mix(
       in srgb,
-      var(--ax-color-primary) 10%,
+      var(--ax-color-primary) 12%,
       transparent
     );
+}
+
+/* endregion */
+
+
+/* region Active */
+
+.ax-input-date-field:active:not(:disabled):not(:read-only) {
+  border-color:
+    var(--ax-color-primary-active);
 }
 
 /* endregion */
@@ -88,11 +108,40 @@
 
 .ax-input-date-field::-webkit-datetime-edit {
   color:
-    var(--ax-color-gray-900);
+    var(--ax-date-text);
 }
 
 .ax-input-date-field::-webkit-datetime-edit-fields-wrapper {
   padding: 0;
+}
+
+.ax-input-date-field::-webkit-datetime-edit-text {
+  color:
+    var(--ax-color-gray-500);
+
+  padding:
+    0 2px;
+}
+
+.ax-input-date-field::-webkit-datetime-edit-day-field,
+.ax-input-date-field::-webkit-datetime-edit-month-field,
+.ax-input-date-field::-webkit-datetime-edit-year-field {
+  border-radius:
+    var(--ax-radius-sm);
+}
+
+.ax-input-date-field::-webkit-datetime-edit-day-field:focus,
+.ax-input-date-field::-webkit-datetime-edit-month-field:focus,
+.ax-input-date-field::-webkit-datetime-edit-year-field:focus {
+  background-color:
+    color-mix(
+      in srgb,
+      var(--ax-color-primary-light) 18%,
+      white
+    );
+
+  color:
+    var(--ax-color-primary);
 }
 
 /* endregion */
@@ -101,6 +150,9 @@
 /* region Calendar Icon */
 
 .ax-input-date-field::-webkit-calendar-picker-indicator {
+  width: 18px;
+  height: 18px;
+
   padding: 4px;
 
   border-radius:
@@ -112,18 +164,30 @@
 
   transition:
     background-color 0.15s ease,
-    opacity 0.15s ease;
+    opacity 0.15s ease,
+    transform 0.15s ease;
 }
 
 .ax-input-date-field::-webkit-calendar-picker-indicator:hover {
   background-color:
     color-mix(
       in srgb,
-      var(--ax-color-primary) 10%,
+      var(--ax-color-primary-light) 14%,
       transparent
     );
 
   opacity: 1;
+}
+
+.ax-input-date-field::-webkit-calendar-picker-indicator:active {
+  background-color:
+    color-mix(
+      in srgb,
+      var(--ax-color-primary) 16%,
+      transparent
+    );
+
+  transform: scale(0.95);
 }
 
 /* endregion */
@@ -137,13 +201,23 @@
 
 .ax-input-date-disabled
 .ax-input-date-field {
+  border-color:
+    var(--ax-color-gray-300);
+
   background-color:
-    var(--ax-color-gray-100);
+    var(--ax-date-disabled-bg);
 
   color:
-    var(--ax-color-gray-400);
+    var(--ax-date-disabled-text);
 
   cursor: not-allowed;
+}
+
+.ax-input-date-disabled
+.ax-input-date-field::-webkit-calendar-picker-indicator {
+  cursor: not-allowed;
+
+  opacity: 0.4;
 }
 
 /* endregion */
@@ -151,9 +225,13 @@
 
 /* region Read Only */
 
-.ax-input-date-field:read-only {
+.ax-input-date-readonly
+.ax-input-date-field {
   background-color:
     var(--ax-color-gray-100);
+
+  color:
+    var(--ax-color-gray-600);
 
   cursor: default;
 }
@@ -170,6 +248,12 @@
 }
 
 .ax-input-date-error
+.ax-input-date-field:hover {
+  border-color:
+    var(--ax-color-danger);
+}
+
+.ax-input-date-error
 .ax-input-date-field:focus {
   border-color:
     var(--ax-color-danger);
@@ -178,7 +262,7 @@
     0 0 0 2px
     color-mix(
       in srgb,
-      var(--ax-color-danger) 10%,
+      var(--ax-color-danger) 12%,
       transparent
     );
 }

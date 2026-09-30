@@ -4,7 +4,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.25rem;
   border: 1px solid transparent;
   border-radius: var(--ax-radius-none);
   font-family: inherit;

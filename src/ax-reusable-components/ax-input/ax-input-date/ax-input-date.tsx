@@ -104,6 +104,10 @@ export const AXInputDate = ({
       ? 'ax-input-date-disabled'
       : '',
 
+    propsReadOnly
+      ? 'ax-input-date-readonly'
+      : '',
+
     propsHasError
       ? 'ax-input-date-error'
       : '',
@@ -116,6 +120,7 @@ export const AXInputDate = ({
 
   const inputClassName = [
     'ax-input-date-field',
+
     propsInputClassName,
   ]
     .filter(Boolean)
@@ -150,7 +155,7 @@ export const AXInputDate = ({
 
         type="date"
 
-        value={propsValue}
+        value={propsValue ?? ''}
 
         min={propsMinDate}
 

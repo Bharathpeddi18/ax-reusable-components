@@ -55,22 +55,13 @@ export const AXMenu: React.FC<MenuProps> = ({
       {/* Menu Body */}
       <ul className="ax-menu-body">
         {items.map((item) => {
-          const isActive = pathname === item.path;
+          const isActive = item.activePath?.includes(pathname);
 
           return (
-            <li
-              key={item.path}
-              className={`ax-menu-item ${isActive ? 'ax-menu-item-active' : ''}`}
-            >
-              <Link
-                href={item.path}
-                tabIndex={0}
-                aria-label={item.label}
-                className={`ax-menu-link ${isActive ? 'ax-menu-link-active' : ''}`}
-                title={item.label}
-              >
+            <li key={item.path} className={`ax-menu-item ${isActive ? 'ax-menu-item-active' : ''}`}>
+              <Link href={item.path} tabIndex={0} aria-label={item.label} className={`ax-menu-link ${isActive ? 'ax-menu-link-active' : ''}`} title={item.label} >
                 <span className="ax-menu-icon">
-                  <Icon name={item.Icon} />
+                  <Icon name={item.icon} />
                 </span>
                 <span className="ax-menu-label">{item.label}</span>
               </Link>

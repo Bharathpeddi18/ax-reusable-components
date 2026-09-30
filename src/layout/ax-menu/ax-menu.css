@@ -36,6 +36,13 @@
   right: 12px;
 }
 
+.ax-menu.ax-menu-collapsed .ax-menu-label {
+  display: none;
+}
+
+.ax-menu.ax-menu-expanded .ax-menu-label {
+  display: block;
+}
 
 /* 1. Header */
 .ax-menu-header {
@@ -67,22 +74,13 @@
   padding: 12px 8px;
   margin: 0;
   list-style: none;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
-}
-
-.ax-menu-body::-webkit-scrollbar {
-  width: 4px;
-}
-
-.ax-menu-body::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
 }
 
 .ax-menu-item {
   list-style: none;
-  margin-bottom: 4px;
 }
 
 .ax-menu-link {
@@ -107,7 +105,7 @@
   color: #ffffff;
 }
 
-.ax-menu-item-active > .ax-menu-link,
+.ax-menu-item-active>.ax-menu-link,
 .ax-menu-link.ax-menu-link-active {
   background: var(--ax-menu-item-active-bg);
   color: #ffffff;

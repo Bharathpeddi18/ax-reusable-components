@@ -3,7 +3,8 @@
    ========================================================================== */
 
 .ax-page-header {
-  height: var(--ax-page-header-height);
+  min-height: var(--ax-page-header-height);
+  height: auto;
   background-color: var(--ax-color-surface);
   border-bottom: 1px solid var(--ax-color-border);
   box-shadow: var(--ax-shadow);

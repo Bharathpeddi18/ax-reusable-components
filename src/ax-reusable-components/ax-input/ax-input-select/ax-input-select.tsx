@@ -1,181 +1,87 @@
 'use client';
 
-import Select, {
-  components,
-  MultiValue,
-  SingleValue,
-} from 'react-select';
+import React from 'react';
+import Select, { SingleValue } from 'react-select';
 
 import './ax-input-select.css';
 import AXInputLabel from '../ax-input-label/ax-input-label';
 
 // region Types
-export interface AXSelectOption {
+export type AXInputSelectRadius =
+  | 'none'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | 'full';
+
+export type AXInputSelectSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
+export interface AXInputSelectOption {
   label: string;
   value: string;
 }
 // endregion
 
-
 // region Interfaces
-export interface AXSelectProps {
+export interface AXInputSelectProps {
   propsLabel?: string;
-  propsOptions: AXSelectOption[];
-
-  propsValue?: string | string[];
-
-  propsMultiSelect?: boolean;
+  propsOptions: AXInputSelectOption[];
+  propsValue?: string;
   propsSearchable?: boolean;
   propsClearable?: boolean;
-
-  propsShowCheckbox?: boolean;
-  propsShowCount?: boolean;
-
   propsPlaceholder?: string;
-
   propsDisabled?: boolean;
   propsMandatory?: boolean;
-
+  propsInputRadius?: AXInputSelectRadius;
+  propsInputSize?: AXInputSelectSize;
   propsClassName?: string;
-
-  propsOnChange?: (
-    value: string | string[]
-  ) => void;
+  propsInputClassName?: string;
+  propsOnChange?: (value: string) => void;
 }
 // endregion
 
-
 // region Main Component
-export const AXSelect = ({
+export const AXInputSelect = ({
   propsLabel,
   propsOptions,
-
   propsValue,
-
-  propsMultiSelect = false,
   propsSearchable = true,
   propsClearable = true,
-
-  propsShowCheckbox = true,
-  propsShowCount = true,
-
   propsPlaceholder = 'Select',
-
   propsDisabled = false,
   propsMandatory = false,
-
+  propsInputRadius = 'md',
+  propsInputSize = 'md',
   propsClassName = '',
-
+  propsInputClassName = '',
   propsOnChange,
-}: AXSelectProps) => {
-
+}: AXInputSelectProps) => {
   // region Selected Value
-  const selectedValue = propsMultiSelect
-    ? propsOptions.filter((option) =>
-        Array.isArray(propsValue)
-          ? propsValue.includes(option.value)
-          : false
-      )
-    : propsOptions.find(
-        (option) => option.value === propsValue
-      ) ?? null;
+  const selectedValue =
+    propsOptions.find((option) => option.value === propsValue) ?? null;
   // endregion
-
 
   // region Change
-  const handleChange = (
-    value:
-      | MultiValue<AXSelectOption>
-      | SingleValue<AXSelectOption>
-  ) => {
-
-    if (propsMultiSelect) {
-      const values = (
-        value as MultiValue<AXSelectOption>
-      ).map((item) => item.value);
-
-      propsOnChange?.(values);
-
-      return;
-    }
-
-    const selected =
-      value as SingleValue<AXSelectOption>;
-
-    propsOnChange?.(
-      selected?.value ?? ''
-    );
+  const handleChange = (value: SingleValue<AXInputSelectOption>) => {
+    propsOnChange?.(value?.value ?? '');
   };
   // endregion
-
-
-  // region Option
-  const Option = (props: any) => (
-    <components.Option {...props}>
-
-      <div className="ax-select-option">
-
-        {propsMultiSelect &&
-          propsShowCheckbox && (
-            <input
-              type="checkbox"
-              checked={props.isSelected}
-              readOnly
-            />
-          )}
-
-        {props.label}
-
-      </div>
-
-    </components.Option>
-  );
-  // endregion
-
-
-  // region Value Container
-  const ValueContainer = (props: any) => {
-
-    const selected = props.getValue();
-
-    if (
-      propsMultiSelect &&
-      propsShowCount &&
-      selected.length
-    ) {
-      return (
-        <components.ValueContainer {...props}>
-
-          <span>
-            {selected.length} selected
-          </span>
-
-          {props.children?.[1]}
-
-        </components.ValueContainer>
-      );
-    }
-
-    return (
-      <components.ValueContainer {...props}>
-        {props.children}
-      </components.ValueContainer>
-    );
-  };
-  // endregion
-
 
   // region Main Return
   return (
     <div
       className={[
         'ax-select',
+        `ax-select-radius-${propsInputRadius}`,
+        `ax-select-size-${propsInputSize}`,
         propsClassName,
       ]
         .filter(Boolean)
         .join(' ')}
     >
-
       {propsLabel && (
         <AXInputLabel
           propsLabel={propsLabel}
@@ -184,42 +90,24 @@ export const AXSelect = ({
         />
       )}
 
-      <Select
+      <Select<AXInputSelectOption, false>
         options={propsOptions}
-
         value={selectedValue}
-
         onChange={handleChange}
-
-        isMulti={propsMultiSelect}
-
+        isMulti={false}
         isSearchable={propsSearchable}
-
         isClearable={propsClearable}
-
         isDisabled={propsDisabled}
-
         placeholder={propsPlaceholder}
-
-        closeMenuOnSelect={!propsMultiSelect}
-
-        hideSelectedOptions={false}
-
+        closeMenuOnSelect={true}
         menuPosition="fixed"
-
         menuPlacement="auto"
-
-        components={{
-            Option,
-            ValueContainer,
-        }}
-
+        className={propsInputClassName}
         classNamePrefix="ax-react-select"
       />
-
     </div>
   );
 };
 // endregion
 
-export default AXSelect;
+export default AXInputSelect;

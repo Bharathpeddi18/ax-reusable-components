@@ -63,6 +63,11 @@ img {
 /* ========================================
    Scroll Bar
    ======================================== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--ax-color-primary-light) transparent;
+}
+
 *::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -73,8 +78,9 @@ img {
 }
 
 *::-webkit-scrollbar-thumb {
+  cursor: pointer;
   background: var(--ax-color-primary-light);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 *::-webkit-scrollbar-thumb:hover {
