@@ -2103,7 +2103,7 @@ export interface IconProps extends React.SVGProps<SVGSVGElement> {
 }
 
 /**
- * `Icon` / `AXIcon` renders high-performance SVG icons from the unified SVG Sprite system (`/sprite.svg`).
+ * `Icon` renders high-performance SVG icons from the unified SVG Sprite system (`/sprite.svg`).
  * Zero JavaScript bundle bloat, zero CSS-in-JS overhead, full vector scaling.
  */
 export const Icon: React.FC<IconProps> = ({
@@ -2137,7 +2137,5 @@ export const Icon: React.FC<IconProps> = ({
     </svg>
   );
 };
-
-export const AXIcon = Icon;
 
 export default Icon;

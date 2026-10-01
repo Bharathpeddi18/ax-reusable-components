@@ -1,0 +1,63 @@
+/* Tabs row */
+.ax-tabs-list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 3px solid #e5e7eb;
+}
+
+
+/* Tab */
+.ax-tab {
+  position: relative;
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  color: #6b7280;
+  font-family: inherit;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+
+/* Active */
+.ax-tab-active {
+  color: #111827;
+  font-weight: 600;
+}
+
+
+/* Active underline */
+.ax-tab-active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  height: 3px;
+  background: var(--ax-color-primary,#00308f);
+  border-radius: 3px;
+}
+
+
+/* Sizes */
+.ax-tab-sm {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+.ax-tab-md {
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.ax-tab-lg {
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+
+/* Content */
+.ax-tabs-content {
+  width: 100%;
+}

@@ -1,0 +1,49 @@
+/* ==========================================================================
+   AX Popover Component Styles
+   ========================================================================== */
+
+.ax-popover {
+  position: fixed;
+  z-index: 9999;
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 12px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
+  color: #111827;
+  font-size: 14px;
+}
+
+/* ========================================
+   Popover Sizes (xs, sm, md, lg, xl, 2xl)
+   ======================================== */
+
+.ax-popover-xs {
+  width: 240px;
+}
+
+.ax-popover-sm {
+  width: 300px;
+}
+
+.ax-popover-md {
+  width: 360px;
+}
+
+.ax-popover-lg {
+  width: 440px;
+}
+
+.ax-popover-xl {
+  width: 540px;
+}
+
+.ax-popover-2xl {
+  width: 640px;
+}
+
+.ax-popover-auto {
+  width: auto;
+}

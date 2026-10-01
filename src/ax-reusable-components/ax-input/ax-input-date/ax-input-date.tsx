@@ -6,175 +6,108 @@ import {
 } from 'react';
 
 import './ax-input-date.css';
-
 import AXInputLabel from '../ax-input-label/ax-input-label';
 
 // region Interfaces
-export interface AXInputDateProps
+export interface InputDateProps
   extends Omit<
     InputHTMLAttributes<HTMLInputElement>,
     'type' | 'value' | 'onChange'
   > {
-
   /** Label */
   propsLabel?: string;
-
   /** Input id */
   propsId?: string;
-
   /** Selected date YYYY-MM-DD */
   propsValue?: string;
-
   /** Minimum date YYYY-MM-DD */
   propsMinDate?: string;
-
   /** Maximum date YYYY-MM-DD */
   propsMaxDate?: string;
-
   /** Mandatory */
   propsMandatory?: boolean;
-
   /** Disabled */
   propsDisabled?: boolean;
-
   /** Read only */
   propsReadOnly?: boolean;
-
   /** Error */
   propsHasError?: boolean;
-
   /** Root class */
   propsClassName?: string;
-
   /** Input class */
   propsInputClassName?: string;
-
   /** Label class */
   propsLabelClassName?: string;
-
   /** Root style */
   propsStyle?: CSSProperties;
-
   /** Change handler */
   propsOnChange?: (
     event: React.ChangeEvent<HTMLInputElement>
   ) => void;
 }
-// endregion
-
 
 // region Main Component
 export const AXInputDate = ({
   propsLabel,
-
   propsId,
-
   propsValue,
-
   propsMinDate,
-
   propsMaxDate,
-
-  propsMandatory = false,
-
-  propsDisabled = false,
-
-  propsReadOnly = false,
-
+  propsMandatory,
+  propsDisabled,
+  propsReadOnly,
   propsHasError = false,
-
   propsClassName = '',
-
   propsInputClassName = '',
-
   propsLabelClassName = '',
-
   propsStyle,
-
   propsOnChange,
-
   ...inputProps
-}: AXInputDateProps) => {
-
-  // region Classes
-  const rootClassName = [
+}: InputDateProps) => {
+  const rootClasses = [
     'ax-input-date',
-
-    propsDisabled
-      ? 'ax-input-date-disabled'
-      : '',
-
-    propsReadOnly
-      ? 'ax-input-date-readonly'
-      : '',
-
-    propsHasError
-      ? 'ax-input-date-error'
-      : '',
-
+    propsDisabled ? 'ax-input-date-disabled' : '',
+    propsHasError ? 'ax-input-date-error' : '',
     propsClassName,
   ]
     .filter(Boolean)
     .join(' ');
 
-
-  const inputClassName = [
+  const inputClasses = [
     'ax-input-date-field',
-
     propsInputClassName,
   ]
     .filter(Boolean)
     .join(' ');
-  // endregion
 
-
-  // region Main Return
   return (
-    <div
-      className={rootClassName}
-      style={propsStyle}
-    >
-
-      {/* Label */}
+    <div className={rootClasses} style={propsStyle}>
       {propsLabel && (
         <AXInputLabel
           propsLabel={propsLabel}
           propsHtmlFor={propsId}
           propsMandatory={propsMandatory}
-          propsDisabled={propsDisabled}
           propsClassName={propsLabelClassName}
+          propsDisabled={propsDisabled}
         />
       )}
 
-
-      {/* Native Date Input */}
-      <input
-        {...inputProps}
-
-        id={propsId}
-
-        type="date"
-
-        value={propsValue ?? ''}
-
-        min={propsMinDate}
-
-        max={propsMaxDate}
-
-        required={propsMandatory}
-
-        disabled={propsDisabled}
-
-        readOnly={propsReadOnly}
-
-        onChange={propsOnChange}
-
-        className={inputClassName}
-      />
-
+      <div className="ax-input-date-wrapper">
+        <input
+          {...inputProps}
+          id={propsId}
+          type="date"
+          value={propsValue}
+          min={propsMinDate}
+          max={propsMaxDate}
+          disabled={propsDisabled}
+          readOnly={propsReadOnly}
+          onChange={propsOnChange}
+          className={inputClasses}
+        />
+      </div>
     </div>
   );
 };
-// endregion
 
 export default AXInputDate;

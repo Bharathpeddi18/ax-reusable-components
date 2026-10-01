@@ -1,6 +1,6 @@
 // Initialize roles
-export const USER_ROLES = { STUDENT: 'student', OWNER: 'owner' } as const;
-export const currentUserRole = USER_ROLES.OWNER;
+export const USER_ROLES = { student: 'student', owner: 'owner' } as const;
+export const currentUserRole = USER_ROLES.owner;
 
 export const ROUTERS_PATHS = {
   homeStudent: '/home-student',
@@ -19,3 +19,11 @@ export const ROUTERS_PATHS = {
   quickLinks: '/quick-links',
   settings: '/settings',
 }
+
+
+// region Enums
+export enum NOTIFICATION_TYPE {
+  general = 'general',
+  alert = 'alert',
+  action = 'action'
+} 

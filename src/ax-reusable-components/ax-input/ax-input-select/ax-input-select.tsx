@@ -7,7 +7,7 @@ import './ax-input-select.css';
 import AXInputLabel from '../ax-input-label/ax-input-label';
 
 // region Types
-export type AXInputSelectRadius =
+export type InputSelectRadius =
   | 'none'
   | 'sm'
   | 'md'
@@ -17,26 +17,26 @@ export type AXInputSelectRadius =
   | '3xl'
   | 'full';
 
-export type AXInputSelectSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+export type InputSelectSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
-export interface AXInputSelectOption {
+export interface InputSelectOption {
   label: string;
   value: string;
 }
 // endregion
 
 // region Interfaces
-export interface AXInputSelectProps {
+export interface InputSelectProps {
   propsLabel?: string;
-  propsOptions: AXInputSelectOption[];
+  propsOptions: InputSelectOption[];
   propsValue?: string;
   propsSearchable?: boolean;
   propsClearable?: boolean;
   propsPlaceholder?: string;
   propsDisabled?: boolean;
   propsMandatory?: boolean;
-  propsInputRadius?: AXInputSelectRadius;
-  propsInputSize?: AXInputSelectSize;
+  propsInputRadius?: InputSelectRadius;
+  propsInputSize?: InputSelectSize;
   propsClassName?: string;
   propsInputClassName?: string;
   propsOnChange?: (value: string) => void;
@@ -58,14 +58,14 @@ export const AXInputSelect = ({
   propsClassName = '',
   propsInputClassName = '',
   propsOnChange,
-}: AXInputSelectProps) => {
+}: InputSelectProps) => {
   // region Selected Value
   const selectedValue =
     propsOptions.find((option) => option.value === propsValue) ?? null;
   // endregion
 
   // region Change
-  const handleChange = (value: SingleValue<AXInputSelectOption>) => {
+  const handleChange = (value: SingleValue<InputSelectOption>) => {
     propsOnChange?.(value?.value ?? '');
   };
   // endregion
@@ -90,7 +90,7 @@ export const AXInputSelect = ({
         />
       )}
 
-      <Select<AXInputSelectOption, false>
+      <Select<InputSelectOption, false>
         options={propsOptions}
         value={selectedValue}
         onChange={handleChange}

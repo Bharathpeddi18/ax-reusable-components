@@ -1,4 +1,4 @@
-import { AXServiceWorker } from '@/components/service-worker';
+import { ServiceWorker } from '@/services/service-worker';
 import '../assets/css/index.css';
 import './layout.css';
 
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <AXServiceWorker />
+        <ServiceWorker />
         <div className="ax-app-layout">
           <Menu />
           <Header />

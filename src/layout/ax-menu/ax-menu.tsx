@@ -15,7 +15,7 @@ export interface MenuProps {
 }
 
 // region Main Component
-export const AXMenu: React.FC<MenuProps> = ({
+export const Menu: React.FC<MenuProps> = ({
   items = menusConfig,
   className = '',
 }) => {
@@ -43,10 +43,10 @@ export const AXMenu: React.FC<MenuProps> = ({
           />
         </Link>
         <AXButton
-          propsSize='xs'
+          propsSize="xs"
           propsStartIcon={<Icon name="sidebar" width={16} height={16} />}
           propsLabel={isCollapsed ? 'Expand Menu' : 'Collapse Menu'}
-          propsLabelClassName='ax-hidden'
+          propsLabelClassName="ax-hidden"
           propsClassName={`ax-menu-toggle ${isCollapsed ? 'ax-text-primary' : 'ax-text-white'}`}
           onClick={handleToggle}
         />
@@ -59,7 +59,13 @@ export const AXMenu: React.FC<MenuProps> = ({
 
           return (
             <li key={item.path} className={`ax-menu-item ${isActive ? 'ax-menu-item-active' : ''}`}>
-              <Link href={item.path} tabIndex={0} aria-label={item.label} className={`ax-menu-link ${isActive ? 'ax-menu-link-active' : ''}`} title={item.label} >
+              <Link
+                href={item.path}
+                tabIndex={0}
+                aria-label={item.label}
+                className={`ax-menu-link ${isActive ? 'ax-menu-link-active' : ''}`}
+                title={item.label}
+              >
                 <span className="ax-menu-icon">
                   <Icon name={item.icon} />
                 </span>
@@ -73,4 +79,4 @@ export const AXMenu: React.FC<MenuProps> = ({
   );
 };
 
-export default AXMenu;
+export default Menu;

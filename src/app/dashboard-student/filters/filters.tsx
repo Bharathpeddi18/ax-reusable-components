@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { AXInputSelect } from '@/ax-reusable-components/ax-input/ax-input-select/ax-input-select';
+import AXInputSelect from '@/ax-reusable-components/ax-input/ax-input-select/ax-input-select';
 
 // region Options Constants
 const FISCAL_YEAR_OPTIONS = [
@@ -44,7 +44,7 @@ export const DashboardFilters = () => {
   return (
     <div className="ax-flex ax-flex-wrap ax-items-center ax-gap-2.5">
       {/* Fiscal Year */}
-      <div className="ax-flex ax-items-center ax-gap-1.5">
+      <div className="ax-flex ax-items-center ax-gap-1-5">
         <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">Fiscal Year</span>
         <div className="ax-w-24">
           <AXInputSelect
@@ -59,7 +59,7 @@ export const DashboardFilters = () => {
       </div>
 
       {/* CTF/Staff */}
-      <div className="ax-flex ax-items-center ax-gap-1.5">
+      <div className="ax-flex ax-items-center ax-gap-1-5">
         <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">CTF/Staff</span>
         <div className="ax-w-20">
           <AXInputSelect
@@ -74,7 +74,7 @@ export const DashboardFilters = () => {
       </div>
 
       {/* Priority */}
-      <div className="ax-flex ax-items-center ax-gap-1.5">
+      <div className="ax-flex ax-items-center ax-gap-1-5">
         <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">Priority</span>
         <div className="ax-w-20">
           <AXInputSelect
@@ -89,7 +89,7 @@ export const DashboardFilters = () => {
       </div>
 
       {/* Category */}
-      <div className="ax-flex ax-items-center ax-gap-1.5">
+      <div className="ax-flex ax-items-center ax-gap-1-5">
         <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">Category</span>
         <div className="ax-w-20">
           <AXInputSelect
@@ -104,7 +104,7 @@ export const DashboardFilters = () => {
       </div>
 
       {/* EEIC */}
-      <div className="ax-flex ax-items-center ax-gap-1.5">
+      <div className="ax-flex ax-items-center ax-gap-1-5">
         <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">EEIC</span>
         <div className="ax-w-20">
           <AXInputSelect
@@ -119,7 +119,7 @@ export const DashboardFilters = () => {
       </div>
 
       {/* BA */}
-      <div className="ax-flex ax-items-center ax-gap-1.5">
+      <div className="ax-flex ax-items-center ax-gap-1-5">
         <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">BA</span>
         <div className="ax-w-20">
           <AXInputSelect
@@ -134,7 +134,7 @@ export const DashboardFilters = () => {
       </div>
 
       {/* SAG */}
-      <div className="ax-flex ax-items-center ax-gap-1.5">
+      <div className="ax-flex ax-items-center ax-gap-1-5">
         <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">SAG</span>
         <div className="ax-w-20">
           <AXInputSelect
@@ -149,7 +149,7 @@ export const DashboardFilters = () => {
       </div>
 
       {/* PEC */}
-      <div className="ax-flex ax-items-center ax-gap-1.5">
+      <div className="ax-flex ax-items-center ax-gap-1-5">
         <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">PEC</span>
         <div className="ax-w-20">
           <AXInputSelect
@@ -164,7 +164,7 @@ export const DashboardFilters = () => {
       </div>
 
       {/* Funds Need by Date */}
-      <div className="ax-flex ax-items-center ax-gap-1.5">
+      <div className="ax-flex ax-items-center ax-gap-1-5">
         <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">Funds Need by Date</span>
         <div className="ax-w-20">
           <AXInputSelect

@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import { useEffect } from "react";
 
-export const AXServiceWorker = () => {
+export const ServiceWorker = () => {
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
@@ -15,3 +15,5 @@ export const AXServiceWorker = () => {
 
   return null;
 };
+
+export default ServiceWorker;

@@ -2,7 +2,7 @@
 
 import React, { useState, useMemo } from 'react';
 import { Icon, iconNames } from '@/assets/icons';
-import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
+import AXPageHeader from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import AXCard from '@/ax-reusable-components/ax-card/ax-card';
 
@@ -103,22 +103,20 @@ export default function IconsGalleryPage() {
               <button
                 type="button"
                 onClick={() => setCopyMode('jsx')}
-                className={`ax-px-2.5 ax-py-1 ax-text-xs ax-font-medium ax-rounded ax-cursor-pointer ax-transition-colors ${
-                  copyMode === 'jsx'
+                className={`ax-px-2.5 ax-py-1 ax-text-xs ax-font-medium ax-rounded ax-cursor-pointer ax-transition-colors ${copyMode === 'jsx'
                     ? 'ax-bg-white ax-text-primary ax-shadow-xs'
                     : 'ax-text-gray-600 hover:ax-text-gray-900'
-                }`}
+                  }`}
               >
                 JSX Component
               </button>
               <button
                 type="button"
                 onClick={() => setCopyMode('name')}
-                className={`ax-px-2.5 ax-py-1 ax-text-xs ax-font-medium ax-rounded ax-cursor-pointer ax-transition-colors ${
-                  copyMode === 'name'
+                className={`ax-px-2.5 ax-py-1 ax-text-xs ax-font-medium ax-rounded ax-cursor-pointer ax-transition-colors ${copyMode === 'name'
                     ? 'ax-bg-white ax-text-primary ax-shadow-xs'
                     : 'ax-text-gray-600 hover:ax-text-gray-900'
-                }`}
+                  }`}
               >
                 Icon Name Only
               </button>
@@ -172,11 +170,10 @@ export default function IconsGalleryPage() {
                           key={size.value}
                           type="button"
                           onClick={() => setSelectedSize(size.value)}
-                          className={`ax-px-2.5 ax-py-1 ax-text-xs ax-font-medium ax-rounded ax-cursor-pointer ax-transition-colors ${
-                            selectedSize === size.value
+                          className={`ax-px-2.5 ax-py-1 ax-text-xs ax-font-medium ax-rounded ax-cursor-pointer ax-transition-colors ${selectedSize === size.value
                               ? 'ax-bg-white ax-text-primary ax-shadow-xs'
                               : 'ax-text-gray-600 hover:ax-text-gray-900'
-                          }`}
+                            }`}
                         >
                           {size.label}
                         </button>
@@ -186,7 +183,7 @@ export default function IconsGalleryPage() {
                 </div>
 
                 {/* Category Chips */}
-                <div className="ax-flex ax-flex-wrap ax-items-center ax-gap-1.5 ax-pt-2 ax-border-t ax-border-gray-100">
+                <div className="ax-flex ax-flex-wrap ax-items-center ax-gap-1-5 ax-pt-2 ax-border-t ax-border-gray-100">
                   <span className="ax-text-xs ax-text-gray-400 ax-mr-1">Category:</span>
                   {QUICK_FILTERS.map((chip) => (
                     <button
@@ -196,11 +193,10 @@ export default function IconsGalleryPage() {
                         setFilterType(chip.value);
                         setDisplayCount(240);
                       }}
-                      className={`ax-px-2.5 ax-py-0.5 ax-text-xs ax-font-medium ax-rounded-full ax-cursor-pointer ax-transition-all ${
-                        filterType === chip.value
+                      className={`ax-px-2.5 ax-py-0.5 ax-text-xs ax-font-medium ax-rounded-full ax-cursor-pointer ax-transition-all ${filterType === chip.value
                           ? 'ax-bg-primary ax-text-white'
                           : 'ax-bg-gray-100 ax-text-gray-600 hover:ax-bg-gray-200'
-                      }`}
+                        }`}
                     >
                       {chip.label}
                     </button>
@@ -232,11 +228,10 @@ export default function IconsGalleryPage() {
                       key={iconName}
                       type="button"
                       onClick={() => handleCopy(iconName)}
-                      className={`ax-group ax-flex ax-flex-col ax-items-center ax-justify-center ax-p-2 ax-rounded-md ax-border ax-cursor-pointer ax-transition-all ax-text-left ${
-                        isCopied
+                      className={`ax-group ax-flex ax-flex-col ax-items-center ax-justify-center ax-p-2 ax-rounded-md ax-border ax-cursor-pointer ax-transition-all ax-text-left ${isCopied
                           ? 'ax-bg-green-50 ax-border-green-400 ax-scale-105'
                           : 'ax-bg-white ax-border-gray-200 hover:ax-border-primary hover:ax-shadow-sm hover:ax-bg-blue-50/40'
-                      }`}
+                        }`}
                       title={`${iconName}\nClick to copy: ${copyMode === 'jsx' ? `<Icon name="${iconName}" />` : iconName}`}
                     >
                       {/* Icon Display Area */}

@@ -1,7 +1,7 @@
 'use client';
 
 import Icon from '@/assets/icons';
-import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
+import AXPageHeader from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import DashboardFilters from './filters/filters';
 import DashboardCard from './components/dashboard-card';
 import DonutChart from './components/donut-chart';

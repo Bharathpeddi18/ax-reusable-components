@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Icon from '@/assets/icons';
 import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import AXCard from '@/ax-reusable-components/ax-card/ax-card';
-import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
+import AXPageHeader from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import AXPageLoader from '@/ax-reusable-components/ax-page-loader/ax-page-loader';
 
 // region Interfaces

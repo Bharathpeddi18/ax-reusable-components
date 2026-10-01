@@ -1,14 +1,18 @@
 'use client';
 
+import Notifications from "@/components/notifications/notifications";
+
 // region Main Component
-export const AXHeader = () => {
+export const Header = () => {
   return (
     <header className="ax-header">
       <div className="ax-header-right">
-        <span>Header Right</span>
+        <div className="ax-d-flex ax-align-items-center">
+          <Notifications />
+        </div>
       </div>
     </header>
   );
 };
 
-export default AXHeader;
+export default Header;

@@ -59,6 +59,9 @@
 .ax-w-40 { width: var(--ax-space-40, 10rem); }
 .ax-w-48 { width: var(--ax-space-48, 12rem); }
 .ax-w-64 { width: var(--ax-space-64, 16rem); }
+.ax-w-72 { width: var(--ax-space-72, 18rem); }
+.ax-w-80 { width: var(--ax-space-80, 20rem); }
+.ax-w-96 { width: var(--ax-space-96, 24rem); }
 
 /* ----------------------------------------
    Min / Max Width
@@ -133,6 +136,9 @@
 .ax-h-40 { height: var(--ax-space-40, 10rem); }
 .ax-h-48 { height: var(--ax-space-48, 12rem); }
 .ax-h-64 { height: var(--ax-space-64, 16rem); }
+.ax-h-72 { height: var(--ax-space-72, 18rem); }
+.ax-h-80 { height: var(--ax-space-80, 20rem); }
+.ax-h-96 { height: var(--ax-space-96, 24rem); }
 
 /* ----------------------------------------
    Min / Max Height
@@ -145,6 +151,10 @@
 .ax-min-h-max { min-height: max-content; }
 .ax-min-h-fit { min-height: fit-content; }
 
+.ax-max-h-64 { max-height: var(--ax-space-64, 16rem); }
+.ax-max-h-72 { max-height: var(--ax-space-72, 18rem); }
+.ax-max-h-80 { max-height: var(--ax-space-80, 20rem); }
+.ax-max-h-96 { max-height: var(--ax-space-96, 24rem); }
 .ax-max-h-full { max-height: 100%; }
 .ax-max-h-screen { max-height: 100vh; }
 .ax-max-h-min { max-height: min-content; }

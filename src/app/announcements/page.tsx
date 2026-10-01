@@ -1,7 +1,7 @@
 'use client';
 
 import Icon from '@/assets/icons';
-import { AXPageHeader } from '@/ax-reusable-components/ax-page-header/ax-page-header';
+import AXPageHeader from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import Announcements from './announcements';
 
 // region Main Page

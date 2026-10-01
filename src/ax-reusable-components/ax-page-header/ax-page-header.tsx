@@ -1,36 +1,32 @@
 'use client';
 
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect } from 'react';
 
 // region Interfaces
-export interface AXPageHeaderProps {
+export interface PageHeaderProps {
   propsLeftContent: ReactNode;
   propsRightContent?: ReactNode;
   propsPageTitle: string;
 }
 
 // region Main Component
-export const AXPageHeader = (props: AXPageHeaderProps) => {
+export const AXPageHeader = (props: PageHeaderProps) => {
   const { propsLeftContent, propsRightContent, propsPageTitle } = props;
 
   useEffect(() => {
     document.title = propsPageTitle;
-  }, [propsPageTitle])
+  }, [propsPageTitle]);
 
   // region Main Return
   return (
     <div className="ax-page-header">
-      {propsLeftContent &&
-        <div className="ax-page-header-left">
-          {propsLeftContent}
-        </div>
-      }
+      {propsLeftContent && (
+        <div className="ax-page-header-left">{propsLeftContent}</div>
+      )}
 
-      {propsRightContent &&
-        <div className="ax-page-header-right">
-          {propsRightContent}
-        </div>
-      }
+      {propsRightContent && (
+        <div className="ax-page-header-right">{propsRightContent}</div>
+      )}
     </div>
   );
 };

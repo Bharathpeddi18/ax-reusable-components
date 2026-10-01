@@ -1,29 +1,15 @@
 'use client';
 
-import {
-  CSSProperties,
-  HTMLAttributes,
-  ReactNode,
-} from 'react';
-
+import { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 import './ax-card.css';
 
 // region Types
-export type AXCardSize =
-  | 'xs'
-  | 'sm'
-  | 'md'
-  | 'lg'
-  | 'xl';
-// endregion
-
+export type CardSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 // region Interfaces
-export interface AXCardProps
-  extends HTMLAttributes<HTMLDivElement> {
-
+export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   /** Card size */
-  propsSize?: AXCardSize;
+  propsSize?: CardSize;
 
   /** Card header content */
   propsHeader?: ReactNode;
@@ -58,105 +44,60 @@ export interface AXCardProps
   /** Inline style for card footer */
   propsFooterStyle?: CSSProperties;
 }
-// endregion
-
 
 // region Main Component
 export const AXCard = ({
   propsSize = 'sm',
-
   propsHeader,
   propsBody,
   propsFooter,
-
   propsClassName = '',
   propsHeaderClassName = '',
   propsBodyClassName = '',
   propsFooterClassName = '',
-
   propsStyle,
   propsHeaderStyle,
   propsBodyStyle,
   propsFooterStyle,
-
   ...cardProps
-}: AXCardProps) => {
-
-  // region Classes
-  const cardClassName = [
-    'ax-card',
-    `ax-card-${propsSize}`,
-    propsClassName,
-  ]
+}: CardProps) => {
+  const cardClassName = ['ax-card', `ax-card-${propsSize}`, propsClassName]
     .filter(Boolean)
     .join(' ');
 
-  const headerClassName = [
-    'ax-card-header',
-    propsHeaderClassName,
-  ]
+  const headerClassName = ['ax-card-header', propsHeaderClassName]
     .filter(Boolean)
     .join(' ');
 
-  const bodyClassName = [
-    'ax-card-body',
-    propsBodyClassName,
-  ]
+  const bodyClassName = ['ax-card-body', propsBodyClassName]
     .filter(Boolean)
     .join(' ');
 
-  const footerClassName = [
-    'ax-card-footer',
-    propsFooterClassName,
-  ]
+  const footerClassName = ['ax-card-footer', propsFooterClassName]
     .filter(Boolean)
     .join(' ');
-  // endregion
 
-
-  // region Main Return
   return (
-    <div
-      {...cardProps}
-      className={cardClassName}
-      style={propsStyle}
-    >
-
-      {/* Card Header */}
+    <div {...cardProps} className={cardClassName} style={propsStyle}>
       {propsHeader && (
-        <div
-          className={headerClassName}
-          style={propsHeaderStyle}
-        >
+        <div className={headerClassName} style={propsHeaderStyle}>
           {propsHeader}
         </div>
       )}
 
-
-      {/* Card Body */}
       {propsBody && (
-        <div
-          className={bodyClassName}
-          style={propsBodyStyle}
-        >
+        <div className={bodyClassName} style={propsBodyStyle}>
           {propsBody}
         </div>
       )}
 
-
-      {/* Card Footer */}
       {propsFooter && (
-        <div
-          className={footerClassName}
-          style={propsFooterStyle}
-        >
+        <div className={footerClassName} style={propsFooterStyle}>
           {propsFooter}
         </div>
       )}
-
     </div>
   );
-  // endregion
 };
 
 export default AXCard;

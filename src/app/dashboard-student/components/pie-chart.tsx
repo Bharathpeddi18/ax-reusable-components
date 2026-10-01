@@ -53,7 +53,7 @@ export const PieChart = ({ segments }: PieChartProps) => {
       {/* Legend */}
       <div className="ax-mt-4 ax-flex ax-flex-wrap ax-items-center ax-justify-center ax-gap-x-3 ax-gap-y-1.5 ax-text-xs">
         {segments.map((seg, idx) => (
-          <div key={idx} className="ax-flex ax-items-center ax-gap-1.5 ax-text-2xs ax-font-medium ax-text-gray-700">
+          <div key={idx} className="ax-flex ax-items-center ax-gap-1-5 ax-text-2xs ax-font-medium ax-text-gray-700">
             <span className="ax-h-2.5 ax-w-2.5 ax-rounded-full ax-shrink-0" style={{ backgroundColor: seg.color }} />
             <span>
               {seg.label} <span className="ax-font-bold">({seg.countLabel})</span>

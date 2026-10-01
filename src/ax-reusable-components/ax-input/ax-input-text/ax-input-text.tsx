@@ -1,78 +1,57 @@
 'use client';
 
-import {
-  CSSProperties,
-  InputHTMLAttributes,
-  JSX,
-} from 'react';
-
+import { CSSProperties, InputHTMLAttributes, JSX } from 'react';
 import './ax-input-text.css';
-
 import AXInputLabel from '../ax-input-label/ax-input-label';
 
 // region Interfaces
-export interface AXInputProps
+export interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-
   /** Label displayed above the input */
   propsLabel?: string;
-
   /** Marks label as mandatory */
   propsMandatory?: boolean;
-
   /** Placeholder text */
   propsPlaceholder?: string;
-
   /** Disable input */
   propsDisabled?: boolean;
-
   /** Currency text displayed beside label */
   propsCurrency?: string;
-
   /** Badge displayed beside label */
   propsBadge?: number | string;
-
   /** Custom class for label */
   propsLabelClassName?: string;
-
   /** Inline style for label */
   propsLabelStyle?: CSSProperties;
-
   /** Icon displayed before the input */
   propsStartIcon?: JSX.Element;
-
   /** Icon displayed after the input */
   propsEndIcon?: JSX.Element;
-
   /** Displays error styling */
   propsHasError?: boolean;
-
   /** Custom class for root component */
   propsClassName?: string;
-
   /** Custom class for input wrapper */
   propsWrapperClassName?: string;
-
   /** Custom class for actual input */
   propsInputClassName?: string;
-
   /** Inline style for root component */
   propsStyle?: CSSProperties;
-
-  /** Input size */
-  propsSize?: 'sm' | 'md' | 'lg';
-
+  /** Size */
+  propsSize?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  /** Read only input */
+  propsReadOnly?: boolean;
+  /** Input id */
+  propsId?: string;
+  /** Input name */
+  propsName?: string;
   /** Input value */
   propsValue?: string;
-
   /** Input change handler */
   propsOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-
   /** Input auto complete */
   propsAutoComplete?: string;
 }
-// endregion
-
 
 // region Main Component
 export const AXInput = ({
@@ -85,75 +64,38 @@ export const AXInput = ({
   propsLabelClassName,
   propsLabelStyle,
   propsAutoComplete,
-
   propsValue,
   propsOnChange,
-
   propsStartIcon,
   propsEndIcon,
-
   propsHasError = false,
-
   propsClassName = '',
   propsWrapperClassName = '',
   propsInputClassName = '',
-
   propsStyle,
-
   propsSize = 'md',
-
   id,
-
   ...inputProps
-}: AXInputProps) => {
-
-  // region Wrapper Classes
+}: InputProps) => {
   const wrapperClassName = [
     'ax-input-wrapper',
-
     `ax-input-${propsSize}`,
-
-    propsStartIcon
-      ? 'ax-input-has-start-icon'
-      : '',
-
-    propsEndIcon
-      ? 'ax-input-has-end-icon'
-      : '',
-
-    propsHasError
-      ? 'ax-input-error'
-      : '',
-
-    propsDisabled
-      ? 'ax-input-disabled'
-      : '',
-
+    propsDisabled ? 'ax-input-disabled' : '',
+    propsHasError ? 'ax-input-error' : '',
     propsWrapperClassName,
   ]
     .filter(Boolean)
     .join(' ');
-  // endregion
 
-
-  // region Root Classes
-  const rootClassName = [
-    'ax-input-container',
-    propsClassName,
+  const inputClasses = [
+    'ax-input-field',
+    propsInputClassName,
   ]
     .filter(Boolean)
     .join(' ');
-  // endregion
 
-
-  // region Main Return
   return (
-    <div
-      className={rootClassName}
-      style={propsStyle}
-    >
-
-      {/* Input Label */}
+    <div className={`ax-input-container ${propsClassName}`.trim()} style={propsStyle}>
       {propsLabel && (
         <AXInputLabel
           propsLabel={propsLabel}
@@ -167,49 +109,29 @@ export const AXInput = ({
         />
       )}
 
-
-      {/* Input Wrapper */}
       <div className={wrapperClassName}>
-
-        {/* Start Icon */}
         {propsStartIcon && (
-          <span className="ax-input-start-icon">
-            {propsStartIcon}
-          </span>
+          <span className="ax-input-start-icon">{propsStartIcon}</span>
         )}
 
-
-        {/* Input */}
         <input
-          {...inputProps}
           id={id}
-          disabled={propsDisabled}
+          className={inputClasses}
           placeholder={propsPlaceholder}
+          disabled={propsDisabled}
+          autoComplete={propsAutoComplete}
           value={propsValue}
           onChange={propsOnChange}
-          autoComplete={propsAutoComplete}
-          required={propsMandatory}
-          className={[
-            'ax-input-field',
-            propsInputClassName,
-          ]
-            .filter(Boolean)
-            .join(' ')}
+          {...inputProps}
         />
 
-
-        {/* End Icon */}
         {propsEndIcon && (
-          <span className="ax-input-end-icon">
-            {propsEndIcon}
-          </span>
+          <span className="ax-input-end-icon">{propsEndIcon}</span>
         )}
-
       </div>
-
     </div>
   );
 };
-// endregion
 
+export const AXInputText = AXInput;
 export default AXInput;

@@ -1,0 +1,25 @@
+/* ==========================================================================
+   AX Notification Content Styles
+   ========================================================================== */
+
+/* Notification Item Legend Dots */
+.ax-notification-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* Legend Colors: Action (Purple), Alert (Yellow), General (Blue) */
+.ax-notification-dot-action {
+  background-color: #8b5cf6;
+}
+
+.ax-notification-dot-alert {
+  background-color: #eab308;
+}
+
+.ax-notification-dot-general {
+  background-color: #3b82f6;
+}

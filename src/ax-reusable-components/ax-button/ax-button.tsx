@@ -2,22 +2,18 @@
 
 import { ButtonHTMLAttributes, CSSProperties, ReactNode } from 'react';
 
-export type AXButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-
-// endregion
+export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
 // region Interface
-export interface AXButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {
-
-  /** Label displayed on the button, aria-label, title*/
-  propsLabel:string
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  /** Label displayed on the button, aria-label, title */
+  propsLabel: string;
 
   /** Label classname primarily used to hide label in small resolution */
-  propsLabelClassName?:string
+  propsLabelClassName?: string;
 
   /** Button size */
-  propsSize?: AXButtonSize;
+  propsSize?: ButtonSize;
 
   /** Icon displayed before the button text */
   propsStartIcon?: ReactNode;
@@ -29,7 +25,7 @@ export interface AXButtonProps
   propsLoading?: boolean;
 
   /** Displays the loading text */
-  propsLoadingText?:string
+  propsLoadingText?: string;
 
   /** Additional CSS class */
   propsClassName?: string;
@@ -39,38 +35,22 @@ export interface AXButtonProps
 
   /** Button disabled state */
   propsDisabled?: boolean;
-
 }
-
-// endregion
 
 // region Main Component
 export const AXButton = ({
   propsLabel,
   propsLabelClassName,
-
   propsSize = 'md',
-
   propsStartIcon,
   propsEndIcon,
-
   propsLoading = false,
-
   propsDisabled = false,
-
   type = 'button',
-
   propsClassName = '',
-
   ...buttonProps
-
-}: AXButtonProps) => {
-
-  const buttonClasses = [
-    'ax-btn',
-    `ax-btn-${propsSize}`,
-    propsClassName,
-  ]
+}: ButtonProps) => {
+  const buttonClasses = ['ax-btn', `ax-btn-${propsSize}`, propsClassName]
     .filter(Boolean)
     .join(' ');
 
@@ -84,29 +64,23 @@ export const AXButton = ({
       aria-busy={propsLoading || undefined}
       {...buttonProps}
     >
-      {propsLoading ? 
-        <>
+      {propsLoading ? (
         <span className="ax-btn-loading"></span>
-        </>
-      :
+      ) : (
         <>
-        {propsStartIcon && (
-          <span className="ax-btn-start-icon">
-            {propsStartIcon}
-          </span>
-        )}
+          {propsStartIcon && (
+            <span className="ax-btn-start-icon">{propsStartIcon}</span>
+          )}
 
-        <span className={`ax-btn-label ${propsLabelClassName}`}>
-          {propsLabel}
-        </span>
-
-        {propsEndIcon && (
-          <span className="ax-btn-end-icon">
-            {propsEndIcon}
+          <span className={`ax-btn-label ${propsLabelClassName || ''}`.trim()}>
+            {propsLabel}
           </span>
-        )}
+
+          {propsEndIcon && (
+            <span className="ax-btn-end-icon">{propsEndIcon}</span>
+          )}
         </>
-      }
+      )}
     </button>
   );
 };

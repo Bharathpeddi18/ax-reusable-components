@@ -1,11 +1,11 @@
 'use client';
-import './ax-input-label.css'
 
+import './ax-input-label.css';
 import React, { CSSProperties, ReactNode } from 'react';
 import { Icon, IconName } from '@/assets/icons';
 
 // region Interfaces
-export interface AXInputLabelProps {
+export interface InputLabelProps {
   /** The text or custom ReactNode content of the label */
   propsLabel: string;
   /** HTML `for` attribute referencing the associated input id */
@@ -36,11 +36,10 @@ export interface AXInputLabelProps {
   propsInfoPosition?: 'top' | 'bottom' | 'left' | 'right';
   /** Disabled state to mute label appearance */
   propsDisabled?: boolean;
-
 }
 
 // region Main Component
-export const AXInputLabel: React.FC<AXInputLabelProps> = (props) => {
+export const AXInputLabel: React.FC<InputLabelProps> = (props) => {
   const {
     propsLabel,
     propsHtmlFor,
@@ -61,7 +60,6 @@ export const AXInputLabel: React.FC<AXInputLabelProps> = (props) => {
     .filter(Boolean)
     .join(' ');
 
-  // region Main Return
   return (
     <label
       id={propsId}
@@ -69,19 +67,16 @@ export const AXInputLabel: React.FC<AXInputLabelProps> = (props) => {
       className={rootClasses}
       style={propsStyle}
     >
-
-      {/* Label Text Content */}
       {propsLabel}
-
-      {/* Currency Indicator */}
-      {propsCurrency && <span className='ax-input-label-currency'>{propsCurrency}</span>}
-
-      {/* Badge / Count */}
-      {propsBadge && <span className='ax-input-label-badge'>{propsBadge}</span>}
-
-      {/* Mandatory Asterisk */}
-      {propsMandatory && <span className="ax-input-label-mandatory">*</span>}
-
+      {propsCurrency && (
+        <span className="ax-input-label-currency">{propsCurrency}</span>
+      )}
+      {propsBadge && (
+        <span className="ax-input-label-badge">{propsBadge}</span>
+      )}
+      {propsMandatory && (
+        <span className="ax-input-label-mandatory">*</span>
+      )}
     </label>
   );
 };

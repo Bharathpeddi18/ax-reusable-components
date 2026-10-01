@@ -135,14 +135,14 @@ export default function Announcements() {
 
         {/* Sort & Action Controls */}
         <div className="ax-flex ax-items-center ax-gap-2">
-          <div className="ax-flex ax-items-center ax-gap-1.5 ax-text-xs ax-font-medium ax-text-gray-500">
+          <div className="ax-flex ax-items-center ax-gap-1-5 ax-text-xs ax-font-medium ax-text-gray-500">
             <Icon name="arrow-down-up" size={14} />
             <span>Sort:</span>
           </div>
 
           <button
             onClick={() => setSortOrder(sortOrder === 'newest' ? 'oldest' : 'newest')}
-            className="ax-flex ax-items-center ax-gap-1.5 ax-px-3 ax-py-1.5 ax-text-xs ax-font-semibold ax-text-gray-700 ax-bg-gray-100 hover:ax-bg-gray-200 ax-rounded-lg ax-transition-colors"
+            className="ax-flex ax-items-center ax-gap-1-5 ax-px-3 ax-py-1.5 ax-text-xs ax-font-semibold ax-text-gray-700 ax-bg-gray-100 hover:ax-bg-gray-200 ax-rounded-lg ax-transition-colors"
             title="Toggle chronological sort order"
           >
             {sortOrder === 'newest' ? 'Newest First' : 'Oldest First'}
@@ -164,17 +164,15 @@ export default function Announcements() {
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`ax-flex ax-items-center ax-gap-1.5 ax-px-3.5 ax-py-1.5 ax-rounded-full ax-text-xs ax-font-semibold ax-whitespace-nowrap ax-transition-all ${
-                isSelected
+              className={`ax-flex ax-items-center ax-gap-1-5 ax-px-3.5 ax-py-1.5 ax-rounded-full ax-text-xs ax-font-semibold ax-whitespace-nowrap ax-transition-all ${isSelected
                   ? 'ax-bg-primary ax-text-white ax-shadow-xs'
                   : 'ax-bg-white ax-text-gray-600 hover:ax-bg-gray-100 ax-border ax-border-gray-200'
-              }`}
+                }`}
             >
               <span>{cat}</span>
               <span
-                className={`ax-px-1.5 ax-py-0.2 ax-rounded-full ax-text-2xs ${
-                  isSelected ? 'ax-bg-white/20 ax-text-white' : 'ax-bg-gray-100 ax-text-gray-500'
-                }`}
+                className={`ax-px-1.5 ax-py-0.2 ax-rounded-full ax-text-2xs ${isSelected ? 'ax-bg-white/20 ax-text-white' : 'ax-bg-gray-100 ax-text-gray-500'
+                  }`}
               >
                 {count}
               </span>
@@ -218,9 +216,8 @@ export default function Announcements() {
             return (
               <article
                 key={item.id}
-                className={`ax-announcement-card ax-flex ax-flex-col ax-gap-3.5 ${
-                  item.isPinned ? 'ax-announcement-card-pinned' : ''
-                }`}
+                className={`ax-announcement-card ax-flex ax-flex-col ax-gap-3.5 ${item.isPinned ? 'ax-announcement-card-pinned' : ''
+                  }`}
               >
                 {/* Header Meta: Category, Priority, Pinned, Date & Actions */}
                 <div className="ax-flex ax-items-center ax-justify-between ax-flex-wrap ax-gap-2">
@@ -235,9 +232,8 @@ export default function Announcements() {
 
                     {/* Category Badge */}
                     <span
-                      className={`ax-px-2.5 ax-py-0.5 ax-rounded-md ax-text-xs ax-font-semibold ${
-                        categoryColors[item.category] || 'ax-badge-general'
-                      }`}
+                      className={`ax-px-2.5 ax-py-0.5 ax-rounded-md ax-text-xs ax-font-semibold ${categoryColors[item.category] || 'ax-badge-general'
+                        }`}
                     >
                       {item.category}
                     </span>
@@ -269,9 +265,8 @@ export default function Announcements() {
 
                     <button
                       onClick={() => toggleBookmark(item.id)}
-                      className={`ax-p-1 ax-rounded-md hover:ax-bg-gray-100 ax-transition-colors ${
-                        isBookmarked ? 'ax-text-primary' : 'ax-text-gray-400'
-                      }`}
+                      className={`ax-p-1 ax-rounded-md hover:ax-bg-gray-100 ax-transition-colors ${isBookmarked ? 'ax-text-primary' : 'ax-text-gray-400'
+                        }`}
                       title={isBookmarked ? 'Remove Bookmark' : 'Bookmark Announcement'}
                       aria-label="Bookmark"
                     >
@@ -310,16 +305,16 @@ export default function Announcements() {
                             file.type === 'pdf'
                               ? 'file-earmark-pdf-fill'
                               : file.type === 'excel'
-                              ? 'file-earmark-excel-fill'
-                              : 'file-earmark-text-fill'
+                                ? 'file-earmark-excel-fill'
+                                : 'file-earmark-text-fill'
                           }
                           size={14}
                           className={
                             file.type === 'pdf'
                               ? 'ax-text-red-600'
                               : file.type === 'excel'
-                              ? 'ax-text-green-600'
-                              : 'ax-text-blue-600'
+                                ? 'ax-text-green-600'
+                                : 'ax-text-blue-600'
                           }
                         />
                         <span className="ax-truncate ax-max-w-xs">{file.name}</span>
@@ -358,14 +353,14 @@ export default function Announcements() {
                   {/* Properties: Target Audience & Timestamp Details */}
                   <div className="ax-flex ax-items-center ax-flex-wrap ax-gap-3 ax-text-xs ax-text-gray-600">
                     {/* Target Audience */}
-                    <div className="ax-flex ax-items-center ax-gap-1.5 ax-bg-gray-50 ax-px-2.5 ax-py-1 ax-rounded-md ax-border ax-border-gray-100">
+                    <div className="ax-flex ax-items-center ax-gap-1-5 ax-bg-gray-50 ax-px-2.5 ax-py-1 ax-rounded-md ax-border ax-border-gray-100">
                       <Icon name="people" size={13} className="ax-text-gray-400" />
                       <span className="ax-font-medium ax-text-gray-700">Audience:</span>
                       <span className="ax-text-gray-600">{item.targetAudience}</span>
                     </div>
 
                     {/* Created At Date */}
-                    <div className="ax-flex ax-items-center ax-gap-1.5 ax-text-gray-500">
+                    <div className="ax-flex ax-items-center ax-gap-1-5 ax-text-gray-500">
                       <Icon name="calendar-event" size={13} className="ax-text-gray-400" />
                       <span>{formatted}</span>
                     </div>

@@ -12,7 +12,7 @@ import './ax-input-file-upload.css';
 import AXInputLabel from '../ax-input-label/ax-input-label';
 
 // region Interfaces
-export interface AXInputFileUploadProps {
+export interface InputFileUploadProps {
   propsLabel?: string;
 
   propsAccept?: string[];
@@ -59,7 +59,7 @@ export const AXInputFileUpload = ({
   propsClassName = '',
 
   propsOnChange,
-}: AXInputFileUploadProps) => {
+}: InputFileUploadProps) => {
 
   // region Refs
   const inputRef =
