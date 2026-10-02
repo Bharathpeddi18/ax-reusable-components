@@ -1,8 +1,23 @@
-export const SampleNotifications = [
+import { NOTIFICATION_TYPE } from '@/../global-config';
+
+export interface NotificationItem {
+  id: number | string;
+  type: NOTIFICATION_TYPE | string;
+  referenceCode?: string;
+  title: string;
+  description: string;
+  isRead: boolean;
+  createdAt: string;
+  readAt: string | null;
+  referenceId: string | number | null;
+}
+
+export const SAMPLE_NOTIFICATIONS: NotificationItem[] = [
   {
     id: 1,
-    type: 'action',
-    title: 'Leave approval required',
+    type: NOTIFICATION_TYPE.action,
+    referenceCode: 'LFS000271',
+    title: 'Leave approval required.',
     description: 'Rahul requested leave for tomorrow.',
     isRead: false,
     createdAt: '2026-10-01T10:30:00',
@@ -11,8 +26,9 @@ export const SampleNotifications = [
   },
   {
     id: 2,
-    type: 'action',
-    title: 'Fee concession review',
+    type: NOTIFICATION_TYPE.action,
+    referenceCode: 'FCS000124',
+    title: 'Fee concession review required.',
     description: 'Fee concession request submitted by Priya.',
     isRead: false,
     createdAt: '2026-09-30T15:15:00',
@@ -21,8 +37,9 @@ export const SampleNotifications = [
   },
   {
     id: 3,
-    type: 'alert',
-    title: 'Your leave has been approved',
+    type: NOTIFICATION_TYPE.alert,
+    referenceCode: 'LFS000270',
+    title: 'Your leave request has been approved.',
     description: 'Your leave request for tomorrow has been approved.',
     isRead: false,
     createdAt: '2026-10-01T09:45:00',
@@ -31,8 +48,9 @@ export const SampleNotifications = [
   },
   {
     id: 4,
-    type: 'alert',
-    title: 'Monthly attendance updated',
+    type: NOTIFICATION_TYPE.alert,
+    referenceCode: 'ATT000301',
+    title: 'Monthly attendance updated.',
     description: 'Your attendance report for September is now available.',
     isRead: true,
     createdAt: '2026-09-30T16:00:00',
@@ -41,8 +59,9 @@ export const SampleNotifications = [
   },
   {
     id: 5,
-    type: 'general',
-    title: 'Sports Day Tomorrow',
+    type: NOTIFICATION_TYPE.general,
+    referenceCode: 'EVT000401',
+    title: 'Sports Day Tomorrow.',
     description: 'Sports Day starts tomorrow at 9:00 AM.',
     isRead: false,
     createdAt: '2026-10-01T08:00:00',
@@ -51,8 +70,9 @@ export const SampleNotifications = [
   },
   {
     id: 6,
-    type: 'general',
-    title: 'Annual Day',
+    type: NOTIFICATION_TYPE.general,
+    referenceCode: 'EVT000402',
+    title: 'Annual Day.',
     description: 'Annual Day will be held on 10 October.',
     isRead: true,
     createdAt: '2026-09-30T16:30:00',
@@ -61,4 +81,5 @@ export const SampleNotifications = [
   },
 ];
 
-export default SampleNotifications;
+export const SampleNotifications = SAMPLE_NOTIFICATIONS;
+export default SAMPLE_NOTIFICATIONS;

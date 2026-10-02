@@ -1,0 +1,96 @@
+/* ========================================
+   Legend Dot
+   ======================================== */
+
+.ax-legend::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(var(--ax-legend-size) + 2px);
+  width: var(--ax-legend-size, 8px);
+  height: var(--ax-legend-size, 8px);
+  border-radius: 50%;
+  background-color: var(--ax-legend-color, var(--ax-color-primary));
+}
+
+
+/* Sizes */
+
+.ax-legend-sm {
+  --ax-legend-size: 6px;
+}
+
+.ax-legend-md {
+  --ax-legend-size: 8px;
+}
+
+.ax-legend-lg {
+  --ax-legend-size: 10px;
+}
+
+
+/* Colors */
+
+.ax-legend-primary {
+  --ax-legend-color: var(--ax-color-primary);
+}
+
+.ax-legend-secondary {
+  --ax-legend-color: var(--ax-color-secondary);
+}
+
+.ax-legend-success {
+  --ax-legend-color: var(--ax-color-success);
+}
+
+.ax-legend-danger {
+  --ax-legend-color: var(--ax-color-danger);
+}
+
+.ax-legend-warning {
+  --ax-legend-color: var(--ax-color-warning);
+}
+
+.ax-legend-info {
+  --ax-legend-color: var(--ax-color-info);
+}
+
+.ax-legend-purple {
+  --ax-legend-color: var(--ax-color-purple);
+}
+
+.ax-legend-blue {
+  --ax-legend-color: var(--ax-color-blue);
+}
+
+.ax-legend-cyan {
+  --ax-legend-color: var(--ax-color-cyan);
+}
+
+.ax-legend-teal {
+  --ax-legend-color: var(--ax-color-teal);
+}
+
+.ax-legend-green {
+  --ax-legend-color: var(--ax-color-green);
+}
+
+.ax-legend-orange {
+  --ax-legend-color: var(--ax-color-orange);
+}
+
+.ax-legend-red {
+  --ax-legend-color: var(--ax-color-red);
+}
+
+.ax-legend-rose {
+  --ax-legend-color: var(--ax-color-rose);
+}
+
+.ax-legend-pink {
+  --ax-legend-color: var(--ax-color-pink);
+}
+
+.ax-legend-fuchsia{
+  --ax-legend-color: var(--ax-color-fuchsia);
+}

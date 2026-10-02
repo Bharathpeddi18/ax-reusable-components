@@ -2,34 +2,36 @@
    Accent Color Utilities
    ======================================== */
 
-.ax-accent-auto {
-  accent-color: auto;
-}
+.ax-accent-auto { accent-color: auto; }
+.ax-accent-current { accent-color: currentColor; }
 
-.ax-accent-current {
-  accent-color: currentColor;
-}
+.ax-accent-primary { accent-color: var(--ax-color-primary); }
+.ax-accent-secondary { accent-color: var(--ax-color-secondary); }
+.ax-accent-default { accent-color: var(--ax-color-default); }
+.ax-accent-accent { accent-color: var(--ax-color-accent); }
+.ax-accent-success { accent-color: var(--ax-color-success); }
+.ax-accent-warning { accent-color: var(--ax-color-warning); }
+.ax-accent-danger { accent-color: var(--ax-color-danger); }
+.ax-accent-info { accent-color: var(--ax-color-info); }
 
-.ax-accent-primary {
-  accent-color: var(--ax-color-primary);
-}
-
-.ax-accent-secondary {
-  accent-color: var(--ax-color-secondary);
-}
-
-.ax-accent-accent {
-  accent-color: var(--ax-color-accent);
-}
-
-.ax-accent-success {
-  accent-color: var(--ax-color-success);
-}
-
-.ax-accent-warning {
-  accent-color: var(--ax-color-warning);
-}
-
-.ax-accent-danger {
-  accent-color: var(--ax-color-danger);
-}
+.ax-accent-purple { accent-color: var(--ax-color-purple); }
+.ax-accent-indigo { accent-color: var(--ax-color-indigo); }
+.ax-accent-blue { accent-color: var(--ax-color-blue); }
+.ax-accent-cyan { accent-color: var(--ax-color-cyan); }
+.ax-accent-teal { accent-color: var(--ax-color-teal); }
+.ax-accent-green { accent-color: var(--ax-color-green); }
+.ax-accent-yellow { accent-color: var(--ax-color-yellow); }
+.ax-accent-orange { accent-color: var(--ax-color-orange); }
+.ax-accent-red { accent-color: var(--ax-color-red); }
+.ax-accent-rose { accent-color: var(--ax-color-rose); }
+.ax-accent-pink { accent-color: var(--ax-color-pink); }
+.ax-accent-brown { accent-color: var(--ax-color-brown); }
+.ax-accent-slate { accent-color: var(--ax-color-slate); }
+.ax-accent-amber { accent-color: var(--ax-color-amber); }
+.ax-accent-emerald { accent-color: var(--ax-color-emerald); }
+.ax-accent-violet { accent-color: var(--ax-color-violet); }
+.ax-accent-fuchsia { accent-color: var(--ax-color-fuchsia); }
+.ax-accent-sky { accent-color: var(--ax-color-sky); }
+.ax-accent-lime { accent-color: var(--ax-color-lime); }
+.ax-accent-black { accent-color: var(--ax-color-black); }
+.ax-accent-white { accent-color: var(--ax-color-white); }

@@ -1,81 +1,225 @@
 /* ========================================
-   Color Tokens
+   Astrax Color Tokens
    ======================================== */
 
 :root {
-  /* Primary: USAF Air Force Blue */
+
+  --ax-body-bg-color: #EEF3F8;
+
+  /* ----------------------------------------
+     Core / Semantic
+     ---------------------------------------- */
+
   --ax-color-primary: #00308F;
-  --ax-color-primary-light: #4D70B5;
+  --ax-color-primary-light: #EDF3FF;
+
+  --ax-color-secondary: #5B3FBF;
+  --ax-color-secondary-light: #F2EFFF;
+
+  --ax-color-default: #374151;
+  --ax-color-default-light: #F3F4F6;
+
+  --ax-color-success: #087F5B;
+  --ax-color-success-light: #EAFBF4;
+
+  --ax-color-danger: #B42318;
+  --ax-color-danger-light: #FFF0EE;
+
+  --ax-color-warning: #8A4B00;
+  --ax-color-warning-light: #FFF7E6;
+
+  --ax-color-info: #005A9C;
+  --ax-color-info-light: #EAF6FF;
+
+
+  /* ----------------------------------------
+     Extended Colors
+     ---------------------------------------- */
+
+  --ax-color-purple: #6B21A8;
+  --ax-color-purple-light: #F7EDFF;
+
+  --ax-color-indigo: #3730A3;
+  --ax-color-indigo-light: #EEF0FF;
+
+  --ax-color-blue: #0057B8;
+  --ax-color-blue-light: #EDF6FF;
+
+  --ax-color-cyan: #006575;
+  --ax-color-cyan-light: #E8F9FC;
+
+  --ax-color-teal: #00695C;
+  --ax-color-teal-light: #E6F8F5;
+
+  --ax-color-green: #33691E;
+  --ax-color-green-light: #F1F8E9;
+
+  --ax-color-yellow: #795500;
+  --ax-color-yellow-light: #FFF8CC;
+
+  --ax-color-orange: #9A3412;
+  --ax-color-orange-light: #FFF1E8;
+
+  --ax-color-red: #B42318;
+  --ax-color-red-light: #FFF0EE;
+
+  --ax-color-rose: #9F1239;
+  --ax-color-rose-light: #FFF1F3;
+
+  --ax-color-pink: #9D174D;
+  --ax-color-pink-light: #FFF0F6;
+
+  --ax-color-brown: #6F4E37;
+  --ax-color-brown-light: #F8F1EC;
+
+  --ax-color-slate: #334155;
+  --ax-color-slate-light: #F1F5F9;
+
+  --ax-color-black: #000000;
+  --ax-color-black-light: #E5E7EB;
+
+  --ax-color-white: #FFFFFF;
+  --ax-color-white-light: #F9FAFB;
+
+
+  /* ----------------------------------------
+     Additional Palette
+     ---------------------------------------- */
+
+  --ax-color-amber: #B45309;
+  --ax-color-amber-light: #FFFBEB;
+
+  --ax-color-emerald: #047857;
+  --ax-color-emerald-light: #ECFDF5;
+
+  --ax-color-violet: #6D28D9;
+  --ax-color-violet-light: #F5F3FF;
+
+  --ax-color-fuchsia: #A21CAF;
+  --ax-color-fuchsia-light: #FDF4FF;
+
+  --ax-color-sky: #0284C7;
+  --ax-color-sky-light: #F0F9FF;
+
+  --ax-color-lime: #4D7C0F;
+  --ax-color-lime-light: #F7FEE7;
+
+  --ax-color-gray: #4B5563;
+  --ax-color-gray-light: #F3F4F6;
+
+  --ax-color-zinc: #52525B;
+  --ax-color-zinc-light: #F4F4F5;
+
+  --ax-color-neutral: #525252;
+  --ax-color-neutral-light: #F5F5F5;
+
+  --ax-color-stone: #57534E;
+  --ax-color-stone-light: #F5F5F4;
+
+  --ax-color-accent: #C9A227;
+  --ax-color-accent-light: #FFF8CC;
+
+
+  /* ----------------------------------------
+     Interactive States
+     ---------------------------------------- */
+
   --ax-color-primary-hover: #002776;
   --ax-color-primary-active: #001E5B;
 
-  /* Secondary: USAF Cadet / Steel Slate Gray */
-  --ax-color-secondary: #607D94;
-  --ax-color-secondary-light: #91A5B5;
-  --ax-color-secondary-hover: #4f677a;
-  --ax-color-secondary-active: #3e5160;
+  --ax-color-secondary-hover: #4C33A3;
+  --ax-color-secondary-active: #3E2987;
 
-  /* Accent: USAF Aviation Insignia Gold / Amber */
-  --ax-color-accent: #C9A227;
-  --ax-color-accent-light: #DDC96D;
-  --ax-color-accent-hover: #b08d22;
-  --ax-color-accent-active: #94771c;
+  --ax-color-success-hover: #06694A;
+  --ax-color-warning-hover: #703D00;
+  --ax-color-danger-hover: #961C13;
+  --ax-color-info-hover: #004A80;
 
-  /* ----------------------------------------
-     Semantic
-     ---------------------------------------- */
-  --ax-color-success: #16a34a;
-  --ax-color-success-hover: #15803d;
+  --ax-color-accent-hover: #B08D22;
+  --ax-color-accent-active: #94771C;
 
-  --ax-color-warning: #C9A227;
-  --ax-color-warning-hover: #b08d22;
-
-  --ax-color-danger: #dc2626;
-  --ax-color-danger-hover: #b91c1c;
-
-  --ax-color-info: #00308F;
-  --ax-color-info-hover: #002776;
 
   /* ----------------------------------------
-     Background & Surface (Clean Aircraft / Airfield)
+     Background / Surface
      ---------------------------------------- */
-  --ax-color-background: #F5F7FA;
+
+  --ax-color-background: #F8FAFC;
+
   --ax-color-surface: #ffffff;
-  --ax-color-surface-secondary: #ebf0f5;
-  --ax-color-surface-tertiary: #dfe5ec;
+  --ax-color-surface-secondary: #F1F5F9;
+  --ax-color-surface-tertiary: #E2E8F0;
+
 
   /* ----------------------------------------
-     Text (Cockpit Navy / Deep Dark Slate)
+     Text
      ---------------------------------------- */
-  --ax-color-text: #17212B;
-  --ax-color-text-secondary: #4a5a6a;
-  --ax-color-text-muted: #607D94;
-  --ax-color-text-disabled: #9eb1c2;
+
+  --ax-color-text: #1E293B;
+  --ax-color-text-secondary: #475569;
+  --ax-color-text-muted: #64748B;
+  --ax-color-text-disabled: #94A3B8;
+
 
   /* ----------------------------------------
-     Border
+     Borders
      ---------------------------------------- */
-  --ax-color-border: #d2dbe5;
-  --ax-color-border-secondary: #cbd5e1;
-  --ax-color-border-focus: var(--ax-color-primary);
+
+  --ax-color-border: #E2E8F0;
+  --ax-color-border-secondary: #CBD5E1;
+  --ax-color-border-focus: #00308F;
+
 
   /* ----------------------------------------
-     Neutral Palette
+     Focus
      ---------------------------------------- */
-  --ax-color-white: #ffffff;
-  --ax-color-black: #000000;
 
-  --ax-color-gray-50: #f8fafc;
-  --ax-color-gray-100: #f1f5f9;
-  --ax-color-gray-200: #e2e8f0;
-  --ax-color-gray-300: #cbd5e1;
-  --ax-color-gray-400: #94a3b8;
-  --ax-color-gray-500: #64748b;
+  --ax-color-focus: #00308F33;
+
+
+  /* ----------------------------------------
+     Neutral Grayscale
+     ---------------------------------------- */
+
+  --ax-color-gray-50: #F8FAFC;
+  --ax-color-gray-100: #F1F5F9;
+  --ax-color-gray-200: #E2E8F0;
+  --ax-color-gray-300: #CBD5E1;
+  --ax-color-gray-400: #94A3B8;
+  --ax-color-gray-500: #64748B;
   --ax-color-gray-600: #475569;
   --ax-color-gray-700: #334155;
-  --ax-color-gray-800: #1e293b;
-  --ax-color-gray-900: #0f172a;
+  --ax-color-gray-800: #1E293B;
+  --ax-color-gray-900: #0F172A;
   --ax-color-gray-950: #020617;
 
-  --ax-color-focus: #00308f55;
+
+  /* ----------------------------------------
+     KPI Colors
+     ---------------------------------------- */
+ --ax-kpi-color: #0573E1;
+--ax-kpi-bg-color: #DCEFFF;
+
+--ax-kpi-color-1: #00308F;
+--ax-kpi-bg-color-1: #DDE8FF;
+
+--ax-kpi-color-2: #5B3FBF;
+--ax-kpi-bg-color-2: #E7DEFF;
+
+--ax-kpi-color-3: #087F5B;
+--ax-kpi-bg-color-3: #D9F6E9;
+
+--ax-kpi-color-4: #B45309;
+--ax-kpi-bg-color-4: #FFF0CC;
+
+--ax-kpi-color-5: #005A9C;
+--ax-kpi-bg-color-5: #D8EEFF;
+
+--ax-kpi-color-6: #6B21A8;
+--ax-kpi-bg-color-6: #EEDBFF;
+
+--ax-kpi-color-7: #006575;
+--ax-kpi-bg-color-7: #D2F2F7;
+
+--ax-kpi-color-8: #9F1239;
+--ax-kpi-bg-color-8: #FFDDE6;
 }

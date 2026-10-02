@@ -10,43 +10,52 @@
 [data-theme="light"] {
   color-scheme: light;
 
-  --ax-color-background: #ffffff;
-  --ax-color-surface: #ffffff;
-  --ax-color-surface-secondary: #f8fafc;
-  --ax-color-surface-tertiary: #f1f5f9;
+  --ax-color-background: #F8FAFC;
+  --ax-color-surface: #FFFFFF;
+  --ax-color-surface-secondary: #F1F5F9;
+  --ax-color-surface-tertiary: #E2E8F0;
 
-  --ax-color-text: #0f172a;
+  --ax-color-text: #1E293B;
   --ax-color-text-secondary: #475569;
-  --ax-color-text-muted: #64748b;
-  --ax-color-text-disabled: #94a3b8;
+  --ax-color-text-muted: #64748B;
+  --ax-color-text-disabled: #94A3B8;
 
-  --ax-color-border: #e2e8f0;
-  --ax-color-border-secondary: #cbd5e1;
+  --ax-color-border: #E2E8F0;
+  --ax-color-border-secondary: #CBD5E1;
   --ax-color-border-focus: var(--ax-color-primary);
 
-  --ax-color-focus: var(--ax-color-primary);
+  --ax-color-focus: #00308F33;
 
-  --ax-color-primary: #2563eb;
-  --ax-color-primary-hover: #1d4ed8;
-  --ax-color-primary-active: #1e40af;
+  --ax-color-primary: #00308F;
+  --ax-color-primary-light: #EDF3FF;
+  --ax-color-primary-hover: #002776;
+  --ax-color-primary-active: #001E5B;
   --ax-color-on-primary: #ffffff;
 
-  --ax-color-secondary: #64748b;
-  --ax-color-secondary-hover: #475569;
-  --ax-color-secondary-active: #334155;
+  --ax-color-secondary: #5B3FBF;
+  --ax-color-secondary-light: #F2EFFF;
+  --ax-color-secondary-hover: #4C33A3;
+  --ax-color-secondary-active: #3E2987;
   --ax-color-on-secondary: #ffffff;
 
-  --ax-color-success: #16a34a;
-  --ax-color-success-hover: #15803d;
+  --ax-color-default: #374151;
+  --ax-color-default-light: #F3F4F6;
 
-  --ax-color-warning: #d97706;
-  --ax-color-warning-hover: #b45309;
+  --ax-color-success: #087F5B;
+  --ax-color-success-light: #EAFBF4;
+  --ax-color-success-hover: #06694A;
 
-  --ax-color-danger: #dc2626;
-  --ax-color-danger-hover: #b91c1c;
+  --ax-color-warning: #8A4B00;
+  --ax-color-warning-light: #FFF7E6;
+  --ax-color-warning-hover: #703D00;
 
-  --ax-color-info: #0284c7;
-  --ax-color-info-hover: #0369a1;
+  --ax-color-danger: #B42318;
+  --ax-color-danger-light: #FFF0EE;
+  --ax-color-danger-hover: #961C13;
+
+  --ax-color-info: #005A9C;
+  --ax-color-info-light: #EAF6FF;
+  --ax-color-info-hover: #004A80;
 }
 
 /* ----------------------------------------
@@ -56,36 +65,45 @@
 [data-theme="dark"] {
   color-scheme: dark;
 
-  --ax-color-background: #090d16;
-  --ax-color-surface: #0f172a;
-  --ax-color-surface-secondary: #1e293b;
-  --ax-color-surface-tertiary: #334155;
+  --ax-color-background: #0B1120;
+  --ax-color-surface: #111827;
+  --ax-color-surface-secondary: #1F2937;
+  --ax-color-surface-tertiary: #374151;
 
-  --ax-color-text: #f8fafc;
-  --ax-color-text-secondary: #cbd5e1;
-  --ax-color-text-muted: #94a3b8;
-  --ax-color-text-disabled: #64748b;
+  --ax-color-text: #F9FAFB;
+  --ax-color-text-secondary: #CBD5E1;
+  --ax-color-text-muted: #94A3B8;
+  --ax-color-text-disabled: #64748B;
 
-  --ax-color-border: #334155;
-  --ax-color-border-secondary: #1e293b;
-  --ax-color-border-focus: #60a5fa;
+  --ax-color-border: #374151;
+  --ax-color-border-secondary: #1F2937;
+  --ax-color-border-focus: #3B82F6;
 
-  --ax-color-focus: #60a5fa;
+  --ax-color-focus: #3B82F655;
 
-  --ax-color-primary: #3b82f6;
-  --ax-color-primary-hover: #60a5fa;
-  --ax-color-primary-active: #93c5fd;
+  --ax-color-primary: #3B82F6;
+  --ax-color-primary-light: #1E293B;
+  --ax-color-primary-hover: #60A5FA;
+  --ax-color-primary-active: #93C5FD;
   --ax-color-on-primary: #ffffff;
 
-  --ax-color-secondary: #94a3b8;
-  --ax-color-secondary-hover: #cbd5e1;
-  --ax-color-secondary-active: #e2e8f0;
-  --ax-color-on-secondary: #0f172a;
+  --ax-color-secondary: #8B5CF6;
+  --ax-color-secondary-light: #2E1065;
+  --ax-color-secondary-hover: #A78BFA;
+  --ax-color-secondary-active: #C4B5FD;
+  --ax-color-on-secondary: #ffffff;
 
-  --ax-color-success: #22c55e;
-  --ax-color-warning: #f59e0b;
-  --ax-color-danger: #ef4444;
-  --ax-color-info: #38bdf8;
+  --ax-color-default: #E5E7EB;
+  --ax-color-default-light: #1F2937;
+
+  --ax-color-success: #10B981;
+  --ax-color-success-light: #064E3B;
+  --ax-color-warning: #F59E0B;
+  --ax-color-warning-light: #78350F;
+  --ax-color-danger: #EF4444;
+  --ax-color-danger-light: #7F1D1D;
+  --ax-color-info: #38BDF8;
+  --ax-color-info-light: #0C4A6E;
 }
 
 /* ----------------------------------------
@@ -96,35 +114,44 @@
   :root:not([data-theme="light"]):not([data-theme="dark"]) {
     color-scheme: dark;
 
-    --ax-color-background: #090d16;
-    --ax-color-surface: #0f172a;
-    --ax-color-surface-secondary: #1e293b;
-    --ax-color-surface-tertiary: #334155;
+    --ax-color-background: #0B1120;
+    --ax-color-surface: #111827;
+    --ax-color-surface-secondary: #1F2937;
+    --ax-color-surface-tertiary: #374151;
 
-    --ax-color-text: #f8fafc;
-    --ax-color-text-secondary: #cbd5e1;
-    --ax-color-text-muted: #94a3b8;
-    --ax-color-text-disabled: #64748b;
+    --ax-color-text: #F9FAFB;
+    --ax-color-text-secondary: #CBD5E1;
+    --ax-color-text-muted: #94A3B8;
+    --ax-color-text-disabled: #64748B;
 
-    --ax-color-border: #334155;
-    --ax-color-border-secondary: #1e293b;
-    --ax-color-border-focus: #60a5fa;
+    --ax-color-border: #374151;
+    --ax-color-border-secondary: #1F2937;
+    --ax-color-border-focus: #3B82F6;
 
-    --ax-color-focus: #60a5fa;
+    --ax-color-focus: #3B82F655;
 
-    --ax-color-primary: #3b82f6;
-    --ax-color-primary-hover: #60a5fa;
-    --ax-color-primary-active: #93c5fd;
+    --ax-color-primary: #3B82F6;
+    --ax-color-primary-light: #1E293B;
+    --ax-color-primary-hover: #60A5FA;
+    --ax-color-primary-active: #93C5FD;
     --ax-color-on-primary: #ffffff;
 
-    --ax-color-secondary: #94a3b8;
-    --ax-color-secondary-hover: #cbd5e1;
-    --ax-color-secondary-active: #e2e8f0;
-    --ax-color-on-secondary: #0f172a;
+    --ax-color-secondary: #8B5CF6;
+    --ax-color-secondary-light: #2E1065;
+    --ax-color-secondary-hover: #A78BFA;
+    --ax-color-secondary-active: #C4B5FD;
+    --ax-color-on-secondary: #ffffff;
 
-    --ax-color-success: #22c55e;
-    --ax-color-warning: #f59e0b;
-    --ax-color-danger: #ef4444;
-    --ax-color-info: #38bdf8;
+    --ax-color-default: #E5E7EB;
+    --ax-color-default-light: #1F2937;
+
+    --ax-color-success: #10B981;
+    --ax-color-success-light: #064E3B;
+    --ax-color-warning: #F59E0B;
+    --ax-color-warning-light: #78350F;
+    --ax-color-danger: #EF4444;
+    --ax-color-danger-light: #7F1D1D;
+    --ax-color-info: #38BDF8;
+    --ax-color-info-light: #0C4A6E;
   }
 }

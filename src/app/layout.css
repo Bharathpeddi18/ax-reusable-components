@@ -5,7 +5,7 @@
 .ax-app-layout {
   height: 100dvh;
   width: 100dvw;
-  background-color: var(--ax-color-surface);
+  background-color: var(--ax-body-bg-color);
   position: relative;
   display: flex;
   flex-direction: column;

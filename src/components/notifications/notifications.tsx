@@ -7,14 +7,14 @@ import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import NotificationContent from './notification-content/notification-content';
 
 export default function Notifications() {
-  const [isOpenPopover, setIsOpenPopover] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <AXPopover
-      propsSize='md'
-      propsIsControlled={true}
-      propsIsOpen={isOpenPopover}
-      propsOnOpenChange={setIsOpenPopover}
+      propsSize="md"
+      propsIsControlled
+      propsIsOpen={isOpen}
+      propsOnOpenChange={setIsOpen}
       propsContentClassName="ax-p-0 ax-shadow-xl"
       propsTrigger={
         <AXButton
@@ -23,12 +23,10 @@ export default function Notifications() {
           propsStartIcon={<Icon name="bell" size={18} />}
           propsSize="sm"
           propsClassName="ax-text-primary ax-rounded-full"
-          onClick={() => { setIsOpenPopover(!isOpenPopover); }}
+          onClick={() => setIsOpen((prev) => !prev)}
         />
       }
-      propsContent={
-        <NotificationContent onClose={() => setIsOpenPopover(false)} />
-      }
+      propsContent={<NotificationContent onClose={() => setIsOpen(false)} />}
     />
   );
 }

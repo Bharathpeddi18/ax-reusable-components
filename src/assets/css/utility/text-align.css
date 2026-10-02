@@ -26,3 +26,12 @@
 .ax-text-end {
   text-align: end;
 }
+
+.ax-text-break {
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+.ax-text-break-all {
+  word-break: break-all;
+}

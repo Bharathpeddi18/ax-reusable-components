@@ -42,18 +42,18 @@
 
 /* Sizes */
 .ax-tab-sm {
-  padding: 8px 12px;
-  font-size: 12px;
+  padding: 6px 10px;
+  font-size: 13px;
 }
 
 .ax-tab-md {
-  padding: 10px 16px;
+  padding: 8px 12px;
   font-size: 14px;
 }
 
 .ax-tab-lg {
-  padding: 12px 20px;
-  font-size: 16px;
+  padding: 10px 14px;
+  font-size: 15px;
 }
 
 

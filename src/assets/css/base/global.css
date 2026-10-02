@@ -65,7 +65,7 @@ img {
    ======================================== */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--ax-color-primary-light) transparent;
+  scrollbar-color: var(--ax-color-primary) transparent;
 }
 
 *::-webkit-scrollbar {
@@ -79,7 +79,7 @@ img {
 
 *::-webkit-scrollbar-thumb {
   cursor: pointer;
-  background: var(--ax-color-primary-light);
+  background: var(--ax-color-primary);
   border-radius: 10px;
 }
 

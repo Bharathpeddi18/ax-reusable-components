@@ -80,11 +80,33 @@
 
 .ax-from-primary { --ax-gradient-from: var(--ax-color-primary) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-primary) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
 .ax-from-secondary { --ax-gradient-from: var(--ax-color-secondary) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-secondary) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-default { --ax-gradient-from: var(--ax-color-default) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-default) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
 .ax-from-accent { --ax-gradient-from: var(--ax-color-accent) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-accent) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
 .ax-from-success { --ax-gradient-from: var(--ax-color-success) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-success) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
 .ax-from-warning { --ax-gradient-from: var(--ax-color-warning) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-warning) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
 .ax-from-danger { --ax-gradient-from: var(--ax-color-danger) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-danger) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
 .ax-from-info { --ax-gradient-from: var(--ax-color-info) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-info) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+
+.ax-from-purple { --ax-gradient-from: var(--ax-color-purple) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-purple) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-indigo { --ax-gradient-from: var(--ax-color-indigo) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-indigo) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-blue { --ax-gradient-from: var(--ax-color-blue) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-blue) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-cyan { --ax-gradient-from: var(--ax-color-cyan) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-cyan) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-teal { --ax-gradient-from: var(--ax-color-teal) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-teal) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-green { --ax-gradient-from: var(--ax-color-green) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-green) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-yellow { --ax-gradient-from: var(--ax-color-yellow) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-yellow) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-orange { --ax-gradient-from: var(--ax-color-orange) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-orange) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-red { --ax-gradient-from: var(--ax-color-red) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-red) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-rose { --ax-gradient-from: var(--ax-color-rose) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-rose) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-pink { --ax-gradient-from: var(--ax-color-pink) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-pink) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-brown { --ax-gradient-from: var(--ax-color-brown) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-brown) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-slate { --ax-gradient-from: var(--ax-color-slate) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-slate) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-amber { --ax-gradient-from: var(--ax-color-amber) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-amber) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-emerald { --ax-gradient-from: var(--ax-color-emerald) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-emerald) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-violet { --ax-gradient-from: var(--ax-color-violet) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-violet) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-fuchsia { --ax-gradient-from: var(--ax-color-fuchsia) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-fuchsia) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-sky { --ax-gradient-from: var(--ax-color-sky) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-sky) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+.ax-from-lime { --ax-gradient-from: var(--ax-color-lime) var(--ax-gradient-from-position, ); --ax-gradient-to: color-mix(in srgb, var(--ax-color-lime) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
+
 .ax-from-white { --ax-gradient-from: #ffffff var(--ax-gradient-from-position, ); --ax-gradient-to: rgb(255 255 255 / 0) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
 .ax-from-black { --ax-gradient-from: #000000 var(--ax-gradient-from-position, ); --ax-gradient-to: rgb(0 0 0 / 0) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
 .ax-from-transparent { --ax-gradient-from: transparent var(--ax-gradient-from-position, ); --ax-gradient-to: transparent var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-gradient-to); }
@@ -107,11 +129,33 @@
 
 .ax-via-primary { --ax-gradient-to: color-mix(in srgb, var(--ax-color-primary) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-primary) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
 .ax-via-secondary { --ax-gradient-to: color-mix(in srgb, var(--ax-color-secondary) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-secondary) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-default { --ax-gradient-to: color-mix(in srgb, var(--ax-color-default) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-default) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
 .ax-via-accent { --ax-gradient-to: color-mix(in srgb, var(--ax-color-accent) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-accent) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
 .ax-via-success { --ax-gradient-to: color-mix(in srgb, var(--ax-color-success) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-success) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
 .ax-via-warning { --ax-gradient-to: color-mix(in srgb, var(--ax-color-warning) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-warning) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
 .ax-via-danger { --ax-gradient-to: color-mix(in srgb, var(--ax-color-danger) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-danger) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
 .ax-via-info { --ax-gradient-to: color-mix(in srgb, var(--ax-color-info) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-info) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+
+.ax-via-purple { --ax-gradient-to: color-mix(in srgb, var(--ax-color-purple) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-purple) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-indigo { --ax-gradient-to: color-mix(in srgb, var(--ax-color-indigo) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-indigo) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-blue { --ax-gradient-to: color-mix(in srgb, var(--ax-color-blue) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-blue) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-cyan { --ax-gradient-to: color-mix(in srgb, var(--ax-color-cyan) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-cyan) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-teal { --ax-gradient-to: color-mix(in srgb, var(--ax-color-teal) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-teal) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-green { --ax-gradient-to: color-mix(in srgb, var(--ax-color-green) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-green) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-yellow { --ax-gradient-to: color-mix(in srgb, var(--ax-color-yellow) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-yellow) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-orange { --ax-gradient-to: color-mix(in srgb, var(--ax-color-orange) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-orange) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-red { --ax-gradient-to: color-mix(in srgb, var(--ax-color-red) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-red) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-rose { --ax-gradient-to: color-mix(in srgb, var(--ax-color-rose) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-rose) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-pink { --ax-gradient-to: color-mix(in srgb, var(--ax-color-pink) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-pink) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-brown { --ax-gradient-to: color-mix(in srgb, var(--ax-color-brown) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-brown) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-slate { --ax-gradient-to: color-mix(in srgb, var(--ax-color-slate) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-slate) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-amber { --ax-gradient-to: color-mix(in srgb, var(--ax-color-amber) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-amber) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-emerald { --ax-gradient-to: color-mix(in srgb, var(--ax-color-emerald) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-emerald) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-violet { --ax-gradient-to: color-mix(in srgb, var(--ax-color-violet) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-violet) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-fuchsia { --ax-gradient-to: color-mix(in srgb, var(--ax-color-fuchsia) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-fuchsia) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-sky { --ax-gradient-to: color-mix(in srgb, var(--ax-color-sky) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-sky) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+.ax-via-lime { --ax-gradient-to: color-mix(in srgb, var(--ax-color-lime) 0%, transparent) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), var(--ax-color-lime) var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
+
 .ax-via-white { --ax-gradient-to: rgb(255 255 255 / 0) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), #ffffff var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
 .ax-via-black { --ax-gradient-to: rgb(0 0 0 / 0) var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), #000000 var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
 .ax-via-transparent { --ax-gradient-to: transparent var(--ax-gradient-to-position, ); --ax-gradient-stops: var(--ax-gradient-from), transparent var(--ax-gradient-via-position, ), var(--ax-gradient-to); }
@@ -134,11 +178,33 @@
 
 .ax-to-primary { --ax-gradient-to: var(--ax-color-primary) var(--ax-gradient-to-position, ); }
 .ax-to-secondary { --ax-gradient-to: var(--ax-color-secondary) var(--ax-gradient-to-position, ); }
+.ax-to-default { --ax-gradient-to: var(--ax-color-default) var(--ax-gradient-to-position, ); }
 .ax-to-accent { --ax-gradient-to: var(--ax-color-accent) var(--ax-gradient-to-position, ); }
 .ax-to-success { --ax-gradient-to: var(--ax-color-success) var(--ax-gradient-to-position, ); }
 .ax-to-warning { --ax-gradient-to: var(--ax-color-warning) var(--ax-gradient-to-position, ); }
 .ax-to-danger { --ax-gradient-to: var(--ax-color-danger) var(--ax-gradient-to-position, ); }
 .ax-to-info { --ax-gradient-to: var(--ax-color-info) var(--ax-gradient-to-position, ); }
+
+.ax-to-purple { --ax-gradient-to: var(--ax-color-purple) var(--ax-gradient-to-position, ); }
+.ax-to-indigo { --ax-gradient-to: var(--ax-color-indigo) var(--ax-gradient-to-position, ); }
+.ax-to-blue { --ax-gradient-to: var(--ax-color-blue) var(--ax-gradient-to-position, ); }
+.ax-to-cyan { --ax-gradient-to: var(--ax-color-cyan) var(--ax-gradient-to-position, ); }
+.ax-to-teal { --ax-gradient-to: var(--ax-color-teal) var(--ax-gradient-to-position, ); }
+.ax-to-green { --ax-gradient-to: var(--ax-color-green) var(--ax-gradient-to-position, ); }
+.ax-to-yellow { --ax-gradient-to: var(--ax-color-yellow) var(--ax-gradient-to-position, ); }
+.ax-to-orange { --ax-gradient-to: var(--ax-color-orange) var(--ax-gradient-to-position, ); }
+.ax-to-red { --ax-gradient-to: var(--ax-color-red) var(--ax-gradient-to-position, ); }
+.ax-to-rose { --ax-gradient-to: var(--ax-color-rose) var(--ax-gradient-to-position, ); }
+.ax-to-pink { --ax-gradient-to: var(--ax-color-pink) var(--ax-gradient-to-position, ); }
+.ax-to-brown { --ax-gradient-to: var(--ax-color-brown) var(--ax-gradient-to-position, ); }
+.ax-to-slate { --ax-gradient-to: var(--ax-color-slate) var(--ax-gradient-to-position, ); }
+.ax-to-amber { --ax-gradient-to: var(--ax-color-amber) var(--ax-gradient-to-position, ); }
+.ax-to-emerald { --ax-gradient-to: var(--ax-color-emerald) var(--ax-gradient-to-position, ); }
+.ax-to-violet { --ax-gradient-to: var(--ax-color-violet) var(--ax-gradient-to-position, ); }
+.ax-to-fuchsia { --ax-gradient-to: var(--ax-color-fuchsia) var(--ax-gradient-to-position, ); }
+.ax-to-sky { --ax-gradient-to: var(--ax-color-sky) var(--ax-gradient-to-position, ); }
+.ax-to-lime { --ax-gradient-to: var(--ax-color-lime) var(--ax-gradient-to-position, ); }
+
 .ax-to-white { --ax-gradient-to: #ffffff var(--ax-gradient-to-position, ); }
 .ax-to-black { --ax-gradient-to: #000000 var(--ax-gradient-to-position, ); }
 .ax-to-transparent { --ax-gradient-to: transparent var(--ax-gradient-to-position, ); }

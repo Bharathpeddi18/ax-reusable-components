@@ -64,3 +64,27 @@
 .ax-decoration-secondary { text-decoration-color: var(--ax-color-secondary); }
 .ax-decoration-current { text-decoration-color: currentColor; }
 .ax-decoration-transparent { text-decoration-color: transparent; }
+
+/* region Title Border */
+
+.ax-title-border {
+  position: relative;
+  padding-bottom: 3px;
+  line-height: 36px;
+}
+
+.ax-title-border::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60%;
+  height: 3px;
+  border-radius: 12px;
+}
+
+.ax-title-border-primary::before{
+   background-color: var(--ax-color-primary);
+}
+
+/* endregion */

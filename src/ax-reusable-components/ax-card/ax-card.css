@@ -4,7 +4,7 @@
   width: 100%;
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--ax-shadow-md);
   display: flex;
   flex-direction: column;
 }
@@ -40,59 +40,41 @@
 /* region Sizes */
 
 .ax-card-xs {
-  padding: 8px;
+  padding: 2px;
   border-radius: 6px;
 }
 
 .ax-card-sm {
-  padding: 12px;
-  border-radius: 8px;
-}
-
-.ax-card-md {
-  padding: 16px;
+  padding: 4px;
   border-radius: 10px;
 }
 
+.ax-card-md {
+  padding: 8px;
+  border-radius: 14px;
+}
+
 .ax-card-lg {
-  padding: 24px;
-  border-radius: 12px;
+  padding: 12px;
+  border-radius: 18px;
 }
 
 .ax-card-xl {
-  padding: 32px;
-  border-radius: 16px;
-}
-
-/* Section padding scaled by card size */
-.ax-card-xs .ax-card-header,
-.ax-card-xs .ax-card-body,
-.ax-card-xs .ax-card-footer {
-  padding: 8px;
-}
-
-.ax-card-sm .ax-card-header,
-.ax-card-sm .ax-card-body,
-.ax-card-sm .ax-card-footer {
-  padding: 12px;
-}
-
-.ax-card-md .ax-card-header,
-.ax-card-md .ax-card-body,
-.ax-card-md .ax-card-footer {
   padding: 16px;
+  border-radius: 22px;
 }
 
-.ax-card-lg .ax-card-header,
-.ax-card-lg .ax-card-body,
-.ax-card-lg .ax-card-footer {
-  padding: 24px;
-}
 
-.ax-card-xl .ax-card-header,
-.ax-card-xl .ax-card-body,
-.ax-card-xl .ax-card-footer {
-  padding: 32px;
+.ax-card-xs { --ax-card-section-padding: 8px; }
+.ax-card-sm { --ax-card-section-padding: 12px; }
+.ax-card-md { --ax-card-section-padding: 16px; }
+.ax-card-lg { --ax-card-section-padding: 24px; }
+.ax-card-xl { --ax-card-section-padding: 32px; }
+
+.ax-card-header,
+.ax-card-body,
+.ax-card-footer {
+  padding: var(--ax-card-section-padding, 12px);
 }
 
 /* endregion */

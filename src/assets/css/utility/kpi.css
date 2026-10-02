@@ -1,0 +1,141 @@
+/* ========================================
+   KPI Styles
+   ======================================== */
+
+/* ----------------------------------------
+   Base KPI
+   ---------------------------------------- */
+
+.ax-kpi {
+  background-color: var(--ax-color-surface);
+  border: 1.5px solid var(--ax-color-border);
+  border-radius: var(--ax-radius-2xl);
+}
+
+.ax-kpi:hover {
+  border-color: var(--ax-kpi-color);
+}
+
+.ax-kpi.active {
+  border-color: var(--ax-kpi-color);
+}
+
+/* ----------------------------------------
+   KPI Text
+   ---------------------------------------- */
+
+.ax-kpi-color {
+  color: var(--ax-kpi-color) !important;
+}
+
+
+/* ----------------------------------------
+   KPI Background
+   ---------------------------------------- */
+
+.ax-kpi-bg {
+  background-color: var(--ax-kpi-color) !important;
+  color: var(--ax-color-white) !important;
+}
+
+.ax-kpi-bg-light {
+  background-color: var(--ax-kpi-bg) !important;
+  color: var(--ax-kpi-color) !important;
+}
+
+
+/* ----------------------------------------
+   KPI Icon
+   ---------------------------------------- */
+
+.ax-kpi-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ax-kpi-color);
+  background-color: var(--ax-kpi-bg);
+}
+
+
+/* ----------------------------------------
+   KPI Borders
+   ---------------------------------------- */
+
+.ax-kpi-border {
+  border: 1.5px solid var(--ax-color-border);
+}
+
+.ax-kpi-border:hover,
+.ax-kpi-border:active,
+.ax-kpi-border.active{
+  border-color: var(--ax-kpi-color);
+}
+
+.ax-kpi-border-left {
+  border-left: 3px solid var(--ax-kpi-color);
+}
+
+.ax-kpi-border-right {
+  border-right: 3px solid var(--ax-kpi-color);
+}
+
+.ax-kpi-border-top {
+  border-top: 3px solid var(--ax-kpi-color);
+}
+
+.ax-kpi-border-bottom {
+  border-bottom: 3px solid var(--ax-kpi-color);
+}
+
+/* ----------------------------------------
+   KPI Focus
+   ---------------------------------------- */
+
+.ax-kpi:focus-visible {
+  outline: 2px solid var(--ax-kpi-color);
+  outline-offset: 2px;
+}
+
+/* ----------------------------------------
+   KPI Color Mapping
+   ---------------------------------------- */
+
+[status-kpis="1"] {
+  --ax-kpi-color: var(--ax-kpi-color-1);
+  --ax-kpi-bg: var(--ax-kpi-bg-color-1);
+}
+
+[status-kpis="2"] {
+  --ax-kpi-color: var(--ax-kpi-color-2);
+  --ax-kpi-bg: var(--ax-kpi-bg-color-2);
+}
+
+[status-kpis="3"] {
+  --ax-kpi-color: var(--ax-kpi-color-3);
+  --ax-kpi-bg: var(--ax-kpi-bg-color-3);
+}
+
+[status-kpis="4"] {
+  --ax-kpi-color: var(--ax-kpi-color-4);
+  --ax-kpi-bg: var(--ax-kpi-bg-color-4);
+}
+
+[status-kpis="5"] {
+  --ax-kpi-color: var(--ax-kpi-color-5);
+  --ax-kpi-bg: var(--ax-kpi-bg-color-5);
+}
+
+[status-kpis="6"] {
+  --ax-kpi-color: var(--ax-kpi-color-6);
+  --ax-kpi-bg: var(--ax-kpi-bg-color-6);
+}
+
+[status-kpis="7"] {
+  --ax-kpi-color: var(--ax-kpi-color-7);
+  --ax-kpi-bg: var(--ax-kpi-bg-color-7);
+}
+
+[status-kpis="8"] {
+  --ax-kpi-color: var(--ax-kpi-color-8);
+  --ax-kpi-bg: var(--ax-kpi-bg-color-8);
+}

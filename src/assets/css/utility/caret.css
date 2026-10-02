@@ -2,45 +2,41 @@
    Caret Utilities
    ======================================== */
 
-
-/* ========================================
-   Caret Color
-   ======================================== */
-
-.ax-caret-transparent {
-  caret-color: transparent;
-}
-
-.ax-caret-current {
-  caret-color: currentColor;
-
-}
-
-.ax-caret-inherit {
-  caret-color: inherit;
-}
-
+.ax-caret-transparent { caret-color: transparent; }
+.ax-caret-current { caret-color: currentColor; }
+.ax-caret-inherit { caret-color: inherit; }
 
 /* ========================================
    Caret Color Tokens
    ======================================== */
 
-.ax-caret-primary {
-  caret-color: var(--ax-color-primary);
-}
+.ax-caret-primary { caret-color: var(--ax-color-primary); }
+.ax-caret-secondary { caret-color: var(--ax-color-secondary); }
+.ax-caret-default { caret-color: var(--ax-color-default); }
+.ax-caret-accent { caret-color: var(--ax-color-accent); }
+.ax-caret-success { caret-color: var(--ax-color-success); }
+.ax-caret-warning { caret-color: var(--ax-color-warning); }
+.ax-caret-danger { caret-color: var(--ax-color-danger); }
+.ax-caret-info { caret-color: var(--ax-color-info); }
 
-.ax-caret-secondary {
-  caret-color: var(--ax-color-secondary);
-}
-
-.ax-caret-success {
-  caret-color: var(--ax-color-success);
-}
-
-.ax-caret-warning {
-  caret-color: var(--ax-color-warning);
-}
-
-.ax-caret-danger {
-  caret-color: var(--ax-color-danger);
-}
+.ax-caret-purple { caret-color: var(--ax-color-purple); }
+.ax-caret-indigo { caret-color: var(--ax-color-indigo); }
+.ax-caret-blue { caret-color: var(--ax-color-blue); }
+.ax-caret-cyan { caret-color: var(--ax-color-cyan); }
+.ax-caret-teal { caret-color: var(--ax-color-teal); }
+.ax-caret-green { caret-color: var(--ax-color-green); }
+.ax-caret-yellow { caret-color: var(--ax-color-yellow); }
+.ax-caret-orange { caret-color: var(--ax-color-orange); }
+.ax-caret-red { caret-color: var(--ax-color-red); }
+.ax-caret-rose { caret-color: var(--ax-color-rose); }
+.ax-caret-pink { caret-color: var(--ax-color-pink); }
+.ax-caret-brown { caret-color: var(--ax-color-brown); }
+.ax-caret-slate { caret-color: var(--ax-color-slate); }
+.ax-caret-amber { caret-color: var(--ax-color-amber); }
+.ax-caret-emerald { caret-color: var(--ax-color-emerald); }
+.ax-caret-violet { caret-color: var(--ax-color-violet); }
+.ax-caret-fuchsia { caret-color: var(--ax-color-fuchsia); }
+.ax-caret-sky { caret-color: var(--ax-color-sky); }
+.ax-caret-lime { caret-color: var(--ax-color-lime); }
+.ax-caret-black { caret-color: var(--ax-color-black); }
+.ax-caret-white { caret-color: var(--ax-color-white); }

@@ -1,7 +1,6 @@
 'use client';
 
 import { CSSProperties, HTMLAttributes, ReactNode } from 'react';
-import './ax-card.css';
 
 // region Types
 export type CardSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';

@@ -34,6 +34,7 @@
 
 
 /* 5. Utilities */
+@import "./utility/kpi.css";
 @import "./utility/display.css";
 @import "./utility/flex.css";
 @import "./utility/grid.css";
@@ -42,6 +43,7 @@
 @import "./utility/spacing.css";
 @import "./utility/sizing.css";
 @import "./utility/typography.css";
+@import "./utility/spacing.css";
 @import "./utility/font-style.css";
 @import "./utility/font-variants.css";
 @import "./utility/vertical-align.css";
@@ -97,6 +99,9 @@
 @import "./utility/rtl.css";
 @import "./utility/print.css";
 @import "./utility/accessibility.css";
+
+/* Add-ons */
+@import "./utility/legends.css";
 
 /* 6. States & Responsive */
 @import "./utility/states.css";
