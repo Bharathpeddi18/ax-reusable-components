@@ -27,7 +27,7 @@ export interface InputSelectOption {
 
 // region Interfaces
 export interface InputSelectProps {
-  propsLabel?: string;
+  propsLabel: string;
   propsOptions: InputSelectOption[];
   propsValue?: string;
   propsSearchable?: boolean;
@@ -39,6 +39,7 @@ export interface InputSelectProps {
   propsInputSize?: InputSelectSize;
   propsClassName?: string;
   propsInputClassName?: string;
+  propsLabelClassName?: string;
   propsOnChange?: (value: string) => void;
 }
 // endregion
@@ -57,6 +58,7 @@ export const AXInputSelect = ({
   propsInputSize = 'md',
   propsClassName = '',
   propsInputClassName = '',
+  propsLabelClassName = '',
   propsOnChange,
 }: InputSelectProps) => {
   // region Selected Value
@@ -72,24 +74,26 @@ export const AXInputSelect = ({
 
   // region Main Return
   return (
-    <div
-      className={[
-        'ax-select',
-        `ax-select-radius-${propsInputRadius}`,
-        `ax-select-size-${propsInputSize}`,
-        propsClassName,
-      ]
-        .filter(Boolean)
-        .join(' ')}
-    >
-      {propsLabel && (
+    <>
+    <div className={`${propsClassName}`}>
+    {propsLabel && (
         <AXInputLabel
+          propsClassName={propsLabelClassName}
           propsLabel={propsLabel}
           propsMandatory={propsMandatory}
           propsDisabled={propsDisabled}
         />
       )}
-
+    <div
+      className={[
+        'ax-select',
+        `ax-select-radius-${propsInputRadius}`,
+        `ax-select-size-${propsInputSize}`,
+        propsInputClassName,
+      ]
+        .filter(Boolean)
+        .join(' ')}
+    >
       <Select<InputSelectOption, false>
         options={propsOptions}
         value={selectedValue}
@@ -106,6 +110,8 @@ export const AXInputSelect = ({
         classNamePrefix="ax-react-select"
       />
     </div>
+    </div>
+    </>
   );
 };
 // endregion

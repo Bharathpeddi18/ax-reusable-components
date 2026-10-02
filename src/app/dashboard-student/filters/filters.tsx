@@ -1,193 +1,111 @@
 'use client';
 
-import { useState } from 'react';
+import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import AXInputSelect from '@/ax-reusable-components/ax-input/ax-input-select/ax-input-select';
-
-// region Options Constants
-const FISCAL_YEAR_OPTIONS = [
-  { label: '2026', value: '2026' },
-  { label: '2025', value: '2025' },
-  { label: '2024', value: '2024' },
-];
-
-const ALL_OPTION = [
-  { label: 'All', value: 'all' },
-  { label: 'Option 1', value: '1' },
-  { label: 'Option 2', value: '2' },
-];
-// endregion
+import { InputSelectOption } from '@/ax-reusable-components/ax-input/ax-input-select/ax-input-select';
+import { useEffect, useState } from 'react';
+import { ACADEMIC_YEAR_OPTIONS, CLASS_OPTIONS, GENDER_OPTIONS, GRADE_OPTIONS, SECTION_OPTIONS_BY_CLASS } from './sample-data';
 
 // region Main Component
-export const DashboardFilters = () => {
-  const [fiscalYear, setFiscalYear] = useState('2026');
-  const [ctfStaff, setCtfStaff] = useState('all');
-  const [priority, setPriority] = useState('all');
-  const [category, setCategory] = useState('all');
-  const [eeic, setEeic] = useState('all');
-  const [ba, setBa] = useState('all');
-  const [sag, setSag] = useState('all');
-  const [pec, setPec] = useState('all');
-  const [fundsNeedByDate, setFundsNeedByDate] = useState('all');
+export const Filters = () => {
+  const [valueAcademicYear, setValueAcademicYear] = useState(ACADEMIC_YEAR_OPTIONS[0].value);
+  const [valueClass, setValueClass] = useState(CLASS_OPTIONS[0].value);
+  const [valueSection, setValueSection] = useState(SECTION_OPTIONS_BY_CLASS[valueClass][0].value);
+  const [valueGender, setValueGender] = useState(GENDER_OPTIONS[0].value);
+  const [valueGrade, setValueGrade] = useState(GRADE_OPTIONS[0].value);
 
-  const handleClearAll = () => {
-    setFiscalYear('2026');
-    setCtfStaff('all');
-    setPriority('all');
-    setCategory('all');
-    setEeic('all');
-    setBa('all');
-    setSag('all');
-    setPec('all');
-    setFundsNeedByDate('all');
-  };
+  const [optionsSection, setOptionsSection] = useState<InputSelectOption[]>(SECTION_OPTIONS_BY_CLASS[valueClass]);
+
+  useEffect(() => {
+    setOptionsSection(SECTION_OPTIONS_BY_CLASS[valueClass]);
+    setValueSection(SECTION_OPTIONS_BY_CLASS[valueClass][0].value);
+  }, [valueClass]);
+
+  function handleClearAll() {
+    const defaultClass = CLASS_OPTIONS[0].value;
+
+    setValueAcademicYear(ACADEMIC_YEAR_OPTIONS[0].value);
+    setValueClass(defaultClass);
+    setValueSection(SECTION_OPTIONS_BY_CLASS[defaultClass][0].value);
+    setValueGender(GENDER_OPTIONS[0].value);
+    setValueGrade(GRADE_OPTIONS[0].value);
+  }
 
   return (
     <div className="ax-flex ax-flex-wrap ax-items-center ax-gap-2.5">
       {/* Fiscal Year */}
       <div className="ax-flex ax-items-center ax-gap-1-5">
-        <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">Fiscal Year</span>
-        <div className="ax-w-24">
-          <AXInputSelect
-            propsInputSize="xs"
-            propsInputRadius="lg"
-            propsOptions={FISCAL_YEAR_OPTIONS}
-            propsValue={fiscalYear}
-            propsOnChange={(v) => setFiscalYear(v)}
-            propsClearable={false}
-          />
-        </div>
-      </div>
+        <AXInputSelect
+          propsLabel='Academic Year'
+          propsClassName="ax-input-horizontal"
+          propsInputClassName='ax-w-20'
+          propsLabelClassName="ax-text-nowrap"
+          propsInputSize="xs"
+          propsInputRadius="3xl"
+          propsOptions={ACADEMIC_YEAR_OPTIONS}
+          propsValue={valueAcademicYear}
+          propsOnChange={(v) => setValueAcademicYear(v)}
+          propsClearable={false}
+        />
+        <AXInputSelect
+          propsLabel='Class'
+          propsClassName="ax-input-horizontal"
+          propsLabelClassName="ax-text-nowrap"
+          propsInputClassName='ax-w-20'
+          propsInputSize="xs"
+          propsInputRadius="3xl"
+          propsOptions={CLASS_OPTIONS}
+          propsValue={valueClass}
+          propsOnChange={(v) => setValueClass(v)}
+          propsClearable={false}
+        />
+        <AXInputSelect
+          propsLabel='Section'
+          propsClassName="ax-input-horizontal"
+          propsLabelClassName="ax-text-nowrap"
+          propsInputClassName='ax-w-20'
+          propsInputSize="xs"
+          propsInputRadius="3xl"
+          propsOptions={optionsSection}
+          propsValue={valueSection}
+          propsOnChange={(v) => setValueSection(v)}
+          propsClearable={false}
+        />
+        <AXInputSelect
+          propsLabel="Gender"
+          propsClassName="ax-input-horizontal"
+          propsLabelClassName="ax-text-nowrap"
+          propsInputClassName="ax-w-20"
+          propsInputSize="xs"
+          propsInputRadius="3xl"
+          propsOptions={GENDER_OPTIONS}
+          propsValue={valueGender}
+          propsOnChange={(v) => setValueGender(v)}
+          propsClearable={false}
+        />
 
-      {/* CTF/Staff */}
-      <div className="ax-flex ax-items-center ax-gap-1-5">
-        <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">CTF/Staff</span>
-        <div className="ax-w-20">
-          <AXInputSelect
-            propsInputSize="xs"
-            propsInputRadius="lg"
-            propsOptions={ALL_OPTION}
-            propsValue={ctfStaff}
-            propsOnChange={(v) => setCtfStaff(v)}
-            propsClearable={false}
-          />
-        </div>
+        <AXInputSelect
+          propsLabel="Grade"
+          propsClassName="ax-input-horizontal"
+          propsLabelClassName="ax-text-nowrap"
+          propsInputClassName="ax-w-20"
+          propsInputSize="xs"
+          propsInputRadius="3xl"
+          propsOptions={GRADE_OPTIONS}
+          propsValue={valueGrade}
+          propsOnChange={(v) => setValueGrade(v)}
+          propsClearable={false}
+        />
+        {/* Clear All */}
+        <AXButton
+          propsLabel="Clear All"
+          propsSize="sm"
+          className="ax-text-xs ax-font-semibold ax-text-primary ax-underline ax-whitespace-nowrap ax-cursor-pointer"
+          onClick={handleClearAll}
+        />
       </div>
-
-      {/* Priority */}
-      <div className="ax-flex ax-items-center ax-gap-1-5">
-        <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">Priority</span>
-        <div className="ax-w-20">
-          <AXInputSelect
-            propsInputSize="xs"
-            propsInputRadius="lg"
-            propsOptions={ALL_OPTION}
-            propsValue={priority}
-            propsOnChange={(v) => setPriority(v)}
-            propsClearable={false}
-          />
-        </div>
-      </div>
-
-      {/* Category */}
-      <div className="ax-flex ax-items-center ax-gap-1-5">
-        <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">Category</span>
-        <div className="ax-w-20">
-          <AXInputSelect
-            propsInputSize="xs"
-            propsInputRadius="lg"
-            propsOptions={ALL_OPTION}
-            propsValue={category}
-            propsOnChange={(v) => setCategory(v)}
-            propsClearable={false}
-          />
-        </div>
-      </div>
-
-      {/* EEIC */}
-      <div className="ax-flex ax-items-center ax-gap-1-5">
-        <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">EEIC</span>
-        <div className="ax-w-20">
-          <AXInputSelect
-            propsInputSize="xs"
-            propsInputRadius="lg"
-            propsOptions={ALL_OPTION}
-            propsValue={eeic}
-            propsOnChange={(v) => setEeic(v)}
-            propsClearable={false}
-          />
-        </div>
-      </div>
-
-      {/* BA */}
-      <div className="ax-flex ax-items-center ax-gap-1-5">
-        <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">BA</span>
-        <div className="ax-w-20">
-          <AXInputSelect
-            propsInputSize="xs"
-            propsInputRadius="lg"
-            propsOptions={ALL_OPTION}
-            propsValue={ba}
-            propsOnChange={(v) => setBa(v)}
-            propsClearable={false}
-          />
-        </div>
-      </div>
-
-      {/* SAG */}
-      <div className="ax-flex ax-items-center ax-gap-1-5">
-        <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">SAG</span>
-        <div className="ax-w-20">
-          <AXInputSelect
-            propsInputSize="xs"
-            propsInputRadius="lg"
-            propsOptions={ALL_OPTION}
-            propsValue={sag}
-            propsOnChange={(v) => setSag(v)}
-            propsClearable={false}
-          />
-        </div>
-      </div>
-
-      {/* PEC */}
-      <div className="ax-flex ax-items-center ax-gap-1-5">
-        <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">PEC</span>
-        <div className="ax-w-20">
-          <AXInputSelect
-            propsInputSize="xs"
-            propsInputRadius="lg"
-            propsOptions={ALL_OPTION}
-            propsValue={pec}
-            propsOnChange={(v) => setPec(v)}
-            propsClearable={false}
-          />
-        </div>
-      </div>
-
-      {/* Funds Need by Date */}
-      <div className="ax-flex ax-items-center ax-gap-1-5">
-        <span className="ax-text-xs ax-font-medium ax-text-gray-700 ax-whitespace-nowrap">Funds Need by Date</span>
-        <div className="ax-w-20">
-          <AXInputSelect
-            propsInputSize="xs"
-            propsInputRadius="lg"
-            propsOptions={ALL_OPTION}
-            propsValue={fundsNeedByDate}
-            propsOnChange={(v) => setFundsNeedByDate(v)}
-            propsClearable={false}
-          />
-        </div>
-      </div>
-
-      {/* Clear All */}
-      <button
-        type="button"
-        onClick={handleClearAll}
-        className="ax-text-xs ax-font-bold ax-text-primary ax-underline ax-cursor-pointer hover:ax-text-primary-hover ax-whitespace-nowrap ax-px-1"
-      >
-        Clear All
-      </button>
     </div>
   );
 };
 
-export default DashboardFilters;
+export default Filters;

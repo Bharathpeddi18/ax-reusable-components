@@ -14,12 +14,12 @@ import AXBadge from "@/ax-reusable-components/ax-mini-components/ax-badge/ax-bad
 import { DASHBOARD_COLORS } from '../../../../global-config';
 
 const studentsByGrade = [
-  { grade: 'A', students: 180, color: DASHBOARD_COLORS.gradeA },
-  { grade: 'B', students: 150, color: DASHBOARD_COLORS.gradeB },
-  { grade: 'C', students: 120, color: DASHBOARD_COLORS.gradeC },
-  { grade: 'D', students: 90, color: DASHBOARD_COLORS.gradeD },
-  { grade: 'E', students: 60, color: DASHBOARD_COLORS.gradeE },
-  { grade: 'F', students: 30, color: DASHBOARD_COLORS.gradeF },
+  { grade: 'Grade A', students: 180, color: DASHBOARD_COLORS.gradeA },
+  { grade: 'Grade B', students: 150, color: DASHBOARD_COLORS.gradeB },
+  { grade: 'Grade C', students: 120, color: DASHBOARD_COLORS.gradeC },
+  { grade: 'Grade D', students: 90, color: DASHBOARD_COLORS.gradeD },
+  { grade: 'Grade E', students: 60, color: DASHBOARD_COLORS.gradeE },
+  { grade: 'Grade F', students: 30, color: DASHBOARD_COLORS.gradeF },
 ];
 
 const totalStudents = studentsByGrade.reduce(
@@ -32,6 +32,7 @@ export const ChartStudentsByGrade = () => {
     <AXCard
       propsSize="lg"
       propsHeaderClassName="ax-pt-2 ax-pb-0"
+      propsBodyClassName='ax-flex ax-items-center'
       propsHeader={
         <div className="ax-flex ax-items-center ax-gap-1">
           <h1
@@ -50,6 +51,7 @@ export const ChartStudentsByGrade = () => {
       }
       propsBody={
         <>
+        <div className="ax-flex ax-flex-col ax-items-center ax-justify-between">
           <div className="ax-w-full ax-h-200">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
@@ -75,7 +77,7 @@ export const ChartStudentsByGrade = () => {
                 </Pie>
 
                 <Tooltip
-                  formatter={(value) => [`${value}`, 'Students']}
+                  formatter={(value: any, grade: any) => [`${value}`, `${grade}`]}
                   contentStyle={{
                     borderRadius: '8px',
                     border: '1px solid #E2E8F0',
@@ -85,7 +87,6 @@ export const ChartStudentsByGrade = () => {
               </PieChart>
             </ResponsiveContainer>
           </div>
-
           <div className="ax-flex ax-items-center ax-justify-center ax-flex-wrap ax-gap-3 ax-mt-2">
             {studentsByGrade.map((item) => (
               <span
@@ -95,10 +96,11 @@ export const ChartStudentsByGrade = () => {
                   '--ax-legend-color': item.color,
                 } as React.CSSProperties}
               >
-                Grade {item.grade}
+                {item.grade}
               </span>
             ))}
           </div>
+        </div>
         </>
       }
     />

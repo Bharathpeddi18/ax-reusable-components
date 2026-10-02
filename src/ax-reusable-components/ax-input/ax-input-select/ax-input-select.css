@@ -7,14 +7,17 @@
   --ax-select-placeholder: var(--ax-color-gray-400);
   --ax-select-disabled-bg: var(--ax-color-gray-100);
   --ax-select-disabled-text: var(--ax-color-gray-400);
-  --ax-select-radius: var(--ax-radius-md);
+  --ax-select-radius: var(--ax-radius-sm);
   --ax-select-min-height: 40px;
   --ax-select-font-size: var(--ax-font-size-sm);
+  --ax-select-font-weight: var(--ax-font-weight-medium);
   --ax-select-padding-y: 4px;
   --ax-select-padding-x: 10px;
   --ax-select-indicator-padding: 8px;
   --ax-select-option-padding: 8px 10px;
   --ax-select-option-min-height: 36px;
+  --ax-select-max-height: 150px;
+  --ax-select-min-width: 100px;
 
   display: flex;
   flex-direction: column;
@@ -102,6 +105,7 @@
   border-radius: var(--ax-select-radius);
   background-color: var(--ax-select-bg);
   font-size: var(--ax-select-font-size);
+  font-weight: var(--ax-select-font-weight);
   box-shadow: none;
   cursor: pointer;
   transition:
@@ -111,7 +115,7 @@
 }
 
 .ax-select .ax-react-select__control:hover {
-  border-color: var(--ax-color-primary-hover);
+  border-color: var(--ax-select-hover-border);
 }
 
 .ax-select .ax-react-select__control--is-focused {
@@ -168,7 +172,7 @@
 }
 
 .ax-select .ax-react-select__indicator:hover {
-  color: var(--ax-color-primary-hover);
+  color: var(--ax-select-hover-color);
 }
 
 .ax-select .ax-react-select__indicator-separator {
@@ -182,20 +186,16 @@
 
 .ax-select .ax-react-select__menu {
   z-index: 1000;
+  min-width: var(--ax-select-min-width);
   margin-top: 4px;
-  overflow: hidden;
-  border: 1px solid var(--ax-select-border);
-  border-radius: var(--ax-select-radius);
+  border-radius: var(--ax-radius-lg);
   background-color: var(--ax-select-bg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.ax-select.ax-select-radius-full .ax-react-select__menu {
-  border-radius: var(--ax-radius-xl);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .ax-select .ax-react-select__menu-list {
-  max-height: 240px;
+  max-height: var(--ax-select-max-height);
+  min-width: var(--ax-select-min-width);
   padding: 4px;
 }
 
@@ -213,6 +213,7 @@
   background-color: transparent;
   color: var(--ax-select-text);
   font-size: var(--ax-select-font-size);
+  font-weight: var(--ax-select-font-weight);
   cursor: pointer;
   transition:
     background-color 0.15s ease,
@@ -220,41 +221,25 @@
 }
 
 .ax-select .ax-react-select__option--is-focused {
-  background-color:
-    color-mix(
-      in srgb,
-      var(--ax-color-primary-light) 10%,
-      white
-    );
+  background-color: var(--ax-select-hover-bg);
+  color: var(--ax-select-hover-color);
+  border-radius: var(--ax-select-hover-radius);
 }
 
 .ax-select .ax-react-select__option--is-selected {
-  background-color:
-    color-mix(
-      in srgb,
-      var(--ax-color-primary-light) 18%,
-      white
-    );
-  color: var(--ax-color-primary);
+  background-color: var(--ax-select-selected-bg);
+  color: var(--ax-select-selected-color);
+  border-radius: var(--ax-select-hover-radius);
 }
 
 .ax-select .ax-react-select__option--is-selected.ax-react-select__option--is-focused {
-  background-color:
-    color-mix(
-      in srgb,
-      var(--ax-color-primary-light) 24%,
-      white
-    );
-  color: var(--ax-color-primary-active);
+  background-color: var(--ax-select-selected-bg);
+  color: var(--ax-select-selected-color);
+  border-radius: var(--ax-select-hover-radius);
 }
 
 .ax-select .ax-react-select__option:active {
-  background-color:
-    color-mix(
-      in srgb,
-      var(--ax-color-primary-active) 14%,
-      white
-    );
+  background-color: var(--ax-select-active-bg);
 }
 
 /* endregion */
@@ -283,7 +268,6 @@
 /* region No Options */
 
 .ax-select .ax-react-select__menu-notice {
-  padding: 12px;
   color: var(--ax-select-placeholder);
   font-size: var(--ax-select-font-size);
   text-align: center;

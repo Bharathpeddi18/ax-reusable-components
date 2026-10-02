@@ -6,6 +6,7 @@ import Kpis from './kpis/kpis';
 import Charts, { ChartStudentsByClass } from './charts/chart-students-by-class';
 import ChartStudentsByGender from './charts/chart-students-by-gender';
 import ChartStudentsByGrade from './charts/chart-students-by-grade';
+import Filters from './filters/filters';
 
 // region Main Component
 export default function DashboardStudentPage() {
@@ -21,6 +22,11 @@ export default function DashboardStudentPage() {
               Dashboard
             </h1>
           </div>
+        }
+        propsRightContent={
+          <>
+            <Filters />
+          </>
         }
       />
 

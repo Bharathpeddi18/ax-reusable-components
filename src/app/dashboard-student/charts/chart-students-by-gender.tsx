@@ -64,6 +64,7 @@ export const ChartStudentsByGender = () => {
     <AXCard
       propsSize="lg"
       propsHeaderClassName="ax-pt-2 ax-pb-0"
+      propsBodyClassName='ax-flex ax-items-center'
       propsHeader={
         <div className="ax-flex ax-items-center ax-gap-1">
           <h1
@@ -81,7 +82,7 @@ export const ChartStudentsByGender = () => {
         </div>
       }
       propsBody={
-        <div className="ax-d-flex ax-flex-column">
+        <div className="ax-flex ax-flex-col ax-items-center ax-justify-between ax-w-full">
           <div className="ax-w-full ax-h-200">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>

@@ -50,7 +50,7 @@ export const Kpis = ({ items = studentKpis }: { items?: KpiItem[] }) => {
               {label}
             </span>
           </div>
-          <span className="ax-text-2xl ax-font-black ax-text-gray-900">
+          <span className="ax-text-xl ax-kpi-color ax-font-black ax-text-gray-900">
             {value}
           </span>
         </div>
