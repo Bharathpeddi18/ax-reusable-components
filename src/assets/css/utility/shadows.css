@@ -1,7 +1,7 @@
 /* ==========================================================================
    Shadow Utilities (Canonical AX Namespace Spec)
    ========================================================================== */
-
+.ax-shadow-none { box-shadow: var(--ax-shadow-none); }
 .ax-shadow-sm { box-shadow: var(--ax-shadow-sm); }
 .ax-shadow, .ax-shadow-default { box-shadow: var(--ax-shadow); }
 .ax-shadow-md { box-shadow: var(--ax-shadow-md); }
@@ -9,4 +9,3 @@
 .ax-shadow-xl { box-shadow: var(--ax-shadow-xl); }
 .ax-shadow-2xl { box-shadow: var(--ax-shadow-2xl); }
 .ax-shadow-inner { box-shadow: var(--ax-shadow-inner); }
-.ax-shadow-none { box-shadow: var(--ax-shadow-none); }

@@ -1,6 +1,13 @@
 // Initialize roles
-export const USER_ROLES = { student: 'student', owner: 'owner' } as const;
-export const currentUserRole = USER_ROLES.owner;
+export const USER_ROLES = {
+  owner: 'owner',
+  management: 'management',
+  administrator: 'administrator',
+  teacher: 'teacher',
+  student: 'student',
+} as const;
+
+export const currentUserRole = USER_ROLES.administrator;
 
 // region Enums
 

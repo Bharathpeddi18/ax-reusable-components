@@ -1,11 +1,6 @@
 import { ServiceWorker } from '@/services/service-worker';
 import '../assets/css/index.css';
-import './layout.css';
 
-import Footer from '@/layout/ax-footer/ax-footer';
-import Header from '@/layout/ax-header/ax-header';
-import Menu from '@/layout/ax-menu/ax-menu';
-import PageWrapper from '@/layout/ax-page-wrapper/ax-page-wrapper';
 import type { Metadata, Viewport } from 'next';
 
 // region Outer Functions
@@ -34,14 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ServiceWorker />
-        <div className="ax-app-layout">
-          <Menu />
-          <Header />
-          <PageWrapper>
-            {children}
-          </PageWrapper>
-          <Footer />
-        </div>
+        {children}
       </body>
     </html>
   );

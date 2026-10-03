@@ -11,7 +11,7 @@ import {
 
 import AXCard from "@/ax-reusable-components/ax-card/ax-card"
 import AXBadge from "@/ax-reusable-components/ax-mini-components/ax-badge/ax-badge"
-import { DASHBOARD_COLORS } from '../../../../global-config';
+import { DASHBOARD_COLORS } from '../../../../../global-config';
 
 const studentsByGrade = [
   { grade: 'Grade A', students: 180, color: DASHBOARD_COLORS.gradeA },

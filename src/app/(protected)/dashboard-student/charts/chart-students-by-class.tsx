@@ -10,9 +10,9 @@ import {
   ResponsiveContainer,
 } from 'recharts';
 
-import AXCard from "@/ax-reusable-components/ax-card/ax-card"
-import AXBadge from "@/ax-reusable-components/ax-mini-components/ax-badge/ax-badge"
-import { DASHBOARD_COLORS } from '../../../../global-config';
+import AXCard from '@/ax-reusable-components/ax-card/ax-card'
+import AXBadge from '@/ax-reusable-components/ax-mini-components/ax-badge/ax-badge'
+import { DASHBOARD_COLORS } from '../../../../../global-config';
 
 const studentsByClass = [
   { id: 'pre-kg', class: 'Class Pre-KG', A: 42 },
