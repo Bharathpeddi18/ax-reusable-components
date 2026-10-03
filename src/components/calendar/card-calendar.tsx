@@ -2,6 +2,7 @@
 
 import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import AXCard from '@/ax-reusable-components/ax-card/ax-card';
+import { ROUTERS_PATHS } from '../../../global-config';
 import { useRouter } from 'next/navigation';
 
 export enum CALENDAR_CATEGORIES {
