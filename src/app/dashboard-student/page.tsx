@@ -7,6 +7,9 @@ import Charts, { ChartStudentsByClass } from './charts/chart-students-by-class';
 import ChartStudentsByGender from './charts/chart-students-by-gender';
 import ChartStudentsByGrade from './charts/chart-students-by-grade';
 import Filters from './filters/filters';
+import CardKnowledgeArticles from '@/components/knowledge-articles/card-knowledge-articles';
+import CardAnnouncements from '@/components/announcements/card-announcements';
+import CardQuickLinks from '@/components/quick-links/card-quick-links';
 
 // region Main Component
 export default function DashboardStudentPage() {
@@ -41,6 +44,15 @@ export default function DashboardStudentPage() {
           </div>
           <div className="ax-col-span-12 md:ax-col-span-6 xl:ax-col-span-4">
             <ChartStudentsByGrade />
+          </div>
+          <div className="ax-col-span-12 md:ax-col-span-6 xl:ax-col-span-4">
+            <CardKnowledgeArticles />
+          </div>
+          <div className="ax-col-span-12 md:ax-col-span-6 xl:ax-col-span-4">
+            <CardAnnouncements />
+          </div>
+          <div className="ax-col-span-12 md:ax-col-span-6 xl:ax-col-span-4">
+            <CardQuickLinks />
           </div>
         </div>
       </main>

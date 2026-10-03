@@ -56,10 +56,10 @@ export const menusConfig: MenuItem[] = [
     roles: [USER_ROLES.owner, USER_ROLES.student],
   },
   {
-    label: 'Knowledge Graph',
+    label: 'Knowledge Articles',
     icon: 'book',
-    path: ROUTERS_PATHS.knowledgeGraph,
-    activePath: [ROUTERS_PATHS.knowledgeGraph],
+    path: ROUTERS_PATHS.knowledgeArticles,
+    activePath: [ROUTERS_PATHS.knowledgeArticles],
     roles: [USER_ROLES.owner, USER_ROLES.student],
   },
   {

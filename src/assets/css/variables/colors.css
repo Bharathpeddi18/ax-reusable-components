@@ -180,12 +180,12 @@
      Select Component
      ---------------------------------------- */
 
-  --ax-select-hover-color: #00308F;
+  --ax-select-hover-color: var(--ax-color-primary);
   --ax-select-hover-bg: #d7e4ff;
-  --ax-select-hover-border: #00308F;
+  --ax-select-hover-border: var(--ax-color-primary);
   --ax-select-hover-radius: var(--ax-radius-md);
-  --ax-select-selected-color: #00308F;
-  --ax-select-selected-bg: #c4d6f9;
+  --ax-select-selected-color: var(--ax-color-primary);
+  --ax-select-selected-bg: #a2c1ff;
   --ax-select-active-bg: #b5caef;
 
 

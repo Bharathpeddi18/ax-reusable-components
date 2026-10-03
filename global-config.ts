@@ -13,7 +13,7 @@ export const ROUTERS_PATHS = {
   announcements: '/announcements',
   calendar: '/calendar',
 
-  knowledgeGraph: '/knowledge-graph',
+  knowledgeArticles: '/knowledge-articles',
   policyGuidelines: '/policy-guidelines',
   pointOfContacts: '/point-of-contacts',
   quickLinks: '/quick-links',

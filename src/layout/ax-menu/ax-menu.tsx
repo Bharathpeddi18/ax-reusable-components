@@ -41,7 +41,7 @@ export const Menu: React.FC<MenuProps> = ({
             height={42}
             className="ax-menu-logo"
           />
-          <div className={`${isCollapsed ? 'ax-hidden' : ''} ax-flex ax-flex-col ax-gap-1 ax-items-start ax-text-white ax-divide-y ax-divide-gray-400 ax-pe-6`}>
+          <div className={`${isCollapsed ? 'ax-hidden' : ''} ax-flex ax-flex-col ax-gap-1 ax-items-start ax-text-white ax-divide-y ax-divide-gray-300 ax-pe-6`}>
             <span className="ax-text-sm ax-font-medium ax-line-clamp-1">AstraX</span>
             <span className="ax-text-xs ax-font-normal ax-break-all ax-line-clamp-1">Student Management Portal</span>
           </div>

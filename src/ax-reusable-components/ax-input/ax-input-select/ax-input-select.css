@@ -197,6 +197,9 @@
   max-height: var(--ax-select-max-height);
   min-width: var(--ax-select-min-width);
   padding: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 /* endregion */
@@ -209,7 +212,7 @@
   align-items: center;
   min-height: var(--ax-select-option-min-height);
   padding: var(--ax-select-option-padding);
-  border-radius: var(--ax-radius-sm);
+  border-radius: var(--ax-select-hover-radius);
   background-color: transparent;
   color: var(--ax-select-text);
   font-size: var(--ax-select-font-size);

@@ -34,7 +34,7 @@ export const Filters = () => {
   return (
     <>
       {/* Fiscal Year */}
-      <div className="ax-flex ax-items-center ax-justify-end ax-gap-1-5">
+      <div className="ax-flex ax-flex-wrap ax-items-center ax-justify-end ax-gap-1-5">
         <AXInputSelect
           propsLabel='Academic Year'
           propsClassName="ax-input-horizontal"
