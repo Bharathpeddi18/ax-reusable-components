@@ -32,9 +32,9 @@ export const Filters = () => {
   }
 
   return (
-    <div className="ax-flex ax-flex-wrap ax-items-center ax-gap-2.5">
+    <>
       {/* Fiscal Year */}
-      <div className="ax-flex ax-items-center ax-gap-1-5">
+      <div className="ax-flex ax-items-center ax-justify-end ax-gap-1-5">
         <AXInputSelect
           propsLabel='Academic Year'
           propsClassName="ax-input-horizontal"
@@ -104,7 +104,7 @@ export const Filters = () => {
           onClick={handleClearAll}
         />
       </div>
-    </div>
+    </>
   );
 };
 
