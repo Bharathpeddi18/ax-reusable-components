@@ -10,6 +10,8 @@ import Filters from './filters/filters';
 import CardKnowledgeArticles from '@/components/knowledge-articles/card-knowledge-articles';
 import CardAnnouncements from '@/components/announcements/card-announcements';
 import CardQuickLinks from '@/components/quick-links/card-quick-links';
+import CardCalendar from '@/components/calendar/card-calendar';
+import CardPointsOfContact from '@/components/points-of-contacts/card-points-of-contacts';
 
 // region Main Component
 export default function DashboardStudentPage() {
@@ -53,6 +55,12 @@ export default function DashboardStudentPage() {
           </div>
           <div className="ax-col-span-12 md:ax-col-span-6 xl:ax-col-span-4">
             <CardQuickLinks />
+          </div>
+          <div className="ax-col-span-12 md:ax-col-span-6 xl:ax-col-span-4">
+            <CardCalendar />
+          </div>
+          <div className="ax-col-span-12 md:ax-col-span-6 xl:ax-col-span-4">
+            <CardPointsOfContact />
           </div>
         </div>
       </main>

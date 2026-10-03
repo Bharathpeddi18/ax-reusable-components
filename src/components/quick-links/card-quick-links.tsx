@@ -34,14 +34,53 @@ const quickLinks = [
     url: 'https://example.com',
     isActive: true,
   },
+  {
+    id: 5,
+    title: 'CBSE Academic',
+    description: 'Access CBSE curriculum, circulars, academic resources and updates.',
+    url: 'https://cbseacademic.nic.in',
+    isActive: true,
+  },
+  {
+    id: 6,
+    title: 'NCERT',
+    description: 'Access NCERT textbooks, publications and educational resources.',
+    url: 'https://ncert.nic.in',
+    isActive: true,
+  },
+  {
+    id: 7,
+    title: 'DIKSHA',
+    description: 'Explore digital learning resources for students and teachers.',
+    url: 'https://diksha.gov.in',
+    isActive: true,
+  },
+  {
+    id: 8,
+    title: 'National Testing Agency',
+    description: 'View examination notifications, registrations and results.',
+    url: 'https://nta.ac.in',
+    isActive: true,
+  },
+  {
+    id: 9,
+    title: 'DigiLocker',
+    description: 'Access digital academic certificates, marksheets and documents.',
+    url: 'https://www.digilocker.gov.in',
+    isActive: true,
+  },
+  {
+    id: 10,
+    title: 'SWAYAM',
+    description: 'Access online courses and learning resources across subjects.',
+    url: 'https://swayam.gov.in',
+    isActive: true,
+  },
 ];
 
 export const CardQuickLinks = () => {
   const router = useRouter();
-
-  const items = quickLinks
-    .filter((item) => item.isActive)
-    .slice(0, 4);
+  const items = quickLinks.filter((i) => i.isActive).slice(0, 10);
 
   return (
     <AXCard
@@ -50,13 +89,9 @@ export const CardQuickLinks = () => {
       propsBodyClassName="ax-py-0"
       propsHeader={
         <div className="ax-flex ax-items-center ax-gap-1">
-          <h1
-            className="ax-text-md ax-font-semibold ax-title-border ax-title-border-primary"
-            tabIndex={0}
-          >
+          <h1 className="ax-text-md ax-font-semibold ax-title-border ax-title-border-primary" tabIndex={0}>
             Quick Links
           </h1>
-
           <div className="ax-flex ax-items-center ax-ms-auto">
             <AXButton
               propsLabel="View All"
@@ -68,24 +103,20 @@ export const CardQuickLinks = () => {
         </div>
       }
       propsBody={
-        <div className="ax-flex ax-flex-col ax-divide-y ax-divide-gray-300">
-  {items.map((item) => (
-    <div key={item.id} className="ax-py-3">
-      <a
-        href={item.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="ax-inline-block ax-text-sm ax-font-semibold ax-text-primary ax-no-underline hover:ax-underline"
-      >
-        {item.title}
-      </a>
-
-      <p className="ax-mt-1 ax-mb-0 ax-line-clamp-2 ax-text-sm ax-font-normal ax-text-base">
-        {item.description}
-      </p>
-    </div>
-  ))}
-</div>
+        <div className="ax-flex ax-flex-col">
+          {items.map(({ id, url, title, description }) => (
+            <div key={id} className="ax-py-1">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ax-inline-block ax-text-sm ax-font-semibold ax-text-primary ax-no-underline hover:ax-underline"
+              >
+                {title}
+              </a>
+            </div>
+          ))}
+        </div>
       }
     />
   );

@@ -400,136 +400,136 @@
    Border Colors - Primary & Brand
    ---------------------------------------- */
 
-.ax-border-primary { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-primary) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-primary-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-primary-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-primary { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-primary) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-primary-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-primary-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-secondary { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-secondary) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-secondary-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-secondary-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-secondary { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-secondary) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-secondary-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-secondary-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-default { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-border) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-default-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-default-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-default { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-border) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-default-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-default-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-accent { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-accent) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-accent-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-accent-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-accent { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-accent) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-accent-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-accent-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
 /* ----------------------------------------
    Border Colors - Semantic Feedback
    ---------------------------------------- */
 
-.ax-border-success { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-success) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-success-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-success-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-success { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-success) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-success-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-success-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-danger { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-danger) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-danger-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-danger-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-danger { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-danger) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-danger-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-danger-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-warning { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-warning) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-warning-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-warning-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-warning { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-warning) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-warning-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-warning-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-info { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-info) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-info-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-info-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-info { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-info) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-info-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-info-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
 /* ----------------------------------------
    Border Colors - Extended Palette
    ---------------------------------------- */
 
-.ax-border-purple { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-purple) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-purple-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-purple-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-purple { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-purple) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-purple-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-purple-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-indigo { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-indigo) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-indigo-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-indigo-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-indigo { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-indigo) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-indigo-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-indigo-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-blue { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-blue) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-blue-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-blue-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-blue { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-blue) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-blue-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-blue-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-cyan { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-cyan) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-cyan-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-cyan-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-cyan { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-cyan) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-cyan-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-cyan-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-teal { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-teal) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-teal-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-teal-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-teal { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-teal) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-teal-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-teal-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-green { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-green) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-green-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-green-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-green { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-green) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-green-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-green-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-yellow { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-yellow) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-yellow-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-yellow-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-yellow { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-yellow) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-yellow-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-yellow-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-orange { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-orange) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-orange-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-orange-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-orange { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-orange) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-orange-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-orange-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-red { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-red) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-red-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-red-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-red { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-red) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-red-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-red-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-rose { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-rose) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-rose-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-rose-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-rose { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-rose) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-rose-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-rose-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-pink { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-pink) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-pink-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-pink-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-pink { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-pink) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-pink-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-pink-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-brown { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-brown) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-brown-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-brown-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-brown { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-brown) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-brown-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-brown-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-slate { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-slate) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-slate-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-slate-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-slate { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-slate) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-slate-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-slate-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-amber { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-amber) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-amber-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-amber-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-amber { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-amber) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-amber-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-amber-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-emerald { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-emerald) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-emerald-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-emerald-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-emerald { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-emerald) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-emerald-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-emerald-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-violet { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-violet) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-violet-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-violet-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-violet { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-violet) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-violet-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-violet-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-fuchsia { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-fuchsia) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-fuchsia-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-fuchsia-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-fuchsia { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-fuchsia) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-fuchsia-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-fuchsia-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-sky { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-sky) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-sky-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-sky-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-sky { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-sky) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-sky-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-sky-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-lime { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-lime) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-lime-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-lime-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-lime { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-lime) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-lime-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-lime-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-gray { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-zinc { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-zinc) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-zinc-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-zinc-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-zinc { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-zinc) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-zinc-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-zinc-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-neutral { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-neutral) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-neutral-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-neutral-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-neutral { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-neutral) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-neutral-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-neutral-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-stone { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-stone) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-stone-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-stone-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-stone { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-stone) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-stone-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-stone-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
 /* ----------------------------------------
    Border Colors - Neutrals & Base
    ---------------------------------------- */
 
-.ax-border-white { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-white) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-white-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-white-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-white { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-white) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-white-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-white-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-black { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-black) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-black-light { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-black-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-black { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-black) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-black-light { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-black-light) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
-.ax-border-secondary-subtle { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-border-secondary) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-transparent { border-color: transparent; }
-.ax-border-current { border-color: currentColor; }
+.ax-border-secondary-subtle { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-border-secondary) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-transparent { --ax-color-border: transparent; }
+.ax-border-current { --ax-color-border: currentColor; }
 
 /* ----------------------------------------
    Border Colors - Gray Scale (50-950)
    ---------------------------------------- */
 
-.ax-border-gray-50 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-50) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-100 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-100) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-200 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-200) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-300 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-300) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-400 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-400) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-500 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-500) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-600 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-600) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-700 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-700) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-800 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-800) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-900 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-900) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
-.ax-border-gray-950 { --ax-border-opacity: 1; border-color: color-mix(in srgb, var(--ax-color-gray-950) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-50 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-50) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-100 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-100) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-200 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-200) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-300 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-300) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-400 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-400) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-500 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-500) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-600 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-600) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-700 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-700) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-800 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-800) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-900 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-900) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
+.ax-border-gray-950 { --ax-border-opacity: 1; --ax-color-border: color-mix(in srgb, var(--ax-color-gray-950) calc(var(--ax-border-opacity, 1) * 100%), transparent); }
 
 /* ----------------------------------------
    Background Opacity

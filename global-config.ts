@@ -2,6 +2,58 @@
 export const USER_ROLES = { student: 'student', owner: 'owner' } as const;
 export const currentUserRole = USER_ROLES.owner;
 
+// region Enums
+
+// Notification Types
+export enum NOTIFICATION_TYPE {
+  general = 'general',
+  alert = 'alert',
+  action = 'action'
+}
+
+// Notification Status
+export enum NOTIFICATION_STATUS {
+  read = 'read',
+  unread = 'unread'
+}
+
+// Calendar Categories
+export enum CALENDAR_CATEGORIES {
+  general = 'general',
+  events = 'events',
+  meetings = 'meetings',
+  trainings = 'trainings',
+  exams = 'exams',
+}
+
+// region Colors
+export const DASHBOARD_COLORS = {
+  // Boys and Girls colors
+  boys: '#1E88E5',        // 
+  girls: '#ff65d3ff',
+
+  // Grade colors
+  gradeA: '#8B5CF6',
+  gradeB: '#22C55E',
+  gradeC: '#38BDF8',
+  gradeD: '#FBBF24',
+  gradeE: '#F43F5E',
+  gradeF: '#E11D48',
+
+  // Class Colors
+  sectionA: '#7A2FD0',
+  sectionB: '#8742D5',
+  sectionC: '#9455DA',
+  sectionD: '#A168DF',
+  sectionE: '#AE7BE4',
+  sectionF: '#BA8EE8',
+  sectionG: '#C6A1EC',
+  sectionH: '#D2B4F0',
+  sectionI: '#DEC7F4',
+  sectionJ: '#EADAF8',
+};
+
+// region Paths
 export const ROUTERS_PATHS = {
   homeStudent: '/home-student',
   dashboardStudent: '/dashboard-student',
@@ -19,36 +71,3 @@ export const ROUTERS_PATHS = {
   quickLinks: '/quick-links',
   settings: '/settings',
 }
-
-
-// region Enums
-export enum NOTIFICATION_TYPE {
-  general = 'general',
-  alert = 'alert',
-  action = 'action'
-}
-
-export const DASHBOARD_COLORS = {
-  // Boys and Girls colors - light blue and pink
-  boys: '#1E88E5',        // Blue 600
-  girls: '#EC407A',       // Pink 400
-
-  // Grade colors - from green to red, with brown for F/Fail
-  gradeA: '#8B5CF6',
-  gradeB: '#22C55E',
-  gradeC: '#38BDF8',
-  gradeD: '#FBBF24',
-  gradeE: '#F43F5E',
-  gradeF: '#E11D48',
-
-  sectionA: '#7A2FD0',
-  sectionB: '#8742D5',
-  sectionC: '#9455DA',
-  sectionD: '#A168DF',
-  sectionE: '#AE7BE4',
-  sectionF: '#BA8EE8',
-  sectionG: '#C6A1EC',
-  sectionH: '#D2B4F0',
-  sectionI: '#DEC7F4',
-  sectionJ: '#EADAF8',
-};
