@@ -9,7 +9,6 @@
 
 /* Tab */
 .ax-tab {
-  position: relative;
   flex-shrink: 0;
   border: 0;
   background: transparent;
@@ -17,26 +16,32 @@
   font-family: inherit;
   font-weight: 400;
   cursor: pointer;
+  position: relative;
 }
 
-
-/* Active */
-.ax-tab-active {
-  color: #111827;
-  font-weight: 600;
-}
-
-
-/* Active underline */
-.ax-tab-active::after {
+.ax-tab::after {
   content: '';
   position: absolute;
   left: 0;
   right: 0;
   bottom: -3px;
+  width: 100%;
   height: 3px;
   background: var(--ax-color-primary,#00308f);
   border-radius: 3px;
+  transition: opacity 250ms ease;
+  opacity: 0;
+}
+
+
+/* Active */
+.ax-tab-active {
+  color: #00308f;
+  font-weight: 600;
+}
+
+.ax-tab-active::after {
+  opacity: 1;
 }
 
 

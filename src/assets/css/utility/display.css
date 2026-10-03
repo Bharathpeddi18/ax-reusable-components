@@ -2,11 +2,11 @@
    Display Utilities (Canonical AX Namespace Spec)
    ========================================================================== */
 
-.ax-hidden { display: none; }
 .ax-block { display: block; }
 .ax-inline { display: inline; }
 .ax-inline-block { display: inline-block; }
 .ax-flex { display: flex; }
+.ax-hidden { display: none; }
 .ax-inline-flex { display: inline-flex; }
 .ax-grid { display: grid; }
 .ax-inline-grid { display: inline-grid; }

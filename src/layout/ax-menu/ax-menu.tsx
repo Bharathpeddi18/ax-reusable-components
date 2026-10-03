@@ -32,15 +32,19 @@ export const Menu: React.FC<MenuProps> = ({
       aria-label="Main Navigation"
     >
       {/* Menu Header */}
-      <div className="ax-menu-header">
-        <Link href="/" className="ax-menu-brand" title="AstraX Home">
+      <div className="ax-menu-header ax-relative ax-px-4 ax-py-2 ax-border-b ax-border-gray-500 ax-flex ax-items-center">
+        <Link href="/" className="ax-flex ax-align-items-center ax-gap-2" title="AstraX - Student Management Portal">
           <img
             src={ApplicationLogo.src}
             alt="AstraX Logo"
-            width={isCollapsed ? 32 : 100}
-            height={36}
+            width={42}
+            height={42}
             className="ax-menu-logo"
           />
+          <div className={`${isCollapsed ? 'ax-hidden' : ''} ax-flex ax-flex-col ax-gap-1 ax-items-start ax-text-white ax-divide-y ax-divide-gray-400 ax-pe-6`}>
+            <span className="ax-text-sm ax-font-medium ax-line-clamp-1">AstraX</span>
+            <span className="ax-text-xs ax-font-normal ax-break-all ax-line-clamp-1">Student Management Portal</span>
+          </div>
         </Link>
         <AXButton
           propsSize="xs"
