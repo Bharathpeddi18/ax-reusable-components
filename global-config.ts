@@ -60,6 +60,25 @@ export const DASHBOARD_COLORS = {
   sectionJ: '#EADAF8',
 };
 
+export const AX_CHART_COLORS = [
+  '#0088FF', // Blue
+  '#34C759', // Green
+  '#FF8D28', // Orange
+  '#6155F5', // Indigo
+  '#00C3D0', // Teal
+  '#CB30E0', // Purple
+  '#FF2D55', // Pink
+  '#00C8B3', // Mint
+  '#FFCC00', // Yellow
+  '#4970FA', // Cobalt
+  '#21C88A', // Emerald
+  '#FF6935', // Coral
+  '#00A5F4', // Sky
+  '#9A4BEB', // Violet
+  '#E43CA0', // Magenta
+  '#D5874B', // Bronze
+];
+
 // region Paths
 export const ROUTERS_PATHS = {
   homeStudent: '/home-student',
