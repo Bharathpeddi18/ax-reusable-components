@@ -36,41 +36,98 @@
      Extended Colors
      ---------------------------------------- */
 
-  --ax-color-purple: #6B21A8;
-  --ax-color-purple-light: #F7EDFF;
+  --ax-color-red: #FF383C;
+  --ax-color-red-light: #FFEBEB;
 
-  --ax-color-indigo: #3730A3;
-  --ax-color-indigo-light: #EEF0FF;
+  --ax-color-orange: #FF8D28;
+  --ax-color-orange-light: #FFF3E9;
 
-  --ax-color-blue: #0057B8;
-  --ax-color-blue-light: #EDF6FF;
+  --ax-color-yellow: #FFCC00;
+  --ax-color-yellow-light: #FFFAEB;
 
-  --ax-color-cyan: #006575;
-  --ax-color-cyan-light: #E8F9FC;
+  --ax-color-green: #34C759;
+  --ax-color-green-light: #EAF9EE;
 
-  --ax-color-teal: #00695C;
-  --ax-color-teal-light: #E6F8F5;
+  --ax-color-mint: #00C8B3;
+  --ax-color-mint-light: #E5FAF8;
 
-  --ax-color-green: #33691E;
-  --ax-color-green-light: #F1F8E9;
+  --ax-color-teal: #00C3D0;
+  --ax-color-teal-light: #E5F9FB;
 
-  --ax-color-yellow: #795500;
-  --ax-color-yellow-light: #FFF8CC;
+  --ax-color-cyan: #00C0E8;
+  --ax-color-cyan-light: #E5F8FD;
 
-  --ax-color-orange: #9A3412;
-  --ax-color-orange-light: #FFF1E8;
+  --ax-color-blue: #0088FF;
+  --ax-color-blue-light: #E5F3FF;
 
-  --ax-color-red: #B42318;
-  --ax-color-red-light: #FFF0EE;
+  --ax-color-indigo: #6155F5;
+  --ax-color-indigo-light: #EFEEFF;
 
-  --ax-color-rose: #9F1239;
-  --ax-color-rose-light: #FFF1F3;
+  --ax-color-purple: #CB30E0;
+  --ax-color-purple-light: #FAEAFB;
 
-  --ax-color-pink: #9D174D;
-  --ax-color-pink-light: #FFF0F6;
+  --ax-color-pink: #FF2D55;
+  --ax-color-pink-light: #FFEAEF;
 
-  --ax-color-brown: #6F4E37;
-  --ax-color-brown-light: #F8F1EC;
+  --ax-color-brown: #AC7F5E;
+  --ax-color-brown-light: #F6F2EF;
+
+  /* =========================================================
+     ASTRAX EXTENDED COLORS
+     Apple-inspired intermediate hues
+     ========================================================= */
+
+  /* Red → Orange */
+  --ax-color-coral: #FF6935;
+  --ax-color-coral-light: #FFEDE7;
+
+  /* Orange → Yellow */
+  --ax-color-amber: #FFAD1D;
+  --ax-color-amber-light: #FFF6E8;
+
+  /* Yellow → Green */
+  --ax-color-lime: #AFCC42;
+  --ax-color-lime-light: #F7FAEB;
+
+  /* Green → Mint */
+  --ax-color-emerald: #21C88A;
+  --ax-color-emerald-light: #E8F9F3;
+
+  /* Mint → Teal */
+  --ax-color-seafoam: #00C6C2;
+  --ax-color-seafoam-light: #E5F9F8;
+
+  /* Teal → Cyan */
+  --ax-color-aqua: #00C2DC;
+  --ax-color-aqua-light: #E5F8FB;
+
+  /* Cyan → Blue */
+  --ax-color-sky: #00A5F4;
+  --ax-color-sky-light: #E5F6FE;
+
+  /* Blue → Indigo */
+  --ax-color-cobalt: #4970FA;
+  --ax-color-cobalt-light: #EDF1FF;
+
+  /* Indigo → Purple */
+  --ax-color-violet: #9A4BEB;
+  --ax-color-violet-light: #F5EDFD;
+
+  /* Purple → Pink */
+  --ax-color-magenta: #E43CA0;
+  --ax-color-magenta-light: #FCECF5;
+
+  /* Pink → Red */
+  --ax-color-rose: #FF3349;
+  --ax-color-rose-light: #FFEBED;
+
+  /* Brown → Orange */
+  --ax-color-bronze: #D5874B;
+  --ax-color-bronze-light: #FAF3ED;
+
+  /* ----------------------------------------
+     Neutrals & Accents
+     ---------------------------------------- */
 
   --ax-color-slate: #334155;
   --ax-color-slate-light: #F1F5F9;
@@ -80,29 +137,6 @@
 
   --ax-color-white: #FFFFFF;
   --ax-color-white-light: #F9FAFB;
-
-
-  /* ----------------------------------------
-     Additional Palette
-     ---------------------------------------- */
-
-  --ax-color-amber: #B45309;
-  --ax-color-amber-light: #FFFBEB;
-
-  --ax-color-emerald: #047857;
-  --ax-color-emerald-light: #ECFDF5;
-
-  --ax-color-violet: #6D28D9;
-  --ax-color-violet-light: #F5F3FF;
-
-  --ax-color-fuchsia: #A21CAF;
-  --ax-color-fuchsia-light: #FDF4FF;
-
-  --ax-color-sky: #0284C7;
-  --ax-color-sky-light: #F0F9FF;
-
-  --ax-color-lime: #4D7C0F;
-  --ax-color-lime-light: #F7FEE7;
 
   --ax-color-gray: #4B5563;
   --ax-color-gray-light: #F3F4F6;
