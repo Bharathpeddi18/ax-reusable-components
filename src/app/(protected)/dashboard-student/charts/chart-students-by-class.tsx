@@ -20,23 +20,13 @@ const studentsByClass = [
   { id: 'ukg', class: 'Class UKG', A: 32, B: 32 },
 
   { id: 'first-class', class: 'Class 1st', A: 26, B: 27, C: 25 },
-  { id: 'second-class', class: 'Class 2nd', A: 36, B: 36 },
-  { id: 'third-class', class: 'Class 3rd', A: 27, B: 28, C: 26 },
-
+  { id: 'second-class', class: 'Class 2nd', A: 36, B: 36, C: 32, D: 30, E: 27 },
+  { id: 'third-class', class: 'Class 3rd', A: 27, B: 28, C: 26, D: 24, E: 20, F: 17, G: 15, H: 13, I: 11, J: 9 },
   { id: 'fourth-class', class: 'Class 4th', A: 76 },
-
-  {
-    id: 'fifth-class',
-    class: 'Class 5th',
-    A: 22,
-    B: 22,
-    C: 23,
-    D: 21,
-  },
-
+  { id: 'fifth-class', class: 'Class 5th', A: 22, B: 22, C: 23, D: 21 },
   { id: 'sixth-class', class: 'Class 6th', A: 42, B: 41 },
   { id: 'seventh-class', class: 'Class 7th', A: 31, B: 30, C: 31 },
-  { id: 'eighth-class', class: 'Class 8th', A: 44, B: 43 },
+  { id: 'eighth-class', class: 'Class 8th', A: 44, B: 43, C: 41, D: 39, E: 37 },
   { id: 'ninth-class', class: 'Class 9th', A: 40, B: 39 },
   { id: 'tenth-class', class: 'Class 10th', A: 74 },
 ];
@@ -147,6 +137,43 @@ export const ChartStudentsByClass = () => {
                   border: '1px solid #E2E8F0',
                   boxShadow: '0 4px 12px rgb(0 0 0 / 0.08)',
                 }}
+              />
+
+              <Bar
+                dataKey="J"
+                stackId="sections"
+                fill={DASHBOARD_COLORS.sectionJ}
+                maxBarSize={24}
+              />
+              <Bar
+                dataKey="I"
+                stackId="sections"
+                fill={DASHBOARD_COLORS.sectionI}
+                maxBarSize={24}
+              />
+              <Bar
+                dataKey="H"
+                stackId="sections"
+                fill={DASHBOARD_COLORS.sectionH}
+                maxBarSize={24}
+              />
+              <Bar
+                dataKey="G"
+                stackId="sections"
+                fill={DASHBOARD_COLORS.sectionG}
+                maxBarSize={24}
+              />
+              <Bar
+                dataKey="F"
+                stackId="sections"
+                fill={DASHBOARD_COLORS.sectionF}
+                maxBarSize={24}
+              />
+              <Bar
+                dataKey="E"
+                stackId="sections"
+                fill={DASHBOARD_COLORS.sectionE}
+                maxBarSize={24}
               />
 
               <Bar
