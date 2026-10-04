@@ -47,17 +47,17 @@ export const DASHBOARD_COLORS = {
   gradeE: '#F43F5E',
   gradeF: '#E11D48',
 
-  // Class Colors
-  sectionA: '#7A2FD0',
-  sectionB: '#8742D5',
-  sectionC: '#9455DA',
-  sectionD: '#A168DF',
-  sectionE: '#AE7BE4',
-  sectionF: '#BA8EE8',
-  sectionG: '#C6A1EC',
-  sectionH: '#D2B4F0',
-  sectionI: '#DEC7F4',
-  sectionJ: '#EADAF8',
+  // Class
+  sectionA: '#5964D8',
+  sectionB: '#6671DF',
+  sectionC: '#747FE5',
+  sectionD: '#828DEB',
+  sectionE: '#909BF0',
+  sectionF: '#9EA9F4',
+  sectionG: '#ACB7F7',
+  sectionH: '#BBC5F9',
+  sectionI: '#CAD3FB',
+  sectionJ: '#D9E0FC',
 };
 
 export const AX_CHART_COLORS = [
