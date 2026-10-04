@@ -144,7 +144,6 @@
      ---------------------------------------- */
 
   --ax-color-background: #F8FAFC;
-
   --ax-color-surface: #ffffff;
   --ax-color-surface-secondary: #F1F5F9;
   --ax-color-surface-tertiary: #E2E8F0;
@@ -166,14 +165,14 @@
 
   --ax-color-border: #E2E8F0;
   --ax-color-border-secondary: #CBD5E1;
-  --ax-color-border-focus: #00308F;
+  --ax-color-border-focus: var(--ax-color-primary);
 
 
   /* ----------------------------------------
      Focus
      ---------------------------------------- */
 
-  --ax-color-focus: #00308F33;
+  --ax-color-focus: #00308F33; /*Added 33 for var(--ax-color-primary) transparency*/
 
 
   /* ----------------------------------------
@@ -223,16 +222,4 @@
 
 --ax-kpi-color-4: #B45309;
 --ax-kpi-bg-color-4: #FFF0CC;
-
---ax-kpi-color-5: #005A9C;
---ax-kpi-bg-color-5: #D8EEFF;
-
---ax-kpi-color-6: #6B21A8;
---ax-kpi-bg-color-6: #EEDBFF;
-
---ax-kpi-color-7: #006575;
---ax-kpi-bg-color-7: #D2F2F7;
-
---ax-kpi-color-8: #9F1239;
---ax-kpi-bg-color-8: #FFDDE6;
 }
