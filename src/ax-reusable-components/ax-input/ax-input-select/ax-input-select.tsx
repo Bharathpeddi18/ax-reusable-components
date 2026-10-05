@@ -33,7 +33,7 @@ export interface InputSelectProps {
   propsSearchable?: boolean;
   propsClearable?: boolean;
   propsPlaceholder?: string;
-  propsDisabled?: boolean;
+  propsReadOnly?: boolean;
   propsMandatory?: boolean;
   propsInputRadius?: InputSelectRadius;
   propsInputSize?: InputSelectSize;
@@ -52,7 +52,7 @@ export const AXInputSelect = ({
   propsSearchable = true,
   propsClearable = true,
   propsPlaceholder = 'Select',
-  propsDisabled = false,
+  propsReadOnly = false,
   propsMandatory = false,
   propsInputRadius = 'md',
   propsInputSize = 'md',
@@ -81,7 +81,6 @@ export const AXInputSelect = ({
           propsClassName={propsLabelClassName}
           propsLabel={propsLabel}
           propsMandatory={propsMandatory}
-          propsDisabled={propsDisabled}
         />
       )}
     <div
@@ -101,7 +100,7 @@ export const AXInputSelect = ({
         isMulti={false}
         isSearchable={propsSearchable}
         isClearable={propsClearable}
-        isDisabled={propsDisabled}
+        isDisabled={propsReadOnly}
         placeholder={propsPlaceholder}
         closeMenuOnSelect={true}
         menuPosition="fixed"

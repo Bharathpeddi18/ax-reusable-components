@@ -88,9 +88,9 @@
 /* endregion */
 
 
-/* region Disabled */
+/* region Read Only */
 
-.ax-text-area-disabled .ax-text-area-field {
+.ax-text-area-readonly .ax-text-area-field {
   background-color: var(--ax-color-gray-100);
 
   color: var(--ax-color-gray-400);
@@ -101,18 +101,6 @@
 
   opacity: 0.7;
 }
-
-/* endregion */
-
-
-/* region Read Only */
-
-.ax-text-area-field:read-only {
-  background-color: var(--ax-color-gray-100);
-
-  cursor: default;
-}
-
 /* endregion */
 
 

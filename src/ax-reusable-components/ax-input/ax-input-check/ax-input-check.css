@@ -19,12 +19,12 @@
   user-select: none;
 }
 
-.ax-input-check-disabled {
+.ax-input-check-readonly {
   opacity: 0.6;
 }
 
-.ax-input-check-disabled .ax-input-check-field,
-.ax-input-check-disabled .ax-input-check-label {
+.ax-input-check-readonly .ax-input-check-field,
+.ax-input-check-readonly .ax-input-check-label {
   cursor: not-allowed;
 }
 

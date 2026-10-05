@@ -284,13 +284,13 @@
 /* endregion */
 
 
-/* region Disabled */
+/* region Read Only */
 
-.ax-input-file-upload-disabled {
+.ax-input-file-upload-readonly {
   opacity: 0.65;
 }
 
-.ax-input-file-upload-disabled
+.ax-input-file-upload-readonly
 .ax-file-drop-zone {
   background:
     var(--ax-color-gray-100);

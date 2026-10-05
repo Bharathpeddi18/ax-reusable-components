@@ -20,8 +20,8 @@
   width: 24px;
   height: 24px;
 
-  border: 3px solid var(--ax-color-primary-light, #4d70b5);
-  border-top-color: var(--ax-color-primary, #00308f);
+  border: 3px solid rgba(0, 0, 0, 0.15);
+  border-top-color: #FFFFFF;
 
   border-radius: 50%;
 

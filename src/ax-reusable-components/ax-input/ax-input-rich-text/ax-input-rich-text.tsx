@@ -20,14 +20,16 @@ export interface InputRichTextProps {
   propsPlaceholder?: string;
   /** Mandatory */
   propsMandatory?: boolean;
-  /** Disabled */
-  propsDisabled?: boolean;
   /** Error */
   propsHasError?: boolean;
+  /** Error message */
+  propsErrorMessage?: string;
   /** Custom root class */
   propsClassName?: string;
   /** Change handler */
   propsOnChange?: (value: string) => void;
+  /** Read only */
+  propsReadOnly?: boolean;
 }
 
 // region Main Component
@@ -36,8 +38,9 @@ export const AXInputRichText = ({
   propsValue = '',
   propsPlaceholder = 'Start typing...',
   propsMandatory = false,
-  propsDisabled = false,
+  propsReadOnly = false,
   propsHasError = false,
+  propsErrorMessage = '',
   propsClassName = '',
   propsOnChange,
 }: InputRichTextProps) => {
@@ -76,7 +79,7 @@ export const AXInputRichText = ({
 
   const rootClassName = [
     'ax-input-rich-text',
-    propsDisabled ? 'ax-input-rich-text-disabled' : '',
+    propsReadOnly ? 'ax-input-rich-text-readonly' : '',
     propsHasError ? 'ax-input-rich-text-error' : '',
     propsClassName,
   ]
@@ -84,12 +87,12 @@ export const AXInputRichText = ({
     .join(' ');
 
   return (
+    <>
     <div className={rootClassName}>
       {propsLabel && (
         <AXInputLabel
           propsLabel={propsLabel}
           propsMandatory={propsMandatory}
-          propsDisabled={propsDisabled}
         />
       )}
 
@@ -98,11 +101,12 @@ export const AXInputRichText = ({
         value={propsValue}
         onChange={propsOnChange}
         placeholder={propsPlaceholder}
-        readOnly={propsDisabled}
         modules={modules}
         formats={formats}
       />
     </div>
+    {propsHasError && <span className="ax-text-xs ax-font-semibold ax-text-red ax-mt-1">{propsErrorMessage}</span>}
+    </>
   );
 };
 

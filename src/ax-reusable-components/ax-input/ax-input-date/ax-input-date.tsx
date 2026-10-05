@@ -26,12 +26,12 @@ export interface InputDateProps
   propsMaxDate?: string;
   /** Mandatory */
   propsMandatory?: boolean;
-  /** Disabled */
-  propsDisabled?: boolean;
   /** Read only */
   propsReadOnly?: boolean;
   /** Error */
   propsHasError?: boolean;
+  /** Error message */
+  propsErrorMessage?: string;
   /** Root class */
   propsClassName?: string;
   /** Input class */
@@ -54,9 +54,9 @@ export const AXInputDate = ({
   propsMinDate,
   propsMaxDate,
   propsMandatory,
-  propsDisabled,
   propsReadOnly,
   propsHasError = false,
+  propsErrorMessage = '',
   propsClassName = '',
   propsInputClassName = '',
   propsLabelClassName = '',
@@ -66,7 +66,7 @@ export const AXInputDate = ({
 }: InputDateProps) => {
   const rootClasses = [
     'ax-input-date',
-    propsDisabled ? 'ax-input-date-disabled' : '',
+    propsReadOnly ? 'ax-input-date-readonly' : '',
     propsHasError ? 'ax-input-date-error' : '',
     propsClassName,
   ]
@@ -81,6 +81,7 @@ export const AXInputDate = ({
     .join(' ');
 
   return (
+    <>
     <div className={rootClasses} style={propsStyle}>
       {propsLabel && (
         <AXInputLabel
@@ -88,7 +89,6 @@ export const AXInputDate = ({
           propsHtmlFor={propsId}
           propsMandatory={propsMandatory}
           propsClassName={propsLabelClassName}
-          propsDisabled={propsDisabled}
         />
       )}
 
@@ -100,13 +100,14 @@ export const AXInputDate = ({
           value={propsValue}
           min={propsMinDate}
           max={propsMaxDate}
-          disabled={propsDisabled}
           readOnly={propsReadOnly}
           onChange={propsOnChange}
           className={inputClasses}
         />
       </div>
     </div>
+    {propsHasError && <span className="ax-text-xs ax-font-semibold ax-text-red ax-mt-1">{propsErrorMessage}</span>}
+    </>
   );
 };
 

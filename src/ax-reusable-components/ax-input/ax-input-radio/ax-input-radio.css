@@ -15,11 +15,7 @@
   accent-color: #00308f;
 }
 
-.ax-input-radio-disabled {
-  opacity: 0.6;
-}
-
-.ax-input-radio-disabled .ax-input-radio-field {
+.ax-input-radio-readonly .ax-input-radio-field {
   cursor: not-allowed;
 }
 

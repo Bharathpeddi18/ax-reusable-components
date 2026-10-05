@@ -23,7 +23,7 @@ export interface InputFileUploadProps {
 
   propsMandatory?: boolean;
 
-  propsDisabled?: boolean;
+  propsReadOnly?: boolean;
 
   propsClassName?: string;
 
@@ -54,7 +54,7 @@ export const AXInputFileUpload = ({
 
   propsMandatory = false,
 
-  propsDisabled = false,
+  propsReadOnly = false,
 
   propsClassName = '',
 
@@ -288,7 +288,7 @@ export const AXInputFileUpload = ({
     index: number
   ) => {
 
-    if (propsDisabled) {
+    if (propsReadOnly) {
       return;
     }
 
@@ -311,7 +311,7 @@ export const AXInputFileUpload = ({
     setIsDragging(false);
 
 
-    if (propsDisabled) {
+    if (propsReadOnly) {
       return;
     }
 
@@ -332,8 +332,8 @@ export const AXInputFileUpload = ({
   const rootClassName = [
     'ax-input-file-upload',
 
-    propsDisabled
-      ? 'ax-input-file-upload-disabled'
+    propsReadOnly
+      ? 'ax-input-file-upload-readonly'
       : '',
 
     propsClassName,
@@ -363,7 +363,6 @@ export const AXInputFileUpload = ({
         <AXInputLabel
           propsLabel={propsLabel}
           propsMandatory={propsMandatory}
-          propsDisabled={propsDisabled}
         />
       )}
 
@@ -375,7 +374,7 @@ export const AXInputFileUpload = ({
         }
 
         onClick={() => {
-          if (!propsDisabled) {
+          if (!propsReadOnly) {
             inputRef.current?.click();
           }
         }}
@@ -383,7 +382,7 @@ export const AXInputFileUpload = ({
         onDragOver={(event) => {
           event.preventDefault();
 
-          if (!propsDisabled) {
+          if (!propsReadOnly) {
             setIsDragging(true);
           }
         }}
@@ -427,8 +426,8 @@ export const AXInputFileUpload = ({
 
         multiple
 
-        disabled={
-          propsDisabled
+        readOnly={
+          propsReadOnly
         }
 
         accept={
@@ -501,7 +500,7 @@ export const AXInputFileUpload = ({
                     }
 
                     disabled={
-                      propsDisabled
+                      propsReadOnly
                     }
                   >
                     Replace
@@ -520,7 +519,7 @@ export const AXInputFileUpload = ({
                     }
 
                     disabled={
-                      propsDisabled
+                      propsReadOnly
                     }
                   >
                     ✕

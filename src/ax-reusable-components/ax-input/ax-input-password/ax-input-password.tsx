@@ -7,7 +7,8 @@ import {
   useState,
 } from 'react';
 
-import AXInput from '../ax-input-text/ax-input-text';
+import '../ax-input-text/ax-input-text.css';
+import AXInputLabel from '../ax-input-label/ax-input-label';
 import { Icon } from '@/assets/icons';
 
 // region Interfaces
@@ -19,8 +20,6 @@ export interface InputPasswordProps
   propsMandatory?: boolean;
   /** Placeholder text */
   propsPlaceholder?: string;
-  /** Disable input */
-  propsDisabled?: boolean;
   /** Currency text displayed beside label */
   propsCurrency?: string;
   /** Badge displayed beside label */
@@ -35,6 +34,8 @@ export interface InputPasswordProps
   propsEndIcon?: JSX.Element;
   /** Displays error styling */
   propsHasError?: boolean;
+  /** Error message */
+  propsErrorMessage?: string;
   /** Custom class for root component */
   propsClassName?: string;
   /** Custom class for input wrapper */
@@ -62,7 +63,6 @@ export const AXInputPassword = ({
   propsLabel,
   propsMandatory,
   propsPlaceholder,
-  propsDisabled,
   propsCurrency,
   propsBadge,
   propsLabelClassName,
@@ -72,6 +72,7 @@ export const AXInputPassword = ({
   propsStartIcon,
   propsEndIcon,
   propsHasError = false,
+  propsErrorMessage = '',
   propsClassName = '',
   propsWrapperClassName = '',
   propsInputClassName = '',
@@ -91,7 +92,7 @@ export const AXInputPassword = ({
   const defaultEndIcon = (
     <button
       type="button"
-      className="ax-input-password-toggle"
+      className="ax-input-password-toggle ax-bg-transparent ax-border-none ax-cursor-pointer ax-flex ax-items-center ax-justify-center ax-p-0 ax-m-0"
       onClick={togglePasswordVisibility}
       tabIndex={-1}
       aria-label={showPassword ? 'Hide password' : 'Show password'}
@@ -103,32 +104,62 @@ export const AXInputPassword = ({
     </button>
   );
 
+  const wrapperClassName = [
+    'ax-input-wrapper',
+    `ax-input-${propsSize}`,
+    propsReadOnly ? 'ax-input-readonly' : '',
+    propsHasError ? 'ax-input-error' : '',
+    propsWrapperClassName,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const inputClasses = [
+    'ax-input-field',
+    propsInputClassName,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
   return (
-    <AXInput
-      type={showPassword ? 'text' : 'password'}
-      propsLabel={propsLabel}
-      propsMandatory={propsMandatory}
-      propsPlaceholder={propsPlaceholder}
-      propsDisabled={propsDisabled}
-      propsCurrency={propsCurrency}
-      propsBadge={propsBadge}
-      propsLabelClassName={propsLabelClassName}
-      propsLabelStyle={propsLabelStyle}
-      propsValue={propsValue}
-      propsOnChange={propsOnChange}
-      propsStartIcon={propsStartIcon}
-      propsEndIcon={propsEndIcon || defaultEndIcon}
-      propsHasError={propsHasError}
-      propsClassName={propsClassName}
-      propsWrapperClassName={propsWrapperClassName}
-      propsInputClassName={propsInputClassName}
-      propsStyle={propsStyle}
-      propsSize={propsSize}
-      propsReadOnly={propsReadOnly}
-      propsId={propsId}
-      propsName={propsName}
-      {...inputProps}
-    />
+    <>
+    <div className={`ax-input-container ${propsClassName}`.trim()} style={propsStyle}>
+      {propsLabel && (
+        <AXInputLabel
+          propsLabel={propsLabel}
+          propsHtmlFor={propsId}
+          propsMandatory={propsMandatory}
+          propsCurrency={propsCurrency}
+          propsBadge={propsBadge}
+          propsClassName={propsLabelClassName}
+          propsStyle={propsLabelStyle}
+        />
+      )}
+
+      <div className={wrapperClassName}>
+        {propsStartIcon && (
+          <span className="ax-input-start-icon">{propsStartIcon}</span>
+        )}
+
+        <input
+          id={propsId}
+          name={propsName}
+          className={inputClasses}
+          placeholder={propsPlaceholder}
+          value={propsValue}
+          onChange={propsOnChange}
+          readOnly={propsReadOnly}
+          type={showPassword ? 'text' : 'password'}
+          {...inputProps}
+        />
+
+        <span className="ax-input-end-icon">
+          {propsEndIcon || defaultEndIcon}
+        </span>
+      </div>
+    </div>
+    {propsHasError && <span className="ax-text-xs ax-font-semibold ax-text-red ax-mt-1">{propsErrorMessage}</span>}
+    </>
   );
 };
 

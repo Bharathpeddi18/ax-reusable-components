@@ -316,24 +316,24 @@ pre.ql-syntax {
 /* endregion */
 
 
-/* region Disabled */
+/* region Read Only */
 
-.ax-input-rich-text-disabled {
+.ax-input-rich-text-readonly {
   opacity: 0.7;
 }
 
-.ax-input-rich-text-disabled
+.ax-input-rich-text-readonly
 .quill {
   background-color:
     var(--ax-color-gray-100);
 }
 
-.ax-input-rich-text-disabled
+.ax-input-rich-text-readonly
 .ql-toolbar {
   pointer-events: none;
 }
 
-.ax-input-rich-text-disabled
+.ax-input-rich-text-readonly
 .ql-editor {
   cursor: not-allowed;
 }

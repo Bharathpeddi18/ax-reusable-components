@@ -8,8 +8,8 @@
 
   --ax-date-placeholder: var(--ax-color-gray-400);
 
-  --ax-date-disabled-bg: var(--ax-color-gray-100);
-  --ax-date-disabled-text: var(--ax-color-gray-400);
+  --ax-date-readonly-bg: var(--ax-color-gray-100);
+  --ax-date-readonly-text: var(--ax-color-gray-400);
 
   --ax-date-radius: var(--ax-radius-md);
 
@@ -68,7 +68,7 @@
 
 /* region Hover */
 
-.ax-input-date-field:hover:not(:disabled):not(:read-only) {
+.ax-input-date-field:hover:not(:read-only) {
   border-color:
     var(--ax-color-primary-hover);
 }
@@ -96,7 +96,7 @@
 
 /* region Active */
 
-.ax-input-date-field:active:not(:disabled):not(:read-only) {
+.ax-input-date-field:active:not(:read-only) {
   border-color:
     var(--ax-color-primary-active);
 }
@@ -193,27 +193,27 @@
 /* endregion */
 
 
-/* region Disabled */
+/* region Read Only */
 
-.ax-input-date-disabled {
+.ax-input-date-readonly {
   opacity: 0.7;
 }
 
-.ax-input-date-disabled
+.ax-input-date-readonly
 .ax-input-date-field {
   border-color:
     var(--ax-color-gray-300);
 
   background-color:
-    var(--ax-date-disabled-bg);
+    var(--ax-date-readonly-bg);
 
   color:
-    var(--ax-date-disabled-text);
+    var(--ax-date-readonly-text);
 
   cursor: not-allowed;
 }
 
-.ax-input-date-disabled
+.ax-input-date-readonly
 .ax-input-date-field::-webkit-calendar-picker-indicator {
   cursor: not-allowed;
 

@@ -13,10 +13,10 @@ export interface TextAreaProps
   propsValue?: string;
   propsRows?: number;
   propsMaxLength?: number;
-  propsDisabled?: boolean;
   propsReadOnly?: boolean;
   propsMandatory?: boolean;
   propsHasError?: boolean;
+  propsErrorMessage?: string;
   propsClassName?: string;
   propsInputClassName?: string;
   propsLabelClassName?: string;
@@ -32,10 +32,10 @@ export const AXTextArea = ({
   propsValue,
   propsRows = 4,
   propsMaxLength,
-  propsDisabled = false,
   propsReadOnly = false,
   propsMandatory = false,
   propsHasError = false,
+  propsErrorMessage = '',
   propsClassName = '',
   propsInputClassName = '',
   propsLabelClassName = '',
@@ -45,7 +45,7 @@ export const AXTextArea = ({
 }: TextAreaProps) => {
   const rootClassName = [
     'ax-text-area',
-    propsDisabled ? 'ax-text-area-disabled' : '',
+    propsReadOnly ? 'ax-text-area-readonly' : '',
     propsHasError ? 'ax-text-area-error' : '',
     propsClassName,
   ]
@@ -60,6 +60,7 @@ export const AXTextArea = ({
     .join(' ');
 
   return (
+    <>
     <div className={rootClassName} style={propsStyle}>
       {propsLabel && (
         <AXInputLabel
@@ -67,7 +68,6 @@ export const AXTextArea = ({
           propsHtmlFor={propsId}
           propsMandatory={propsMandatory}
           propsClassName={propsLabelClassName}
-          propsDisabled={propsDisabled}
         />
       )}
 
@@ -78,12 +78,13 @@ export const AXTextArea = ({
         value={propsValue}
         rows={propsRows}
         maxLength={propsMaxLength}
-        disabled={propsDisabled}
         readOnly={propsReadOnly}
         onChange={propsOnChange}
         className={inputClassName}
       />
     </div>
+    {propsHasError && <span className="ax-text-xs ax-font-semibold ax-text-red ax-mt-1">{propsErrorMessage}</span>}
+    </>
   );
 };
 

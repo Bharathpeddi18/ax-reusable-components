@@ -13,8 +13,6 @@ export interface InputProps
   propsMandatory?: boolean;
   /** Placeholder text */
   propsPlaceholder?: string;
-  /** Disable input */
-  propsDisabled?: boolean;
   /** Currency text displayed beside label */
   propsCurrency?: string;
   /** Badge displayed beside label */
@@ -51,6 +49,8 @@ export interface InputProps
   propsOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   /** Input auto complete */
   propsAutoComplete?: string;
+  /** Error message */
+  propsErrorMessage?: string;
 }
 
 // region Main Component
@@ -58,7 +58,7 @@ export const AXInput = ({
   propsLabel,
   propsMandatory,
   propsPlaceholder,
-  propsDisabled,
+  propsReadOnly,
   propsCurrency,
   propsBadge,
   propsLabelClassName,
@@ -69,6 +69,7 @@ export const AXInput = ({
   propsStartIcon,
   propsEndIcon,
   propsHasError = false,
+  propsErrorMessage='',
   propsClassName = '',
   propsWrapperClassName = '',
   propsInputClassName = '',
@@ -80,7 +81,7 @@ export const AXInput = ({
   const wrapperClassName = [
     'ax-input-wrapper',
     `ax-input-${propsSize}`,
-    propsDisabled ? 'ax-input-disabled' : '',
+    propsReadOnly ? 'ax-input-readonly' : '',
     propsHasError ? 'ax-input-error' : '',
     propsWrapperClassName,
   ]
@@ -95,6 +96,7 @@ export const AXInput = ({
     .join(' ');
 
   return (
+    <>
     <div className={`ax-input-container ${propsClassName}`.trim()} style={propsStyle}>
       {propsLabel && (
         <AXInputLabel
@@ -105,7 +107,6 @@ export const AXInput = ({
           propsBadge={propsBadge}
           propsClassName={propsLabelClassName}
           propsStyle={propsLabelStyle}
-          propsDisabled={propsDisabled}
         />
       )}
 
@@ -118,10 +119,10 @@ export const AXInput = ({
           id={id}
           className={inputClasses}
           placeholder={propsPlaceholder}
-          disabled={propsDisabled}
           autoComplete={propsAutoComplete}
           value={propsValue}
           onChange={propsOnChange}
+          readOnly={propsReadOnly}
           {...inputProps}
         />
 
@@ -130,6 +131,8 @@ export const AXInput = ({
         )}
       </div>
     </div>
+    {propsHasError && <span className="ax-text-xs ax-font-semibold ax-text-red ax-mt-1">{propsErrorMessage}</span>}
+    </>
   );
 };
 

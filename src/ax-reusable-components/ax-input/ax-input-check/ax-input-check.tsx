@@ -28,6 +28,8 @@ export interface InputCheckProps
   propsStyle?: CSSProperties;
   /** Displays error styling */
   propsHasError?: boolean;
+  /** Error message */
+  propsErrorMessage?: string;
   propsOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   propsId?: string;
   propsMandatory?: boolean;
@@ -35,9 +37,9 @@ export interface InputCheckProps
   propsBadge?: number | string;
   propsChecked?: boolean;
   propsDefaultChecked?: boolean;
-  propsDisabled?: boolean;
   propsName?: string;
   propsValue?: string;
+  propsReadOnly?: boolean;
 }
 
 // region Main Component
@@ -49,13 +51,14 @@ export const AXInputCheck = ({
   propsLabelClassName = '',
   propsStyle,
   propsHasError = false,
+  propsErrorMessage = '',
+  propsReadOnly,
   propsId,
   propsMandatory,
   propsCurrency,
   propsBadge,
   propsChecked,
   propsDefaultChecked,
-  propsDisabled,
   propsName,
   propsValue,
   propsOnChange,
@@ -66,7 +69,7 @@ export const AXInputCheck = ({
     propsLabelPosition === 'before'
       ? 'ax-input-check-label-before'
       : 'ax-input-check-label-after',
-    propsDisabled ? 'ax-input-check-disabled' : '',
+    propsReadOnly ? 'ax-input-check-readonly' : '',
     propsHasError ? 'ax-input-check-error' : '',
     propsClassName,
   ]
@@ -81,6 +84,7 @@ export const AXInputCheck = ({
     .join(' ');
 
   return (
+    <>
     <div className={rootClassName} style={propsStyle}>
       {propsLabelPosition === 'before' && (
         <AXInputLabel
@@ -90,7 +94,6 @@ export const AXInputCheck = ({
           propsCurrency={propsCurrency}
           propsBadge={propsBadge}
           propsClassName={propsLabelClassName}
-          propsDisabled={propsDisabled}
         />
       )}
 
@@ -102,8 +105,8 @@ export const AXInputCheck = ({
         value={propsValue}
         checked={propsChecked}
         defaultChecked={propsDefaultChecked}
-        disabled={propsDisabled}
         onChange={propsOnChange}
+        readOnly={propsReadOnly}
         className={inputClassName}
       />
 
@@ -115,10 +118,11 @@ export const AXInputCheck = ({
           propsCurrency={propsCurrency}
           propsBadge={propsBadge}
           propsClassName={propsLabelClassName}
-          propsDisabled={propsDisabled}
         />
       )}
     </div>
+    {propsHasError && <span className="ax-text-xs ax-font-semibold ax-text-red ax-mt-1">{propsErrorMessage}</span>}
+    </>
   );
 };
 

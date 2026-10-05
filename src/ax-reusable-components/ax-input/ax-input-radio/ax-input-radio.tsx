@@ -28,6 +28,8 @@ export interface InputRadioProps
   propsStyle?: CSSProperties;
   /** Error state */
   propsHasError?: boolean;
+  /** Error message */
+  propsErrorMessage?: string;
   /** Change event */
   propsOnChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   propsId?: string;
@@ -36,7 +38,7 @@ export interface InputRadioProps
   propsBadge?: number | string;
   propsChecked?: boolean;
   propsDefaultChecked?: boolean;
-  propsDisabled?: boolean;
+  propsReadOnly?: boolean;
   propsName?: string;
   propsValue?: string;
 }
@@ -50,13 +52,14 @@ export const AXInputRadio = ({
   propsLabelClassName = '',
   propsStyle,
   propsHasError = false,
+  propsErrorMessage = '',
   propsId,
   propsMandatory,
   propsCurrency,
   propsBadge,
   propsChecked,
   propsDefaultChecked,
-  propsDisabled,
+  propsReadOnly,
   propsName,
   propsValue,
   propsOnChange,
@@ -67,7 +70,7 @@ export const AXInputRadio = ({
     propsLabelPosition === 'before'
       ? 'ax-input-radio-label-before'
       : 'ax-input-radio-label-after',
-    propsDisabled ? 'ax-input-radio-disabled' : '',
+    propsReadOnly ? 'ax-input-radio-readonly' : '',
     propsHasError ? 'ax-input-radio-error' : '',
     propsClassName,
   ]
@@ -82,6 +85,7 @@ export const AXInputRadio = ({
     .join(' ');
 
   return (
+    <>
     <div className={rootClassName} style={propsStyle}>
       {propsLabelPosition === 'before' && (
         <AXInputLabel
@@ -91,7 +95,6 @@ export const AXInputRadio = ({
           propsCurrency={propsCurrency}
           propsBadge={propsBadge}
           propsClassName={propsLabelClassName}
-          propsDisabled={propsDisabled}
         />
       )}
 
@@ -103,7 +106,7 @@ export const AXInputRadio = ({
         value={propsValue}
         checked={propsChecked}
         defaultChecked={propsDefaultChecked}
-        disabled={propsDisabled}
+        readOnly={propsReadOnly}
         onChange={propsOnChange}
         className={inputClassName}
       />
@@ -116,10 +119,11 @@ export const AXInputRadio = ({
           propsCurrency={propsCurrency}
           propsBadge={propsBadge}
           propsClassName={propsLabelClassName}
-          propsDisabled={propsDisabled}
         />
       )}
     </div>
+    {propsHasError && <span className="ax-text-xs ax-font-semibold ax-text-red ax-mt-1">{propsErrorMessage}</span>}
+    </>
   );
 };
 

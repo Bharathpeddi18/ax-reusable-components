@@ -34,8 +34,6 @@ export interface InputLabelProps {
   propsInfoClassName?: string;
   /** Tooltip placement position */
   propsInfoPosition?: 'top' | 'bottom' | 'left' | 'right';
-  /** Disabled state to mute label appearance */
-  propsDisabled?: boolean;
 }
 
 // region Main Component
@@ -49,13 +47,11 @@ export const AXInputLabel: React.FC<InputLabelProps> = (props) => {
     propsMandatory,
     propsCurrency,
     propsBadge,
-    propsDisabled,
   } = props;
 
   const rootClasses = [
     'ax-input-label',
     propsClassName,
-    propsDisabled ? 'ax-input-label-disabled' : '',
   ]
     .filter(Boolean)
     .join(' ');
