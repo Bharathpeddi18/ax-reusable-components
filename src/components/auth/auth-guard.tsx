@@ -15,7 +15,7 @@ interface AuthGuardProps {
 interface User {
   id: number;
   email: string;
-  role: UserRole;
+  group_code: UserRole;
 }
 
 const AuthGuard = ({
@@ -49,7 +49,7 @@ const AuthGuard = ({
 
         if (
           allowedRoles &&
-          !allowedRoles.includes(currentUser.role)
+          !allowedRoles.includes(currentUser.group_code)
         ) {
           router.replace('/unauthorized');
           return;
