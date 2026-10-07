@@ -41,7 +41,9 @@ export const Login = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleLogin = async () => {
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     const cleanedEmail = email.trim();
     const cleanedPassword = password.trim();
 
@@ -76,6 +78,10 @@ export const Login = () => {
       }
 
       console.log('Login successful:', data);
+
+      const user = await getCurrentUser();
+      console.log('user: ', user)
+      
       router.push(ROUTERS_PATHS.dashboardStudent)
 
     } catch (error) {
@@ -83,9 +89,6 @@ export const Login = () => {
     } finally {
       setIsLoading(false);
     }
-
-    const user = await getCurrentUser();
-    console.log('user: ', user)
   };
 
   return (
@@ -122,7 +125,7 @@ export const Login = () => {
             </>
           }
           propsBody={
-            <div className="ax-flex ax-flex-col ax-gap-1">
+            <form noValidate onSubmit={handleLogin} className="ax-flex ax-flex-col ax-gap-1">
               <div className="ax-flex ax-flex-col ax-gap-2">
                 <div className="ax-flex ax-flex-col">
                   <AXInputText
@@ -177,15 +180,13 @@ export const Login = () => {
               {/* Login */}
               <AXButton
                 propsLabel={isLoading ? 'Signing In...' : 'Sign In'}
+                propsType='submit'
                 propsSize="md"
                 propsClassName="ax-bg-coral ax-text-white ax-rounded-md ax-w-full ax-mt-2 hover:ax-opacity-90 ax-transition-opacity"
                 propsDisabled={isLoading}
                 propsLoading={isLoading}
-                onClick={() => {
-                  handleLogin();
-                }}  
               />
-            </div>
+            </form>
           }
         />
       </div>
