@@ -11,17 +11,14 @@ import AXPageLoader from '@/ax-reusable-components/ax-page-loader/ax-page-loader
 interface Submission {
   id: number;
   name: string;
-  number: string;
-}
-
-interface SubmissionsResponse {
-  status: number;
-  submissions: Submission[];
+  class_id: number;
+  photo_id?: string;
+  photo_url?: string;
 }
 // endregion
 
 // region Constants
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL;
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
 // endregion
 
 // region Main Component
@@ -30,19 +27,20 @@ export default function StudentSubmissionsPage() {
   const [tableData, setTableData] = useState<Submission[]>([]);
   const [loading, setLoading] = useState({ page: true, delete: false });
   const [message, setMessage] = useState('');
+  const [imageError, setImageError] = useState<Record<number, boolean>>({});
   // endregion
 
   // region Fetch Submissions
   const fetchSubmissions = async () => {
     setLoading((prev) => ({ ...prev, page: true }));
     try {
-      const response = await fetch(`${BACKEND_URL}/submissions`);
-      if (!response.ok) throw new Error('Failed to fetch submissions');
+      const response = await fetch(`${BACKEND_URL}/students`);
+      if (!response.ok) throw new Error('Failed to fetch students');
 
-      const data: SubmissionsResponse = await response.json();
-      setTableData(data.submissions ?? []);
+      const data: Submission[] = await response.json();
+      setTableData(data || []);
     } catch (error) {
-      console.error('Fetch submissions error:', error);
+      console.error('Fetch students error:', error);
       setTableData([]);
     } finally {
       setLoading((prev) => ({ ...prev, page: false }));
@@ -58,14 +56,14 @@ export default function StudentSubmissionsPage() {
   const handleDelete = async (id: number) => {
     setLoading((prev) => ({ ...prev, delete: true }));
     try {
-      const response = await fetch(`${BACKEND_URL}/submissions-delete/${id}`, { method: 'GET' });
-      if (!response.ok) throw new Error('Failed to delete submission');
+      const response = await fetch(`${BACKEND_URL}/students/${id}`, { method: 'DELETE' });
+      if (!response.ok) throw new Error('Failed to delete student');
 
       const data = await response.json();
-      setMessage(data.message ?? 'Submission deleted successfully');
+      setMessage(data.message ?? 'Student deleted successfully');
       await fetchSubmissions();
     } catch (error) {
-      console.error('Delete submission error:', error);
+      console.error('Delete student error:', error);
       setMessage('Something went wrong');
     } finally {
       setLoading((prev) => ({ ...prev, delete: false }));
@@ -132,8 +130,9 @@ export default function StudentSubmissionsPage() {
                   <thead>
                     <tr className="ax-border-b ax-border-gray-200 ax-bg-gray-50">
                       <th className="ax-px-4 ax-py-3 ax-font-semibold ax-text-gray-700">ID</th>
+                      <th className="ax-px-4 ax-py-3 ax-font-semibold ax-text-gray-700">Photo</th>
                       <th className="ax-px-4 ax-py-3 ax-font-semibold ax-text-gray-700">Name</th>
-                      <th className="ax-px-4 ax-py-3 ax-font-semibold ax-text-gray-700">Phone Number</th>
+                      <th className="ax-px-4 ax-py-3 ax-font-semibold ax-text-gray-700">Class ID</th>
                       <th className="ax-px-4 ax-py-3 ax-text-right ax-font-semibold ax-text-gray-700">Actions</th>
                     </tr>
                   </thead>
@@ -146,8 +145,22 @@ export default function StudentSubmissionsPage() {
                           className="ax-border-b ax-border-gray-100 ax-transition-colors hover:ax-bg-gray-50"
                         >
                           <td className="ax-px-4 ax-py-3 ax-font-medium ax-text-gray-900">#{item.id}</td>
+                          <td className="ax-px-4 ax-py-3">
+                            {item.photo_url && !imageError[item.id] ? (
+                              <img
+                                src={`${BACKEND_URL}${item.photo_url}`}
+                                alt={item.name}
+                                className="ax-h-10 ax-w-10 ax-rounded-full ax-object-cover ax-border ax-border-gray-200"
+                                onError={() => setImageError((prev) => ({ ...prev, [item.id]: true }))}
+                              />
+                            ) : (
+                              <div className="ax-flex ax-h-10 ax-w-10 ax-items-center ax-justify-center ax-rounded-full ax-bg-gray-100 ax-text-gray-400">
+                                <Icon name="person" size={20} />
+                              </div>
+                            )}
+                          </td>
                           <td className="ax-px-4 ax-py-3 ax-text-gray-800">{item.name}</td>
-                          <td className="ax-px-4 ax-py-3 ax-text-gray-600">{item.number}</td>
+                          <td className="ax-px-4 ax-py-3 ax-text-gray-600">{item.class_id}</td>
                           <td className="ax-px-4 ax-py-3 ax-text-right">
                             <AXButton
                               propsLabel="Delete"
