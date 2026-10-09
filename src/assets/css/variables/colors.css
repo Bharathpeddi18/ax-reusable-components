@@ -1,206 +1,123 @@
-/* ========================================
-   Astrax Color Tokens
-   ======================================== */
+  :root {
+    --ax-body-bg-color: #eff7ff;
 
-:root {
+    /* Core semantic */
+    --ax-color-primary: #00308F;
+    --ax-color-primary-light: #EDF3FF;
+    --ax-color-secondary: #8250DF;
+    --ax-color-secondary-light: #FBEFFF;
+    --ax-color-default: #24292F;
+    --ax-color-default-light: #F6F8FA;
+    --ax-color-success: #1A7F37;
+    --ax-color-success-light: #DAFBE1;
+    --ax-color-danger: #CF222E;
+    --ax-color-danger-light: #FFEBE9;
+    --ax-color-warning: #9A6700;
+    --ax-color-warning-light: #FFF8C5;
+    --ax-color-info: #0969DA;
+    --ax-color-info-light: #DDF4FF;
+    --ax-color-link: #0969DA;
+    --ax-color-link-light: #DDF4FF;
 
-   --ax-body-bg-color: #EEF3F8;
+    /* Extended palette */
+    --ax-color-red: #CF222E;
+    --ax-color-red-light: #FFEBE9;
+    --ax-color-orange: #BC4C00;
+    --ax-color-orange-light: #FFF1E5;
+    --ax-color-yellow: #9A6700;
+    --ax-color-yellow-light: #FFF8C5;
+    --ax-color-green: #1A7F37;
+    --ax-color-green-light: #DAFBE1;
+    --ax-color-mint: #147D64;
+    --ax-color-mint-light: #DDF8EE;
+    --ax-color-teal: #116D6E;
+    --ax-color-teal-light: #DDF5F3;
+    --ax-color-cyan: #096B86;
+    --ax-color-cyan-light: #DDF4FF;
+    --ax-color-blue: #0969DA;
+    --ax-color-blue-light: #DDF4FF;
+    --ax-color-indigo: #4F46B5;
+    --ax-color-indigo-light: #EEEDFF;
+    --ax-color-purple: #8250DF;
+    --ax-color-purple-light: #FBEFFF;
+    --ax-color-pink: #BF3989;
+    --ax-color-pink-light: #FFEBF4;
+    --ax-color-brown: #7D4E2D;
+    --ax-color-brown-light: #F5EDE5;
 
-   /* ----------------------------------------
-     Core / Semantic
-     ---------------------------------------- */
+    /* Intermediate hues */
+    --ax-color-coral: #C4432B;
+    --ax-color-coral-light: #FFEBE5;
+    --ax-color-amber: #9A6700;
+    --ax-color-amber-light: #FFF8C5;
+    --ax-color-lime: #577A15;
+    --ax-color-lime-light: #F0F8D8;
+    --ax-color-emerald: #1A7F37;
+    --ax-color-emerald-light: #DAFBE1;
+    --ax-color-seafoam: #147D64;
+    --ax-color-seafoam-light: #DDF8EE;
+    --ax-color-aqua: #096B86;
+    --ax-color-aqua-light: #DDF4FF;
+    --ax-color-sky: #0969DA;
+    --ax-color-sky-light: #DDF4FF;
+    --ax-color-cobalt: #0550AE;
+    --ax-color-cobalt-light: #DDF4FF;
+    --ax-color-violet: #8250DF;
+    --ax-color-violet-light: #FBEFFF;
+    --ax-color-magenta: #BF3989;
+    --ax-color-magenta-light: #FFEBF4;
+    --ax-color-rose: #CF222E;
+    --ax-color-rose-light: #FFEBE9;
+    --ax-color-bronze: #95511A;
+    --ax-color-bronze-light: #F9EBDD;
 
-   --ax-color-primary: #00308F;
-   --ax-color-primary-light: #EDF3FF;
+    /* Neutrals */
+    --ax-color-slate: #424A53;
+    --ax-color-slate-light: #F6F8FA;
+    --ax-color-black: #1F2328;
+    --ax-color-black-light: #EAEEF2;
+    --ax-color-white: #FFFFFF;
+    --ax-color-white-light: #F6F8FA;
+    --ax-color-gray: #59636E;
+    --ax-color-gray-light: #F6F8FA;
+    --ax-color-zinc: #52525B;
+    --ax-color-zinc-light: #F4F4F5;
+    --ax-color-neutral: #57606A;
+    --ax-color-neutral-light: #F6F8FA;
+    --ax-color-stone: #57534E;
+    --ax-color-stone-light: #F5F5F4;
+    --ax-color-accent: #9A6700;
+    --ax-color-accent-light: #FFF8C5;
 
-   --ax-color-secondary: #5B3FBF;
-   --ax-color-secondary-light: #F2EFFF;
+    /* Interactive states */
+    --ax-color-primary-hover: #0550AE;
+    --ax-color-primary-active: #033D8B;
+    --ax-color-secondary-hover: #6639BA;
+    --ax-color-secondary-active: #512A97;
+    --ax-color-success-hover: #116329;
+    --ax-color-warning-hover: #805400;
+    --ax-color-danger-hover: #A40E26;
+    --ax-color-info-hover: #0550AE;
+    --ax-color-accent-hover: #805400;
+    --ax-color-accent-active: #633F00;
 
-   --ax-color-default: #28334F;
-   --ax-color-default-light: #F3F4F6;
+    /* Backgrounds */
+    --ax-color-background: #F6F8FA;
+    --ax-color-surface: #FFFFFF;
+    --ax-color-surface-secondary: #F6F8FA;
+    --ax-color-surface-tertiary: #EAEEF2;
 
-   --ax-color-success: #087F5B;
-   --ax-color-success-light: #EAFBF4;
+    /* Text */
+    --ax-color-text: #1F2328;
+    --ax-color-text-secondary: #59636E;
+    --ax-color-text-muted: #59636E;
+    --ax-color-text-disabled: #818B98;
+    --ax-color-text-inverse: #FFFFFF;
 
-   --ax-color-danger: #B42318;
-   --ax-color-danger-light: #FFF0EE;
-
-   --ax-color-warning: #8A4B00;
-   --ax-color-warning-light: #FFF7E6;
-
-   --ax-color-info: #005A9C;
-   --ax-color-info-light: #EAF6FF;
-
-
-   /* ----------------------------------------
-     Extended Colors
-     ---------------------------------------- */
-
-   --ax-color-red: #FF383C;
-   --ax-color-red-light: #FFEBEB;
-
-   --ax-color-orange: #FF8D28;
-   --ax-color-orange-light: #FFF3E9;
-
-   --ax-color-yellow: #FFCC00;
-   --ax-color-yellow-light: #FFFAEB;
-
-   --ax-color-green: #34C759;
-   --ax-color-green-light: #EAF9EE;
-
-   --ax-color-mint: #00C8B3;
-   --ax-color-mint-light: #E5FAF8;
-
-   --ax-color-teal: #00C3D0;
-   --ax-color-teal-light: #E5F9FB;
-
-   --ax-color-cyan: #00C0E8;
-   --ax-color-cyan-light: #E5F8FD;
-
-   --ax-color-blue: #0088FF;
-   --ax-color-blue-light: #E5F3FF;
-
-   --ax-color-indigo: #6155F5;
-   --ax-color-indigo-light: #EFEEFF;
-
-   --ax-color-purple: #CB30E0;
-   --ax-color-purple-light: #FAEAFB;
-
-   --ax-color-pink: #FF2D55;
-   --ax-color-pink-light: #FFEAEF;
-
-   --ax-color-brown: #AC7F5E;
-   --ax-color-brown-light: #F6F2EF;
-
-   /* =========================================================
-     ASTRAX EXTENDED COLORS
-     Apple-inspired intermediate hues
-     ========================================================= */
-
-   /* Red → Orange */
-   --ax-color-coral: #FF6935;
-   --ax-color-coral-light: #FFEDE7;
-
-   /* Orange → Yellow */
-   --ax-color-amber: #FFAD1D;
-   --ax-color-amber-light: #FFF6E8;
-
-   /* Yellow → Green */
-   --ax-color-lime: #AFCC42;
-   --ax-color-lime-light: #F7FAEB;
-
-   /* Green → Mint */
-   --ax-color-emerald: #21C88A;
-   --ax-color-emerald-light: #E8F9F3;
-
-   /* Mint → Teal */
-   --ax-color-seafoam: #00C6C2;
-   --ax-color-seafoam-light: #E5F9F8;
-
-   /* Teal → Cyan */
-   --ax-color-aqua: #00C2DC;
-   --ax-color-aqua-light: #E5F8FB;
-
-   /* Cyan → Blue */
-   --ax-color-sky: #00A5F4;
-   --ax-color-sky-light: #E5F6FE;
-
-   /* Blue → Indigo */
-   --ax-color-cobalt: #4970FA;
-   --ax-color-cobalt-light: #EDF1FF;
-
-   /* Indigo → Purple */
-   --ax-color-violet: #9A4BEB;
-   --ax-color-violet-light: #F5EDFD;
-
-   /* Purple → Pink */
-   --ax-color-magenta: #E43CA0;
-   --ax-color-magenta-light: #FCECF5;
-
-   /* Pink → Red */
-   --ax-color-rose: #FF3349;
-   --ax-color-rose-light: #FFEBED;
-
-   /* Brown → Orange */
-   --ax-color-bronze: #D5874B;
-   --ax-color-bronze-light: #FAF3ED;
-
-   /* ----------------------------------------
-     Neutrals & Accents
-     ---------------------------------------- */
-
-   --ax-color-slate: #334155;
-   --ax-color-slate-light: #F1F5F9;
-
-   --ax-color-black: #000000;
-   --ax-color-black-light: #E5E7EB;
-
-   --ax-color-white: #FFFFFF;
-   --ax-color-white-light: #F9FAFB;
-
-   --ax-color-gray: #4B5563;
-   --ax-color-gray-light: #F3F4F6;
-
-   --ax-color-zinc: #52525B;
-   --ax-color-zinc-light: #F4F4F5;
-
-   --ax-color-neutral: #525252;
-   --ax-color-neutral-light: #F5F5F5;
-
-   --ax-color-stone: #57534E;
-   --ax-color-stone-light: #F5F5F4;
-
-   --ax-color-accent: #C9A227;
-   --ax-color-accent-light: #FFF8CC;
-
-
-   /* ----------------------------------------
-     Interactive States
-     ---------------------------------------- */
-
-   --ax-color-primary-hover: #002776;
-   --ax-color-primary-active: #001E5B;
-
-   --ax-color-secondary-hover: #4C33A3;
-   --ax-color-secondary-active: #3E2987;
-
-   --ax-color-success-hover: #06694A;
-   --ax-color-warning-hover: #703D00;
-   --ax-color-danger-hover: #961C13;
-   --ax-color-info-hover: #004A80;
-
-   --ax-color-accent-hover: #B08D22;
-   --ax-color-accent-active: #94771C;
-
-
-   /* ----------------------------------------
-     Background / Surface
-     ---------------------------------------- */
-
-   --ax-color-background: #F8FAFC;
-   --ax-color-surface: #ffffff;
-   --ax-color-surface-secondary: #F1F5F9;
-   --ax-color-surface-tertiary: #E2E8F0;
-
-
-   /* ----------------------------------------
-     Text
-     ---------------------------------------- */
-
-   --ax-color-text: #131A2B;
-   --ax-color-text-secondary: #475569;
-   --ax-color-text-muted: #64748B;
-   --ax-color-text-disabled: #94A3B8;
-
-
-   /* ----------------------------------------
-     Borders
-     ---------------------------------------- */
-
-   --ax-color-border: #E2E8F0;
-   --ax-color-border-secondary: #CBD5E1;
-   --ax-color-border-focus: var(--ax-color-primary);
-
+    /* Borders */
+    --ax-color-border: #D0D7DE;
+    --ax-color-border-secondary: #AFB8C1;
+    --ax-color-border-focus: #0969DA;
 
    /* ----------------------------------------
      Focus
