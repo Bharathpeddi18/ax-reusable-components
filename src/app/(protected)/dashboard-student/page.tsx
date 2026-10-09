@@ -25,9 +25,9 @@ export default function DashboardStudentPage() {
           propsLeftContent={
             <div className="ax-flex ax-items-center ax-gap-1">
               <Icon name="grid-fill" size={20} className="ax-text-primary" />
-              <h1 className="ax-text-lg ax-font-semibold" tabIndex={0}>
+              <h2 className="ax-text-lg ax-font-semibold" tabIndex={0}>
                 Dashboard
-              </h1>
+              </h2>
             </div>
           }
           propsRightContent={

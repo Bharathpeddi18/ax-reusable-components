@@ -88,9 +88,9 @@ export default function IconsGalleryPage() {
         propsPageTitle="Icon Gallery"
         propsLeftContent={
           <div className="ax-flex ax-items-center ax-gap-3">
-            <h1 className="ax-text-base ax-font-semibold ax-text-gray-900" tabIndex={0}>
+            <h2 className="ax-text-base ax-font-semibold ax-text-gray-900" tabIndex={0}>
               Icon Explorer
-            </h1>
+            </h2>
             <span className="ax-text-xs ax-font-medium ax-bg-blue-50 ax-text-primary ax-px-2.5 ax-py-0.5 ax-rounded-full">
               {filteredIcons.length.toLocaleString()} Icons
             </span>

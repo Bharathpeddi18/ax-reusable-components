@@ -67,12 +67,12 @@ export const ChartStudentsByGender = () => {
       propsBodyClassName='ax-flex ax-items-center'
       propsHeader={
         <div className="ax-flex ax-items-center ax-gap-1">
-          <h1
+          <h3
             className="ax-text-md ax-font-semibold ax-title-border ax-title-border-primary"
             tabIndex={0}
           >
             By Gender
-          </h1>
+          </h3>
 
           <AXBadge
             propsLabel={totalStudents.toString()}

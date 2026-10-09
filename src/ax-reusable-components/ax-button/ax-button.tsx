@@ -35,6 +35,9 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
   /** Button disabled state */
   propsDisabled?: boolean;
+
+  /** Button type */
+  propsType?: 'button' | 'submit';
 }
 
 // region Main Component
@@ -46,7 +49,7 @@ export const AXButton = ({
   propsEndIcon,
   propsLoading = false,
   propsDisabled = false,
-  type = 'button',
+  propsType = 'button',
   propsClassName = '',
   ...buttonProps
 }: ButtonProps) => {
@@ -56,7 +59,7 @@ export const AXButton = ({
 
   return (
     <button
-      type={type}
+      type={propsType}
       aria-label={propsLabel}
       title={propsLabel}
       className={buttonClasses}

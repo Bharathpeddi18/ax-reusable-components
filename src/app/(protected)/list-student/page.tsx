@@ -79,11 +79,14 @@ export default function StudentSubmissionsPage() {
       {loading.page && <AXPageLoader />}
 
       <AXPageHeader
-        propsPageTitle="Student Submissions"
+        propsPageTitle="Students"
         propsLeftContent={
-          <h1 className="ax-text-base ax-font-semibold" tabIndex={0}>
-            Student Submissions
-          </h1>
+          <div className="ax-flex ax-items-center ax-gap-1">
+            <Icon name="people-fill" size={20} className="ax-text-primary" />
+            <h2 className="ax-text-lg ax-font-semibold" tabIndex={0}>
+              Students
+            </h2>
+          </div>
         }
       />
 

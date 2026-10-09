@@ -89,9 +89,9 @@ export const CardQuickLinks = () => {
       propsBodyClassName="ax-py-0"
       propsHeader={
         <div className="ax-flex ax-items-center ax-gap-1">
-          <h1 className="ax-text-md ax-font-semibold ax-title-border ax-title-border-primary" tabIndex={0}>
+          <h3 className="ax-text-md ax-font-semibold ax-title-border ax-title-border-primary" tabIndex={0}>
             Quick Links
-          </h1>
+          </h3>
           <div className="ax-flex ax-items-center ax-ms-auto">
             <AXButton
               propsLabel="View All"
