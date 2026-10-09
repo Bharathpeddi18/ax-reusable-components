@@ -70,11 +70,11 @@ const calendarEvents: CalendarEvent[] = [
 const categoryConfig = {
     [CALENDAR_CATEGORIES.general]: {
         label: 'General',
-        color: 'ax-bg-gray-500',
+        color: '--ax-color-sky',
     },
     [CALENDAR_CATEGORIES.events]: {
         label: 'Events',
-        color: 'ax-bg-warning',
+        color: 'ax-bg-orange',
     },
     [CALENDAR_CATEGORIES.meetings]: {
         label: 'Meetings',
@@ -114,12 +114,12 @@ export const CardCalendar = () => {
             propsBodyClassName="ax-pt-0"
             propsHeader={
                 <div className="ax-flex ax-items-center ax-gap-1">
-                    <h1
+                    <h3
                         className="ax-text-md ax-font-semibold ax-title-border ax-title-border-primary"
                         tabIndex={0}
                     >
                         Upcoming Events
-                    </h1>
+                    </h3>
 
                     <div className="ax-flex ax-items-center ax-ms-auto">
                         <AXButton

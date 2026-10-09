@@ -98,9 +98,12 @@ export default function CreateStudentPage() {
       <AXPageHeader
         propsPageTitle="Create Student"
         propsLeftContent={
-          <h1 className="ax-text-base ax-font-semibold" tabIndex={0} aria-label="Create Student">
-            Create Student
-          </h1>
+          <div className="ax-flex ax-items-center ax-gap-1">
+            <Icon name="person-plus-fill" size={20} className="ax-text-primary" />
+            <h2 className="ax-text-lg ax-font-semibold" tabIndex={0}>
+              Create Student
+            </h2>
+          </div>
         }
         propsRightContent={
           <AXButton

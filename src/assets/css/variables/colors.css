@@ -16,7 +16,7 @@
    --ax-color-secondary: #5B3FBF;
    --ax-color-secondary-light: #F2EFFF;
 
-   --ax-color-default: #374151;
+   --ax-color-default: #28334F;
    --ax-color-default-light: #F3F4F6;
 
    --ax-color-success: #087F5B;
@@ -187,7 +187,7 @@
      Text
      ---------------------------------------- */
 
-   --ax-color-text: #1E293B;
+   --ax-color-text: #131A2B;
    --ax-color-text-secondary: #475569;
    --ax-color-text-muted: #64748B;
    --ax-color-text-disabled: #94A3B8;
