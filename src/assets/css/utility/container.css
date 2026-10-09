@@ -9,7 +9,7 @@
   margin-right: auto;
 }
 
-@media (min-width: 640px) {
+/* @media (min-width: 640px) {
   .ax-container {
     max-width: 640px;
   }
@@ -37,4 +37,4 @@
   .ax-container {
     max-width: 1536px;
   }
-}
+} */

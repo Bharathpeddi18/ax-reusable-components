@@ -88,8 +88,8 @@ export default function StudentSubmissionsPage() {
         }
       />
 
-      <main className="ax-p-4 md:ax-p-6">
-        <div className="ax-container ax-flex ax-flex-col ax-gap-4">
+      <main className="ax-container">
+        <div className="ax-flex ax-flex-col ax-gap-4">
           {/* Server Message Feedback */}
           {message && (
             <div className="ax-flex ax-items-center ax-justify-between ax-rounded-lg ax-border ax-border-blue-200 ax-bg-blue-50 ax-p-4">
