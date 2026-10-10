@@ -11,7 +11,7 @@
   width: 100%;
   left: 0;
   z-index: var(--ax-z-index-header);
-  box-shadow: var(--ax-shadow-lg);
+  box-shadow: var(--ax-shadow-md);
   transition: var(--ax-g-transition-all);
   display: flex;
   align-items: center;

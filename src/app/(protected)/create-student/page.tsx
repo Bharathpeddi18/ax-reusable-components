@@ -98,7 +98,7 @@ export default function CreateStudentPage() {
         }
       />
 
-      <main className="ax-container">
+      <main className="ax-container mt-3">
         <div className="ax-flex ax-flex-col ax-gap-6">
           {/* Submission Response Feedback */}
           {message && (

@@ -125,8 +125,8 @@ export default function IconsGalleryPage() {
         }
       />
 
-      <main className="ax-p-4 md:ax-p-6">
-        <div className="ax-container ax-flex ax-flex-col ax-gap-4">
+      <main className="ax-container">
+        <div className="ax-flex ax-flex-col ax-gap-4">
           {/* Filter and Control Bar Card */}
           <AXCard
             propsSize="sm"

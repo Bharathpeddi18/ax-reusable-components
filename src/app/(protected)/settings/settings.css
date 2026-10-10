@@ -1,0 +1,27 @@
+.ax-page-settings .ax-tabs-h .ax-tabs-h-list:before{
+    bottom: 5px;
+    width: calc(100% - 28px);
+    margin: auto;
+}
+
+.ax-page-settings .ax-tabs-v .ax-tabs-v-list:before{
+    left: 12px;
+    height: calc(100% - 28px);
+    margin-block: auto;
+}
+
+/* Max Heights */
+@media (min-width: 1024px) {
+    .ax-page-settings .ax-tabs-v .ax-tabs-v-list {
+        height: 100%;
+        max-height: calc(100vh - 240px);
+        overflow-y: auto;
+    }
+}
+
+.ax-page-settings .ax-tabs-v .ax-tabs-v-content,
+.ax-page-settings .ax-tabs-v .ax-tabs-v-content-mobile{
+    height: 100%;
+    max-height: calc(100vh - 240px);
+    overflow-y: auto;
+}

@@ -1,0 +1,163 @@
+/* ==================================================
+   COMMON STYLES — CONSISTENT WITH HORIZONTAL TABS
+   ================================================== */
+
+/* Container */
+.ax-tabs-v {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Tabs List */
+.ax-tabs-v-list {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+/* Tab Wrapper — Vertical-specific structure */
+.ax-tab-v-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Tab Button */
+.ax-tab-v {
+  flex-shrink: 0;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: var(--ax-color-text-disabled);
+  font-family: inherit;
+  font-weight: var(--ax-font-weight-semibold);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Tab Hover / Focus States */
+.ax-tab-v:hover,
+.ax-tab-v:focus,
+.ax-tab-v:focus-visible {
+  color: var(--ax-color-primary);
+}
+
+/* Active Tab */
+.ax-tab-v-active {
+  color: var(--ax-color-primary);
+}
+
+/* Tab Sizes — Consistent with Horizontal Tabs */
+.ax-tab-v-sm {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.ax-tab-v-md {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.ax-tab-v-lg {
+  padding: 10px 14px;
+  font-size: 15px;
+}
+
+
+/* ==================================================
+   VERTICAL TABS — ADDITIONAL STYLES
+   ================================================== */
+
+/* Vertical List Layout */
+.ax-tabs-v-list {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Full-width Tab Buttons */
+.ax-tab-v {
+  display: block;
+}
+
+/* Left-side Active Indicator */
+.ax-tab-v::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--ax-color-primary);
+  border-radius: var(--ax-radius-xl);
+  transition: opacity 250ms ease;
+  opacity: 0;
+}
+
+/* Show Indicator for Active Tab */
+.ax-tab-v-active::before {
+  opacity: 1;
+}
+
+
+/* ==================================================
+   DESKTOP STYLES — 1024px AND ABOVE
+   ================================================== */
+
+@media (min-width: 1024px) {
+
+  /* Side-by-side Tab List and Content */
+  .ax-tabs-v {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  /* Fixed-width Vertical Tab List */
+  .ax-tabs-v-list {
+    min-width: 250px;
+    width: 250px;
+  }
+
+  /* Indicator Track */
+  .ax-tabs-v-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--ax-color-border);
+    border-radius: var(--ax-radius-xl);
+  }
+
+  /* Tab Content */
+  .ax-tabs-v-content {
+    flex: 1;
+    padding-left: 24px;
+    width: 100%;
+  }
+
+}
+
+
+/* ==================================================
+   MOBILE & TABLET STYLES — BELOW 1024px
+   ================================================== */
+
+@media (max-width: 1023px) {
+
+  /* Tab Separators */
+  .ax-tab-v {
+    border-bottom: 1px solid var(--ax-color-border);
+  }
+
+  /* Mobile Tab Content */
+  .ax-tabs-v-content-mobile {
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--ax-color-border);
+  }
+
+}

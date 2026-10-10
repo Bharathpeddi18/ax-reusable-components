@@ -25,6 +25,13 @@ export enum CALENDAR_CATEGORIES {
   exams = 'exams',
 }
 
+// Settings Content View Modes
+export enum SETTINGS_CONTENT_VIEW_MODES {
+  list = 'list',
+  add = 'add',
+  edit = 'edit',
+}
+
 // region Colors
 export const DASHBOARD_COLORS = {
   // Boys and Girls colors
@@ -89,3 +96,11 @@ export const ROUTERS_PATHS = {
   quickLinks: '/quick-links',
   settings: '/settings',
 }
+
+// region Selects
+
+// Yes and No Options
+export const SELECT_YES_NO_OPTIONS = [
+  { label: 'Yes', value: 'Yes' },
+  { label: 'No', value: 'No' }
+]

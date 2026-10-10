@@ -104,6 +104,10 @@
   border-color: var(--ax-color-border);
 }
 
+.ax-divide-border-secondary-light > * + * {
+  border-color: var(--ax-color-border-secondary-light);
+}
+
 .ax-divide-border-secondary > * + * {
   border-color: var(--ax-color-border-secondary);
 }

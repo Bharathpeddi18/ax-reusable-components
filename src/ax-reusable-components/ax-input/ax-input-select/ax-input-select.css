@@ -42,7 +42,7 @@
 
 .ax-select-size-sm {
   --ax-select-min-height: 32px;
-  --ax-select-font-size: var(--ax-font-size-xs);
+  --ax-select-font-size: var(--ax-font-size-sm);
   --ax-select-padding-y: 3px;
   --ax-select-padding-x: 8px;
   --ax-select-indicator-padding: 6px;
@@ -52,7 +52,7 @@
 
 .ax-select-size-md {
   --ax-select-min-height: 40px;
-  --ax-select-font-size: var(--ax-font-size-sm);
+  --ax-select-font-size: var(--ax-font-size-md);
   --ax-select-padding-y: 4px;
   --ax-select-padding-x: 10px;
   --ax-select-indicator-padding: 8px;

@@ -31,6 +31,8 @@
 @import "../../ax-reusable-components/ax-button/ax-button.css";
 @import "../../ax-reusable-components/ax-card/ax-card.css";
 @import "../../ax-reusable-components/ax-popover/ax-popover.css";
+@import "../../ax-reusable-components/ax-tabs-horizontal/ax-tabs-horizontal.css";
+@import "../../ax-reusable-components/ax-tabs-vertical/ax-tabs-vertical.css";
 
 
 /* 5. Utilities */

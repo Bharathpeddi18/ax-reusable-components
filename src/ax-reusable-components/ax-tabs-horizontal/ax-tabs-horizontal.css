@@ -1,25 +1,84 @@
-/* Tabs row */
-.ax-tabs-list {
+/* ==================================================
+   HORIZONTAL TABS — BASE STYLES
+   ================================================== */
+
+/* Container */
+.ax-tabs-h {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tabs List */
+.ax-tabs-h-list {
   display: flex;
   align-items: center;
   width: 100%;
-  border-bottom: 3px solid #e5e7eb;
+  position: relative;
 }
 
 
-/* Tab */
-.ax-tab {
+/* ==================================================
+   TAB BUTTON — BASE STYLES
+   ================================================== */
+
+.ax-tab-h {
   flex-shrink: 0;
   border: 0;
   background: transparent;
-  color: #6b7280;
+  color: var(--ax-color-text-disabled);
   font-family: inherit;
-  font-weight: 400;
+  font-weight: var(--ax-font-weight-semibold);
   cursor: pointer;
   position: relative;
 }
 
-.ax-tab::after {
+
+/* ==================================================
+   TAB STATES — HOVER, FOCUS & ACTIVE
+   ================================================== */
+
+/* Hover / Focus */
+.ax-tab-h:hover,
+.ax-tab-h:focus,
+.ax-tab-h:focus-visible {
+  color: var(--ax-color-primary);
+}
+
+/* Active Tab */
+.ax-tab-h-active {
+  color: var(--ax-color-primary);
+}
+
+
+/* ==================================================
+   TAB SIZES
+   ================================================== */
+
+/* Small */
+.ax-tab-h-sm {
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+/* Medium */
+.ax-tab-h-md {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* Large */
+.ax-tab-h-lg {
+  padding: 10px 14px;
+  font-size: 15px;
+}
+
+
+/* ==================================================
+   HORIZONTAL-SPECIFIC STYLES — BOTTOM INDICATOR
+   ================================================== */
+
+/* Indicator Track */
+.ax-tabs-h-list::before {
   content: '';
   position: absolute;
   left: 0;
@@ -27,42 +86,34 @@
   bottom: -3px;
   width: 100%;
   height: 3px;
-  background: var(--ax-color-primary,#00308f);
-  border-radius: 3px;
-  transition: opacity 250ms ease;
+  background: var(--ax-color-border);
+  border-radius: var(--ax-radius-xl);
+}
+
+/* Tab Active Indicator */
+.ax-tab-h::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 3px;
+  background: var(--ax-color-primary);
+  border-radius: var(--ax-radius-xl);
   opacity: 0;
 }
 
-
-/* Active */
-.ax-tab-active {
-  color: #00308f;
-  font-weight: 600;
-}
-
-.ax-tab-active::after {
+/* Show Indicator on Active Tab */
+.ax-tab-h-active::after {
   opacity: 1;
 }
 
 
-/* Sizes */
-.ax-tab-sm {
-  padding: 6px 10px;
-  font-size: 13px;
-}
+/* ==================================================
+   TAB CONTENT
+   ================================================== */
 
-.ax-tab-md {
-  padding: 8px 12px;
-  font-size: 14px;
-}
-
-.ax-tab-lg {
-  padding: 10px 14px;
-  font-size: 15px;
-}
-
-
-/* Content */
-.ax-tabs-content {
+.ax-tabs-h-content {
   width: 100%;
 }
