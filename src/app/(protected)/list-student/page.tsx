@@ -6,6 +6,7 @@ import AXButton from '@/ax-reusable-components/ax-button/ax-button';
 import AXCard from '@/ax-reusable-components/ax-card/ax-card';
 import AXPageHeader from '@/ax-reusable-components/ax-page-header/ax-page-header';
 import AXPageLoader from '@/ax-reusable-components/ax-page-loader/ax-page-loader';
+import AxSnackbar from '@/ax-reusable-components/ax-snackbar/ax-snackbar';
 
 // region Interfaces
 interface Submission {
@@ -27,6 +28,8 @@ export default function StudentSubmissionsPage() {
   const [tableData, setTableData] = useState<Submission[]>([]);
   const [loading, setLoading] = useState({ page: true, delete: false });
   const [message, setMessage] = useState('');
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
   const [imageError, setImageError] = useState<Record<number, boolean>>({});
   // endregion
 
@@ -60,7 +63,9 @@ export default function StudentSubmissionsPage() {
       if (!response.ok) throw new Error('Failed to delete student');
 
       const data = await response.json();
-      setMessage(data.message ?? 'Student deleted successfully');
+      setSnackbarMessage(data.message ?? 'Student deleted successfully');
+      setSnackbarOpen(true);
+      setMessage('');
       await fetchSubmissions();
     } catch (error) {
       console.error('Delete student error:', error);
@@ -88,7 +93,7 @@ export default function StudentSubmissionsPage() {
         }
       />
 
-      <main className="ax-container mt-3">
+      <main className="ax-container ax-mt-3">
         <div className="ax-flex ax-flex-col ax-gap-4">
           {/* Server Message Feedback */}
           {message && (
@@ -178,7 +183,7 @@ export default function StudentSubmissionsPage() {
                       !loading.page && (
                         <tr>
                           <td colSpan={4} className="ax-py-10 ax-text-center ax-text-gray-500">
-                            No student submissions found.
+                            No student data found.
                           </td>
                         </tr>
                       )
@@ -190,6 +195,18 @@ export default function StudentSubmissionsPage() {
           />
         </div>
       </main>
+
+      <AxSnackbar
+        propsOpen={snackbarOpen}
+        propsOnClose={() => setSnackbarOpen(false)}
+        propsPosition="top-center"
+        propsDuration={3000}
+      >
+        <div className="ax-bg-danger-light ax-text-danger ax-border ax-border-danger ax-px-4 ax-py-2.5 ax-rounded-lg ax-shadow-xl ax-flex ax-items-center ax-gap-2">
+          <Icon name="check" size={18} className="ax-text-danger" />
+          <span className="ax-text-sm ax-font-medium">{snackbarMessage}</span>
+        </div>
+      </AxSnackbar>
     </>
   );
 }

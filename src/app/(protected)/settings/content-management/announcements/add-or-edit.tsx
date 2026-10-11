@@ -9,6 +9,7 @@ import AXInputDate from '@/ax-reusable-components/ax-input/ax-input-date/ax-inpu
 import AXInputSelect from '@/ax-reusable-components/ax-input/ax-input-select/ax-input-select';
 import { Announcement } from './announcements';
 import { SELECT_YES_NO_OPTIONS } from '../../../../../../global-config';
+import AxModalPopover from '@/ax-reusable-components/ax-modal-popover/ax-modal-popover';
 
 interface AddOrEditProps {
   initialData?: Announcement | null;
@@ -43,74 +44,76 @@ export default function AddOrEdit({ initialData, onSave, onCancel }: AddOrEditPr
   const isEdit = !!initialData?.id;
 
   return (
-    <AXCard
-      propsSize="lg"
-      propsClassName="ax-shadow-md ax-border ax-border-gray-200 ax-rounded-xl ax-bg-white ax-mb-4"
-      propsHeader={
-        <h4 className="ax-font-semibold ax-text-lg ax-m-0 ax-text-gray-800">
-          {isEdit ? 'Edit Announcement' : 'Add Announcement'}
-        </h4>
-      }
-      propsHeaderClassName="ax-border-b ax-border-gray-200 ax-px-4 ax-py-3"
-      propsBody={
-        <div className="ax-flex ax-flex-col ax-gap-4">
-          <AXInputText
-            id="title"
-            propsLabel="Title"
-            propsMandatory
-            propsPlaceholder="Enter announcement title"
-            propsValue={formData.title}
-            propsOnChange={(e) => setFormData({ ...formData, title: e.target.value })}
-          />
-          
-          <AXInputRichText
-            propsLabel="Description"
-            propsMandatory
-            propsPlaceholder="Enter detailed description"
-            propsValue={formData.description}
-            propsOnChange={(value) => setFormData({ ...formData, description: value })}
-          />
-          
-          <div className="ax-flex ax-flex-col md:ax-flex-row ax-gap-4">
-            <div className="ax-flex-1">
-              <AXInputDate
-                propsId="expiryDate"
-                propsLabel="Expiry Date"
-                propsMandatory
-                propsValue={formData.expiryDate}
-                propsMinDate={new Date().toISOString().split('T')[0]}
-                propsOnChange={(e) => setFormData({ ...formData, expiryDate: e.target.value })}
-              />
-            </div>
-            <div className="ax-flex-1">
-              <AXInputSelect
-                propsLabel="Is Archived"
-                propsOptions={SELECT_YES_NO_OPTIONS}
-                propsValue={formData.isArchived}
-                propsOnChange={(val) => setFormData({ ...formData, isArchived: val })}
-              />
+    <AxModalPopover propsSize='lg' propsOpen={true} propsOnClose={onCancel} propsCloseOnOutsideClick={true}>
+      <AXCard
+        propsSize="lg"
+        propsClassName="ax-bg-transparent ax-border-none"
+        propsHeader={
+          <h4 className="ax-font-semibold ax-text-lg ax-m-0 ax-text-gray-800">
+            {isEdit ? 'Edit Announcement' : 'Add Announcement'}
+          </h4>
+        }
+        propsHeaderClassName="ax-border-b ax-border-gray-200 ax-px-4 ax-py-3"
+        propsBody={
+          <div className="ax-flex ax-flex-col ax-gap-4">
+            <AXInputText
+              id="title"
+              propsLabel="Title"
+              propsMandatory
+              propsPlaceholder="Enter announcement title"
+              propsValue={formData.title}
+              propsOnChange={(e) => setFormData({ ...formData, title: e.target.value })}
+            />
+            
+            <AXInputRichText
+              propsLabel="Description"
+              propsMandatory
+              propsPlaceholder="Enter detailed description"
+              propsValue={formData.description}
+              propsOnChange={(value) => setFormData({ ...formData, description: value })}
+            />
+            
+            <div className="ax-flex ax-flex-col md:ax-flex-row ax-gap-4">
+              <div className="ax-flex-1">
+                <AXInputDate
+                  propsId="expiryDate"
+                  propsLabel="Expiry Date"
+                  propsMandatory
+                  propsValue={formData.expiryDate}
+                  propsMinDate={new Date().toISOString().split('T')[0]}
+                  propsOnChange={(e) => setFormData({ ...formData, expiryDate: e.target.value })}
+                />
+              </div>
+              <div className="ax-flex-1">
+                <AXInputSelect
+                  propsLabel="Is Archived"
+                  propsOptions={SELECT_YES_NO_OPTIONS}
+                  propsValue={formData.isArchived}
+                  propsOnChange={(val) => setFormData({ ...formData, isArchived: val })}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      }
-      propsBodyClassName="ax-p-4"
-      propsFooter={
-        <div className="ax-flex ax-items-center ax-gap-3 ax-justify-end ax-w-full">
-          <AXButton
-            propsLabel="Cancel"
-            propsSize="md"
-            propsClassName="ax-bg-gray-100 ax-text-gray-700 hover:ax-bg-gray-200 ax-rounded-lg ax-px-4"
-            onClick={onCancel}
-          />
-          <AXButton
-            propsLabel={isEdit ? 'Update' : 'Submit'}
-            propsSize="md"
-            propsClassName="ax-bg-primary ax-text-white hover:ax-opacity-90 ax-rounded-lg ax-px-4"
-            onClick={handleSave}
-          />
-        </div>
-      }
-      propsFooterClassName="ax-border-t ax-border-gray-200 ax-px-4 ax-py-3"
-    />
+        }
+        propsBodyClassName="ax-p-4"
+        propsFooter={
+          <div className="ax-flex ax-items-center ax-gap-3 ax-justify-end ax-w-full">
+            <AXButton
+              propsLabel="Cancel"
+              propsSize="md"
+              propsClassName="ax-bg-gray-100 ax-text-gray-700 hover:ax-bg-gray-200 ax-rounded-lg ax-px-4"
+              onClick={onCancel}
+            />
+            <AXButton
+              propsLabel={isEdit ? 'Update' : 'Submit'}
+              propsSize="md"
+              propsClassName="ax-bg-primary ax-text-white hover:ax-opacity-90 ax-rounded-lg ax-px-4"
+              onClick={handleSave}
+            />
+          </div>
+        }
+        propsFooterClassName="ax-border-t ax-border-gray-200 ax-px-4 ax-py-3"
+      />
+    </AxModalPopover>
   );
 }

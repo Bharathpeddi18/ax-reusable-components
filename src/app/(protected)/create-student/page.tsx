@@ -8,6 +8,7 @@ import AXInputSelect from '@/ax-reusable-components/ax-input/ax-input-select/ax-
 import AXInputText from '@/ax-reusable-components/ax-input/ax-input-text/ax-input-text';
 import AXInputFileUpload from '@/ax-reusable-components/ax-input/ax-input-file/ax-input-file-upload';
 import AXPageHeader from '@/ax-reusable-components/ax-page-header/ax-page-header';
+import AxSnackbar from '@/ax-reusable-components/ax-snackbar/ax-snackbar';
 
 // region Constants
 const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
@@ -28,6 +29,8 @@ export default function CreateStudentPage() {
   // UI States
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [snackbarMessage, setSnackbarMessage] = useState('');
   // endregion
 
   // region Handlers
@@ -42,7 +45,7 @@ export default function CreateStudentPage() {
       const formData = new FormData();
       formData.append('name', name);
       formData.append('class_id', studentClass);
-      
+
       if (attachments.length > 0) {
         formData.append('photo', attachments[0]);
       }
@@ -55,7 +58,10 @@ export default function CreateStudentPage() {
       if (!response.ok) throw new Error('Failed to submit form');
 
       const data = await response.json();
-      setMessage(data.message ?? 'Student submitted successfully');
+      const successMsg = data.message ?? 'Student added successfully';
+      setSnackbarMessage(successMsg);
+      setSnackbarOpen(true);
+      setMessage('');
       handleReset();
     } catch (error) {
       console.error('Submit error:', error);
@@ -98,7 +104,7 @@ export default function CreateStudentPage() {
         }
       />
 
-      <main className="ax-container mt-3">
+      <main className="ax-container ax-mt-3">
         <div className="ax-flex ax-flex-col ax-gap-6">
           {/* Submission Response Feedback */}
           {message && (
@@ -190,6 +196,18 @@ export default function CreateStudentPage() {
           />
         </div>
       </main>
+
+      <AxSnackbar
+        propsOpen={snackbarOpen}
+        propsOnClose={() => setSnackbarOpen(false)}
+        propsPosition="top-center"
+        propsDuration={3000}
+      >
+        <div className="ax-bg-success-light ax-text-success ax-border ax-border-success ax-px-4 ax-py-2.5 ax-rounded-lg ax-shadow-xl ax-flex ax-items-center ax-gap-2">
+          <Icon name="check" size={18} className="ax-text-success" />
+          <span className="ax-text-sm ax-font-medium">{snackbarMessage}</span>
+        </div>
+      </AxSnackbar>
     </>
   );
 }

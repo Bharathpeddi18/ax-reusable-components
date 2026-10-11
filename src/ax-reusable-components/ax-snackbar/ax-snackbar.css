@@ -1,0 +1,20 @@
+.ax-snackbar,
+.snackbar {
+  position: fixed;
+  z-index: var(--ax-z-index-toast, 9000);
+  width: max-content;
+  max-width: calc(100dvw - var(--ax-space-8, 32px));
+}
+
+/* Vertical positioning */
+[snackbar-position^="top"] { top: var(--ax-space-4, 16px); }
+[snackbar-position^="middle"] { top: 50%; transform: translateY(-50%); }
+[snackbar-position^="bottom"] { bottom: var(--ax-space-4, 16px); }
+
+/* Horizontal positioning */
+[snackbar-position$="left"] { left: var(--ax-space-4, 16px); }
+[snackbar-position$="center"] { left: 50%; transform: translateX(-50%); }
+[snackbar-position$="right"] { right: var(--ax-space-4, 16px); }
+
+/* Center intersection */
+[snackbar-position="middle-center"] { transform: translate(-50%, -50%); }
