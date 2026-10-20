@@ -16,7 +16,8 @@
 
 .ax-text-xs { font-size: var(--ax-font-size-xs); line-height: 1rem; }
 .ax-text-sm { font-size: var(--ax-font-size-sm); line-height: 1.25rem; }
-.ax-text-base, .ax-text-md { font-size: var(--ax-font-size-base); line-height: 1.5rem; }
+.ax-text-base { font-size: var(--ax-font-size-base); line-height: 1.5rem; }
+.ax-text-md { font-size: var(--ax-font-size-md); line-height: 1.5rem; }
 .ax-text-lg { font-size: var(--ax-font-size-lg); line-height: 1.75rem; }
 .ax-text-xl { font-size: var(--ax-font-size-xl); line-height: 1.75rem; }
 .ax-text-2xl { font-size: var(--ax-font-size-2xl); line-height: 2rem; }

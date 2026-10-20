@@ -77,6 +77,7 @@
 
 .hover\:ax-border-primary:hover { border-color: var(--ax-color-primary); }
 .hover\:ax-border-secondary:hover { border-color: var(--ax-color-border-secondary); }
+.hover\:ax-border-secondary-light:hover { border-color: var(--ax-color-border-secondary-light); }
 .hover\:ax-border-accent:hover { border-color: var(--ax-color-accent); }
 .hover\:ax-border-gray-300:hover { border-color: var(--ax-color-gray-300); }
 .hover\:ax-border-gray-400:hover { border-color: var(--ax-color-gray-400); }

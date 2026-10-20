@@ -107,7 +107,6 @@ export function NotificationContent({ notifications = SAMPLE_NOTIFICATIONS, onCl
       <AXTabsHorizontal
         propsSize="md"
         propsDefaultTab={NOTIFICATION_TYPE.action}
-        propsClassName="ax-flex ax-flex-col ax-flex-1"
         propsContentClassName="ax-p-0 ax-max-h-80 ax-overflow-y-auto"
         propsTabs={tabs}
       />

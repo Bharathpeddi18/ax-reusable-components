@@ -1,7 +1,6 @@
 'use client';
 
 import { ReactNode, useState } from 'react';
-import './ax-tabs-horizontal.css';
 
 // region Interfaces
 export interface TabItem {
@@ -16,7 +15,8 @@ export interface TabsProps {
   propsTabs: TabItem[];
   propsDefaultTab?: string;
   propsSize?: 'sm' | 'md' | 'lg';
-  propsClassName?: string;
+  propsTabsClassName?: string;
+  propsTabsListClassName?: string;
   propsTabClassName?: string;
   propsContentClassName?: string;
   propsOnChange?: (tabId: string) => void;
@@ -27,7 +27,8 @@ export function AXTabsHorizontal({
   propsTabs,
   propsDefaultTab,
   propsSize = 'md',
-  propsClassName = '',
+  propsTabsClassName = '',
+  propsTabsListClassName= '',
   propsTabClassName = '',
   propsContentClassName = '',
   propsOnChange,
@@ -47,9 +48,9 @@ export function AXTabsHorizontal({
 
   // region Render
   return (
-    <div className={`ax-tabs ${propsClassName}`.trim()}>
+    <div className={`ax-tabs-h ${propsTabsClassName}`.trim()}>
       {/* Tab List */}
-      <div className="ax-tabs-list" role="tablist">
+      <div className={`ax-tabs-h-list ${propsTabsListClassName}`.trim()} role="tablist">
         {propsTabs.map((tab) => {
           const isActive = activeTab === tab.id;
 
@@ -59,7 +60,7 @@ export function AXTabsHorizontal({
               type="button"
               role="tab"
               aria-selected={isActive}
-              className={`ax-tab ax-tab-${propsSize} ${isActive ? 'ax-tab-active' : ''} ${propsTabClassName}`.trim()}
+              className={`ax-tab-h ax-tab-h-${propsSize} ${isActive ? 'ax-tab-h-active' : ''} ${propsTabClassName}`.trim()}
               onClick={() => handleTabChange(tab.id)}
             >
               {tab.label}
@@ -69,7 +70,7 @@ export function AXTabsHorizontal({
       </div>
 
       {/* Tab Content */}
-      <div className={`ax-tabs-content ${propsContentClassName}`.trim()} role="tabpanel">
+      <div className={`ax-tabs-h-content ${propsContentClassName}`.trim()} role="tabpanel">
         {activeContent}
       </div>
     </div>

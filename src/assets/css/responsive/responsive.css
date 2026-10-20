@@ -139,6 +139,7 @@
   .sm\:ax-text-xs { font-size: var(--ax-font-size-xs); line-height: 1rem; }
   .sm\:ax-text-sm { font-size: var(--ax-font-size-sm); line-height: 1.25rem; }
   .sm\:ax-text-base { font-size: var(--ax-font-size-base); line-height: 1.5rem; }
+  .sm\:ax-text-md { font-size: var(--ax-font-size-md); line-height: 1.5rem; }
   .sm\:ax-text-lg { font-size: var(--ax-font-size-lg); line-height: 1.75rem; }
   .sm\:ax-text-xl { font-size: var(--ax-font-size-xl); line-height: 1.75rem; }
   .sm\:ax-text-2xl { font-size: var(--ax-font-size-2xl); line-height: 2rem; }
@@ -274,6 +275,7 @@
   .md\:ax-text-right { text-align: right; }
   .md\:ax-text-sm { font-size: var(--ax-font-size-sm); line-height: 1.25rem; }
   .md\:ax-text-base { font-size: var(--ax-font-size-base); line-height: 1.5rem; }
+  .md\:ax-text-md { font-size: var(--ax-font-size-md); line-height: 1.5rem; }
   .md\:ax-text-lg { font-size: var(--ax-font-size-lg); line-height: 1.75rem; }
   .md\:ax-text-xl { font-size: var(--ax-font-size-xl); line-height: 1.75rem; }
   .md\:ax-text-2xl { font-size: var(--ax-font-size-2xl); line-height: 2rem; }
@@ -405,6 +407,7 @@
   .lg\:ax-text-center { text-align: center; }
   .lg\:ax-text-right { text-align: right; }
   .lg\:ax-text-base { font-size: var(--ax-font-size-base); line-height: 1.5rem; }
+  .lg\:ax-text-md { font-size: var(--ax-font-size-md); line-height: 1.5rem; }
   .lg\:ax-text-lg { font-size: var(--ax-font-size-lg); line-height: 1.75rem; }
   .lg\:ax-text-xl { font-size: var(--ax-font-size-xl); line-height: 1.75rem; }
   .lg\:ax-text-2xl { font-size: var(--ax-font-size-2xl); line-height: 2rem; }
@@ -532,6 +535,8 @@
   .xl\:ax-text-left { text-align: left; }
   .xl\:ax-text-center { text-align: center; }
   .xl\:ax-text-right { text-align: right; }
+  .xl\:ax-text-base { font-size: var(--ax-font-size-base); line-height: 1.5rem; }
+  .xl\:ax-text-md { font-size: var(--ax-font-size-md); line-height: 1.5rem; }
   .xl\:ax-text-lg { font-size: var(--ax-font-size-lg); line-height: 1.75rem; }
   .xl\:ax-text-xl { font-size: var(--ax-font-size-xl); line-height: 1.75rem; }
   .xl\:ax-text-2xl { font-size: var(--ax-font-size-2xl); line-height: 2rem; }
